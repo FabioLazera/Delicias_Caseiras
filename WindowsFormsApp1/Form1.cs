@@ -12,9 +12,16 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        Restaurant Delicias_Caseiras_Porto = new Restaurant();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void NewOrder_Click(object sender, EventArgs e)
+        {
+            //Delicias_Caseiras_Porto.AddOrder();
         }
     }
 }
