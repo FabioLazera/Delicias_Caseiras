@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
             Orders.Add(order);
         }
 
-        //Sempre que se cria um restaurante ele adiciona uma order a lista de orders
+        //Remove uma order a lista de orders
 
         public void RemoveOrder(Order order)
         {

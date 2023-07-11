@@ -33,12 +33,14 @@
             // 
             // NewOrder
             // 
+            this.NewOrder.AutoSize = true;
             this.NewOrder.Location = new System.Drawing.Point(525, 103);
             this.NewOrder.Name = "NewOrder";
-            this.NewOrder.Size = new System.Drawing.Size(132, 23);
+            this.NewOrder.Size = new System.Drawing.Size(132, 26);
             this.NewOrder.TabIndex = 0;
             this.NewOrder.Text = "New Order";
             this.NewOrder.UseVisualStyleBackColor = true;
+            this.NewOrder.Visible = false;
             this.NewOrder.Click += new System.EventHandler(this.NewOrder_Click);
             // 
             // Form1
@@ -50,6 +52,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
