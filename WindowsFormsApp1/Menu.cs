@@ -15,6 +15,28 @@ namespace WindowsFormsApp1
         public Menu()
         {
             InitializeComponent();
+            DisableFormResize();
+            CenterFormOnScreen();
+        }
+
+        private void DisableFormResize()
+        {
+            FormBorderStyle = FormBorderStyle.FixedSingle; // Set the form's border style to fixed
+            MaximizeBox = false; // Disable the maximize button
+            MinimizeBox = true; // Disable the minimize button
+            // ControlBox = false; // Disable the control box (close, minimize, maximize buttons)
+            // ResizeRedraw = false; // Disable redrawing of the form while resizing
+        }
+
+        private void CenterFormOnScreen()
+        {
+            StartPosition = FormStartPosition.CenterScreen;
+            //Set the form's start position to center screen
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
