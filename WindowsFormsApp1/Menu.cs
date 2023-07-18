@@ -34,9 +34,27 @@ namespace WindowsFormsApp1
             //Set the form's start position to center screen
         }
 
+        private void AddPanel(Form f)
+        {
+            //ControlPanel.Controls.Clear();
+            //f.Dock = DockStyle.Fill;
+            //f.TopLevel = false;
+            //ControlPanel.Controls.Add(f);
+            //f.Show();
+        }
+
         private void Menu_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            //new OrdersPanel().Show();
+            //new OrdersPanel().BringToFront();
+
+        }
     }
+    
 }
