@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Dish.cs" />
+    <Compile Include="Panels\addClientPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\addClientPanel.Designer.cs">
+      <DependentUpon>addClientPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\addEmployeePanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Restaurant.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\addClientPanel.resx">
+      <DependentUpon>addClientPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\addEmployeePanel.resx">
       <DependentUpon>addEmployeePanel.cs</DependentUpon>

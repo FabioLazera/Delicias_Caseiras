@@ -200,6 +200,7 @@
             // 
             // clientsPImg
             // 
+            this.clientsPImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clientsPImg.Image = global::WindowsFormsApp1.Properties.Resources.addPerson;
             this.clientsPImg.Location = new System.Drawing.Point(41, 77);
             this.clientsPImg.Name = "clientsPImg";
@@ -207,6 +208,7 @@
             this.clientsPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.clientsPImg.TabIndex = 23;
             this.clientsPImg.TabStop = false;
+            this.clientsPImg.Click += new System.EventHandler(this.clientsPImg_Click);
             // 
             // clientsLabel
             // 

@@ -10,17 +10,22 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Panels
 {
-    public partial class clientsPanel : Form
+    public partial class addClientsPanel : Form
     {
-        public clientsPanel()
+        public addClientsPanel()
         {
             InitializeComponent();
+            CenterFormOnScreen();
         }
 
-        private void clientsPImg_Click(object sender, EventArgs e)
+        private void CenterFormOnScreen()
         {
-            addClientsPanel addClientsPanel = new addClientsPanel();
-            addClientsPanel.Show();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
