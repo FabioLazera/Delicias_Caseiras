@@ -31,20 +31,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.clientPanel = new System.Windows.Forms.Panel();
             this.clientsGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.clientsLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.clientsPImg = new System.Windows.Forms.PictureBox();
             this.cID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.clientsPImg = new System.Windows.Forms.PictureBox();
+            this.clientsLabel = new System.Windows.Forms.Label();
             this.clientPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -61,6 +60,7 @@
             this.clientPanel.Controls.Add(this.clientsPImg);
             this.clientPanel.Controls.Add(this.clientsLabel);
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientPanel.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientPanel.Location = new System.Drawing.Point(0, 0);
             this.clientPanel.Name = "clientPanel";
             this.clientPanel.Size = new System.Drawing.Size(824, 768);
@@ -83,7 +83,7 @@
             this.clientsGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -109,82 +109,11 @@
             this.clientsGrid.Location = new System.Drawing.Point(35, 204);
             this.clientsGrid.Name = "clientsGrid";
             this.clientsGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.clientsGrid.RowHeadersVisible = false;
             this.clientsGrid.RowHeadersWidth = 51;
             this.clientsGrid.RowTemplate.Height = 24;
             this.clientsGrid.Size = new System.Drawing.Size(755, 535);
             this.clientsGrid.TabIndex = 28;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.searchLabel.Location = new System.Drawing.Point(590, 95);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(91, 18);
-            this.searchLabel.TabIndex = 27;
-            this.searchLabel.Text = "Search Here";
-            // 
-            // separator
-            // 
-            this.separator.AutoSize = true;
-            this.separator.BackColor = System.Drawing.Color.Transparent;
-            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.separator.Location = new System.Drawing.Point(34, 163);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(855, 20);
-            this.separator.TabIndex = 25;
-            this.separator.Text = "_________________________________________________________________________________" +
-    "_____________";
-            // 
-            // searchTB
-            // 
-            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(557, 115);
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(230, 27);
-            this.searchTB.TabIndex = 24;
-            // 
-            // clientsLabel
-            // 
-            this.clientsLabel.AutoSize = true;
-            this.clientsLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.clientsLabel.Location = new System.Drawing.Point(36, 38);
-            this.clientsLabel.Name = "clientsLabel";
-            this.clientsLabel.Size = new System.Drawing.Size(91, 26);
-            this.clientsLabel.TabIndex = 22;
-            this.clientsLabel.Text = "Clients";
-            // 
-            // searchImg
-            // 
-            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
-            this.searchImg.Location = new System.Drawing.Point(557, 85);
-            this.searchImg.Name = "searchImg";
-            this.searchImg.Size = new System.Drawing.Size(29, 27);
-            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchImg.TabIndex = 26;
-            this.searchImg.TabStop = false;
-            // 
-            // clientsPImg
-            // 
-            this.clientsPImg.Image = global::WindowsFormsApp1.Properties.Resources.addPerson;
-            this.clientsPImg.Location = new System.Drawing.Point(41, 77);
-            this.clientsPImg.Name = "clientsPImg";
-            this.clientsPImg.Size = new System.Drawing.Size(65, 65);
-            this.clientsPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.clientsPImg.TabIndex = 23;
-            this.clientsPImg.TabStop = false;
             // 
             // cID
             // 
@@ -224,6 +153,69 @@
             this.cNIF.MinimumWidth = 100;
             this.cNIF.Name = "cNIF";
             this.cNIF.ReadOnly = true;
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.searchLabel.Location = new System.Drawing.Point(590, 95);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(91, 18);
+            this.searchLabel.TabIndex = 27;
+            this.searchLabel.Text = "Search Here";
+            // 
+            // searchImg
+            // 
+            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
+            this.searchImg.Location = new System.Drawing.Point(557, 85);
+            this.searchImg.Name = "searchImg";
+            this.searchImg.Size = new System.Drawing.Size(29, 27);
+            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchImg.TabIndex = 26;
+            this.searchImg.TabStop = false;
+            // 
+            // separator
+            // 
+            this.separator.AutoSize = true;
+            this.separator.BackColor = System.Drawing.Color.Transparent;
+            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.separator.Location = new System.Drawing.Point(34, 163);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(855, 20);
+            this.separator.TabIndex = 25;
+            this.separator.Text = "_________________________________________________________________________________" +
+    "_____________";
+            // 
+            // searchTB
+            // 
+            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTB.Location = new System.Drawing.Point(557, 115);
+            this.searchTB.Name = "searchTB";
+            this.searchTB.Size = new System.Drawing.Size(230, 27);
+            this.searchTB.TabIndex = 24;
+            // 
+            // clientsPImg
+            // 
+            this.clientsPImg.Image = global::WindowsFormsApp1.Properties.Resources.addPerson;
+            this.clientsPImg.Location = new System.Drawing.Point(41, 77);
+            this.clientsPImg.Name = "clientsPImg";
+            this.clientsPImg.Size = new System.Drawing.Size(65, 65);
+            this.clientsPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.clientsPImg.TabIndex = 23;
+            this.clientsPImg.TabStop = false;
+            // 
+            // clientsLabel
+            // 
+            this.clientsLabel.AutoSize = true;
+            this.clientsLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.clientsLabel.Location = new System.Drawing.Point(36, 38);
+            this.clientsLabel.Name = "clientsLabel";
+            this.clientsLabel.Size = new System.Drawing.Size(91, 26);
+            this.clientsLabel.TabIndex = 22;
+            this.clientsLabel.Text = "Clients";
             // 
             // clientsPanel
             // 

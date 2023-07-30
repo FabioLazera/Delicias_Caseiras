@@ -251,6 +251,7 @@
             this.drinksBtn.TabIndex = 5;
             this.drinksBtn.Text = "Drinks";
             this.drinksBtn.UseVisualStyleBackColor = false;
+            this.drinksBtn.Click += new System.EventHandler(this.drinksBtn_Click);
             // 
             // ordersBtn
             // 
