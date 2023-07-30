@@ -14,7 +14,13 @@ namespace WindowsFormsApp1.Panels
     {
         public drinksPanel()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+        }
+
+        private void drinksPImg_Click(object sender, EventArgs e)
+        {
+            addDrinksPanel addDrinksPanel = new addDrinksPanel();
+            addDrinksPanel.Show();
         }
     }
 }

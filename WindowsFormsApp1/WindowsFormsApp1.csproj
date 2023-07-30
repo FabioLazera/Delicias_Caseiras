@@ -63,6 +63,12 @@
     <Compile Include="Panels\addClientPanel.Designer.cs">
       <DependentUpon>addClientPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\addDrinksPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\addDrinksPanel.Designer.cs">
+      <DependentUpon>addDrinksPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panels\addEmployeePanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\addClientPanel.resx">
       <DependentUpon>addClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\addDrinksPanel.resx">
+      <DependentUpon>addDrinksPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\addEmployeePanel.resx">
       <DependentUpon>addEmployeePanel.cs</DependentUpon>
@@ -211,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addProcess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
