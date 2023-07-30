@@ -199,6 +199,7 @@
             // 
             // dishesPImg
             // 
+            this.dishesPImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dishesPImg.Image = global::WindowsFormsApp1.Properties.Resources.addStock;
             this.dishesPImg.Location = new System.Drawing.Point(41, 77);
             this.dishesPImg.Name = "dishesPImg";
@@ -206,6 +207,7 @@
             this.dishesPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dishesPImg.TabIndex = 37;
             this.dishesPImg.TabStop = false;
+            this.dishesPImg.Click += new System.EventHandler(this.dishesPImg_Click);
             // 
             // dishesLabel
             // 

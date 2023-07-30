@@ -10,17 +10,22 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Panels
 {
-    public partial class dishesPanel : Form
+    public partial class addDishesPanel : Form
     {
-        public dishesPanel()
+        public addDishesPanel()
         {
             InitializeComponent();
+            CenterFormOnScreen();   
         }
 
-        private void dishesPImg_Click(object sender, EventArgs e)
+        private void CenterFormOnScreen()
         {
-            addDishesPanel addDishesPanel = new addDishesPanel();
-            addDishesPanel.Show();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void dishCloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
