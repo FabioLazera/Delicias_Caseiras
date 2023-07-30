@@ -28,220 +28,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ControlPanel = new System.Windows.Forms.Panel();
+            this.optionsPanel = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.deliveryBtn = new System.Windows.Forms.Button();
+            this.employeesBtn = new System.Windows.Forms.Button();
+            this.dishesBtn = new System.Windows.Forms.Button();
+            this.clientsBtn = new System.Windows.Forms.Button();
+            this.drinksBtn = new System.Windows.Forms.Button();
+            this.ordersBtn = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.OrderButton = new System.Windows.Forms.Button();
-            this.DishButton = new System.Windows.Forms.Button();
-            this.EmployeeButton = new System.Windows.Forms.Button();
-            this.DrinkButton = new System.Windows.Forms.Button();
-            this.ClientButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.ControlPanel.SuspendLayout();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.logo1 = new System.Windows.Forms.PictureBox();
+            this.optionsPanel.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // optionsPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.OrderButton);
-            this.panel1.Controls.Add(this.DishButton);
-            this.panel1.Controls.Add(this.EmployeeButton);
-            this.panel1.Controls.Add(this.DrinkButton);
-            this.panel1.Controls.Add(this.ClientButton);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 754);
-            this.panel1.TabIndex = 0;
+            this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.optionsPanel.Controls.Add(this.pictureBox8);
+            this.optionsPanel.Controls.Add(this.pictureBox7);
+            this.optionsPanel.Controls.Add(this.pictureBox6);
+            this.optionsPanel.Controls.Add(this.pictureBox5);
+            this.optionsPanel.Controls.Add(this.pictureBox4);
+            this.optionsPanel.Controls.Add(this.pictureBox3);
+            this.optionsPanel.Controls.Add(this.pictureBox2);
+            this.optionsPanel.Controls.Add(this.logoutBtn);
+            this.optionsPanel.Controls.Add(this.deliveryBtn);
+            this.optionsPanel.Controls.Add(this.employeesBtn);
+            this.optionsPanel.Controls.Add(this.dishesBtn);
+            this.optionsPanel.Controls.Add(this.clientsBtn);
+            this.optionsPanel.Controls.Add(this.drinksBtn);
+            this.optionsPanel.Controls.Add(this.ordersBtn);
+            this.optionsPanel.Controls.Add(this.logo1);
+            this.optionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.optionsPanel.Location = new System.Drawing.Point(0, 0);
+            this.optionsPanel.Name = "optionsPanel";
+            this.optionsPanel.Size = new System.Drawing.Size(200, 768);
+            this.optionsPanel.TabIndex = 0;
             // 
-            // ControlPanel
+            // logoutBtn
             // 
-            this.ControlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.ControlPanel.Controls.Add(this.pictureBox1);
-            this.ControlPanel.Location = new System.Drawing.Point(234, 5);
-            this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1027, 750);
-            this.ControlPanel.TabIndex = 4;
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.logoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
+            this.logoutBtn.Location = new System.Drawing.Point(59, 665);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(143, 70);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
+            // deliveryBtn
+            // 
+            this.deliveryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.deliveryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deliveryBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.deliveryBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.deliveryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deliveryBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliveryBtn.ForeColor = System.Drawing.Color.White;
+            this.deliveryBtn.Location = new System.Drawing.Point(59, 589);
+            this.deliveryBtn.Name = "deliveryBtn";
+            this.deliveryBtn.Size = new System.Drawing.Size(143, 70);
+            this.deliveryBtn.TabIndex = 7;
+            this.deliveryBtn.Text = "Delivery";
+            this.deliveryBtn.UseVisualStyleBackColor = false;
+            // 
+            // employeesBtn
+            // 
+            this.employeesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.employeesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.employeesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.employeesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.employeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeesBtn.ForeColor = System.Drawing.Color.White;
+            this.employeesBtn.Location = new System.Drawing.Point(59, 285);
+            this.employeesBtn.Name = "employeesBtn";
+            this.employeesBtn.Size = new System.Drawing.Size(143, 70);
+            this.employeesBtn.TabIndex = 3;
+            this.employeesBtn.Text = "Employees";
+            this.employeesBtn.UseVisualStyleBackColor = false;
+            // 
+            // dishesBtn
+            // 
+            this.dishesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.dishesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dishesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.dishesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.dishesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dishesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dishesBtn.ForeColor = System.Drawing.Color.White;
+            this.dishesBtn.Location = new System.Drawing.Point(59, 513);
+            this.dishesBtn.Name = "dishesBtn";
+            this.dishesBtn.Size = new System.Drawing.Size(143, 70);
+            this.dishesBtn.TabIndex = 6;
+            this.dishesBtn.Text = "Dishes";
+            this.dishesBtn.UseVisualStyleBackColor = false;
+            // 
+            // clientsBtn
+            // 
+            this.clientsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.clientsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clientsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.clientsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.clientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientsBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientsBtn.ForeColor = System.Drawing.Color.White;
+            this.clientsBtn.Location = new System.Drawing.Point(59, 361);
+            this.clientsBtn.Name = "clientsBtn";
+            this.clientsBtn.Size = new System.Drawing.Size(143, 70);
+            this.clientsBtn.TabIndex = 4;
+            this.clientsBtn.Text = "Clients";
+            this.clientsBtn.UseVisualStyleBackColor = false;
+            // 
+            // drinksBtn
+            // 
+            this.drinksBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.drinksBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.drinksBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.drinksBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.drinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drinksBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drinksBtn.ForeColor = System.Drawing.Color.White;
+            this.drinksBtn.Location = new System.Drawing.Point(59, 437);
+            this.drinksBtn.Name = "drinksBtn";
+            this.drinksBtn.Size = new System.Drawing.Size(143, 70);
+            this.drinksBtn.TabIndex = 5;
+            this.drinksBtn.Text = "Drinks";
+            this.drinksBtn.UseVisualStyleBackColor = false;
+            // 
+            // ordersBtn
+            // 
+            this.ordersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.ordersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ordersBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.ordersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordersBtn.ForeColor = System.Drawing.Color.White;
+            this.ordersBtn.Location = new System.Drawing.Point(59, 209);
+            this.ordersBtn.Name = "ordersBtn";
+            this.ordersBtn.Size = new System.Drawing.Size(143, 70);
+            this.ordersBtn.TabIndex = 2;
+            this.ordersBtn.Text = "Orders";
+            this.ordersBtn.UseVisualStyleBackColor = false;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.mainPanel.Controls.Add(this.pictureBox1);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(200, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(824, 768);
+            this.mainPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.logo_transparent1;
-            this.pictureBox1.Location = new System.Drawing.Point(114, 7);
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._1logo_transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(442, 431);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(810, 732);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.Size = new System.Drawing.Size(425, 370);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button6
+            // pictureBox8
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button6.Image = global::WindowsFormsApp1.Properties.Resources.delivery;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 650);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(227, 100);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Delivery";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
+            this.pictureBox8.Image = global::WindowsFormsApp1.Properties.Resources.logout;
+            this.pictureBox8.Location = new System.Drawing.Point(23, 684);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 15;
+            this.pictureBox8.TabStop = false;
             // 
-            // OrderButton
+            // pictureBox7
             // 
-            this.OrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.OrderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OrderButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OrderButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.OrderButton.FlatAppearance.BorderSize = 0;
-            this.OrderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.OrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderButton.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.OrderButton.Image = global::WindowsFormsApp1.Properties.Resources.order;
-            this.OrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OrderButton.Location = new System.Drawing.Point(0, 1);
-            this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(227, 100);
-            this.OrderButton.TabIndex = 7;
-            this.OrderButton.Text = "Pedidos";
-            this.OrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.OrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OrderButton.UseVisualStyleBackColor = false;
-            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
+            this.pictureBox7.Image = global::WindowsFormsApp1.Properties.Resources.delivery1;
+            this.pictureBox7.Location = new System.Drawing.Point(23, 606);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
             // 
-            // DishButton
+            // pictureBox6
             // 
-            this.DishButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.DishButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.DishButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DishButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.DishButton.FlatAppearance.BorderSize = 0;
-            this.DishButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.DishButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.DishButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DishButton.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DishButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.DishButton.Image = global::WindowsFormsApp1.Properties.Resources.food;
-            this.DishButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DishButton.Location = new System.Drawing.Point(0, 522);
-            this.DishButton.Name = "DishButton";
-            this.DishButton.Size = new System.Drawing.Size(227, 100);
-            this.DishButton.TabIndex = 11;
-            this.DishButton.Text = "Pratos";
-            this.DishButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DishButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DishButton.UseVisualStyleBackColor = false;
+            this.pictureBox6.Image = global::WindowsFormsApp1.Properties.Resources.dishes;
+            this.pictureBox6.Location = new System.Drawing.Point(23, 529);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
             // 
-            // EmployeeButton
+            // pictureBox5
             // 
-            this.EmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.EmployeeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EmployeeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EmployeeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.EmployeeButton.FlatAppearance.BorderSize = 0;
-            this.EmployeeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.EmployeeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.EmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmployeeButton.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.EmployeeButton.Image = global::WindowsFormsApp1.Properties.Resources.employee;
-            this.EmployeeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeeButton.Location = new System.Drawing.Point(0, 127);
-            this.EmployeeButton.Name = "EmployeeButton";
-            this.EmployeeButton.Size = new System.Drawing.Size(227, 100);
-            this.EmployeeButton.TabIndex = 8;
-            this.EmployeeButton.Text = "Funcionários";
-            this.EmployeeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EmployeeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.EmployeeButton.UseVisualStyleBackColor = false;
+            this.pictureBox5.Image = global::WindowsFormsApp1.Properties.Resources.drinks;
+            this.pictureBox5.Location = new System.Drawing.Point(23, 453);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
             // 
-            // DrinkButton
+            // pictureBox4
             // 
-            this.DrinkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.DrinkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.DrinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DrinkButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.DrinkButton.FlatAppearance.BorderSize = 0;
-            this.DrinkButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.DrinkButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.DrinkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DrinkButton.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DrinkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.DrinkButton.Image = global::WindowsFormsApp1.Properties.Resources.drink;
-            this.DrinkButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DrinkButton.Location = new System.Drawing.Point(0, 386);
-            this.DrinkButton.Name = "DrinkButton";
-            this.DrinkButton.Size = new System.Drawing.Size(227, 100);
-            this.DrinkButton.TabIndex = 10;
-            this.DrinkButton.Text = "Bebidas";
-            this.DrinkButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DrinkButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DrinkButton.UseVisualStyleBackColor = false;
+            this.pictureBox4.Image = global::WindowsFormsApp1.Properties.Resources.clients;
+            this.pictureBox4.Location = new System.Drawing.Point(23, 376);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
             // 
-            // ClientButton
+            // pictureBox3
             // 
-            this.ClientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.ClientButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClientButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(99)))));
-            this.ClientButton.FlatAppearance.BorderSize = 0;
-            this.ClientButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.ClientButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            this.ClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClientButton.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientButton.Image = global::WindowsFormsApp1.Properties.Resources.client;
-            this.ClientButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClientButton.Location = new System.Drawing.Point(0, 257);
-            this.ClientButton.Name = "ClientButton";
-            this.ClientButton.Size = new System.Drawing.Size(227, 100);
-            this.ClientButton.TabIndex = 9;
-            this.ClientButton.Text = "Clientes";
-            this.ClientButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ClientButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ClientButton.UseVisualStyleBackColor = false;
+            this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.employees;
+            this.pictureBox3.Location = new System.Drawing.Point(23, 301);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.orders;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 224);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // logo1
+            // 
+            this.logo1.Image = global::WindowsFormsApp1.Properties.Resources.logo_transparent1;
+            this.logo1.Location = new System.Drawing.Point(0, 3);
+            this.logo1.Name = "logo1";
+            this.logo1.Size = new System.Drawing.Size(200, 200);
+            this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo1.TabIndex = 0;
+            this.logo1.TabStop = false;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.ClientSize = new System.Drawing.Size(1262, 753);
-            this.Controls.Add(this.ControlPanel);
-            this.Controls.Add(this.panel1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.optionsPanel);
+            this.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
-            this.panel1.ResumeLayout(false);
-            this.ControlPanel.ResumeLayout(false);
+            this.optionsPanel.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button OrderButton;
-        private System.Windows.Forms.Button EmployeeButton;
-        private System.Windows.Forms.Button DrinkButton;
-        private System.Windows.Forms.Button ClientButton;
+        public System.Windows.Forms.Panel optionsPanel;
+        public System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.PictureBox logo1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button DishButton;
-        private System.Windows.Forms.Panel ControlPanel;
+        private System.Windows.Forms.Button ordersBtn;
+        private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Button deliveryBtn;
+        private System.Windows.Forms.Button dishesBtn;
+        private System.Windows.Forms.Button drinksBtn;
+        private System.Windows.Forms.Button clientsBtn;
+        private System.Windows.Forms.Button employeesBtn;
+        public System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.PictureBox pictureBox7;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.PictureBox pictureBox4;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox3;
     }
 }
