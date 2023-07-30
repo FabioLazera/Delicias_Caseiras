@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeePanel = new System.Windows.Forms.Panel();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.employeesPImg = new System.Windows.Forms.PictureBox();
-            this.employeesLabel = new System.Windows.Forms.Label();
             this.employeesGrid = new System.Windows.Forms.DataGridView();
             this.eID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +40,16 @@
             this.eAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eJob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.employeesPImg = new System.Windows.Forms.PictureBox();
+            this.employeesLabel = new System.Windows.Forms.Label();
             this.employeePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesPImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // employeePanel
@@ -68,6 +67,111 @@
             this.employeePanel.Name = "employeePanel";
             this.employeePanel.Size = new System.Drawing.Size(824, 768);
             this.employeePanel.TabIndex = 0;
+            // 
+            // employeesGrid
+            // 
+            this.employeesGrid.AllowUserToAddRows = false;
+            this.employeesGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.employeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeesGrid.BackgroundColor = System.Drawing.Color.White;
+            this.employeesGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.employeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.employeesGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.employeesGrid.ColumnHeadersHeight = 40;
+            this.employeesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.eID,
+            this.eName,
+            this.eAge,
+            this.ePhoneNumber,
+            this.eAddress,
+            this.eSalary,
+            this.eJob});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeesGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.employeesGrid.EnableHeadersVisualStyles = false;
+            this.employeesGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.employeesGrid.Location = new System.Drawing.Point(35, 204);
+            this.employeesGrid.Name = "employeesGrid";
+            this.employeesGrid.ReadOnly = true;
+            this.employeesGrid.RowHeadersVisible = false;
+            this.employeesGrid.RowHeadersWidth = 51;
+            this.employeesGrid.RowTemplate.Height = 24;
+            this.employeesGrid.Size = new System.Drawing.Size(755, 535);
+            this.employeesGrid.TabIndex = 21;
+            // 
+            // eID
+            // 
+            this.eID.FillWeight = 50F;
+            this.eID.HeaderText = "ID";
+            this.eID.MinimumWidth = 50;
+            this.eID.Name = "eID";
+            this.eID.ReadOnly = true;
+            // 
+            // eName
+            // 
+            this.eName.FillWeight = 125F;
+            this.eName.HeaderText = "Name";
+            this.eName.MinimumWidth = 125;
+            this.eName.Name = "eName";
+            this.eName.ReadOnly = true;
+            // 
+            // eAge
+            // 
+            this.eAge.FillWeight = 50F;
+            this.eAge.HeaderText = "Age";
+            this.eAge.MinimumWidth = 50;
+            this.eAge.Name = "eAge";
+            this.eAge.ReadOnly = true;
+            // 
+            // ePhoneNumber
+            // 
+            this.ePhoneNumber.HeaderText = "PNumber";
+            this.ePhoneNumber.MinimumWidth = 100;
+            this.ePhoneNumber.Name = "ePhoneNumber";
+            this.ePhoneNumber.ReadOnly = true;
+            // 
+            // eAddress
+            // 
+            this.eAddress.FillWeight = 200F;
+            this.eAddress.HeaderText = "Address";
+            this.eAddress.MinimumWidth = 200;
+            this.eAddress.Name = "eAddress";
+            this.eAddress.ReadOnly = true;
+            // 
+            // eSalary
+            // 
+            this.eSalary.FillWeight = 79F;
+            this.eSalary.HeaderText = "Salary";
+            this.eSalary.MinimumWidth = 79;
+            this.eSalary.Name = "eSalary";
+            this.eSalary.ReadOnly = true;
+            // 
+            // eJob
+            // 
+            this.eJob.HeaderText = "Job";
+            this.eJob.MinimumWidth = 100;
+            this.eJob.Name = "eJob";
+            this.eJob.ReadOnly = true;
             // 
             // searchLabel
             // 
@@ -132,119 +236,6 @@
             this.employeesLabel.TabIndex = 14;
             this.employeesLabel.Text = "Employees";
             // 
-            // employeesGrid
-            // 
-            this.employeesGrid.AllowUserToAddRows = false;
-            this.employeesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.employeesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.employeesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.employeesGrid.BackgroundColor = System.Drawing.Color.White;
-            this.employeesGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.employeesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.employeesGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.employeesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.employeesGrid.ColumnHeadersHeight = 40;
-            this.employeesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.eID,
-            this.eName,
-            this.eAge,
-            this.ePhoneNumber,
-            this.eAddress,
-            this.eSalary,
-            this.eJob});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.employeesGrid.DefaultCellStyle = dataGridViewCellStyle7;
-            this.employeesGrid.EnableHeadersVisualStyles = false;
-            this.employeesGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.employeesGrid.Location = new System.Drawing.Point(35, 204);
-            this.employeesGrid.Name = "employeesGrid";
-            this.employeesGrid.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.employeesGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.employeesGrid.RowHeadersVisible = false;
-            this.employeesGrid.RowHeadersWidth = 51;
-            this.employeesGrid.RowTemplate.Height = 24;
-            this.employeesGrid.Size = new System.Drawing.Size(755, 535);
-            this.employeesGrid.TabIndex = 21;
-            // 
-            // eID
-            // 
-            this.eID.FillWeight = 50F;
-            this.eID.HeaderText = "ID";
-            this.eID.MinimumWidth = 50;
-            this.eID.Name = "eID";
-            this.eID.ReadOnly = true;
-            // 
-            // eName
-            // 
-            this.eName.FillWeight = 125F;
-            this.eName.HeaderText = "Name";
-            this.eName.MinimumWidth = 125;
-            this.eName.Name = "eName";
-            this.eName.ReadOnly = true;
-            // 
-            // eAge
-            // 
-            this.eAge.FillWeight = 50F;
-            this.eAge.HeaderText = "Age";
-            this.eAge.MinimumWidth = 50;
-            this.eAge.Name = "eAge";
-            this.eAge.ReadOnly = true;
-            // 
-            // ePhoneNumber
-            // 
-            this.ePhoneNumber.HeaderText = "PNumber";
-            this.ePhoneNumber.MinimumWidth = 100;
-            this.ePhoneNumber.Name = "ePhoneNumber";
-            this.ePhoneNumber.ReadOnly = true;
-            // 
-            // eAddress
-            // 
-            this.eAddress.FillWeight = 200F;
-            this.eAddress.HeaderText = "Address";
-            this.eAddress.MinimumWidth = 200;
-            this.eAddress.Name = "eAddress";
-            this.eAddress.ReadOnly = true;
-            // 
-            // eSalary
-            // 
-            this.eSalary.FillWeight = 79F;
-            this.eSalary.HeaderText = "Salary";
-            this.eSalary.MinimumWidth = 79;
-            this.eSalary.Name = "eSalary";
-            this.eSalary.ReadOnly = true;
-            // 
-            // eJob
-            // 
-            this.eJob.HeaderText = "Job";
-            this.eJob.MinimumWidth = 100;
-            this.eJob.Name = "eJob";
-            this.eJob.ReadOnly = true;
-            // 
             // employeesPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -257,9 +248,9 @@
             this.Load += new System.EventHandler(this.employeesPanel_Load);
             this.employeePanel.ResumeLayout(false);
             this.employeePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesPImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }

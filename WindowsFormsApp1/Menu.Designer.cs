@@ -234,6 +234,7 @@
             this.clientsBtn.TabIndex = 4;
             this.clientsBtn.Text = "Clients";
             this.clientsBtn.UseVisualStyleBackColor = false;
+            this.clientsBtn.Click += new System.EventHandler(this.clientsBtn_Click);
             // 
             // drinksBtn
             // 

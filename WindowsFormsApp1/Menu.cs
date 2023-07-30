@@ -39,6 +39,11 @@ namespace WindowsFormsApp1
             AddPanel(new employeesPanel());
         }
 
+        private void clientsBtn_Click(object sender, EventArgs e)
+        {
+            AddPanel(new clientsPanel());
+        }
+
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
