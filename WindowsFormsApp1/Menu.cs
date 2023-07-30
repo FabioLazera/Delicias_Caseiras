@@ -49,6 +49,11 @@ namespace WindowsFormsApp1
             AddPanel(new drinksPanel());
         }
 
+        private void dishesBtn_Click(object sender, EventArgs e)
+        {
+            AddPanel(new dishesPanel());
+        }
+
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();

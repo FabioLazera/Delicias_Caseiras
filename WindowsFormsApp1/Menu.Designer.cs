@@ -218,6 +218,7 @@
             this.dishesBtn.TabIndex = 6;
             this.dishesBtn.Text = "Dishes";
             this.dishesBtn.UseVisualStyleBackColor = false;
+            this.dishesBtn.Click += new System.EventHandler(this.dishesBtn_Click);
             // 
             // clientsBtn
             // 
