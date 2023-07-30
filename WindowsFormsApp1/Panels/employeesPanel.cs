@@ -14,12 +14,18 @@ namespace WindowsFormsApp1.Panels
     {
         public employeesPanel()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
 
         private void employeesPanel_Load(object sender, EventArgs e)
         {
-            searchTB.Height = 100;
+            
+        }
+
+        private void employeesPImg_Click(object sender, EventArgs e)
+        {
+            addEmployeePanel addEmployeePanel = new addEmployeePanel();
+            addEmployeePanel.Show();
         }
     }
 }

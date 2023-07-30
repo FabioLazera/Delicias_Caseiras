@@ -193,8 +193,9 @@
             // 
             this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTB.Location = new System.Drawing.Point(557, 115);
+            this.searchTB.Multiline = true;
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(230, 27);
+            this.searchTB.Size = new System.Drawing.Size(230, 30);
             this.searchTB.TabIndex = 24;
             // 
             // clientsPImg
