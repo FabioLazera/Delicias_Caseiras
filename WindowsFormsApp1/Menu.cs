@@ -34,6 +34,11 @@ namespace WindowsFormsApp1
             f.Show();
         }
 
+        private void ordersBtn_Click(object sender, EventArgs e)
+        {
+            AddPanel(new ordersPanel());
+        }
+
         private void employeesBtn_Click(object sender, EventArgs e)
         {
             AddPanel(new employeesPanel());
@@ -58,6 +63,5 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
-
     }
 }

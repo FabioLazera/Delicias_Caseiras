@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.addClientPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.addCL = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.aCNIFTB = new System.Windows.Forms.TextBox();
@@ -42,6 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addCL = new System.Windows.Forms.Label();
             this.addClientPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,40 +63,8 @@
             this.addClientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addClientPanel.Location = new System.Drawing.Point(0, 0);
             this.addClientPanel.Name = "addClientPanel";
-            this.addClientPanel.Size = new System.Drawing.Size(481, 572);
+            this.addClientPanel.Size = new System.Drawing.Size(600, 715);
             this.addClientPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.addCL);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 141);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.addProcess;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // addCL
-            // 
-            this.addCL.AutoSize = true;
-            this.addCL.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.addCL.ForeColor = System.Drawing.Color.White;
-            this.addCL.Location = new System.Drawing.Point(108, 59);
-            this.addCL.Name = "addCL";
-            this.addCL.Size = new System.Drawing.Size(130, 26);
-            this.addCL.TabIndex = 2;
-            this.addCL.Text = "Add Client";
             // 
             // button2
             // 
@@ -208,6 +176,38 @@
             this.label1.Size = new System.Drawing.Size(52, 19);
             this.label1.TabIndex = 16;
             this.label1.Text = "Name";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.addCL);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(600, 141);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.addProcess;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // addCL
+            // 
+            this.addCL.AutoSize = true;
+            this.addCL.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.addCL.ForeColor = System.Drawing.Color.White;
+            this.addCL.Location = new System.Drawing.Point(108, 59);
+            this.addCL.Name = "addCL";
+            this.addCL.Size = new System.Drawing.Size(130, 26);
+            this.addCL.TabIndex = 2;
+            this.addCL.Text = "Add Client";
             // 
             // addClientsPanel
             // 

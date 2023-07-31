@@ -269,6 +269,7 @@
             this.ordersBtn.TabIndex = 2;
             this.ordersBtn.Text = "Orders";
             this.ordersBtn.UseVisualStyleBackColor = false;
+            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
             // 
             // logo1
             // 
