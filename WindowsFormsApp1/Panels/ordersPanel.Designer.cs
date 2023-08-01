@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderPanel = new System.Windows.Forms.Panel();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.ordersPImg = new System.Windows.Forms.PictureBox();
-            this.ordersLabel = new System.Windows.Forms.Label();
             this.oID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oDelivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.ordersPImg = new System.Windows.Forms.PictureBox();
+            this.ordersLabel = new System.Windows.Forms.Label();
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -70,25 +70,25 @@
             // 
             this.ordersGrid.AllowUserToAddRows = false;
             this.ordersGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ordersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersGrid.BackgroundColor = System.Drawing.Color.White;
             this.ordersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ordersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.ordersGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ordersGrid.ColumnHeadersHeight = 40;
             this.ordersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.oID,
@@ -97,14 +97,14 @@
             this.oType,
             this.oTime,
             this.oDelivery});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ordersGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ordersGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.ordersGrid.EnableHeadersVisualStyles = false;
             this.ordersGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ordersGrid.Location = new System.Drawing.Point(35, 204);
@@ -115,6 +115,50 @@
             this.ordersGrid.RowTemplate.Height = 24;
             this.ordersGrid.Size = new System.Drawing.Size(755, 535);
             this.ordersGrid.TabIndex = 35;
+            // 
+            // oID
+            // 
+            this.oID.FillWeight = 50F;
+            this.oID.HeaderText = "ID";
+            this.oID.MinimumWidth = 50;
+            this.oID.Name = "oID";
+            this.oID.ReadOnly = true;
+            // 
+            // oClient
+            // 
+            this.oClient.FillWeight = 125F;
+            this.oClient.HeaderText = "Client";
+            this.oClient.MinimumWidth = 125;
+            this.oClient.Name = "oClient";
+            this.oClient.ReadOnly = true;
+            // 
+            // oStatus
+            // 
+            this.oStatus.HeaderText = "Status";
+            this.oStatus.MinimumWidth = 100;
+            this.oStatus.Name = "oStatus";
+            this.oStatus.ReadOnly = true;
+            // 
+            // oType
+            // 
+            this.oType.HeaderText = "Order Type";
+            this.oType.MinimumWidth = 100;
+            this.oType.Name = "oType";
+            this.oType.ReadOnly = true;
+            // 
+            // oTime
+            // 
+            this.oTime.HeaderText = "Order Time";
+            this.oTime.MinimumWidth = 100;
+            this.oTime.Name = "oTime";
+            this.oTime.ReadOnly = true;
+            // 
+            // oDelivery
+            // 
+            this.oDelivery.HeaderText = "Delivery Forecast";
+            this.oDelivery.MinimumWidth = 100;
+            this.oDelivery.Name = "oDelivery";
+            this.oDelivery.ReadOnly = true;
             // 
             // searchLabel
             // 
@@ -170,6 +214,7 @@
             this.ordersPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ordersPImg.TabIndex = 30;
             this.ordersPImg.TabStop = false;
+            this.ordersPImg.Click += new System.EventHandler(this.ordersPImg_Click);
             // 
             // ordersLabel
             // 
@@ -180,50 +225,6 @@
             this.ordersLabel.Size = new System.Drawing.Size(88, 26);
             this.ordersLabel.TabIndex = 29;
             this.ordersLabel.Text = "Orders";
-            // 
-            // oID
-            // 
-            this.oID.FillWeight = 50F;
-            this.oID.HeaderText = "ID";
-            this.oID.MinimumWidth = 50;
-            this.oID.Name = "oID";
-            this.oID.ReadOnly = true;
-            // 
-            // oClient
-            // 
-            this.oClient.FillWeight = 125F;
-            this.oClient.HeaderText = "Client";
-            this.oClient.MinimumWidth = 125;
-            this.oClient.Name = "oClient";
-            this.oClient.ReadOnly = true;
-            // 
-            // oStatus
-            // 
-            this.oStatus.HeaderText = "Status";
-            this.oStatus.MinimumWidth = 100;
-            this.oStatus.Name = "oStatus";
-            this.oStatus.ReadOnly = true;
-            // 
-            // oType
-            // 
-            this.oType.HeaderText = "Order Type";
-            this.oType.MinimumWidth = 100;
-            this.oType.Name = "oType";
-            this.oType.ReadOnly = true;
-            // 
-            // oTime
-            // 
-            this.oTime.HeaderText = "Order Time";
-            this.oTime.MinimumWidth = 100;
-            this.oTime.Name = "oTime";
-            this.oTime.ReadOnly = true;
-            // 
-            // oDelivery
-            // 
-            this.oDelivery.HeaderText = "Delivery Forecast";
-            this.oDelivery.MinimumWidth = 100;
-            this.oDelivery.Name = "oDelivery";
-            this.oDelivery.ReadOnly = true;
             // 
             // ordersPanel
             // 

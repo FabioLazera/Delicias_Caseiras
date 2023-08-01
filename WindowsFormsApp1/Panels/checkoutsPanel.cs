@@ -8,16 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Panels
 {
-    public partial class newOrdersPanel : Form
+    public partial class checkoutsPanel : Form
     {
-        public newOrdersPanel()
+        public checkoutsPanel()
         {
             InitializeComponent();
+            CenterFormOnScreen();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void CenterFormOnScreen()
+        {
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void ceckoutCB_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -55,10 +55,10 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="newOrdersPanel.cs">
+    <Compile Include="Panels\newOrdersPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newOrdersPanel.Designer.cs">
+    <Compile Include="Panels\newOrdersPanel.Designer.cs">
       <DependentUpon>newOrdersPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
@@ -86,6 +86,12 @@
     </Compile>
     <Compile Include="Panels\addEmployeePanel.Designer.cs">
       <DependentUpon>addEmployeePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\checkoutsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\checkoutsPanel.Designer.cs">
+      <DependentUpon>checkoutsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\clientsPanel.cs">
       <SubType>Form</SubType>
@@ -123,7 +129,7 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newOrdersPanel.resx">
+    <EmbeddedResource Include="Panels\newOrdersPanel.resx">
       <DependentUpon>newOrdersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\addClientPanel.resx">
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\addEmployeePanel.resx">
       <DependentUpon>addEmployeePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\checkoutsPanel.resx">
+      <DependentUpon>checkoutsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\clientsPanel.resx">
       <DependentUpon>clientsPanel.cs</DependentUpon>
@@ -259,6 +268,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\euro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

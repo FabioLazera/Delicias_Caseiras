@@ -16,5 +16,11 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
         }
+
+        private void ordersPImg_Click(object sender, EventArgs e)
+        {
+            newOrdersPanel newOrdersPanel = new newOrdersPanel();
+            newOrdersPanel.Show();
+        }
     }
 }
