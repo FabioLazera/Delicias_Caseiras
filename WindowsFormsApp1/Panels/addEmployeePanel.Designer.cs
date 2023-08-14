@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.addEmployeesPanel = new System.Windows.Forms.Panel();
             this.addECB = new System.Windows.Forms.Button();
             this.addESB = new System.Windows.Forms.Button();
             this.eJobTB = new System.Windows.Forms.TextBox();
@@ -46,33 +46,34 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addEL = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.addEmployeesPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // addEmployeesPanel
             // 
-            this.panel1.Controls.Add(this.addECB);
-            this.panel1.Controls.Add(this.addESB);
-            this.panel1.Controls.Add(this.eJobTB);
-            this.panel1.Controls.Add(this.eSalaryTB);
-            this.panel1.Controls.Add(this.eAddressTB);
-            this.panel1.Controls.Add(this.ePNTB);
-            this.panel1.Controls.Add(this.eAgeTB);
-            this.panel1.Controls.Add(this.eNameTB);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 504);
-            this.panel1.TabIndex = 0;
+            this.addEmployeesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addEmployeesPanel.Controls.Add(this.addECB);
+            this.addEmployeesPanel.Controls.Add(this.addESB);
+            this.addEmployeesPanel.Controls.Add(this.eJobTB);
+            this.addEmployeesPanel.Controls.Add(this.eSalaryTB);
+            this.addEmployeesPanel.Controls.Add(this.eAddressTB);
+            this.addEmployeesPanel.Controls.Add(this.ePNTB);
+            this.addEmployeesPanel.Controls.Add(this.eAgeTB);
+            this.addEmployeesPanel.Controls.Add(this.eNameTB);
+            this.addEmployeesPanel.Controls.Add(this.label6);
+            this.addEmployeesPanel.Controls.Add(this.label5);
+            this.addEmployeesPanel.Controls.Add(this.label4);
+            this.addEmployeesPanel.Controls.Add(this.label3);
+            this.addEmployeesPanel.Controls.Add(this.label2);
+            this.addEmployeesPanel.Controls.Add(this.label1);
+            this.addEmployeesPanel.Controls.Add(this.panel2);
+            this.addEmployeesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addEmployeesPanel.Location = new System.Drawing.Point(0, 0);
+            this.addEmployeesPanel.Name = "addEmployeesPanel";
+            this.addEmployeesPanel.Size = new System.Drawing.Size(571, 504);
+            this.addEmployeesPanel.TabIndex = 0;
             // 
             // addECB
             // 
@@ -233,7 +234,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 141);
+            this.panel2.Size = new System.Drawing.Size(569, 141);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -262,13 +263,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(571, 504);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.addEmployeesPanel);
             this.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addEmployeePanel";
             this.Text = "addEmployeePanel";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.addEmployeesPanel.ResumeLayout(false);
+            this.addEmployeesPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -278,7 +279,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel addEmployeesPanel;
         private System.Windows.Forms.Label addEL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;

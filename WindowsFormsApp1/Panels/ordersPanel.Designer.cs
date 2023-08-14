@@ -33,26 +33,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderPanel = new System.Windows.Forms.Panel();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.ordersLabel = new System.Windows.Forms.Label();
             this.oID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.oType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oDelivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
             this.ordersPImg = new System.Windows.Forms.PictureBox();
-            this.ordersLabel = new System.Windows.Forms.Label();
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).BeginInit();
             this.SuspendLayout();
             // 
             // orderPanel
             // 
+            this.orderPanel.Controls.Add(this.pictureBox1);
+            this.orderPanel.Controls.Add(this.dateTimePicker);
             this.orderPanel.Controls.Add(this.ordersGrid);
             this.orderPanel.Controls.Add(this.searchLabel);
             this.orderPanel.Controls.Add(this.searchImg);
@@ -113,52 +118,8 @@
             this.ordersGrid.RowHeadersVisible = false;
             this.ordersGrid.RowHeadersWidth = 51;
             this.ordersGrid.RowTemplate.Height = 24;
-            this.ordersGrid.Size = new System.Drawing.Size(755, 535);
+            this.ordersGrid.Size = new System.Drawing.Size(755, 470);
             this.ordersGrid.TabIndex = 35;
-            // 
-            // oID
-            // 
-            this.oID.FillWeight = 50F;
-            this.oID.HeaderText = "ID";
-            this.oID.MinimumWidth = 50;
-            this.oID.Name = "oID";
-            this.oID.ReadOnly = true;
-            // 
-            // oClient
-            // 
-            this.oClient.FillWeight = 125F;
-            this.oClient.HeaderText = "Client";
-            this.oClient.MinimumWidth = 125;
-            this.oClient.Name = "oClient";
-            this.oClient.ReadOnly = true;
-            // 
-            // oStatus
-            // 
-            this.oStatus.HeaderText = "Status";
-            this.oStatus.MinimumWidth = 100;
-            this.oStatus.Name = "oStatus";
-            this.oStatus.ReadOnly = true;
-            // 
-            // oType
-            // 
-            this.oType.HeaderText = "Order Type";
-            this.oType.MinimumWidth = 100;
-            this.oType.Name = "oType";
-            this.oType.ReadOnly = true;
-            // 
-            // oTime
-            // 
-            this.oTime.HeaderText = "Order Time";
-            this.oTime.MinimumWidth = 100;
-            this.oTime.Name = "oTime";
-            this.oTime.ReadOnly = true;
-            // 
-            // oDelivery
-            // 
-            this.oDelivery.HeaderText = "Delivery Forecast";
-            this.oDelivery.MinimumWidth = 100;
-            this.oDelivery.Name = "oDelivery";
-            this.oDelivery.ReadOnly = true;
             // 
             // searchLabel
             // 
@@ -171,16 +132,6 @@
             this.searchLabel.Size = new System.Drawing.Size(91, 18);
             this.searchLabel.TabIndex = 34;
             this.searchLabel.Text = "Search Here";
-            // 
-            // searchImg
-            // 
-            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
-            this.searchImg.Location = new System.Drawing.Point(557, 85);
-            this.searchImg.Name = "searchImg";
-            this.searchImg.Size = new System.Drawing.Size(29, 27);
-            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchImg.TabIndex = 33;
-            this.searchImg.TabStop = false;
             // 
             // separator
             // 
@@ -204,6 +155,90 @@
             this.searchTB.Size = new System.Drawing.Size(230, 30);
             this.searchTB.TabIndex = 31;
             // 
+            // ordersLabel
+            // 
+            this.ordersLabel.AutoSize = true;
+            this.ordersLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.ordersLabel.Location = new System.Drawing.Point(36, 38);
+            this.ordersLabel.Name = "ordersLabel";
+            this.ordersLabel.Size = new System.Drawing.Size(88, 26);
+            this.ordersLabel.TabIndex = 29;
+            this.ordersLabel.Text = "Orders";
+            // 
+            // oID
+            // 
+            this.oID.FillWeight = 50F;
+            this.oID.HeaderText = "ID";
+            this.oID.MinimumWidth = 50;
+            this.oID.Name = "oID";
+            this.oID.ReadOnly = true;
+            // 
+            // oClient
+            // 
+            this.oClient.FillWeight = 125F;
+            this.oClient.HeaderText = "Client";
+            this.oClient.MinimumWidth = 125;
+            this.oClient.Name = "oClient";
+            this.oClient.ReadOnly = true;
+            // 
+            // oStatus
+            // 
+            this.oStatus.HeaderText = "Status";
+            this.oStatus.MinimumWidth = 100;
+            this.oStatus.Name = "oStatus";
+            this.oStatus.ReadOnly = true;
+            this.oStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.oStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // oType
+            // 
+            this.oType.HeaderText = "Order Type";
+            this.oType.MinimumWidth = 100;
+            this.oType.Name = "oType";
+            this.oType.ReadOnly = true;
+            // 
+            // oTime
+            // 
+            this.oTime.HeaderText = "Order Time";
+            this.oTime.MinimumWidth = 100;
+            this.oTime.Name = "oTime";
+            this.oTime.ReadOnly = true;
+            // 
+            // oDelivery
+            // 
+            this.oDelivery.HeaderText = "Delivery Forecast";
+            this.oDelivery.MinimumWidth = 100;
+            this.oDelivery.Name = "oDelivery";
+            this.oDelivery.ReadOnly = true;
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(41, 148);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(258, 27);
+            this.dateTimePicker.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.printer;
+            this.pictureBox1.Location = new System.Drawing.Point(725, 691);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // searchImg
+            // 
+            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
+            this.searchImg.Location = new System.Drawing.Point(557, 85);
+            this.searchImg.Name = "searchImg";
+            this.searchImg.Size = new System.Drawing.Size(29, 27);
+            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchImg.TabIndex = 33;
+            this.searchImg.TabStop = false;
+            // 
             // ordersPImg
             // 
             this.ordersPImg.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -215,16 +250,6 @@
             this.ordersPImg.TabIndex = 30;
             this.ordersPImg.TabStop = false;
             this.ordersPImg.Click += new System.EventHandler(this.ordersPImg_Click);
-            // 
-            // ordersLabel
-            // 
-            this.ordersLabel.AutoSize = true;
-            this.ordersLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.ordersLabel.Location = new System.Drawing.Point(36, 38);
-            this.ordersLabel.Name = "ordersLabel";
-            this.ordersLabel.Size = new System.Drawing.Size(88, 26);
-            this.ordersLabel.TabIndex = 29;
-            this.ordersLabel.Text = "Orders";
             // 
             // ordersPanel
             // 
@@ -240,6 +265,7 @@
             this.orderPanel.ResumeLayout(false);
             this.orderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).EndInit();
             this.ResumeLayout(false);
@@ -258,9 +284,11 @@
         private System.Windows.Forms.Label ordersLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn oID;
         private System.Windows.Forms.DataGridViewTextBoxColumn oClient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oStatus;
+        private System.Windows.Forms.DataGridViewComboBoxColumn oStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn oType;
         private System.Windows.Forms.DataGridViewTextBoxColumn oTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn oDelivery;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

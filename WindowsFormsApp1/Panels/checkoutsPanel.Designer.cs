@@ -29,28 +29,32 @@
         private void InitializeComponent()
         {
             this.checkoutPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ceckoutOT = new System.Windows.Forms.ComboBox();
+            this.ceckoutClient = new System.Windows.Forms.ComboBox();
+            this.ceckoutCB = new System.Windows.Forms.Button();
+            this.checkoutSB = new System.Windows.Forms.Button();
             this.ceckoutCashR = new System.Windows.Forms.TextBox();
             this.ceckoutDiscount = new System.Windows.Forms.TextBox();
             this.ceckoutBA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ceckoutCB = new System.Windows.Forms.Button();
-            this.checkoutSB = new System.Windows.Forms.Button();
-            this.ceckoutClient = new System.Windows.Forms.ComboBox();
-            this.ceckoutOT = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkoutPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkoutPanel
             // 
+            this.checkoutPanel.Controls.Add(this.label7);
+            this.checkoutPanel.Controls.Add(this.comboBox1);
             this.checkoutPanel.Controls.Add(this.label6);
             this.checkoutPanel.Controls.Add(this.label5);
             this.checkoutPanel.Controls.Add(this.ceckoutOT);
@@ -71,37 +75,78 @@
             this.checkoutPanel.Size = new System.Drawing.Size(589, 551);
             this.checkoutPanel.TabIndex = 0;
             // 
-            // panel1
+            // label6
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 141);
-            this.panel1.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(339, 371);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Order Type";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(122, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Checkout";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(339, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 19);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Client";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // pictureBox1
+            // ceckoutOT
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.euro;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(76, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.ceckoutOT.FormattingEnabled = true;
+            this.ceckoutOT.Items.AddRange(new object[] {
+            "In Person",
+            "Delivery"});
+            this.ceckoutOT.Location = new System.Drawing.Point(343, 393);
+            this.ceckoutOT.Name = "ceckoutOT";
+            this.ceckoutOT.Size = new System.Drawing.Size(220, 29);
+            this.ceckoutOT.TabIndex = 20;
+            // 
+            // ceckoutClient
+            // 
+            this.ceckoutClient.FormattingEnabled = true;
+            this.ceckoutClient.Location = new System.Drawing.Point(343, 207);
+            this.ceckoutClient.Name = "ceckoutClient";
+            this.ceckoutClient.Size = new System.Drawing.Size(220, 29);
+            this.ceckoutClient.TabIndex = 19;
+            // 
+            // ceckoutCB
+            // 
+            this.ceckoutCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
+            this.ceckoutCB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ceckoutCB.FlatAppearance.BorderSize = 0;
+            this.ceckoutCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ceckoutCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ceckoutCB.ForeColor = System.Drawing.Color.White;
+            this.ceckoutCB.Location = new System.Drawing.Point(307, 475);
+            this.ceckoutCB.Name = "ceckoutCB";
+            this.ceckoutCB.Size = new System.Drawing.Size(180, 45);
+            this.ceckoutCB.TabIndex = 18;
+            this.ceckoutCB.Text = "Close";
+            this.ceckoutCB.UseVisualStyleBackColor = false;
+            this.ceckoutCB.Click += new System.EventHandler(this.ceckoutCB_Click);
+            // 
+            // checkoutSB
+            // 
+            this.checkoutSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkoutSB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.checkoutSB.FlatAppearance.BorderSize = 0;
+            this.checkoutSB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkoutSB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutSB.ForeColor = System.Drawing.Color.White;
+            this.checkoutSB.Location = new System.Drawing.Point(108, 475);
+            this.checkoutSB.Name = "checkoutSB";
+            this.checkoutSB.Size = new System.Drawing.Size(180, 45);
+            this.checkoutSB.TabIndex = 17;
+            this.checkoutSB.Text = "Save";
+            this.checkoutSB.UseVisualStyleBackColor = false;
             // 
             // ceckoutCashR
             // 
@@ -163,74 +208,60 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Bill Amount";
             // 
-            // ceckoutCB
+            // pictureBox1
             // 
-            this.ceckoutCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.ceckoutCB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ceckoutCB.FlatAppearance.BorderSize = 0;
-            this.ceckoutCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ceckoutCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ceckoutCB.ForeColor = System.Drawing.Color.White;
-            this.ceckoutCB.Location = new System.Drawing.Point(307, 475);
-            this.ceckoutCB.Name = "ceckoutCB";
-            this.ceckoutCB.Size = new System.Drawing.Size(180, 45);
-            this.ceckoutCB.TabIndex = 18;
-            this.ceckoutCB.Text = "Close";
-            this.ceckoutCB.UseVisualStyleBackColor = false;
-            this.ceckoutCB.Click += new System.EventHandler(this.ceckoutCB_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.euro;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // checkoutSB
+            // panel1
             // 
-            this.checkoutSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkoutSB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.checkoutSB.FlatAppearance.BorderSize = 0;
-            this.checkoutSB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkoutSB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutSB.ForeColor = System.Drawing.Color.White;
-            this.checkoutSB.Location = new System.Drawing.Point(108, 475);
-            this.checkoutSB.Name = "checkoutSB";
-            this.checkoutSB.Size = new System.Drawing.Size(180, 45);
-            this.checkoutSB.TabIndex = 17;
-            this.checkoutSB.Text = "Save";
-            this.checkoutSB.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(589, 141);
+            this.panel1.TabIndex = 1;
             // 
-            // ceckoutClient
+            // label1
             // 
-            this.ceckoutClient.FormattingEnabled = true;
-            this.ceckoutClient.Location = new System.Drawing.Point(343, 213);
-            this.ceckoutClient.Name = "ceckoutClient";
-            this.ceckoutClient.Size = new System.Drawing.Size(220, 29);
-            this.ceckoutClient.TabIndex = 19;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(122, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 26);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Checkout";
             // 
-            // ceckoutOT
+            // label7
             // 
-            this.ceckoutOT.FormattingEnabled = true;
-            this.ceckoutOT.Location = new System.Drawing.Point(343, 307);
-            this.ceckoutOT.Name = "ceckoutOT";
-            this.ceckoutOT.Size = new System.Drawing.Size(220, 29);
-            this.ceckoutOT.TabIndex = 20;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(339, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 19);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Payment Method";
             // 
-            // label5
+            // comboBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bookman Old Style", 9F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(339, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 19);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Client";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 9F);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(339, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 19);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Order Type";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "MbWay",
+            "Visa",
+            "Cash"});
+            this.comboBox1.Location = new System.Drawing.Point(343, 301);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(220, 29);
+            this.comboBox1.TabIndex = 23;
             // 
             // checkoutsPanel
             // 
@@ -244,9 +275,9 @@
             this.Text = "checkoutPanel";
             this.checkoutPanel.ResumeLayout(false);
             this.checkoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,5 +300,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox ceckoutOT;
         private System.Windows.Forms.ComboBox ceckoutClient;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

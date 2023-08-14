@@ -33,12 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newOrderPanel = new System.Windows.Forms.Panel();
             this.checkoutGrid = new System.Windows.Forms.DataGridView();
-            this.noID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchImg = new System.Windows.Forms.PictureBox();
             this.searchTB = new System.Windows.Forms.TextBox();
@@ -48,11 +42,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkoutBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.noID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newOrderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -105,7 +102,6 @@
             this.checkoutGrid.ColumnHeadersHeight = 40;
             this.checkoutGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noID,
-            this.noClient,
             this.noProduct,
             this.noQty,
             this.noPrice,
@@ -128,54 +124,6 @@
             this.checkoutGrid.RowTemplate.Height = 24;
             this.checkoutGrid.Size = new System.Drawing.Size(414, 521);
             this.checkoutGrid.TabIndex = 31;
-            // 
-            // noID
-            // 
-            this.noID.FillWeight = 40F;
-            this.noID.HeaderText = "ID";
-            this.noID.MinimumWidth = 40;
-            this.noID.Name = "noID";
-            this.noID.ReadOnly = true;
-            // 
-            // noClient
-            // 
-            this.noClient.FillWeight = 80F;
-            this.noClient.HeaderText = "Client";
-            this.noClient.MinimumWidth = 80;
-            this.noClient.Name = "noClient";
-            this.noClient.ReadOnly = true;
-            // 
-            // noProduct
-            // 
-            this.noProduct.FillWeight = 80F;
-            this.noProduct.HeaderText = "Product";
-            this.noProduct.MinimumWidth = 80;
-            this.noProduct.Name = "noProduct";
-            this.noProduct.ReadOnly = true;
-            // 
-            // noQty
-            // 
-            this.noQty.FillWeight = 40F;
-            this.noQty.HeaderText = "Qty";
-            this.noQty.MinimumWidth = 40;
-            this.noQty.Name = "noQty";
-            this.noQty.ReadOnly = true;
-            // 
-            // noPrice
-            // 
-            this.noPrice.FillWeight = 70F;
-            this.noPrice.HeaderText = "Price";
-            this.noPrice.MinimumWidth = 70;
-            this.noPrice.Name = "noPrice";
-            this.noPrice.ReadOnly = true;
-            // 
-            // noAmount
-            // 
-            this.noAmount.FillWeight = 70F;
-            this.noAmount.HeaderText = "Amount";
-            this.noAmount.MinimumWidth = 70;
-            this.noAmount.Name = "noAmount";
-            this.noAmount.ReadOnly = true;
             // 
             // searchLabel
             // 
@@ -265,8 +213,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -275,29 +221,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 110);
             this.panel1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Fábio SIlva",
-            "Henrique Varela",
-            "Rúben Canelas"});
-            this.comboBox1.Location = new System.Drawing.Point(610, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 29);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(624, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Choose Client";
             // 
             // pictureBox2
             // 
@@ -331,6 +254,46 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // noID
+            // 
+            this.noID.FillWeight = 40F;
+            this.noID.HeaderText = "ID";
+            this.noID.MinimumWidth = 40;
+            this.noID.Name = "noID";
+            this.noID.ReadOnly = true;
+            // 
+            // noProduct
+            // 
+            this.noProduct.FillWeight = 80F;
+            this.noProduct.HeaderText = "Product";
+            this.noProduct.MinimumWidth = 80;
+            this.noProduct.Name = "noProduct";
+            this.noProduct.ReadOnly = true;
+            // 
+            // noQty
+            // 
+            this.noQty.FillWeight = 40F;
+            this.noQty.HeaderText = "Qty";
+            this.noQty.MinimumWidth = 40;
+            this.noQty.Name = "noQty";
+            this.noQty.ReadOnly = true;
+            // 
+            // noPrice
+            // 
+            this.noPrice.FillWeight = 70F;
+            this.noPrice.HeaderText = "Price";
+            this.noPrice.MinimumWidth = 70;
+            this.noPrice.Name = "noPrice";
+            this.noPrice.ReadOnly = true;
+            // 
+            // noAmount
+            // 
+            this.noAmount.FillWeight = 70F;
+            this.noAmount.HeaderText = "Amount";
+            this.noAmount.MinimumWidth = 70;
+            this.noAmount.Name = "noAmount";
+            this.noAmount.ReadOnly = true;
             // 
             // newOrdersPanel
             // 
@@ -371,12 +334,9 @@
         private System.Windows.Forms.Button checkoutBtn;
         public System.Windows.Forms.DataGridView checkoutGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn noID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn noProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn noQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn noPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn noAmount;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

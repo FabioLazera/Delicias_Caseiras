@@ -22,5 +22,11 @@ namespace WindowsFormsApp1.Panels
             addClientsPanel addClientsPanel = new addClientsPanel();
             addClientsPanel.Show();
         }
+
+        private void calculatorImg_Click(object sender, EventArgs e)
+        {
+            betweenDatesPanel betweenDatesPanel = new betweenDatesPanel();
+            betweenDatesPanel.Show();
+        }
     }
 }

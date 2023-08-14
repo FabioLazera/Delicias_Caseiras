@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.addDishPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.addDL = new System.Windows.Forms.Label();
             this.dishIS = new System.Windows.Forms.Button();
             this.dishCloseBtn = new System.Windows.Forms.Button();
             this.dishSaveBtn = new System.Windows.Forms.Button();
@@ -44,14 +41,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addDL = new System.Windows.Forms.Label();
             this.addDishPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // addDishPanel
             // 
+            this.addDishPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addDishPanel.Controls.Add(this.dishIS);
             this.addDishPanel.Controls.Add(this.dishCloseBtn);
             this.addDishPanel.Controls.Add(this.dishSaveBtn);
@@ -71,38 +72,6 @@
             this.addDishPanel.Name = "addDishPanel";
             this.addDishPanel.Size = new System.Drawing.Size(586, 591);
             this.addDishPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.addDL);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 141);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.addProcess;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // addDL
-            // 
-            this.addDL.AutoSize = true;
-            this.addDL.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.addDL.ForeColor = System.Drawing.Color.White;
-            this.addDL.Location = new System.Drawing.Point(114, 57);
-            this.addDL.Name = "addDL";
-            this.addDL.Size = new System.Drawing.Size(115, 26);
-            this.addDL.TabIndex = 6;
-            this.addDL.Text = "Add Dish";
             // 
             // dishIS
             // 
@@ -240,6 +209,38 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Name";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.addDL);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(584, 141);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.addProcess;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // addDL
+            // 
+            this.addDL.AutoSize = true;
+            this.addDL.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.addDL.ForeColor = System.Drawing.Color.White;
+            this.addDL.Location = new System.Drawing.Point(114, 57);
+            this.addDL.Name = "addDL";
+            this.addDL.Size = new System.Drawing.Size(115, 26);
+            this.addDL.TabIndex = 6;
+            this.addDL.Text = "Add Dish";
+            // 
             // addDishesPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -250,10 +251,10 @@
             this.Text = "addDishesPanel";
             this.addDishPanel.ResumeLayout(false);
             this.addDishPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

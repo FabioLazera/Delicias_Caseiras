@@ -49,6 +49,8 @@
             // 
             // addClientPanel
             // 
+            this.addClientPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.addClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addClientPanel.Controls.Add(this.button2);
             this.addClientPanel.Controls.Add(this.button1);
             this.addClientPanel.Controls.Add(this.aCNIFTB);
@@ -63,7 +65,7 @@
             this.addClientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addClientPanel.Location = new System.Drawing.Point(0, 0);
             this.addClientPanel.Name = "addClientPanel";
-            this.addClientPanel.Size = new System.Drawing.Size(600, 715);
+            this.addClientPanel.Size = new System.Drawing.Size(481, 572);
             this.addClientPanel.TabIndex = 0;
             // 
             // button2
@@ -185,7 +187,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 141);
+            this.panel1.Size = new System.Drawing.Size(479, 141);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
