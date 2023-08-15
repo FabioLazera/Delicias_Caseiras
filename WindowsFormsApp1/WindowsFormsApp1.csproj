@@ -49,6 +49,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="Delivery.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
