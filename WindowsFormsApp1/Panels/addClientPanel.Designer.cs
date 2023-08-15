@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.addClientPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.aCNIFTB = new System.Windows.Forms.TextBox();
-            this.aCATB = new System.Windows.Forms.TextBox();
-            this.aCPNTB = new System.Windows.Forms.TextBox();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.aCNIF = new System.Windows.Forms.TextBox();
+            this.aCA = new System.Windows.Forms.TextBox();
+            this.aCPN = new System.Windows.Forms.TextBox();
             this.aCName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,11 +51,11 @@
             // 
             this.addClientPanel.BackColor = System.Drawing.SystemColors.Control;
             this.addClientPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addClientPanel.Controls.Add(this.button2);
-            this.addClientPanel.Controls.Add(this.button1);
-            this.addClientPanel.Controls.Add(this.aCNIFTB);
-            this.addClientPanel.Controls.Add(this.aCATB);
-            this.addClientPanel.Controls.Add(this.aCPNTB);
+            this.addClientPanel.Controls.Add(this.closeBtn);
+            this.addClientPanel.Controls.Add(this.saveBtn);
+            this.addClientPanel.Controls.Add(this.aCNIF);
+            this.addClientPanel.Controls.Add(this.aCA);
+            this.addClientPanel.Controls.Add(this.aCPN);
             this.addClientPanel.Controls.Add(this.aCName);
             this.addClientPanel.Controls.Add(this.label4);
             this.addClientPanel.Controls.Add(this.label3);
@@ -68,63 +68,64 @@
             this.addClientPanel.Size = new System.Drawing.Size(481, 572);
             this.addClientPanel.TabIndex = 0;
             // 
-            // button2
+            // closeBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(259, 514);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 45);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Location = new System.Drawing.Point(259, 514);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(180, 45);
+            this.closeBtn.TabIndex = 25;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(42, 514);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 45);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.saveBtn.FlatAppearance.BorderSize = 0;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(42, 514);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(180, 45);
+            this.saveBtn.TabIndex = 24;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // aCNIFTB
+            // aCNIF
             // 
-            this.aCNIFTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.aCNIFTB.Location = new System.Drawing.Point(129, 445);
-            this.aCNIFTB.Multiline = true;
-            this.aCNIFTB.Name = "aCNIFTB";
-            this.aCNIFTB.Size = new System.Drawing.Size(220, 35);
-            this.aCNIFTB.TabIndex = 23;
+            this.aCNIF.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aCNIF.Location = new System.Drawing.Point(129, 445);
+            this.aCNIF.Multiline = true;
+            this.aCNIF.Name = "aCNIF";
+            this.aCNIF.Size = new System.Drawing.Size(220, 35);
+            this.aCNIF.TabIndex = 23;
             // 
-            // aCATB
+            // aCA
             // 
-            this.aCATB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.aCATB.Location = new System.Drawing.Point(129, 369);
-            this.aCATB.Multiline = true;
-            this.aCATB.Name = "aCATB";
-            this.aCATB.Size = new System.Drawing.Size(220, 35);
-            this.aCATB.TabIndex = 22;
+            this.aCA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aCA.Location = new System.Drawing.Point(129, 369);
+            this.aCA.Multiline = true;
+            this.aCA.Name = "aCA";
+            this.aCA.Size = new System.Drawing.Size(220, 35);
+            this.aCA.TabIndex = 22;
             // 
-            // aCPNTB
+            // aCPN
             // 
-            this.aCPNTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.aCPNTB.Location = new System.Drawing.Point(129, 277);
-            this.aCPNTB.Multiline = true;
-            this.aCPNTB.Name = "aCPNTB";
-            this.aCPNTB.Size = new System.Drawing.Size(220, 35);
-            this.aCPNTB.TabIndex = 21;
+            this.aCPN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aCPN.Location = new System.Drawing.Point(129, 277);
+            this.aCPN.Multiline = true;
+            this.aCPN.Name = "aCPN";
+            this.aCPN.Size = new System.Drawing.Size(220, 35);
+            this.aCPN.TabIndex = 21;
             // 
             // aCName
             // 
@@ -235,15 +236,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label addCL;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.TextBox aCNIFTB;
-        public System.Windows.Forms.TextBox aCATB;
-        public System.Windows.Forms.TextBox aCPNTB;
+        private System.Windows.Forms.Button closeBtn;
+        public System.Windows.Forms.TextBox aCNIF;
+        public System.Windows.Forms.TextBox aCA;
+        public System.Windows.Forms.TextBox aCPN;
         public System.Windows.Forms.TextBox aCName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button saveBtn;
     }
 }

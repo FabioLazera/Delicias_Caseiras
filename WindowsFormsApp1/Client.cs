@@ -7,17 +7,43 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Client : Order
+    public class Client //: Order
     {
-         public string Name { get; set; }
-         public string Address { get; set; }
-         public string Mobile_Number { get; set; }
+        private string _name;
+        private string _phone_number;
+        private string _address;
+        private long _nIF;
 
-      public Client(string status, string name, string address, string mobile_number) : base (status)
+        public Client(string name, string phone_number, string address, long nIF)
         {
-            Name = name;
-            Address = address;
-            Mobile_Number = mobile_number;
+            _name = name;
+            _phone_number = phone_number;
+            _address = address;
+            _nIF = nIF;
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public string Phone_Number
+        {
+            get { return _phone_number; }
+            set { _phone_number = value; }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set { _address = value; }
+        }
+
+        public long NIF
+        {
+            get { return _nIF; }
+            set{  _nIF = value; }
         }
     }
 }
