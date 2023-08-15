@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.addEmployeesPanel = new System.Windows.Forms.Panel();
-            this.addECB = new System.Windows.Forms.Button();
-            this.addESB = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.eJobTB = new System.Windows.Forms.TextBox();
             this.eSalaryTB = new System.Windows.Forms.TextBox();
             this.eAddressTB = new System.Windows.Forms.TextBox();
@@ -54,8 +54,8 @@
             // addEmployeesPanel
             // 
             this.addEmployeesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addEmployeesPanel.Controls.Add(this.addECB);
-            this.addEmployeesPanel.Controls.Add(this.addESB);
+            this.addEmployeesPanel.Controls.Add(this.closeBtn);
+            this.addEmployeesPanel.Controls.Add(this.saveBtn);
             this.addEmployeesPanel.Controls.Add(this.eJobTB);
             this.addEmployeesPanel.Controls.Add(this.eSalaryTB);
             this.addEmployeesPanel.Controls.Add(this.eAddressTB);
@@ -75,36 +75,37 @@
             this.addEmployeesPanel.Size = new System.Drawing.Size(571, 504);
             this.addEmployeesPanel.TabIndex = 0;
             // 
-            // addECB
+            // closeBtn
             // 
-            this.addECB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.addECB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addECB.FlatAppearance.BorderSize = 0;
-            this.addECB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addECB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addECB.ForeColor = System.Drawing.Color.White;
-            this.addECB.Location = new System.Drawing.Point(305, 447);
-            this.addECB.Name = "addECB";
-            this.addECB.Size = new System.Drawing.Size(180, 45);
-            this.addECB.TabIndex = 15;
-            this.addECB.Text = "Close";
-            this.addECB.UseVisualStyleBackColor = false;
-            this.addECB.Click += new System.EventHandler(this.button2_Click);
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Location = new System.Drawing.Point(305, 447);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(180, 45);
+            this.closeBtn.TabIndex = 15;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // addESB
+            // saveBtn
             // 
-            this.addESB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addESB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addESB.FlatAppearance.BorderSize = 0;
-            this.addESB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addESB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addESB.ForeColor = System.Drawing.Color.White;
-            this.addESB.Location = new System.Drawing.Point(88, 447);
-            this.addESB.Name = "addESB";
-            this.addESB.Size = new System.Drawing.Size(180, 45);
-            this.addESB.TabIndex = 14;
-            this.addESB.Text = "Save";
-            this.addESB.UseVisualStyleBackColor = false;
+            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.saveBtn.FlatAppearance.BorderSize = 0;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(88, 447);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(180, 45);
+            this.saveBtn.TabIndex = 14;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // eJobTB
             // 
@@ -283,8 +284,8 @@
         private System.Windows.Forms.Label addEL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button addECB;
-        private System.Windows.Forms.Button addESB;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button saveBtn;
         public System.Windows.Forms.TextBox eJobTB;
         public System.Windows.Forms.TextBox eSalaryTB;
         public System.Windows.Forms.TextBox eAddressTB;

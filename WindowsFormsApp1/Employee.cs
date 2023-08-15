@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Employee
+    public class Employee
     {
         private string _name;
         private int _age;
