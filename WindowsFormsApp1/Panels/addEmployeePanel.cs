@@ -75,7 +75,7 @@ namespace WindowsFormsApp1.Panels
             bool ageValid = !string.IsNullOrWhiteSpace(eAgeTB.Text); 
             bool phoneValid = !string.IsNullOrWhiteSpace(ePNTB.Text);
             bool addressValid = !string.IsNullOrWhiteSpace(eAddressTB.Text);
-            bool salaryValid = double.TryParse(eSalaryTB.Text, out double salary);
+            bool salaryValid = !string.IsNullOrWhiteSpace(eSalaryTB.Text);
             bool jobValid = !string.IsNullOrWhiteSpace(eJobTB.Text);
 
             if (!nameValid || !ageValid || !phoneValid || !jobValid || !salaryValid || !addressValid)

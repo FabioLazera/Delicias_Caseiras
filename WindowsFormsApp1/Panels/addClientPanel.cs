@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.Panels
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (TextBoxesFilled() && IsValid(aCNIF.Text))
+            if (TextBoxesFilledAndValid())
             {
                 string name = aCName.Text;
                 string phoneNumber = aCPN.Text;
@@ -64,32 +64,35 @@ namespace WindowsFormsApp1.Panels
                 aCA.Clear();
                 aCNIF.Clear();
             }
-            else
-            {
-                MessageBox.Show("Please fill in all fields and check that the NIF field is filled in correctly.");
-            }
         }
 
-        private bool TextBoxesFilled()
+        private bool TextBoxesFilledAndValid()
         {
-            return !string.IsNullOrWhiteSpace(aCName.Text) &&
-                   !string.IsNullOrWhiteSpace(aCPN.Text) &&
-                   !string.IsNullOrWhiteSpace(aCA.Text) &&
-                   !string.IsNullOrWhiteSpace(aCNIF.Text);
-        }
+            bool nameValid = !string.IsNullOrWhiteSpace(aCName.Text);
+            bool phoneValid = !string.IsNullOrWhiteSpace(aCPN.Text);
+            bool addressValid = !string.IsNullOrWhiteSpace(aCA.Text);
+            bool nifValid = !string.IsNullOrWhiteSpace(aCNIF.Text);
 
-        private bool IsValid(string input)
-        {
-            if (long.TryParse(input, out long result))
+            if (!nameValid || !phoneValid || !addressValid || !nifValid)
             {
-                const int NifValue = 999999999;
-
-                if (result <= NifValue)
-                {
-                    return true;
-                }
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
 
+            if (!IsValidInt(aCA.Text))
+            {
+                MessageBox.Show("Invalid age format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool IsValidInt(string input)
+        {
+            if (int.TryParse(input, out int result))
+            {
+                return true;
+            }
             return false;
         }
 
