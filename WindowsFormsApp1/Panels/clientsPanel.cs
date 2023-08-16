@@ -12,30 +12,25 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class clientsPanel : Form
     {
-        private List<Client> clients = new List<Client>();
 
         public clientsPanel()
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
+            RefreshDataGridView();
         }
 
         private void clientsPImg_Click(object sender, EventArgs e)
         {
             addClientsPanel addClientsPanel = new addClientsPanel(this);
-            addClientsPanel.Show();
-        }
-
-        public void AddClient(Client client)
-        {
-            clients.Add(client);
+            addClientsPanel.ShowDialog();
             RefreshDataGridView();
         }
 
-        private void RefreshDataGridView()
+        public void RefreshDataGridView()
         {
             clientsGrid.Rows.Clear();
-            foreach (Client client in clients)
+            foreach (Client client in ClientList.GetClients())
             {
                 clientsGrid.Rows.Add(client.Name, client.Phone_Number, client.Address, client.NIF);
             }
@@ -53,7 +48,7 @@ namespace WindowsFormsApp1.Panels
 
             clientsGrid.Rows.Clear();
 
-            foreach (Client client in clients)
+            foreach (Client client in ClientList.GetClients())
             {
                 if (client.Name.ToLower().StartsWith(searchValue))
                 {

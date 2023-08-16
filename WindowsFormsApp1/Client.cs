@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class Client //: Order
+    public class Client
     {
         private string _name;
         private string _phone_number;

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="ClientList.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="Delivery.cs" />
     <Compile Include="Employee.cs" />

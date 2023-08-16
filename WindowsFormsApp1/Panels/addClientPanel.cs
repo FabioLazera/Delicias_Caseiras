@@ -55,9 +55,9 @@ namespace WindowsFormsApp1.Panels
                 long nif = long.Parse(aCNIF.Text);
 
                 Client newClient = new Client(name, phoneNumber, address, nif);
-                parentForm.AddClient(newClient);
-
+                ClientList.AddClient(newClient);
                 MessageBox.Show("Customer created successfully!");
+                parentForm.RefreshDataGridView();
 
                 aCName.Clear();
                 aCPN.Clear();
