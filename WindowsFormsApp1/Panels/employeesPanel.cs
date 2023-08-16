@@ -12,30 +12,26 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class employeesPanel : Form
     {
-        private List<Employee> employees = new List<Employee>();
 
         public employeesPanel()
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
+            RefreshDataGridView();
         }
 
         private void employeesPImg_Click(object sender, EventArgs e)
         {
             addEmployeePanel addEmployeePanel = new addEmployeePanel(this);
-            addEmployeePanel.Show();
-        }
-
-        public void AddEmployee(Employee employee)
-        {
-            employees.Add(employee);
+            addEmployeePanel.ShowDialog();
             RefreshDataGridView();
         }
 
-        private void RefreshDataGridView()
+
+        public void RefreshDataGridView()
         {
             employeesGrid.Rows.Clear();
-            foreach (Employee employee in employees)
+            foreach (Employee employee in EmployeeList.GetEmployees())
             {
                 employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Address, employee.Salary, employee.Job);
             }
@@ -47,7 +43,7 @@ namespace WindowsFormsApp1.Panels
 
             employeesGrid.Rows.Clear();
 
-            foreach (Employee employee in employees)
+            foreach (Employee employee in EmployeeList.GetEmployees())
             {
                 if (employee.Name.ToLower().StartsWith(searchValue))
                 {

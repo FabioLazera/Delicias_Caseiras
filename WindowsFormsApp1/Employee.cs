@@ -8,6 +8,8 @@ namespace WindowsFormsApp1
 {
     public class Employee
     {
+        private static List<Employee> employees = new List<Employee>();
+
         private string _name;
         private int _age;
         private string _phone_number;

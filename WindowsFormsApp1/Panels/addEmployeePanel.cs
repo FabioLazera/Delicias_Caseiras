@@ -56,9 +56,9 @@ namespace WindowsFormsApp1.Panels
 
 
                 Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
-                parentForm.AddEmployee(newEmployee);
-
+                EmployeeList.AddEmployee(newEmployee);
                 MessageBox.Show("Customer created successfully!");
+                parentForm.RefreshDataGridView();
 
                 eNameTB.Clear();
                 eAgeTB.Clear();
