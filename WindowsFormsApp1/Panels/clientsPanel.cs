@@ -57,5 +57,32 @@ namespace WindowsFormsApp1.Panels
             }
         }
 
+        private void clientsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (clientsGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
+                {
+                    int rowIndex = e.RowIndex;
+
+                    if (imageColumn.Name == "gridEdit")
+                    {
+                        addClientsPanel addClientsPanel = new addClientsPanel(this, rowIndex);
+                        addClientsPanel.ShowDialog();
+                        RefreshDataGridView();
+                    }
+                    else if (imageColumn.Name == "gridDelete")
+                    {
+                        DialogResult result = MessageBox.Show("Do you want to delete the client?", "Delete Client", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            ClientList.DeleteClient(rowIndex);
+                            RefreshDataGridView();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

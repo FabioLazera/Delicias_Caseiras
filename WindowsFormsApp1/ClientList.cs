@@ -20,5 +20,21 @@ namespace WindowsFormsApp1
         {
             return clients;
         }
+
+        public static void EditClient(int index, Client newClientData)
+        {
+            if (index >= 0 && index < clients.Count)
+            {
+                clients[index] = newClientData;
+            }
+        }
+
+        public static void DeleteClient(int index)
+        {
+            if (index >= 0 && index < clients.Count)
+            {
+                clients.RemoveAt(index);
+            }
+        }
     }
 }

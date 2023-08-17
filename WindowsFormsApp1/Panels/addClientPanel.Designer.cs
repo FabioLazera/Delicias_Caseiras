@@ -208,9 +208,9 @@
             this.addCL.ForeColor = System.Drawing.Color.White;
             this.addCL.Location = new System.Drawing.Point(108, 59);
             this.addCL.Name = "addCL";
-            this.addCL.Size = new System.Drawing.Size(130, 26);
+            this.addCL.Size = new System.Drawing.Size(79, 26);
             this.addCL.TabIndex = 2;
-            this.addCL.Text = "Add Client";
+            this.addCL.Text = "Client";
             // 
             // addClientsPanel
             // 

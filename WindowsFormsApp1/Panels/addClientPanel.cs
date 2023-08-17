@@ -16,13 +16,25 @@ namespace WindowsFormsApp1.Panels
     public partial class addClientsPanel : Form
     {
         private clientsPanel parentForm;
+        private int rowIndex;
 
-        public addClientsPanel(clientsPanel parent)
+        public addClientsPanel(clientsPanel parent, int index = -1)
         {
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
+            this.rowIndex = index;
+
+            if (index >= 0)
+            {
+                Client client = ClientList.GetClients()[index];
+                aCName.Text = client.Name;
+                aCPN.Text = client.Phone_Number;
+                aCA.Text = client.Address;
+                aCNIF.Text = client.NIF.ToString();
+            }
         }
+
 
         private void addClientsPanel_Load(object sender, EventArgs e)
         {
@@ -54,15 +66,23 @@ namespace WindowsFormsApp1.Panels
                 string address = aCA.Text;
                 long nif = long.Parse(aCNIF.Text);
 
-                Client newClient = new Client(name, phoneNumber, address, nif);
-                ClientList.AddClient(newClient);
-                MessageBox.Show("Customer created successfully!");
-                parentForm.RefreshDataGridView();
+                if (rowIndex >= 0)
+                {
+                    // Editar o cliente existente
+                    Client editedClient = new Client(name, phoneNumber, address, nif);
+                    ClientList.EditClient(rowIndex, editedClient);
+                    MessageBox.Show("Customer edited successfully!");
+                }
+                else
+                {
+                    // Criar um novo cliente
+                    Client newClient = new Client(name, phoneNumber, address, nif);
+                    ClientList.AddClient(newClient);
+                    MessageBox.Show("Customer created successfully!");
+                }
 
-                aCName.Clear();
-                aCPN.Clear();
-                aCA.Clear();
-                aCNIF.Clear();
+                parentForm.RefreshDataGridView();
+                this.Close();
             }
         }
 
@@ -79,9 +99,9 @@ namespace WindowsFormsApp1.Panels
                 return false;
             }
 
-            if (!IsValidInt(aCA.Text))
+            if (!IsValidInt(aCNIF.Text))
             {
-                MessageBox.Show("Invalid age format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid NIF format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
