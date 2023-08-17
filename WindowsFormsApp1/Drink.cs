@@ -6,17 +6,43 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Drink : Order
+    public class Drink
     {
-        private string Name { get; set; }
-        private string Description { get; set; }
-        private double Price { get; set; }
+        private string _name;
+        private string _description;
+        private double _price;
+        private int _stock;
 
-        public Drink(string status, string name, string description, double price) : base(status)
+        public Drink(string name, string description, double price, int stock) 
         {
-            Name = name;
-            Description = description;
-            Price = price;
+            _name = name;
+            _description = description;
+            _price = price;
+            _stock = stock;
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+
+        public double Price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+
+        public int Stock
+        {
+            get { return _stock; }
+            set { _stock = value; }
         }
     }
 }
