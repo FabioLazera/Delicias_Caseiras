@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace WindowsFormsApp1
 {
@@ -12,13 +13,15 @@ namespace WindowsFormsApp1
         private string _description;
         private double _price;
         private int _stock;
+        private string _imagePath;
 
-        public Drink(string name, string description, double price, int stock) 
+        public Drink(string name, string description, double price, int stock, string imagePath) 
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
+            _imagePath = imagePath;
         }
 
         public string Name
@@ -43,6 +46,22 @@ namespace WindowsFormsApp1
         {
             get { return _stock; }
             set { _stock = value; }
+        }
+
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            set { _imagePath = value; }
+        }
+
+        
+        public Image GetImage()
+        {
+            if (!string.IsNullOrEmpty(_imagePath))
+            {
+                return Image.FromFile(_imagePath);
+            }
+            return null;
         }
     }
 }

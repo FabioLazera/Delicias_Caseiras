@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientList.cs" />
+    <Compile Include="DishList.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="Delivery.cs" />
+    <Compile Include="DrinkList.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeList.cs" />
     <Compile Include="Menu.cs">
