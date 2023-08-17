@@ -33,18 +33,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.employeesGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.employeesPImg = new System.Windows.Forms.PictureBox();
-            this.employeesLabel = new System.Windows.Forms.Label();
             this.eName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ePhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eJob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.employeesPImg = new System.Windows.Forms.PictureBox();
+            this.employeesLabel = new System.Windows.Forms.Label();
             this.employeePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -97,7 +99,9 @@
             this.ePhoneNumber,
             this.eAddress,
             this.eSalary,
-            this.eJob});
+            this.eJob,
+            this.gridEdit,
+            this.gridDelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +120,77 @@
             this.employeesGrid.RowTemplate.Height = 24;
             this.employeesGrid.Size = new System.Drawing.Size(755, 535);
             this.employeesGrid.TabIndex = 21;
+            this.employeesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesGrid_CellClick);
+            // 
+            // eName
+            // 
+            this.eName.FillWeight = 125F;
+            this.eName.HeaderText = "Name";
+            this.eName.MinimumWidth = 125;
+            this.eName.Name = "eName";
+            this.eName.ReadOnly = true;
+            // 
+            // eAge
+            // 
+            this.eAge.FillWeight = 50F;
+            this.eAge.HeaderText = "Age";
+            this.eAge.MinimumWidth = 50;
+            this.eAge.Name = "eAge";
+            this.eAge.ReadOnly = true;
+            // 
+            // ePhoneNumber
+            // 
+            this.ePhoneNumber.HeaderText = "PNumber";
+            this.ePhoneNumber.MinimumWidth = 100;
+            this.ePhoneNumber.Name = "ePhoneNumber";
+            this.ePhoneNumber.ReadOnly = true;
+            // 
+            // eAddress
+            // 
+            this.eAddress.FillWeight = 200F;
+            this.eAddress.HeaderText = "Address";
+            this.eAddress.MinimumWidth = 200;
+            this.eAddress.Name = "eAddress";
+            this.eAddress.ReadOnly = true;
+            // 
+            // eSalary
+            // 
+            this.eSalary.FillWeight = 79F;
+            this.eSalary.HeaderText = "Salary";
+            this.eSalary.MinimumWidth = 79;
+            this.eSalary.Name = "eSalary";
+            this.eSalary.ReadOnly = true;
+            // 
+            // eJob
+            // 
+            this.eJob.HeaderText = "Job";
+            this.eJob.MinimumWidth = 100;
+            this.eJob.Name = "eJob";
+            this.eJob.ReadOnly = true;
+            // 
+            // gridEdit
+            // 
+            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridEdit.FillWeight = 50F;
+            this.gridEdit.HeaderText = "";
+            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridEdit.MinimumWidth = 50;
+            this.gridEdit.Name = "gridEdit";
+            this.gridEdit.ReadOnly = true;
+            this.gridEdit.Width = 50;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
             // 
             // searchLabel
             // 
@@ -183,52 +258,6 @@
             this.employeesLabel.TabIndex = 14;
             this.employeesLabel.Text = "Employees";
             // 
-            // eName
-            // 
-            this.eName.FillWeight = 125F;
-            this.eName.HeaderText = "Name";
-            this.eName.MinimumWidth = 125;
-            this.eName.Name = "eName";
-            this.eName.ReadOnly = true;
-            // 
-            // eAge
-            // 
-            this.eAge.FillWeight = 50F;
-            this.eAge.HeaderText = "Age";
-            this.eAge.MinimumWidth = 50;
-            this.eAge.Name = "eAge";
-            this.eAge.ReadOnly = true;
-            // 
-            // ePhoneNumber
-            // 
-            this.ePhoneNumber.HeaderText = "PNumber";
-            this.ePhoneNumber.MinimumWidth = 100;
-            this.ePhoneNumber.Name = "ePhoneNumber";
-            this.ePhoneNumber.ReadOnly = true;
-            // 
-            // eAddress
-            // 
-            this.eAddress.FillWeight = 200F;
-            this.eAddress.HeaderText = "Address";
-            this.eAddress.MinimumWidth = 200;
-            this.eAddress.Name = "eAddress";
-            this.eAddress.ReadOnly = true;
-            // 
-            // eSalary
-            // 
-            this.eSalary.FillWeight = 79F;
-            this.eSalary.HeaderText = "Salary";
-            this.eSalary.MinimumWidth = 79;
-            this.eSalary.Name = "eSalary";
-            this.eSalary.ReadOnly = true;
-            // 
-            // eJob
-            // 
-            this.eJob.HeaderText = "Job";
-            this.eJob.MinimumWidth = 100;
-            this.eJob.Name = "eJob";
-            this.eJob.ReadOnly = true;
-            // 
             // employeesPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -262,5 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn eAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn eSalary;
         private System.Windows.Forms.DataGridViewTextBoxColumn eJob;
+        private System.Windows.Forms.DataGridViewImageColumn gridEdit;
+        private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }
 }

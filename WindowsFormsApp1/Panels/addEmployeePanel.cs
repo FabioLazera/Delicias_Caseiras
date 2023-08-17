@@ -15,12 +15,25 @@ namespace WindowsFormsApp1.Panels
     public partial class addEmployeePanel : Form
     {
         private employeesPanel parentForm;
+        private int rowIndex;
 
-        public addEmployeePanel(employeesPanel parent)
+        public addEmployeePanel(employeesPanel parent, int index = -1)
         {
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
+            this.rowIndex = index;
+
+            if (index >= 0)
+            {
+                Employee employee = EmployeeList.GetEmployees()[index];
+                eNameTB.Text = employee.Name;
+                eAgeTB.Text = employee.Age.ToString();
+                ePNTB.Text = employee.PhoneNumber;
+                eAddressTB.Text = employee.Address;
+                eSalaryTB.Text = employee.Salary.ToString();
+                eJobTB.Text = employee.Job;
+            }
         }
 
         private void addEmployeePanel_Load(object sender, EventArgs e)
@@ -48,24 +61,27 @@ namespace WindowsFormsApp1.Panels
             if (TextBoxesFilledAndValid())
             {
                 string name = eNameTB.Text;
-                int age = int.Parse(eAgeTB.Text);
+                int age =  int.Parse(eAgeTB.Text);
                 string phoneNumber = ePNTB.Text;
                 string address = eAddressTB.Text;
                 double salary = double.Parse(eSalaryTB.Text);
                 string job = eJobTB.Text;
 
+                if (rowIndex >= 0)
+                {
+                    Employee editedEmployee = new Employee(name, age, phoneNumber, address, salary, job);
+                    EmployeeList.EditEmployee(rowIndex, editedEmployee);
+                    MessageBox.Show("Employee edited successfully!");
+                }
+                else
+                {
+                    Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
+                    EmployeeList.AddEmployee(newEmployee);
+                    MessageBox.Show("Employee created successfully!");
+                }
 
-                Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
-                EmployeeList.AddEmployee(newEmployee);
-                MessageBox.Show("Customer created successfully!");
                 parentForm.RefreshDataGridView();
-
-                eNameTB.Clear();
-                eAgeTB.Clear();
-                ePNTB.Clear();
-                eAddressTB.Clear();
-                eSalaryTB.Clear();
-                eJobTB.Clear();
+                this.Close();
             }
         }
 

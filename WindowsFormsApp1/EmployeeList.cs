@@ -23,5 +23,20 @@ namespace WindowsFormsApp1
             return employees;
         }
 
+        public static void EditEmployee(int index, Employee newEmployeeData)
+        {
+            if (index >= 0 && index < employees.Count)
+            {
+                employees[index] = newEmployeeData;
+            }
+        }
+
+        public static void DeleteEmployee(int index)
+        {
+            if (index >= 0 && index < employees.Count)
+            {
+                employees.RemoveAt(index);
+            }
+        }
     }
 }

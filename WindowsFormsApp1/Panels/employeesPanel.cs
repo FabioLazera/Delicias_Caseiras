@@ -51,5 +51,33 @@ namespace WindowsFormsApp1.Panels
                 }
             }
         }
+
+        private void employeesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (employeesGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
+                {
+                    int rowIndex = e.RowIndex;
+
+                    if (imageColumn.Name == "gridEdit")
+                    {
+                        addEmployeePanel addEmployeesPanel = new addEmployeePanel(this, rowIndex);
+                        addEmployeesPanel.ShowDialog();
+                        RefreshDataGridView();
+                    }
+                    else if (imageColumn.Name == "gridDelete")
+                    {
+                        DialogResult result = MessageBox.Show("Do you want to remove the employee?", "Delete Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            EmployeeList.DeleteEmployee(rowIndex);
+                            RefreshDataGridView();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

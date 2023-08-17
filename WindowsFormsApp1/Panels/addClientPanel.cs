@@ -68,14 +68,12 @@ namespace WindowsFormsApp1.Panels
 
                 if (rowIndex >= 0)
                 {
-                    // Editar o cliente existente
                     Client editedClient = new Client(name, phoneNumber, address, nif);
                     ClientList.EditClient(rowIndex, editedClient);
                     MessageBox.Show("Customer edited successfully!");
                 }
                 else
                 {
-                    // Criar um novo cliente
                     Client newClient = new Client(name, phoneNumber, address, nif);
                     ClientList.AddClient(newClient);
                     MessageBox.Show("Customer created successfully!");

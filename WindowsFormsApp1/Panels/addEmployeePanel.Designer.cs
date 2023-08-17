@@ -255,9 +255,9 @@
             this.addEL.ForeColor = System.Drawing.Color.White;
             this.addEL.Location = new System.Drawing.Point(116, 62);
             this.addEL.Name = "addEL";
-            this.addEL.Size = new System.Drawing.Size(171, 26);
+            this.addEL.Size = new System.Drawing.Size(120, 26);
             this.addEL.TabIndex = 0;
-            this.addEL.Text = "Add Employee";
+            this.addEL.Text = "Employee";
             // 
             // addEmployeePanel
             // 
