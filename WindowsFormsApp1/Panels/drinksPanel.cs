@@ -25,7 +25,7 @@ namespace WindowsFormsApp1.Panels
             addDrinksPanel addDrinksPanel = new addDrinksPanel(this);
             addDrinksPanel.Show();
             RefreshDataGridView();
-        }
+        } 
 
         public void RefreshDataGridView()
         {

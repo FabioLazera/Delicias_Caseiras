@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace WindowsFormsApp1
 {
@@ -12,6 +13,16 @@ namespace WindowsFormsApp1
         private string _description;
         private double _price;
         private int _stock;
+        private Image _image;
+
+        public Dish(string name, string description, double price, int stock, Image image)
+        {
+            _name = name;
+            _description = description;
+            _price = price;
+            _stock = stock;
+            _image = image;
+        }
 
         public Dish(string name, string description, double price, int stock)
         {
@@ -19,6 +30,7 @@ namespace WindowsFormsApp1
             _description = description;
             _price = price;
             _stock = stock;
+            _image = null;
         }
 
         public string Name
@@ -43,6 +55,12 @@ namespace WindowsFormsApp1
         {
             get { return _stock; }
             set { _stock = value; }
+        }
+
+        public Image Image
+        {
+            get { return _image; }
+            set { _image = value; }
         }
     }
 }

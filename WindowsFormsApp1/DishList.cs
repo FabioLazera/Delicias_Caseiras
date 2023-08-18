@@ -16,12 +16,12 @@ namespace WindowsFormsApp1
             dishes.Add(dish);
         }
 
-        public static List<Dish> GetDishes()
+        public static List<Dish> GetDish()
         {
             return dishes;
         }
 
-        public static void EditDishes(int index, Dish newDishData)
+        public static void EditDish(int index, Dish newDishData)
         {
             if (index >= 0 && index < dishes.Count)
             {

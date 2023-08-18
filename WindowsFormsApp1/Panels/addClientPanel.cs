@@ -35,18 +35,6 @@ namespace WindowsFormsApp1.Panels
             }
         }
 
-
-        private void addClientsPanel_Load(object sender, EventArgs e)
-        {
-            saveBtn.Enabled = true;
-
-            if (aCName.Text == "" || aCPN.Text == "" || aCA.Text == "" || aCNIF.Text == "")
-            {
-                saveBtn.Enabled = false;
-            }
-        }
-
-
         private void CenterFormOnScreen()
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -70,13 +58,13 @@ namespace WindowsFormsApp1.Panels
                 {
                     Client editedClient = new Client(name, phoneNumber, address, nif);
                     ClientList.EditClient(rowIndex, editedClient);
-                    MessageBox.Show("Customer edited successfully!");
+                    MessageBox.Show("Client edited successfully!");
                 }
                 else
                 {
                     Client newClient = new Client(name, phoneNumber, address, nif);
                     ClientList.AddClient(newClient);
-                    MessageBox.Show("Customer created successfully!");
+                    MessageBox.Show("Client created successfully!");
                 }
 
                 parentForm.RefreshDataGridView();

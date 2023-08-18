@@ -36,16 +36,6 @@ namespace WindowsFormsApp1.Panels
             }
         }
 
-        private void addEmployeePanel_Load(object sender, EventArgs e)
-        {
-            saveBtn.Enabled = true;
-
-            if (eNameTB.Text == "" || eAgeTB.Text == "" || ePNTB.Text == "" || eAddressTB.Text == "" || eSalaryTB.Text == "" || eJobTB.Text == "")
-            {
-                saveBtn.Enabled = false;
-            }
-        }
-
         private void CenterFormOnScreen()
         {
             StartPosition = FormStartPosition.CenterScreen;

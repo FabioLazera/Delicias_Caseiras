@@ -118,6 +118,7 @@
             this.dishSaveBtn.TabIndex = 45;
             this.dishSaveBtn.Text = "Save";
             this.dishSaveBtn.UseVisualStyleBackColor = false;
+            this.dishSaveBtn.Click += new System.EventHandler(this.dishSaveBtn_Click);
             // 
             // pictureBox2
             // 
