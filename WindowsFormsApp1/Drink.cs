@@ -13,15 +13,24 @@ namespace WindowsFormsApp1
         private string _description;
         private double _price;
         private int _stock;
-        private string _imagePath;
+        private Image _image;
 
-        public Drink(string name, string description, double price, int stock, string imagePath) 
+        public Drink(string name, string description, double price, int stock, Image image)
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
-            _imagePath = imagePath;
+            _image = image;
+        }
+
+        public Drink(string name, string description, double price, int stock)
+        {
+            _name = name;
+            _description = description;
+            _price = price;
+            _stock = stock;
+            _image = null;
         }
 
         public string Name
@@ -48,20 +57,10 @@ namespace WindowsFormsApp1
             set { _stock = value; }
         }
 
-        public string ImagePath
+        public Image Image
         {
-            get { return _imagePath; }
-            set { _imagePath = value; }
-        }
-
-        
-        public Image GetImage()
-        {
-            if (!string.IsNullOrEmpty(_imagePath))
-            {
-                return Image.FromFile(_imagePath);
-            }
-            return null;
+            get { return _image; }
+            set { _image = value; }
         }
     }
 }

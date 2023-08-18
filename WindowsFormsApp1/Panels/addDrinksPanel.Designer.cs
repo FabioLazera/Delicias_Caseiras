@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.addDrinkPanel = new System.Windows.Forms.Panel();
-            this.aCSB = new System.Windows.Forms.Button();
+            this.imageSearchBtn = new System.Windows.Forms.Button();
             this.drinkCloseBtn = new System.Windows.Forms.Button();
             this.drinkSaveBtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.drinkImage = new System.Windows.Forms.PictureBox();
             this.drinkStockTB = new System.Windows.Forms.TextBox();
             this.drinkPriceTB = new System.Windows.Forms.TextBox();
             this.drinkDescriptionTB = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addCL = new System.Windows.Forms.Label();
             this.addDrinkPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drinkImage)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +53,10 @@
             // addDrinkPanel
             // 
             this.addDrinkPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addDrinkPanel.Controls.Add(this.aCSB);
+            this.addDrinkPanel.Controls.Add(this.imageSearchBtn);
             this.addDrinkPanel.Controls.Add(this.drinkCloseBtn);
             this.addDrinkPanel.Controls.Add(this.drinkSaveBtn);
-            this.addDrinkPanel.Controls.Add(this.pictureBox2);
+            this.addDrinkPanel.Controls.Add(this.drinkImage);
             this.addDrinkPanel.Controls.Add(this.drinkStockTB);
             this.addDrinkPanel.Controls.Add(this.drinkPriceTB);
             this.addDrinkPanel.Controls.Add(this.drinkDescriptionTB);
@@ -72,20 +72,20 @@
             this.addDrinkPanel.Size = new System.Drawing.Size(586, 591);
             this.addDrinkPanel.TabIndex = 0;
             // 
-            // aCSB
+            // imageSearchBtn
             // 
-            this.aCSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.aCSB.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.aCSB.FlatAppearance.BorderSize = 0;
-            this.aCSB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aCSB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aCSB.ForeColor = System.Drawing.Color.White;
-            this.aCSB.Location = new System.Drawing.Point(395, 368);
-            this.aCSB.Name = "aCSB";
-            this.aCSB.Size = new System.Drawing.Size(140, 35);
-            this.aCSB.TabIndex = 35;
-            this.aCSB.Text = "Image Search";
-            this.aCSB.UseVisualStyleBackColor = false;
+            this.imageSearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.imageSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.imageSearchBtn.FlatAppearance.BorderSize = 0;
+            this.imageSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imageSearchBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imageSearchBtn.ForeColor = System.Drawing.Color.White;
+            this.imageSearchBtn.Location = new System.Drawing.Point(395, 368);
+            this.imageSearchBtn.Name = "imageSearchBtn";
+            this.imageSearchBtn.Size = new System.Drawing.Size(140, 35);
+            this.imageSearchBtn.TabIndex = 35;
+            this.imageSearchBtn.Text = "Image Search";
+            this.imageSearchBtn.UseVisualStyleBackColor = false;
             // 
             // drinkCloseBtn
             // 
@@ -101,7 +101,7 @@
             this.drinkCloseBtn.TabIndex = 34;
             this.drinkCloseBtn.Text = "Close";
             this.drinkCloseBtn.UseVisualStyleBackColor = false;
-            this.drinkCloseBtn.Click += new System.EventHandler(this.button2_Click);
+            this.drinkCloseBtn.Click += new System.EventHandler(this.drinkCloseBtn_Click);
             // 
             // drinkSaveBtn
             // 
@@ -117,17 +117,17 @@
             this.drinkSaveBtn.TabIndex = 33;
             this.drinkSaveBtn.Text = "Save";
             this.drinkSaveBtn.UseVisualStyleBackColor = false;
-            this.drinkSaveBtn.Click += new System.EventHandler(this.button1_Click);
+            this.drinkSaveBtn.Click += new System.EventHandler(this.drinkSaveBtn_Click);
             // 
-            // pictureBox2
+            // drinkImage
             // 
-            this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.folder;
-            this.pictureBox2.Location = new System.Drawing.Point(422, 262);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 98);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
+            this.drinkImage.Image = global::WindowsFormsApp1.Properties.Resources.folder;
+            this.drinkImage.Location = new System.Drawing.Point(422, 262);
+            this.drinkImage.Name = "drinkImage";
+            this.drinkImage.Size = new System.Drawing.Size(89, 98);
+            this.drinkImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.drinkImage.TabIndex = 32;
+            this.drinkImage.TabStop = false;
             // 
             // drinkStockTB
             // 
@@ -252,7 +252,7 @@
             this.Text = "addDrinksPanel";
             this.addDrinkPanel.ResumeLayout(false);
             this.addDrinkPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drinkImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -266,7 +266,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label addCL;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox drinkImage;
         public System.Windows.Forms.TextBox drinkStockTB;
         public System.Windows.Forms.TextBox drinkPriceTB;
         public System.Windows.Forms.TextBox drinkDescriptionTB;
@@ -277,6 +277,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button drinkCloseBtn;
         private System.Windows.Forms.Button drinkSaveBtn;
-        private System.Windows.Forms.Button aCSB;
+        private System.Windows.Forms.Button imageSearchBtn;
     }
 }

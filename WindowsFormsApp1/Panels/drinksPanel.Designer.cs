@@ -43,6 +43,8 @@
             this.dDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drinksGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -93,7 +95,9 @@
             this.dName,
             this.dDescription,
             this.dPrice,
-            this.dStock});
+            this.dStock,
+            this.gridEdit,
+            this.gridDelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +116,7 @@
             this.drinksGrid.RowTemplate.Height = 24;
             this.drinksGrid.Size = new System.Drawing.Size(755, 535);
             this.drinksGrid.TabIndex = 35;
+            this.drinksGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drinksGrid_CellClick);
             // 
             // searchLabel
             // 
@@ -209,6 +214,30 @@
             this.dStock.Name = "dStock";
             this.dStock.ReadOnly = true;
             // 
+            // gridEdit
+            // 
+            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridEdit.FillWeight = 50F;
+            this.gridEdit.HeaderText = "";
+            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridEdit.MinimumWidth = 50;
+            this.gridEdit.Name = "gridEdit";
+            this.gridEdit.ReadOnly = true;
+            this.gridEdit.Width = 50;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
+            // 
             // drinksPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -240,5 +269,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn dPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dStock;
+        private System.Windows.Forms.DataGridViewImageColumn gridEdit;
+        private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }
 }
