@@ -57,6 +57,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Dish editedDish = new Dish(name, description, price, stock);
                     DishList.EditDish(rowIndex, editedDish);
+                    DishList.SaveToCSV("dishes.csv");
                     MessageBox.Show("Dish edited successfully!");
                 }
                 else

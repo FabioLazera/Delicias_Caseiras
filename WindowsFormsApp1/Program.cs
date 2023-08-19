@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
-        public static string ProjectDirectory => Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+        public static string ProjectDirectory => AppDomain.CurrentDomain.BaseDirectory;
         [STAThread]
         static void Main()
         {

@@ -55,6 +55,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Drink editedDrink = new Drink(name, description, price, stock);
                     DrinkList.EditDrink(rowIndex, editedDrink);
+                    DrinkList.SaveToCSV("drinks.csv");
                     MessageBox.Show("Drink edited successfully!");
                 }
                 else

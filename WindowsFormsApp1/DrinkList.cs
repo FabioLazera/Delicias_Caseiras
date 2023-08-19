@@ -54,8 +54,7 @@ namespace WindowsFormsApp1
 
         public static void LoadFromCSV(string fileName)
         {
-            string folderPath = Path.Combine(Program.ProjectDirectory, "csvFiles");
-            string fullPath = Path.Combine(folderPath, fileName);
+            string fullPath = Path.Combine(Program.ProjectDirectory, "csvFiles", fileName);
 
             if (File.Exists(fullPath))
             {

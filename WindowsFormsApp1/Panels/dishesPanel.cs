@@ -16,6 +16,10 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
+            if (DishList.GetDish().Count == 0)
+            {
+                DishList.LoadFromCSV("dishes.csv");
+            }
             RefreshDataGridView();
         }
 
@@ -61,8 +65,11 @@ namespace WindowsFormsApp1.Panels
                     if (imageColumn.Name == "gridEdit")
                     {
                         addDishesPanel addDishesPanel = new addDishesPanel(this, rowIndex);
-                        addDishesPanel.ShowDialog();
-                        RefreshDataGridView();
+                        if (addDishesPanel.ShowDialog() == DialogResult.OK) 
+                        {
+                            DishList.SaveToCSV("dishes.csv");
+                            RefreshDataGridView();
+                        }
                     }
                     else if (imageColumn.Name == "gridDelete")
                     {
@@ -71,6 +78,7 @@ namespace WindowsFormsApp1.Panels
                         if (result == DialogResult.Yes)
                         {
                             DishList.DeleteDish(rowIndex);
+                            DishList.SaveToCSV("dishes.csv");
                             RefreshDataGridView();
                         }
                     }

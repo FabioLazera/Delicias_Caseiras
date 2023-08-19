@@ -17,7 +17,10 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
-            DrinkList.LoadFromCSV("drinks.csv");
+            if (DrinkList.GetDrinks().Count == 0)
+            {
+                DrinkList.LoadFromCSV("drinks.csv");
+            }
             RefreshDataGridView();
         }
 
@@ -73,6 +76,7 @@ namespace WindowsFormsApp1.Panels
                         if (result == DialogResult.Yes)
                         {
                             DrinkList.DeleteDrink(rowIndex);
+                            DrinkList.SaveToCSV("drinks.csv");
                             RefreshDataGridView();
                         }
                     }
