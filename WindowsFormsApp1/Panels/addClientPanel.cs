@@ -58,6 +58,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Client editedClient = new Client(name, phoneNumber, address, nif);
                     ClientList.EditClient(rowIndex, editedClient);
+                    ClientList.SaveToCSV("clients.csv");
                     MessageBox.Show("Client edited successfully!");
                 }
                 else

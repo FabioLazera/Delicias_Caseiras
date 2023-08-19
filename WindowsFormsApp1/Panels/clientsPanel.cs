@@ -17,6 +17,10 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
+            if (ClientList.GetClients().Count == 0)
+            {
+                ClientList.LoadFromCSV("clients.csv");
+            }
             RefreshDataGridView();
         }
 
@@ -68,8 +72,11 @@ namespace WindowsFormsApp1.Panels
                     if (imageColumn.Name == "gridEdit")
                     {
                         addClientsPanel addClientsPanel = new addClientsPanel(this, rowIndex);
-                        addClientsPanel.ShowDialog();
-                        RefreshDataGridView();
+                        if (addClientsPanel.ShowDialog() == DialogResult.OK)
+                        {
+                            ClientList.SaveToCSV("clients.csv");
+                            RefreshDataGridView();
+                        }
                     }
                     else if (imageColumn.Name == "gridDelete")
                     {
@@ -78,6 +85,7 @@ namespace WindowsFormsApp1.Panels
                         if (result == DialogResult.Yes)
                         {
                             ClientList.DeleteClient(rowIndex);
+                            ClientList.SaveToCSV("clients.csv");
                             RefreshDataGridView();
                         }
                     }
