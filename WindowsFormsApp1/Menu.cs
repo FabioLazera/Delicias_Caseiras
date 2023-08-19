@@ -78,6 +78,7 @@ namespace WindowsFormsApp1
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            DrinkList.SaveToCSV("drinks.csv");
             Application.Exit();
         }
     }

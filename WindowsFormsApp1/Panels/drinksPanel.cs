@@ -17,6 +17,7 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
+            DrinkList.LoadFromCSV("drinks.csv");
             RefreshDataGridView();
         }
 
@@ -78,5 +79,6 @@ namespace WindowsFormsApp1.Panels
                 }
             }
         }
+
     }
 }

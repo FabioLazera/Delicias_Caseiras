@@ -13,16 +13,6 @@ namespace WindowsFormsApp1
         private string _description;
         private double _price;
         private int _stock;
-        private Image _image;
-
-        public Drink(string name, string description, double price, int stock, Image image)
-        {
-            _name = name;
-            _description = description;
-            _price = price;
-            _stock = stock;
-            _image = image;
-        }
 
         public Drink(string name, string description, double price, int stock)
         {
@@ -30,7 +20,7 @@ namespace WindowsFormsApp1
             _description = description;
             _price = price;
             _stock = stock;
-            _image = null;
+
         }
 
         public string Name
@@ -57,10 +47,5 @@ namespace WindowsFormsApp1
             set { _stock = value; }
         }
 
-        public Image Image
-        {
-            get { return _image; }
-            set { _image = value; }
-        }
     }
 }

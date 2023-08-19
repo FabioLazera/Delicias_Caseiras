@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Panels;
@@ -12,6 +14,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
+        public static string ProjectDirectory => Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
         [STAThread]
         static void Main()
         {
