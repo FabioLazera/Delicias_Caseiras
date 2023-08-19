@@ -16,7 +16,10 @@ namespace WindowsFormsApp1.Panels
         public employeesPanel()
         {
             InitializeComponent();
-            searchTB.TextChanged += searchTB_TextChanged;
+            if (EmployeeList.GetEmployees().Count == 0)
+            {
+                EmployeeList.LoadFromCSV("employees.csv");
+            }
             RefreshDataGridView();
         }
 
@@ -62,9 +65,12 @@ namespace WindowsFormsApp1.Panels
 
                     if (imageColumn.Name == "gridEdit")
                     {
-                        addEmployeePanel addEmployeesPanel = new addEmployeePanel(this, rowIndex);
-                        addEmployeesPanel.ShowDialog();
-                        RefreshDataGridView();
+                        addEmployeePanel addEmployeePanel = new addEmployeePanel(this, rowIndex);
+                        if (addEmployeePanel.ShowDialog() == DialogResult.OK)
+                        {
+                            EmployeeList.SaveToCSV("employees.csv");
+                            RefreshDataGridView();
+                        }
                     }
                     else if (imageColumn.Name == "gridDelete")
                     {
@@ -73,6 +79,7 @@ namespace WindowsFormsApp1.Panels
                         if (result == DialogResult.Yes)
                         {
                             EmployeeList.DeleteEmployee(rowIndex);
+                            EmployeeList.SaveToCSV("employees.csv");
                             RefreshDataGridView();
                         }
                     }

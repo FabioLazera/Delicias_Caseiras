@@ -61,6 +61,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Employee editedEmployee = new Employee(name, age, phoneNumber, address, salary, job);
                     EmployeeList.EditEmployee(rowIndex, editedEmployee);
+                    EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee edited successfully!");
                 }
                 else

@@ -81,6 +81,7 @@ namespace WindowsFormsApp1
             DrinkList.SaveToCSV("drinks.csv");
             DishList.SaveToCSV("dishes.csv");
             ClientList.SaveToCSV("clients.csv");
+            EmployeeList.SaveToCSV("employees.csv");
             Application.Exit();
         }
     }
