@@ -1,20 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal class Delivery : Order
+    public class Delivery
     {
-        public string Address { get; set; }
-        public DateTime Date { get; set; }
+        private string _deliveryAddress;
+        private DateTime _deliveryForecast;
 
-        public Delivery (string status, string address, DateTime date) : base(status)
+        public Delivery(string deliveryAddress, DateTime deliveryForecast)
         {
-            Address = address;
-            Date = date;
+            _deliveryAddress = deliveryAddress;
+            _deliveryForecast = deliveryForecast;
+        }
+
+        public string DeliveryAddress
+        {
+            get { return _deliveryAddress; }
+            set { _deliveryAddress = value; }
+        }
+
+        public DateTime DeliveryForecast
+        {
+            get { return _deliveryForecast; }
+            set { _deliveryForecast = value; }
         }
     }
 }
+
+//public Delivery (string status, string address, DateTime date) : base(status)
+//{
+    //Address = address;
+    //Date = date;
+//}

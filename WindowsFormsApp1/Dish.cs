@@ -7,30 +7,29 @@ using System.Drawing;
 
 namespace WindowsFormsApp1
 {
-    public class Dish
+    public class Dish : Order
     {
         private string _name;
         private string _description;
         private double _price;
         private int _stock;
-        private Image _image;
 
-        public Dish(string name, string description, double price, int stock, Image image)
+        public Dish(string name, string description, double price, int stock, int id, string orderType, DateTime orderTime, DateTime readyForDelivery, string status)
+        : base(id, orderType, orderTime, readyForDelivery, status)
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
-            _image = image;
         }
 
         public Dish(string name, string description, double price, int stock)
+        : base(0, null, DateTime.MinValue, DateTime.MinValue, null)
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
-            _image = null;
         }
 
         public string Name
@@ -57,10 +56,5 @@ namespace WindowsFormsApp1
             set { _stock = value; }
         }
 
-        public Image Image
-        {
-            get { return _image; }
-            set { _image = value; }
-        }
     }
 }
