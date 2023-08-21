@@ -16,10 +16,7 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             searchTB.TextChanged += searchTB_TextChanged;
-            if (DishList.GetDish().Count == 0)
-            {
-                DishList.LoadFromCSV("dishes.csv");
-            }
+            DishList.LoadDishesIfNeeded();
             RefreshDataGridView();
         }
 

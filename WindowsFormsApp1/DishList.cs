@@ -77,5 +77,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        public static void LoadDishesIfNeeded()
+        {
+            if (dishes.Count == 0)
+            {
+                LoadFromCSV("dishes.csv");
+            }
+        }
     }
 }
