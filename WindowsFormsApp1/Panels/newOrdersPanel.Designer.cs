@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newOrderPanel = new System.Windows.Forms.Panel();
             this.checkoutGrid = new System.Windows.Forms.DataGridView();
-            this.noID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.searchTB = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.drinksBtn = new System.Windows.Forms.Button();
             this.dishesBtn = new System.Windows.Forms.Button();
@@ -50,9 +42,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCost = new System.Windows.Forms.Label();
             this.newOrderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,9 +58,6 @@
             // newOrderPanel
             // 
             this.newOrderPanel.Controls.Add(this.checkoutGrid);
-            this.newOrderPanel.Controls.Add(this.searchLabel);
-            this.newOrderPanel.Controls.Add(this.searchImg);
-            this.newOrderPanel.Controls.Add(this.searchTB);
             this.newOrderPanel.Controls.Add(this.flowLayoutPanel);
             this.newOrderPanel.Controls.Add(this.drinksBtn);
             this.newOrderPanel.Controls.Add(this.dishesBtn);
@@ -80,40 +73,39 @@
             // 
             this.checkoutGrid.AllowUserToAddRows = false;
             this.checkoutGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkoutGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkoutGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.checkoutGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.checkoutGrid.BackgroundColor = System.Drawing.Color.White;
             this.checkoutGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkoutGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.checkoutGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkoutGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkoutGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.checkoutGrid.ColumnHeadersHeight = 40;
             this.checkoutGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noID,
             this.noProduct,
             this.noQty,
             this.noPrice,
             this.noAmount});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkoutGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkoutGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.checkoutGrid.EnableHeadersVisualStyles = false;
             this.checkoutGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.checkoutGrid.Location = new System.Drawing.Point(610, 177);
@@ -124,77 +116,6 @@
             this.checkoutGrid.RowTemplate.Height = 24;
             this.checkoutGrid.Size = new System.Drawing.Size(414, 521);
             this.checkoutGrid.TabIndex = 31;
-            // 
-            // noID
-            // 
-            this.noID.FillWeight = 40F;
-            this.noID.HeaderText = "ID";
-            this.noID.MinimumWidth = 40;
-            this.noID.Name = "noID";
-            this.noID.ReadOnly = true;
-            // 
-            // noProduct
-            // 
-            this.noProduct.FillWeight = 80F;
-            this.noProduct.HeaderText = "Product";
-            this.noProduct.MinimumWidth = 80;
-            this.noProduct.Name = "noProduct";
-            this.noProduct.ReadOnly = true;
-            // 
-            // noQty
-            // 
-            this.noQty.FillWeight = 40F;
-            this.noQty.HeaderText = "Qty";
-            this.noQty.MinimumWidth = 40;
-            this.noQty.Name = "noQty";
-            this.noQty.ReadOnly = true;
-            // 
-            // noPrice
-            // 
-            this.noPrice.FillWeight = 70F;
-            this.noPrice.HeaderText = "Price";
-            this.noPrice.MinimumWidth = 70;
-            this.noPrice.Name = "noPrice";
-            this.noPrice.ReadOnly = true;
-            // 
-            // noAmount
-            // 
-            this.noAmount.FillWeight = 70F;
-            this.noAmount.HeaderText = "Amount";
-            this.noAmount.MinimumWidth = 70;
-            this.noAmount.Name = "noAmount";
-            this.noAmount.ReadOnly = true;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.searchLabel.Location = new System.Drawing.Point(57, 177);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(91, 18);
-            this.searchLabel.TabIndex = 30;
-            this.searchLabel.Text = "Search Here";
-            // 
-            // searchImg
-            // 
-            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
-            this.searchImg.Location = new System.Drawing.Point(24, 167);
-            this.searchImg.Name = "searchImg";
-            this.searchImg.Size = new System.Drawing.Size(29, 27);
-            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchImg.TabIndex = 29;
-            this.searchImg.TabStop = false;
-            // 
-            // searchTB
-            // 
-            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(24, 198);
-            this.searchTB.Multiline = true;
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(162, 30);
-            this.searchTB.TabIndex = 28;
             // 
             // flowLayoutPanel
             // 
@@ -209,19 +130,20 @@
             this.drinksBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
             this.drinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinksBtn.ForeColor = System.Drawing.Color.White;
-            this.drinksBtn.Location = new System.Drawing.Point(24, 322);
+            this.drinksBtn.Location = new System.Drawing.Point(22, 245);
             this.drinksBtn.Name = "drinksBtn";
             this.drinksBtn.Size = new System.Drawing.Size(162, 45);
             this.drinksBtn.TabIndex = 3;
             this.drinksBtn.Text = "Drinks";
             this.drinksBtn.UseVisualStyleBackColor = false;
+            this.drinksBtn.Click += new System.EventHandler(this.drinksBtn_Click);
             // 
             // dishesBtn
             // 
             this.dishesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
             this.dishesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dishesBtn.ForeColor = System.Drawing.Color.White;
-            this.dishesBtn.Location = new System.Drawing.Point(24, 254);
+            this.dishesBtn.Location = new System.Drawing.Point(22, 177);
             this.dishesBtn.Name = "dishesBtn";
             this.dishesBtn.Size = new System.Drawing.Size(162, 45);
             this.dishesBtn.TabIndex = 2;
@@ -232,6 +154,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.panel2.Controls.Add(this.totalCost);
             this.panel2.Controls.Add(this.checkoutBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 699);
@@ -297,6 +220,48 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // noProduct
+            // 
+            this.noProduct.FillWeight = 80F;
+            this.noProduct.HeaderText = "Product";
+            this.noProduct.MinimumWidth = 80;
+            this.noProduct.Name = "noProduct";
+            this.noProduct.ReadOnly = true;
+            // 
+            // noQty
+            // 
+            this.noQty.FillWeight = 40F;
+            this.noQty.HeaderText = "Qty";
+            this.noQty.MinimumWidth = 40;
+            this.noQty.Name = "noQty";
+            this.noQty.ReadOnly = true;
+            // 
+            // noPrice
+            // 
+            this.noPrice.FillWeight = 70F;
+            this.noPrice.HeaderText = "Price";
+            this.noPrice.MinimumWidth = 70;
+            this.noPrice.Name = "noPrice";
+            this.noPrice.ReadOnly = true;
+            // 
+            // noAmount
+            // 
+            this.noAmount.FillWeight = 70F;
+            this.noAmount.HeaderText = "Amount";
+            this.noAmount.MinimumWidth = 70;
+            this.noAmount.Name = "noAmount";
+            this.noAmount.ReadOnly = true;
+            // 
+            // totalCost
+            // 
+            this.totalCost.AutoSize = true;
+            this.totalCost.ForeColor = System.Drawing.Color.White;
+            this.totalCost.Location = new System.Drawing.Point(606, 24);
+            this.totalCost.Name = "totalCost";
+            this.totalCost.Size = new System.Drawing.Size(83, 21);
+            this.totalCost.TabIndex = 33;
+            this.totalCost.Text = "Total: 0€";
+            // 
             // newOrdersPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -307,10 +272,9 @@
             this.Name = "newOrdersPanel";
             this.Text = "newOrdersPanel";
             this.newOrderPanel.ResumeLayout(false);
-            this.newOrderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -330,15 +294,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.PictureBox searchImg;
-        public System.Windows.Forms.TextBox searchTB;
         private System.Windows.Forms.Button checkoutBtn;
         public System.Windows.Forms.DataGridView checkoutGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noID;
         private System.Windows.Forms.DataGridViewTextBoxColumn noProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn noQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn noPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn noAmount;
+        private System.Windows.Forms.Label totalCost;
     }
 }

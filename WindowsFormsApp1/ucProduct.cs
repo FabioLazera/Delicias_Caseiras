@@ -26,8 +26,21 @@ namespace WindowsFormsApp1
 
         public double ProductPriceLabel
         {
-            get { return Convert.ToDouble(productPrice.Text); }
-            set { productPrice.Text = $"{value:F2} €"; }
+            get
+            {
+                if (double.TryParse(productPrice.Text.Replace(" €", ""), out double price))
+                {
+                    return price;
+                }
+                else
+                {
+                    return 0.0;
+                }
+            }
+            set
+            {
+                productPrice.Text = $"{value:F2} €";
+            }
         }
 
         public string ProductDescriptionTB

@@ -64,19 +64,19 @@
             // 
             this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.optionsPanel.Controls.Add(this.pictureBox8);
+            this.optionsPanel.Controls.Add(this.ordersBtn);
+            this.optionsPanel.Controls.Add(this.ordersImg);
             this.optionsPanel.Controls.Add(this.pictureBox7);
             this.optionsPanel.Controls.Add(this.pictureBox6);
             this.optionsPanel.Controls.Add(this.pictureBox5);
             this.optionsPanel.Controls.Add(this.pictureBox4);
             this.optionsPanel.Controls.Add(this.pictureBox3);
-            this.optionsPanel.Controls.Add(this.ordersImg);
             this.optionsPanel.Controls.Add(this.logoutBtn);
             this.optionsPanel.Controls.Add(this.deliveryBtn);
             this.optionsPanel.Controls.Add(this.employeesBtn);
             this.optionsPanel.Controls.Add(this.dishesBtn);
             this.optionsPanel.Controls.Add(this.clientsBtn);
             this.optionsPanel.Controls.Add(this.drinksBtn);
-            this.optionsPanel.Controls.Add(this.ordersBtn);
             this.optionsPanel.Controls.Add(this.logo1);
             this.optionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.optionsPanel.Location = new System.Drawing.Point(0, 0);
@@ -107,7 +107,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::WindowsFormsApp1.Properties.Resources.dishes;
-            this.pictureBox6.Location = new System.Drawing.Point(23, 529);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 456);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 35);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,7 +117,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WindowsFormsApp1.Properties.Resources.drinks;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 453);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 380);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::WindowsFormsApp1.Properties.Resources.clients;
-            this.pictureBox4.Location = new System.Drawing.Point(23, 376);
+            this.pictureBox4.Location = new System.Drawing.Point(23, 303);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.employees;
-            this.pictureBox3.Location = new System.Drawing.Point(23, 301);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 228);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +147,7 @@
             // ordersImg
             // 
             this.ordersImg.Image = global::WindowsFormsApp1.Properties.Resources.orders;
-            this.ordersImg.Location = new System.Drawing.Point(23, 224);
+            this.ordersImg.Location = new System.Drawing.Point(23, 528);
             this.ordersImg.Name = "ordersImg";
             this.ordersImg.Size = new System.Drawing.Size(35, 35);
             this.ordersImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -196,7 +196,7 @@
             this.employeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeesBtn.ForeColor = System.Drawing.Color.White;
-            this.employeesBtn.Location = new System.Drawing.Point(59, 285);
+            this.employeesBtn.Location = new System.Drawing.Point(59, 212);
             this.employeesBtn.Name = "employeesBtn";
             this.employeesBtn.Size = new System.Drawing.Size(143, 70);
             this.employeesBtn.TabIndex = 3;
@@ -213,7 +213,7 @@
             this.dishesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dishesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dishesBtn.ForeColor = System.Drawing.Color.White;
-            this.dishesBtn.Location = new System.Drawing.Point(59, 513);
+            this.dishesBtn.Location = new System.Drawing.Point(59, 440);
             this.dishesBtn.Name = "dishesBtn";
             this.dishesBtn.Size = new System.Drawing.Size(143, 70);
             this.dishesBtn.TabIndex = 6;
@@ -230,7 +230,7 @@
             this.clientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientsBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientsBtn.ForeColor = System.Drawing.Color.White;
-            this.clientsBtn.Location = new System.Drawing.Point(59, 361);
+            this.clientsBtn.Location = new System.Drawing.Point(59, 288);
             this.clientsBtn.Name = "clientsBtn";
             this.clientsBtn.Size = new System.Drawing.Size(143, 70);
             this.clientsBtn.TabIndex = 4;
@@ -247,7 +247,7 @@
             this.drinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinksBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drinksBtn.ForeColor = System.Drawing.Color.White;
-            this.drinksBtn.Location = new System.Drawing.Point(59, 437);
+            this.drinksBtn.Location = new System.Drawing.Point(59, 364);
             this.drinksBtn.Name = "drinksBtn";
             this.drinksBtn.Size = new System.Drawing.Size(143, 70);
             this.drinksBtn.TabIndex = 5;
@@ -264,7 +264,7 @@
             this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordersBtn.ForeColor = System.Drawing.Color.White;
-            this.ordersBtn.Location = new System.Drawing.Point(59, 209);
+            this.ordersBtn.Location = new System.Drawing.Point(59, 513);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Size = new System.Drawing.Size(143, 70);
             this.ordersBtn.TabIndex = 2;

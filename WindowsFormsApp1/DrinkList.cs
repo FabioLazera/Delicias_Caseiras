@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     public class DrinkList
     {
-        private static List<Drink> drinks = new List<Drink>();
+        public static List<Drink> drinks = new List<Drink>();
 
         public static void AddDrink(Drink drink)
         {
@@ -75,6 +75,14 @@ namespace WindowsFormsApp1
                         }
                     }
                 }
+            }
+        }
+
+        public static void LoadDrinksIfNeeded()
+        {
+            if (drinks.Count == 0)
+            {
+                LoadFromCSV("drinks.csv");
             }
         }
     }
