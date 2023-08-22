@@ -11,16 +11,27 @@ namespace WindowsFormsApp1
 {
     internal static class Program
     {
-        /// <summary>
-        /// Ponto de entrada principal para o aplicativo.
-        /// </summary>
         public static string ProjectDirectory => AppDomain.CurrentDomain.BaseDirectory;
+
+        private const string CsvFolderPath = "csvFiles";
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CheckCsvFolder();
             Application.Run(new Menu());
+        }
+
+        private static void CheckCsvFolder()
+        {
+            string csvFolderPath = Path.Combine(ProjectDirectory, CsvFolderPath);
+
+            if (!Directory.Exists(csvFolderPath))
+            {
+                Directory.CreateDirectory(csvFolderPath);
+            }
         }
     }
 }

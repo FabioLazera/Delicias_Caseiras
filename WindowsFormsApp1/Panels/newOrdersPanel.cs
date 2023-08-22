@@ -114,7 +114,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            MessageBox.Show("Estoque insuficiente!");
+                            MessageBox.Show("Insufficient stock!");
                         }
                     }
                     else
@@ -128,11 +128,11 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            MessageBox.Show("Estoque insuficiente!");
+                            MessageBox.Show("Insufficient stock!");
                         }
                     }
 
-                    // Atualizar o estoque restante apenas se o estoque estiver disponível e não for 0
+                    // Atualizar o stock restante apenas se o stock estiver disponível e não for 0
                     if (selectedDrink != null && selectedDrink.Stock > 0)
                     {
                         selectedDrink.Stock--;
