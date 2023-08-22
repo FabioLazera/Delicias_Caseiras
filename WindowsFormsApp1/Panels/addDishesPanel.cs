@@ -64,6 +64,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Dish newDish = new Dish(name, description, price, stock);
                     DishList.AddDish(newDish);
+                    DishList.SaveToCSV("dishes.csv");
                     MessageBox.Show("Dish created successfully!");
                 }
 

@@ -96,7 +96,6 @@
             this.label5.Size = new System.Drawing.Size(55, 19);
             this.label5.TabIndex = 21;
             this.label5.Text = "Client";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // ceckoutOT
             // 

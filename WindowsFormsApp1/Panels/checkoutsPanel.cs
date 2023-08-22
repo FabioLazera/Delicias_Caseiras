@@ -16,6 +16,7 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             CenterFormOnScreen();
+            LoadClientsToComboBox();
         }
 
         private void CenterFormOnScreen()
@@ -28,9 +29,15 @@ namespace WindowsFormsApp1.Panels
             this.Close();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void LoadClientsToComboBox()
         {
+            List<Client> clients = ClientList.GetClients();
 
+            foreach (Client client in clients)
+            {
+                ceckoutClient.Items.Add(client.Name);
+            }
         }
+
     }
 }

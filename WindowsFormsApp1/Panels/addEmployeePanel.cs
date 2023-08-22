@@ -68,6 +68,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
                     EmployeeList.AddEmployee(newEmployee);
+                    EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee created successfully!");
                 }
 
@@ -108,7 +109,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool IsValidInt(string input)
         {
-            if (int.TryParse(input,out int result))
+            if (int.TryParse(input, out int result) && result >= 0)
             {
                 return true;
             }
@@ -117,7 +118,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool IsValidDouble(string input)
         {
-            if (double.TryParse(input, out double result))
+            if (double.TryParse(input, out double result) && result >= 0)
             {
                 return true;
             }

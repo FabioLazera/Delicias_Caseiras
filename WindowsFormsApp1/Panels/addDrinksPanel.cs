@@ -62,6 +62,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Drink newDrink = new Drink(name, description, price, stock);
                     DrinkList.AddDrink(newDrink);
+                    DrinkList.SaveToCSV("drinks.csv");
                     MessageBox.Show("Drink created successfully!");
                 }
 

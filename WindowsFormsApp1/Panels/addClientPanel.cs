@@ -65,6 +65,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     Client newClient = new Client(name, phoneNumber, address, nif);
                     ClientList.AddClient(newClient);
+                    ClientList.SaveToCSV("clients.csv");
                     MessageBox.Show("Client created successfully!");
                 }
 
@@ -96,7 +97,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool IsValidInt(string input)
         {
-            if (int.TryParse(input, out int result))
+            if (int.TryParse(input, out int result) && result >= 0)
             {
                 return true;
             }
