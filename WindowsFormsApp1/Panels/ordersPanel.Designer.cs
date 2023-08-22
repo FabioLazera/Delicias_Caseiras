@@ -46,7 +46,8 @@
             this.oStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.oType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oDelivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderPanel.SuspendLayout();
@@ -121,7 +122,8 @@
             this.oStatus,
             this.oType,
             this.oTime,
-            this.oDelivery,
+            this.oForecast,
+            this.oCost,
             this.gridEdit,
             this.gridDelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -248,12 +250,20 @@
             this.oTime.Name = "oTime";
             this.oTime.ReadOnly = true;
             // 
-            // oDelivery
+            // oForecast
             // 
-            this.oDelivery.HeaderText = "Delivery Forecast";
-            this.oDelivery.MinimumWidth = 100;
-            this.oDelivery.Name = "oDelivery";
-            this.oDelivery.ReadOnly = true;
+            this.oForecast.HeaderText = "NStage Forecast";
+            this.oForecast.MinimumWidth = 100;
+            this.oForecast.Name = "oForecast";
+            this.oForecast.ReadOnly = true;
+            // 
+            // oCost
+            // 
+            this.oCost.FillWeight = 75F;
+            this.oCost.HeaderText = "Cost";
+            this.oCost.MinimumWidth = 75;
+            this.oCost.Name = "oCost";
+            this.oCost.ReadOnly = true;
             // 
             // gridEdit
             // 
@@ -317,7 +327,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn oStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn oType;
         private System.Windows.Forms.DataGridViewTextBoxColumn oTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oDelivery;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oForecast;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oCost;
         private System.Windows.Forms.DataGridViewImageColumn gridEdit;
         private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }

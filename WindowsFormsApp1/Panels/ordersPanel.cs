@@ -22,5 +22,20 @@ namespace WindowsFormsApp1.Panels
             newOrdersPanel newOrdersPanel = new newOrdersPanel();
             newOrdersPanel.Show();
         }
+
+        //private void searchTB_TextChanged(object sender, EventArgs e)
+        //{
+        //    string searchValue = searchTB.Text.Trim().ToLower();
+        //
+        //    ordersGrid.Rows.Clear();
+        //
+        //    foreach (Order order in OrderList.GetOrders())
+        //    {
+        //        if (order.clientList.Name.ToLower().StartsWith(searchValue))
+        //        {
+        //            ordersGrid.Rows.Add(Address, client.NIF);
+        //        }
+        //    }
+        //}
     }
 }

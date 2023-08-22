@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.checkoutPanel = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ceckoutOT = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,6 +53,7 @@
             // 
             // checkoutPanel
             // 
+            this.checkoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.checkoutPanel.Controls.Add(this.label7);
             this.checkoutPanel.Controls.Add(this.comboBox1);
             this.checkoutPanel.Controls.Add(this.label6);
@@ -74,6 +75,29 @@
             this.checkoutPanel.Name = "checkoutPanel";
             this.checkoutPanel.Size = new System.Drawing.Size(589, 551);
             this.checkoutPanel.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(339, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 19);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Payment Method";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "MbWay",
+            "Visa",
+            "Cash"});
+            this.comboBox1.Location = new System.Drawing.Point(343, 301);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(220, 29);
+            this.comboBox1.TabIndex = 23;
             // 
             // label6
             // 
@@ -225,7 +249,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 141);
+            this.panel1.Size = new System.Drawing.Size(587, 141);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -238,29 +262,6 @@
             this.label1.Size = new System.Drawing.Size(120, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Checkout";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(339, 279);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 19);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Payment Method";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "MbWay",
-            "Visa",
-            "Cash"});
-            this.comboBox1.Location = new System.Drawing.Point(343, 301);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 29);
-            this.comboBox1.TabIndex = 23;
             // 
             // checkoutsPanel
             // 

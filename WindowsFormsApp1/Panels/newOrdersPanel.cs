@@ -20,6 +20,9 @@ namespace WindowsFormsApp1
             CenterFormOnScreen();
             DishList.LoadDishesIfNeeded();
             DrinkList.LoadDrinksIfNeeded();
+            checkoutGrid.RowsAdded += checkoutGrid_RowsAdded;
+            checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
+            checkoutBtn.Enabled = false;
         }
 
         private void CenterFormOnScreen()
@@ -112,7 +115,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            MessageBox.Show("Stock insuficiente!");
+                            MessageBox.Show("Insufficient stock!");
                         }
                     }
                     else
@@ -126,7 +129,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            MessageBox.Show("Stock insuficiente!");
+                            MessageBox.Show("Insufficient stock!");
                         }
                     }
 
@@ -163,6 +166,16 @@ namespace WindowsFormsApp1
         {
             double total = CalculateTotalCost();
             totalCost.Text = $"Total: {total:F2} €";
+        }
+
+        private void checkoutGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            checkoutBtn.Enabled = checkoutGrid.Rows.Count > 0;
+        }
+
+        private void checkoutGrid_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            checkoutBtn.Enabled = checkoutGrid.Rows.Count > 0;
         }
     }
 }
