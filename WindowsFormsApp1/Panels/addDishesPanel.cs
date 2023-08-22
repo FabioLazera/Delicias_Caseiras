@@ -88,13 +88,13 @@ namespace WindowsFormsApp1.Panels
 
             if (!IsValidDouble(dishPriceTB.Text))
             {
-                MessageBox.Show("Invalid price format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid price. Please enter a valid positive numerica value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             if (!IsValidInt(dishStockTB.Text))
             {
-                MessageBox.Show("Invalid stock format. Please enter a valid numeric value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid stock. Please enter a valid positive numeric value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool IsValidInt(string input)
         {
-            if (int.TryParse(input, out int result))
+            if (int.TryParse(input, out int result) && result >= 0)
             {
                 return true;
             }
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool IsValidDouble(string input)
         {
-            if (double.TryParse(input, out double result))
+            if (double.TryParse(input, out double result) && result >= 0)
             {
                 return true;
             }

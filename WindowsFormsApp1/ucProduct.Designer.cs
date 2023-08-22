@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.productPrice = new System.Windows.Forms.Label();
-            this.productDescription = new System.Windows.Forms.TextBox();
             this.description = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.Label();
             this.productName = new System.Windows.Forms.Label();
+            this.productDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // productPrice
@@ -44,19 +44,6 @@
             this.productPrice.Size = new System.Drawing.Size(47, 18);
             this.productPrice.TabIndex = 9;
             this.productPrice.Text = "label1";
-            // 
-            // productDescription
-            // 
-            this.productDescription.BackColor = System.Drawing.SystemColors.Control;
-            this.productDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.productDescription.Font = new System.Drawing.Font("Bookman Old Style", 7.8F);
-            this.productDescription.Location = new System.Drawing.Point(24, 108);
-            this.productDescription.Multiline = true;
-            this.productDescription.Name = "productDescription";
-            this.productDescription.ReadOnly = true;
-            this.productDescription.Size = new System.Drawing.Size(126, 84);
-            this.productDescription.TabIndex = 8;
-            this.productDescription.Text = "Teste para verificar se o tamanho é suficiente";
             // 
             // description
             // 
@@ -88,12 +75,21 @@
             this.productName.TabIndex = 5;
             this.productName.Text = "Product Name";
             // 
+            // productDescription
+            // 
+            this.productDescription.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productDescription.Location = new System.Drawing.Point(21, 114);
+            this.productDescription.Name = "productDescription";
+            this.productDescription.Size = new System.Drawing.Size(129, 69);
+            this.productDescription.TabIndex = 11;
+            this.productDescription.Text = "Texto para verificar se o tamanho da label é suficiente ou não";
+            // 
             // ucProduct
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.productPrice);
             this.Controls.Add(this.productDescription);
+            this.Controls.Add(this.productPrice);
             this.Controls.Add(this.description);
             this.Controls.Add(this.price);
             this.Controls.Add(this.productName);
@@ -107,9 +103,9 @@
         #endregion
 
         public System.Windows.Forms.Label productPrice;
-        public System.Windows.Forms.TextBox productDescription;
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.Label price;
         public System.Windows.Forms.Label productName;
+        private System.Windows.Forms.Label productDescription;
     }
 }

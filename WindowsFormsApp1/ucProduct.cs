@@ -16,6 +16,12 @@ namespace WindowsFormsApp1
         public ucProduct()
         {
             InitializeComponent();
+            productName.Click += Component_Click;
+            price.Click += Component_Click;
+            productPrice.Click += Component_Click;
+            description.Click += Component_Click;
+            productDescription.Click += Component_Click;
+
         }
 
         public string ProductNameLabel
@@ -47,6 +53,11 @@ namespace WindowsFormsApp1
         {
             get { return productDescription.Text; }
             set { productDescription.Text = value; }
+        }
+
+        private void Component_Click(object sender, EventArgs e)
+        {
+            OnClick(e);
         }
     }
 }
