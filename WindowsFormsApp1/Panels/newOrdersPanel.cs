@@ -80,21 +80,16 @@ namespace WindowsFormsApp1
 
         private void ucProduct_Click(object sender, EventArgs e)
         {
-            // Verificar se o objeto sender é um ucProduct (controlo de produto)
             if (sender is ucProduct productControl)
             {
-                // Obter o nome e o preço do produto a partir do ucProduct
                 string productName = productControl.ProductNameLabel;
                 double productPrice = productControl.ProductPriceLabel;
 
-                // Encontrar o produto correspondente na lista de Bebidas (Drinks) ou Pratos (Dishes)
                 Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
                 Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
 
-                // Verificar se foi selecionada uma bebida ou um prato
                 if (selectedDrink != null || selectedDish != null)
                 {
-                    // Procurar por uma linha existente na checkoutGrid com o mesmo produto
                     DataGridViewRow existingRow = null;
                     foreach (DataGridViewRow row in checkoutGrid.Rows)
                     {
@@ -104,48 +99,37 @@ namespace WindowsFormsApp1
                             break;
                         }
                     }
-
-                    // Verificar se já existe uma linha para este produto na checkoutGrid
                     if (existingRow != null)
                     {
-                        // Obter a quantidade atual e o stock disponível
                         int currentQty = Convert.ToInt32(existingRow.Cells["noQty"].Value);
                         int availableStock = selectedDrink != null ? selectedDrink.Stock : selectedDish.Stock;
 
-                        // Verificar se é possível aumentar a quantidade sem exceder o stock disponível
-                        if (currentQty + 1 <= availableStock)
+                        if (availableStock > 0)
                         {
-                            // Atualizar a quantidade na linha existente
                             existingRow.Cells["noQty"].Value = currentQty + 1;
                             double totalPrice = productPrice * (currentQty + 1);
                             UpdateAmountForRow(existingRow.Index);
                         }
                         else
                         {
-                            // Exibir mensagem se o stock for insuficiente para adicionar mais unidades
                             MessageBox.Show("Stock insuficiente!");
                         }
                     }
                     else
                     {
-                        // Obter o stock disponível
                         int availableStock = selectedDrink != null ? selectedDrink.Stock : selectedDish.Stock;
 
-                        // Verificar se há stock disponível para adicionar pelo menos 1 unidade
                         if (availableStock >= 1)
                         {
-                            // Adicionar uma nova linha para o produto na checkoutGrid
                             int rowIndex = checkoutGrid.Rows.Add(productName, 1, productPrice, productPrice);
                             UpdateAmountForRow(rowIndex);
                         }
                         else
                         {
-                            // Exibir mensagem se não houver stock para adicionar unidades
                             MessageBox.Show("Stock insuficiente!");
                         }
                     }
 
-                    // Atualizar o stock restante apenas se houver stock disponível e não for 0
                     if (selectedDrink != null && selectedDrink.Stock > 0)
                     {
                         selectedDrink.Stock--;
@@ -155,7 +139,6 @@ namespace WindowsFormsApp1
                         selectedDish.Stock--;
                     }
 
-                    // Atualizar o custo total da encomenda
                     UpdateTotalCost();
                 }
             }

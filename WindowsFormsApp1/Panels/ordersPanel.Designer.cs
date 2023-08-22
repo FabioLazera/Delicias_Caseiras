@@ -32,10 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
             this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
             this.separator = new System.Windows.Forms.Label();
             this.searchTB = new System.Windows.Forms.TextBox();
+            this.ordersPImg = new System.Windows.Forms.PictureBox();
             this.ordersLabel = new System.Windows.Forms.Label();
             this.oID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +47,11 @@
             this.oType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oDelivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.ordersPImg = new System.Windows.Forms.PictureBox();
+            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +72,24 @@
             this.orderPanel.Name = "orderPanel";
             this.orderPanel.Size = new System.Drawing.Size(824, 768);
             this.orderPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.printer;
+            this.pictureBox1.Location = new System.Drawing.Point(725, 691);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(41, 148);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(258, 27);
+            this.dateTimePicker.TabIndex = 36;
             // 
             // ordersGrid
             // 
@@ -101,7 +121,9 @@
             this.oStatus,
             this.oType,
             this.oTime,
-            this.oDelivery});
+            this.oDelivery,
+            this.gridEdit,
+            this.gridDelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +155,16 @@
             this.searchLabel.TabIndex = 34;
             this.searchLabel.Text = "Search Here";
             // 
+            // searchImg
+            // 
+            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
+            this.searchImg.Location = new System.Drawing.Point(557, 85);
+            this.searchImg.Name = "searchImg";
+            this.searchImg.Size = new System.Drawing.Size(29, 27);
+            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchImg.TabIndex = 33;
+            this.searchImg.TabStop = false;
+            // 
             // separator
             // 
             this.separator.AutoSize = true;
@@ -154,6 +186,18 @@
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(230, 30);
             this.searchTB.TabIndex = 31;
+            // 
+            // ordersPImg
+            // 
+            this.ordersPImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ordersPImg.Image = global::WindowsFormsApp1.Properties.Resources.addBasket;
+            this.ordersPImg.Location = new System.Drawing.Point(41, 77);
+            this.ordersPImg.Name = "ordersPImg";
+            this.ordersPImg.Size = new System.Drawing.Size(65, 65);
+            this.ordersPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ordersPImg.TabIndex = 30;
+            this.ordersPImg.TabStop = false;
+            this.ordersPImg.Click += new System.EventHandler(this.ordersPImg_Click);
             // 
             // ordersLabel
             // 
@@ -211,45 +255,29 @@
             this.oDelivery.Name = "oDelivery";
             this.oDelivery.ReadOnly = true;
             // 
-            // dateTimePicker
+            // gridEdit
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(41, 148);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(258, 27);
-            this.dateTimePicker.TabIndex = 36;
+            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridEdit.FillWeight = 50F;
+            this.gridEdit.HeaderText = "";
+            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridEdit.MinimumWidth = 50;
+            this.gridEdit.Name = "gridEdit";
+            this.gridEdit.ReadOnly = true;
+            this.gridEdit.Width = 50;
             // 
-            // pictureBox1
+            // gridDelete
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.printer;
-            this.pictureBox1.Location = new System.Drawing.Point(725, 691);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
-            // searchImg
-            // 
-            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
-            this.searchImg.Location = new System.Drawing.Point(557, 85);
-            this.searchImg.Name = "searchImg";
-            this.searchImg.Size = new System.Drawing.Size(29, 27);
-            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchImg.TabIndex = 33;
-            this.searchImg.TabStop = false;
-            // 
-            // ordersPImg
-            // 
-            this.ordersPImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ordersPImg.Image = global::WindowsFormsApp1.Properties.Resources.addBasket;
-            this.ordersPImg.Location = new System.Drawing.Point(41, 77);
-            this.ordersPImg.Name = "ordersPImg";
-            this.ordersPImg.Size = new System.Drawing.Size(65, 65);
-            this.ordersPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ordersPImg.TabIndex = 30;
-            this.ordersPImg.TabStop = false;
-            this.ordersPImg.Click += new System.EventHandler(this.ordersPImg_Click);
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
             // 
             // ordersPanel
             // 
@@ -264,8 +292,8 @@
             this.Text = "ordersPanel";
             this.orderPanel.ResumeLayout(false);
             this.orderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).EndInit();
             this.ResumeLayout(false);
@@ -282,13 +310,15 @@
         public System.Windows.Forms.TextBox searchTB;
         public System.Windows.Forms.PictureBox ordersPImg;
         private System.Windows.Forms.Label ordersLabel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn oID;
         private System.Windows.Forms.DataGridViewTextBoxColumn oClient;
         private System.Windows.Forms.DataGridViewComboBoxColumn oStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn oType;
         private System.Windows.Forms.DataGridViewTextBoxColumn oTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn oDelivery;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewImageColumn gridEdit;
+        private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }
 }

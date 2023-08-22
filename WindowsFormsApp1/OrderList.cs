@@ -23,8 +23,6 @@ namespace WindowsFormsApp1
             return orders;
         }
 
-        // Outros métodos para editar, excluir, salvar em CSV, etc.
-
         public static int GetNextOrderId()
         {
             return nextOrderId;
