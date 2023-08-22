@@ -19,6 +19,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             CenterFormOnScreen();
+            UpdateDigitalClock();
+            timerDigitalClock.Start();
+            timerDigitalClock.Interval = 1000; 
+            timerDigitalClock.Tick += TimerDigitalClock_Tick;
+            
         }
 
         private void CenterFormOnScreen()
@@ -84,5 +89,20 @@ namespace WindowsFormsApp1
             EmployeeList.SaveToCSV("employees.csv");
             Application.Exit();
         }
+
+        private void UpdateDigitalClock()
+        {
+            DateTime currentTime = DateTime.Now;
+            string formattedTime = currentTime.ToString("HH:mm:ss");
+            string formattedDate = currentTime.ToString("dd/MM/yyyy");
+            string dateTimeString = $"{formattedDate} {formattedTime}";
+            dateHour.Text = dateTimeString;
+        }
+
+        private void TimerDigitalClock_Tick(object sender, EventArgs e)
+        {
+            UpdateDigitalClock();
+        }
+
     }
 }

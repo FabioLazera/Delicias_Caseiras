@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.optionsPanel = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.ordersBtn = new System.Windows.Forms.Button();
+            this.ordersImg = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ordersImg = new System.Windows.Forms.PictureBox();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.deliveryBtn = new System.Windows.Forms.Button();
             this.employeesBtn = new System.Windows.Forms.Button();
             this.dishesBtn = new System.Windows.Forms.Button();
             this.clientsBtn = new System.Windows.Forms.Button();
             this.drinksBtn = new System.Windows.Forms.Button();
-            this.ordersBtn = new System.Windows.Forms.Button();
             this.logo1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateHour = new System.Windows.Forms.Label();
+            this.timerDigitalClock = new System.Windows.Forms.Timer(this.components);
             this.optionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +66,7 @@
             // optionsPanel
             // 
             this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.optionsPanel.Controls.Add(this.dateHour);
             this.optionsPanel.Controls.Add(this.pictureBox8);
             this.optionsPanel.Controls.Add(this.ordersBtn);
             this.optionsPanel.Controls.Add(this.ordersImg);
@@ -93,6 +97,33 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 15;
             this.pictureBox8.TabStop = false;
+            // 
+            // ordersBtn
+            // 
+            this.ordersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.ordersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ordersBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.ordersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
+            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordersBtn.ForeColor = System.Drawing.Color.White;
+            this.ordersBtn.Location = new System.Drawing.Point(59, 513);
+            this.ordersBtn.Name = "ordersBtn";
+            this.ordersBtn.Size = new System.Drawing.Size(143, 70);
+            this.ordersBtn.TabIndex = 2;
+            this.ordersBtn.Text = "Orders";
+            this.ordersBtn.UseVisualStyleBackColor = false;
+            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
+            // 
+            // ordersImg
+            // 
+            this.ordersImg.Image = global::WindowsFormsApp1.Properties.Resources.orders;
+            this.ordersImg.Location = new System.Drawing.Point(23, 528);
+            this.ordersImg.Name = "ordersImg";
+            this.ordersImg.Size = new System.Drawing.Size(35, 35);
+            this.ordersImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ordersImg.TabIndex = 9;
+            this.ordersImg.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -143,16 +174,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
-            // 
-            // ordersImg
-            // 
-            this.ordersImg.Image = global::WindowsFormsApp1.Properties.Resources.orders;
-            this.ordersImg.Location = new System.Drawing.Point(23, 528);
-            this.ordersImg.Name = "ordersImg";
-            this.ordersImg.Size = new System.Drawing.Size(35, 35);
-            this.ordersImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ordersImg.TabIndex = 9;
-            this.ordersImg.TabStop = false;
             // 
             // logoutBtn
             // 
@@ -255,23 +276,6 @@
             this.drinksBtn.UseVisualStyleBackColor = false;
             this.drinksBtn.Click += new System.EventHandler(this.drinksBtn_Click);
             // 
-            // ordersBtn
-            // 
-            this.ordersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.ordersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ordersBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.ordersBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
-            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ordersBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ordersBtn.ForeColor = System.Drawing.Color.White;
-            this.ordersBtn.Location = new System.Drawing.Point(59, 513);
-            this.ordersBtn.Name = "ordersBtn";
-            this.ordersBtn.Size = new System.Drawing.Size(143, 70);
-            this.ordersBtn.TabIndex = 2;
-            this.ordersBtn.Text = "Orders";
-            this.ordersBtn.UseVisualStyleBackColor = false;
-            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
-            // 
             // logo1
             // 
             this.logo1.Image = global::WindowsFormsApp1.Properties.Resources.logo_transparent1;
@@ -302,6 +306,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // dateHour
+            // 
+            this.dateHour.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateHour.ForeColor = System.Drawing.Color.White;
+            this.dateHour.Location = new System.Drawing.Point(55, 9);
+            this.dateHour.Name = "dateHour";
+            this.dateHour.Size = new System.Drawing.Size(85, 39);
+            this.dateHour.TabIndex = 16;
+            this.dateHour.Text = "label1";
+            this.dateHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -315,12 +330,12 @@
             this.Text = "Menu";
             this.optionsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -348,5 +363,7 @@
         public System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.PictureBox ordersImg;
         public System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label dateHour;
+        private System.Windows.Forms.Timer timerDigitalClock;
     }
 }
