@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newOrderPanel = new System.Windows.Forms.Panel();
             this.checkoutGrid = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.drinksBtn = new System.Windows.Forms.Button();
             this.dishesBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.totalCost = new System.Windows.Forms.Label();
             this.checkoutBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,7 @@
             this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCost = new System.Windows.Forms.Label();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.newOrderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutGrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,39 +74,40 @@
             // 
             this.checkoutGrid.AllowUserToAddRows = false;
             this.checkoutGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkoutGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkoutGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.checkoutGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.checkoutGrid.BackgroundColor = System.Drawing.Color.White;
             this.checkoutGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkoutGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.checkoutGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkoutGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkoutGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.checkoutGrid.ColumnHeadersHeight = 40;
             this.checkoutGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noProduct,
             this.noQty,
             this.noPrice,
-            this.noAmount});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkoutGrid.DefaultCellStyle = dataGridViewCellStyle9;
+            this.noAmount,
+            this.gridDelete});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkoutGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.checkoutGrid.EnableHeadersVisualStyles = false;
             this.checkoutGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.checkoutGrid.Location = new System.Drawing.Point(610, 177);
@@ -161,6 +163,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1024, 69);
             this.panel2.TabIndex = 1;
+            // 
+            // totalCost
+            // 
+            this.totalCost.AutoSize = true;
+            this.totalCost.ForeColor = System.Drawing.Color.White;
+            this.totalCost.Location = new System.Drawing.Point(606, 24);
+            this.totalCost.Name = "totalCost";
+            this.totalCost.Size = new System.Drawing.Size(83, 21);
+            this.totalCost.TabIndex = 33;
+            this.totalCost.Text = "Total: 0€";
             // 
             // checkoutBtn
             // 
@@ -252,15 +264,17 @@
             this.noAmount.Name = "noAmount";
             this.noAmount.ReadOnly = true;
             // 
-            // totalCost
+            // gridDelete
             // 
-            this.totalCost.AutoSize = true;
-            this.totalCost.ForeColor = System.Drawing.Color.White;
-            this.totalCost.Location = new System.Drawing.Point(606, 24);
-            this.totalCost.Name = "totalCost";
-            this.totalCost.Size = new System.Drawing.Size(83, 21);
-            this.totalCost.TabIndex = 33;
-            this.totalCost.Text = "Total: 0€";
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
             // 
             // newOrdersPanel
             // 
@@ -296,10 +310,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button checkoutBtn;
         public System.Windows.Forms.DataGridView checkoutGrid;
+        private System.Windows.Forms.Label totalCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn noProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn noQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn noPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn noAmount;
-        private System.Windows.Forms.Label totalCost;
+        private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }
 }

@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             DrinkList.LoadDrinksIfNeeded();
             checkoutGrid.RowsAdded += checkoutGrid_RowsAdded;
             checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
+            checkoutGrid.CellClick += checkoutGrid_CellClick;
             checkoutBtn.Enabled = false;
         }
 
@@ -176,6 +177,34 @@ namespace WindowsFormsApp1
         private void checkoutGrid_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             checkoutBtn.Enabled = checkoutGrid.Rows.Count > 0;
+        }
+
+        private void checkoutGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == checkoutGrid.Columns["gridDelete"].Index)
+            {
+                DataGridViewRow row = checkoutGrid.Rows[e.RowIndex];
+
+                string productName = row.Cells["noProduct"].Value.ToString();
+                double productPrice = Convert.ToDouble(row.Cells["noPrice"].Value);
+                int quantity = Convert.ToInt32(row.Cells["noQty"].Value);
+
+                Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
+                Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
+
+                if (selectedDrink != null && selectedDrink.Stock >= 0)
+                {
+                    selectedDrink.Stock += quantity;
+                }
+                else if (selectedDish != null && selectedDish.Stock >= 0)
+                {
+                    selectedDish.Stock += quantity;
+                }
+
+                checkoutGrid.Rows.RemoveAt(e.RowIndex);
+                UpdateTotalCost();
+                checkoutBtn.Enabled = checkoutGrid.Rows.Count > 0;
+            }
         }
     }
 }
