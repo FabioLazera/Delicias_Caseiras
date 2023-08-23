@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(checkoutsPanel));
             this.checkoutPanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.checkoutMC = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             // checkoutPanel
             // 
             this.checkoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkoutPanel.Controls.Add(this.label11);
             this.checkoutPanel.Controls.Add(this.label9);
             this.checkoutPanel.Controls.Add(this.checkoutMC);
             this.checkoutPanel.Controls.Add(this.label10);
@@ -86,6 +88,17 @@
             this.checkoutPanel.Name = "checkoutPanel";
             this.checkoutPanel.Size = new System.Drawing.Size(589, 569);
             this.checkoutPanel.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label11.Location = new System.Drawing.Point(131, 259);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 25);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "%";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -269,7 +282,7 @@
             this.checkoutDiscount.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.checkoutDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkoutDiscount.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutDiscount.Location = new System.Drawing.Point(112, 259);
+            this.checkoutDiscount.Location = new System.Drawing.Point(95, 259);
             this.checkoutDiscount.Multiline = true;
             this.checkoutDiscount.Name = "checkoutDiscount";
             this.checkoutDiscount.Size = new System.Drawing.Size(38, 25);
@@ -294,9 +307,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(21, 260);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 19);
+            this.label2.Size = new System.Drawing.Size(86, 19);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Discount(%) :";
+            this.label2.Text = "Discount :";
             // 
             // label4
             // 
@@ -386,5 +399,6 @@
         public System.Windows.Forms.Label checkoutWD;
         public System.Windows.Forms.Label checkoutMC;
         public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label11;
     }
 }

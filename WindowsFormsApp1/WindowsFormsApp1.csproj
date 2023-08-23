@@ -311,6 +311,17 @@
   <ItemGroup>
     <None Include="Resources\recycle.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15minutes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tomorrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ylogo_transparent1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

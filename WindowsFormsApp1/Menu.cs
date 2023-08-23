@@ -15,11 +15,13 @@ namespace WindowsFormsApp1
     public partial class Menu : Form
     {
         private Button lastPressedButton;
+        private int addedMinutes = 0;
+
         public Menu()
         {
             InitializeComponent();
             CenterFormOnScreen();
-            //UpdateDigitalClock();
+            UpdateDigitalClock();
             timerDigitalClock.Start();
             timerDigitalClock.Interval = 1000; 
             timerDigitalClock.Tick += TimerDigitalClock_Tick;
@@ -53,9 +55,25 @@ namespace WindowsFormsApp1
 
         private void ordersBtn_Click(object sender, EventArgs e)
         {
-            AddPanel(new ordersPanel());
+            ordersPanel ordersPanel = new ordersPanel();
+            ordersPanel.PlusHourClicked += OrdersPanel_PlusHourClicked;
+            ordersPanel.PlusDayClicked += OrdersPanel_PlusDayClicked;
+            AddPanel(ordersPanel);
             HighlightButton(ordersBtn);
         }
+
+        private void OrdersPanel_PlusHourClicked(object sender, EventArgs e)
+        {
+            addedMinutes += 15;
+            UpdateDigitalClock();
+        }
+
+        private void OrdersPanel_PlusDayClicked(object sender, EventArgs e)
+        {
+            addedMinutes += 1440;
+            UpdateDigitalClock();
+        }
+
 
         private void employeesBtn_Click(object sender, EventArgs e)
         {
@@ -90,23 +108,19 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        private void TimerDigitalClock_Tick(object sender, EventArgs e)
+        {
+            UpdateDigitalClock();
+        }
+
+
         private void UpdateDigitalClock()
         {
-            DateTime currentTime = DateTime.Now;
+            DateTime currentTime = DateTime.Now.AddMinutes(addedMinutes);
             string formattedTime = currentTime.ToString("HH:mm:ss");
             string formattedDate = currentTime.ToString("dd/MM/yyyy");
             string dateTimeString = $"{formattedDate} {formattedTime}";
             dateHour.Text = dateTimeString;
-        }
-
-        private void TimerDigitalClock_Tick(object sender, EventArgs e)
-        {
-            dateHour.Text = TimeUtility.StrCurrentTime;
-        }
-
-        private void plusHour_Click(object sender, EventArgs e)
-        {
-            TimeUtility.AddSeconds(900); // 15 Minutes
         }
     }
 }

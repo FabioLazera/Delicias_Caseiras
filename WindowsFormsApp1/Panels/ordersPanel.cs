@@ -12,6 +12,9 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class ordersPanel : Form
     {
+        public event EventHandler PlusHourClicked;
+        public event EventHandler PlusDayClicked;
+
         public ordersPanel()
         {
             InitializeComponent();
@@ -22,6 +25,18 @@ namespace WindowsFormsApp1.Panels
             newOrdersPanel newOrdersPanel = new newOrdersPanel();
             newOrdersPanel.Show();
         }
+
+        private void plusHour_Click(object sender, EventArgs e)
+        {
+            PlusHourClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void plusDay_Click(object sender, EventArgs e)
+        {
+            PlusDayClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+
 
         //private void searchTB_TextChanged(object sender, EventArgs e)
         //{

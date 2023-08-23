@@ -63,6 +63,26 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _15 {
+            get {
+                object obj = ResourceManager.GetObject("15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _15minutes {
+            get {
+                object obj = ResourceManager.GetObject("15minutes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1logo_transparent {
             get {
                 object obj = ResourceManager.GetObject("1logo_transparent", resourceCulture);
@@ -396,6 +416,26 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap shoppingCart {
             get {
                 object obj = ResourceManager.GetObject("shoppingCart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tomorrow {
+            get {
+                object obj = ResourceManager.GetObject("tomorrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ylogo_transparent1 {
+            get {
+                object obj = ResourceManager.GetObject("Ylogo_transparent1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
