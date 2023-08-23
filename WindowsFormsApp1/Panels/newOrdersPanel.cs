@@ -38,7 +38,8 @@ namespace WindowsFormsApp1
 
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
-            checkoutsPanel checkoutsPanel = new checkoutsPanel();
+            double totalCost = CalculateTotalCost();
+            checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost);
             checkoutsPanel.Show();
         }
 

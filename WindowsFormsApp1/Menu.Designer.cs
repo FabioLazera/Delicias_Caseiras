@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.optionsPanel = new System.Windows.Forms.Panel();
+            this.dateHour = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ordersBtn = new System.Windows.Forms.Button();
             this.ordersImg = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -48,10 +50,11 @@
             this.logo1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateHour = new System.Windows.Forms.Label();
             this.timerDigitalClock = new System.Windows.Forms.Timer(this.components);
+            this.plusHour = new System.Windows.Forms.Button();
             this.optionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -66,8 +69,10 @@
             // optionsPanel
             // 
             this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.optionsPanel.Controls.Add(this.plusHour);
             this.optionsPanel.Controls.Add(this.dateHour);
             this.optionsPanel.Controls.Add(this.pictureBox8);
+            this.optionsPanel.Controls.Add(this.pictureBox2);
             this.optionsPanel.Controls.Add(this.ordersBtn);
             this.optionsPanel.Controls.Add(this.ordersImg);
             this.optionsPanel.Controls.Add(this.pictureBox7);
@@ -88,15 +93,36 @@
             this.optionsPanel.Size = new System.Drawing.Size(200, 768);
             this.optionsPanel.TabIndex = 0;
             // 
+            // dateHour
+            // 
+            this.dateHour.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateHour.ForeColor = System.Drawing.Color.White;
+            this.dateHour.Location = new System.Drawing.Point(61, 20);
+            this.dateHour.Name = "dateHour";
+            this.dateHour.Size = new System.Drawing.Size(80, 39);
+            this.dateHour.TabIndex = 16;
+            this.dateHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::WindowsFormsApp1.Properties.Resources.logout;
-            this.pictureBox8.Location = new System.Drawing.Point(23, 684);
+            this.pictureBox8.Location = new System.Drawing.Point(23, 711);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(35, 35);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 15;
             this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
+            this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.clock;
+            this.pictureBox2.Location = new System.Drawing.Point(43, -6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 92);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
             // 
             // ordersBtn
             // 
@@ -107,7 +133,7 @@
             this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ordersBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordersBtn.ForeColor = System.Drawing.Color.White;
-            this.ordersBtn.Location = new System.Drawing.Point(59, 513);
+            this.ordersBtn.Location = new System.Drawing.Point(59, 540);
             this.ordersBtn.Name = "ordersBtn";
             this.ordersBtn.Size = new System.Drawing.Size(143, 70);
             this.ordersBtn.TabIndex = 2;
@@ -118,7 +144,7 @@
             // ordersImg
             // 
             this.ordersImg.Image = global::WindowsFormsApp1.Properties.Resources.orders;
-            this.ordersImg.Location = new System.Drawing.Point(23, 528);
+            this.ordersImg.Location = new System.Drawing.Point(23, 555);
             this.ordersImg.Name = "ordersImg";
             this.ordersImg.Size = new System.Drawing.Size(35, 35);
             this.ordersImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,7 +154,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::WindowsFormsApp1.Properties.Resources.delivery1;
-            this.pictureBox7.Location = new System.Drawing.Point(23, 606);
+            this.pictureBox7.Location = new System.Drawing.Point(23, 633);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(35, 35);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,7 +164,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::WindowsFormsApp1.Properties.Resources.dishes;
-            this.pictureBox6.Location = new System.Drawing.Point(23, 456);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 483);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 35);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +174,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WindowsFormsApp1.Properties.Resources.drinks;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 380);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 407);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +184,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::WindowsFormsApp1.Properties.Resources.clients;
-            this.pictureBox4.Location = new System.Drawing.Point(23, 303);
+            this.pictureBox4.Location = new System.Drawing.Point(23, 330);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +194,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.employees;
-            this.pictureBox3.Location = new System.Drawing.Point(23, 228);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 255);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -184,7 +210,7 @@
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.logoutBtn.Location = new System.Drawing.Point(59, 665);
+            this.logoutBtn.Location = new System.Drawing.Point(59, 692);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(143, 70);
             this.logoutBtn.TabIndex = 8;
@@ -201,7 +227,7 @@
             this.deliveryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deliveryBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliveryBtn.ForeColor = System.Drawing.Color.White;
-            this.deliveryBtn.Location = new System.Drawing.Point(59, 589);
+            this.deliveryBtn.Location = new System.Drawing.Point(59, 616);
             this.deliveryBtn.Name = "deliveryBtn";
             this.deliveryBtn.Size = new System.Drawing.Size(143, 70);
             this.deliveryBtn.TabIndex = 7;
@@ -217,7 +243,7 @@
             this.employeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeesBtn.ForeColor = System.Drawing.Color.White;
-            this.employeesBtn.Location = new System.Drawing.Point(59, 212);
+            this.employeesBtn.Location = new System.Drawing.Point(59, 239);
             this.employeesBtn.Name = "employeesBtn";
             this.employeesBtn.Size = new System.Drawing.Size(143, 70);
             this.employeesBtn.TabIndex = 3;
@@ -234,7 +260,7 @@
             this.dishesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dishesBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dishesBtn.ForeColor = System.Drawing.Color.White;
-            this.dishesBtn.Location = new System.Drawing.Point(59, 440);
+            this.dishesBtn.Location = new System.Drawing.Point(59, 467);
             this.dishesBtn.Name = "dishesBtn";
             this.dishesBtn.Size = new System.Drawing.Size(143, 70);
             this.dishesBtn.TabIndex = 6;
@@ -251,7 +277,7 @@
             this.clientsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientsBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientsBtn.ForeColor = System.Drawing.Color.White;
-            this.clientsBtn.Location = new System.Drawing.Point(59, 288);
+            this.clientsBtn.Location = new System.Drawing.Point(59, 315);
             this.clientsBtn.Name = "clientsBtn";
             this.clientsBtn.Size = new System.Drawing.Size(143, 70);
             this.clientsBtn.TabIndex = 4;
@@ -268,7 +294,7 @@
             this.drinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinksBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drinksBtn.ForeColor = System.Drawing.Color.White;
-            this.drinksBtn.Location = new System.Drawing.Point(59, 364);
+            this.drinksBtn.Location = new System.Drawing.Point(59, 391);
             this.drinksBtn.Name = "drinksBtn";
             this.drinksBtn.Size = new System.Drawing.Size(143, 70);
             this.drinksBtn.TabIndex = 5;
@@ -279,7 +305,7 @@
             // logo1
             // 
             this.logo1.Image = global::WindowsFormsApp1.Properties.Resources.logo_transparent1;
-            this.logo1.Location = new System.Drawing.Point(0, 3);
+            this.logo1.Location = new System.Drawing.Point(0, 44);
             this.logo1.Name = "logo1";
             this.logo1.Size = new System.Drawing.Size(200, 200);
             this.logo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,16 +332,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // dateHour
+            // plusHour
             // 
-            this.dateHour.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateHour.ForeColor = System.Drawing.Color.White;
-            this.dateHour.Location = new System.Drawing.Point(55, 9);
-            this.dateHour.Name = "dateHour";
-            this.dateHour.Size = new System.Drawing.Size(85, 39);
-            this.dateHour.TabIndex = 16;
-            this.dateHour.Text = "label1";
-            this.dateHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.plusHour.Location = new System.Drawing.Point(64, 78);
+            this.plusHour.Name = "plusHour";
+            this.plusHour.Size = new System.Drawing.Size(75, 23);
+            this.plusHour.TabIndex = 2;
+            this.plusHour.Text = "button1";
+            this.plusHour.UseVisualStyleBackColor = true;
+            this.plusHour.Click += new System.EventHandler(this.plusHour_Click);
             // 
             // Menu
             // 
@@ -330,6 +355,7 @@
             this.Text = "Menu";
             this.optionsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -365,5 +391,7 @@
         public System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label dateHour;
         private System.Windows.Forms.Timer timerDigitalClock;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button plusHour;
     }
 }

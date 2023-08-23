@@ -12,16 +12,16 @@ namespace WindowsFormsApp1
         private int _id;
         private string _orderType;
         private DateTime _orderTime;
-        private DateTime _readyForDelivery;
+        private DateTime _nextStage;
         private string _status;
         private Delivery _delivery;
 
-        public Order (int id, string orderType, DateTime orderTime, DateTime readyForDelivery, string status)
+        public Order (int id, string orderType, DateTime orderTime, DateTime nextStage, string status)
         {
             _id = id;
             _orderType = orderType;
             _orderTime = orderTime;
-            _readyForDelivery = readyForDelivery;
+            _nextStage = nextStage;
             _status = status;
         }
 
@@ -43,10 +43,10 @@ namespace WindowsFormsApp1
             set { _orderTime = value; }
         }
 
-        public DateTime ReadyForDelivery
+        public DateTime NextStage
         {
-            get { return _readyForDelivery; }
-            set { _readyForDelivery = value; }
+            get { return _nextStage; }
+            set { _nextStage = value; }
         }
 
         public string Status

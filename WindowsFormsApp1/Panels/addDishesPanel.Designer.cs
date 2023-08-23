@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addDishesPanel));
             this.addDishPanel = new System.Windows.Forms.Panel();
             this.dishIS = new System.Windows.Forms.Button();
             this.dishCloseBtn = new System.Windows.Forms.Button();
@@ -248,6 +249,7 @@
             this.ClientSize = new System.Drawing.Size(586, 591);
             this.Controls.Add(this.addDishPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "addDishesPanel";
             this.Text = "addDishesPanel";
             this.addDishPanel.ResumeLayout(false);

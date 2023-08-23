@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             CenterFormOnScreen();
-            UpdateDigitalClock();
+            //UpdateDigitalClock();
             timerDigitalClock.Start();
             timerDigitalClock.Interval = 1000; 
             timerDigitalClock.Tick += TimerDigitalClock_Tick;
@@ -101,8 +101,12 @@ namespace WindowsFormsApp1
 
         private void TimerDigitalClock_Tick(object sender, EventArgs e)
         {
-            UpdateDigitalClock();
+            dateHour.Text = TimeUtility.StrCurrentTime;
         }
 
+        private void plusHour_Click(object sender, EventArgs e)
+        {
+            TimeUtility.AddSeconds(900); // 15 Minutes
+        }
     }
 }

@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(betweenDatesPanel));
             this.betweenDatePanel = new System.Windows.Forms.Panel();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.calculateBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.endDate = new System.Windows.Forms.DateTimePicker();
@@ -36,8 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.text = new System.Windows.Forms.Label();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.calculateBtn = new System.Windows.Forms.Button();
             this.betweenDatePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +59,37 @@
             this.betweenDatePanel.Name = "betweenDatePanel";
             this.betweenDatePanel.Size = new System.Drawing.Size(481, 365);
             this.betweenDatePanel.TabIndex = 0;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.Location = new System.Drawing.Point(248, 285);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(140, 35);
+            this.closeBtn.TabIndex = 48;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // calculateBtn
+            // 
+            this.calculateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.calculateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.calculateBtn.FlatAppearance.BorderSize = 0;
+            this.calculateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calculateBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateBtn.ForeColor = System.Drawing.Color.White;
+            this.calculateBtn.Location = new System.Drawing.Point(93, 285);
+            this.calculateBtn.Name = "calculateBtn";
+            this.calculateBtn.Size = new System.Drawing.Size(140, 35);
+            this.calculateBtn.TabIndex = 47;
+            this.calculateBtn.Text = "Calculate";
+            this.calculateBtn.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -125,43 +157,13 @@
             this.text.TabIndex = 6;
             this.text.Text = "Calculate Between Dates";
             // 
-            // closeBtn
-            // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(248, 285);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(140, 35);
-            this.closeBtn.TabIndex = 48;
-            this.closeBtn.Text = "Close";
-            this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // calculateBtn
-            // 
-            this.calculateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.calculateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.calculateBtn.FlatAppearance.BorderSize = 0;
-            this.calculateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.calculateBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateBtn.ForeColor = System.Drawing.Color.White;
-            this.calculateBtn.Location = new System.Drawing.Point(93, 285);
-            this.calculateBtn.Name = "calculateBtn";
-            this.calculateBtn.Size = new System.Drawing.Size(140, 35);
-            this.calculateBtn.TabIndex = 47;
-            this.calculateBtn.Text = "Calculate";
-            this.calculateBtn.UseVisualStyleBackColor = false;
-            // 
             // betweenDatesPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(481, 365);
             this.Controls.Add(this.betweenDatePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "betweenDatesPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "betweenDatesPanel";

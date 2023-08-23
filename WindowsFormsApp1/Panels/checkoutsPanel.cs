@@ -12,11 +12,14 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class checkoutsPanel : Form
     {
-        public checkoutsPanel()
+        private double totalCost;
+        public checkoutsPanel(double totalCost)
         {
             InitializeComponent();
             CenterFormOnScreen();
             LoadClientsToComboBox();
+            this.totalCost = totalCost;
+            checkoutWD.Text = totalCost.ToString("F2") + "€";
         }
 
         private void CenterFormOnScreen()
@@ -35,9 +38,73 @@ namespace WindowsFormsApp1.Panels
 
             foreach (Client client in clients)
             {
-                ceckoutClient.Items.Add(client.Name);
+                checkoutClient.Items.Add(client.Name);
             }
         }
 
+        private void UpdateCheckoutValues()
+        {
+            if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
+            {
+                double discountAmount = this.totalCost * discount / 100;
+                double finalAmountToPay = this.totalCost - discountAmount;
+
+                checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
+
+                if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
+                {
+                    double changeAmount = cashReceived - finalAmountToPay;
+                    checkoutMC.Text = changeAmount.ToString("F2") + " €";
+                }
+                else
+                {
+                    checkoutMC.Text = "Insufficient cash";
+                }
+            }
+            else
+            {
+                checkoutFAP.Text = "";
+                checkoutMC.Text = "";
+            }
+        }
+
+        private void UpdateCheckoutButtonStatus()
+        {
+            bool discountValid = double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100;
+            bool cashReceivedValid = double.TryParse(checkoutCashR.Text, out double cashReceived);
+            bool sufficientCash = checkoutMC.Text != "Insufficient cash";
+            bool clientSelected = checkoutClient.SelectedIndex != -1;
+            bool paymentMethodSelected = checkoutPM.SelectedIndex != -1;
+            bool orderTypeSelected = checkoutOT.SelectedIndex != -1;
+
+            checkoutSB.Enabled = discountValid && cashReceivedValid && sufficientCash && clientSelected && paymentMethodSelected && orderTypeSelected;
+        }
+
+        private void checkoutDiscount_TextChanged(object sender, EventArgs e)
+        {
+            UpdateCheckoutValues();
+            UpdateCheckoutButtonStatus();
+        }
+
+        private void checkoutCashR_TextChanged(object sender, EventArgs e)
+        {
+            UpdateCheckoutValues();
+            UpdateCheckoutButtonStatus();
+        }
+
+        private void checkoutClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCheckoutButtonStatus();
+        }
+
+        private void checkoutPM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCheckoutButtonStatus();
+        }
+
+        private void checkoutOT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCheckoutButtonStatus();
+        }
     }
 }

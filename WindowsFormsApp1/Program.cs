@@ -33,5 +33,42 @@ namespace WindowsFormsApp1
                 Directory.CreateDirectory(csvFolderPath);
             }
         }
+
+    }
+    public static class TimeUtility
+    {
+        private static DateTime _currentTime = DateTime.Now;
+        private static Timer _timer;
+
+
+
+        public static DateTime CurrentTime
+        {
+            get { return _currentTime; }
+            set { _currentTime = value; }
+        }
+
+        public static string StrCurrentTime
+        {
+            get { return _currentTime.ToString("dd/MM/yyyy HH:mm:ss"); }
+        }
+
+        public static void AddSeconds(int seconds)
+        {
+            _currentTime = _currentTime.AddSeconds(seconds);
+        }
+
+        static TimeUtility()
+        {
+            _timer = new Timer();
+            _timer.Interval = 1000;
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+        }
+
+        private static void Timer_Tick(object sender, EventArgs e)
+        {
+            _currentTime = _currentTime.AddSeconds(1);
+        }
     }
 }

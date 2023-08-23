@@ -48,7 +48,6 @@
             this.oTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,7 +123,6 @@
             this.oTime,
             this.oForecast,
             this.oCost,
-            this.gridEdit,
             this.gridDelete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -265,18 +263,6 @@
             this.oCost.Name = "oCost";
             this.oCost.ReadOnly = true;
             // 
-            // gridEdit
-            // 
-            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridEdit.FillWeight = 50F;
-            this.gridEdit.HeaderText = "";
-            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
-            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridEdit.MinimumWidth = 50;
-            this.gridEdit.Name = "gridEdit";
-            this.gridEdit.ReadOnly = true;
-            this.gridEdit.Width = 50;
-            // 
             // gridDelete
             // 
             this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -329,7 +315,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn oForecast;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCost;
-        private System.Windows.Forms.DataGridViewImageColumn gridEdit;
         private System.Windows.Forms.DataGridViewImageColumn gridDelete;
     }
 }
