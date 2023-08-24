@@ -55,14 +55,26 @@ namespace WindowsFormsApp1.Panels
 
                 checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
 
-                if (checkoutPM.SelectedItem == "Cash" && double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
+                if (checkoutPM.SelectedItem == "Cash")
                 {
-                    double changeAmount = cashReceived - finalAmountToPay;
-                    checkoutMC.Text = changeAmount.ToString("F2") + " €";
+                    if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
+                    {
+                        double changeAmount = cashReceived - finalAmountToPay;
+                        checkoutMC.Text = changeAmount.ToString("F2") + " €";
+                    }
+                    else
+                    {
+                        checkoutMC.Text = "Insufficient cash";
+                    }
+                }
+                else if (checkoutPM.SelectedItem == "MbWay" || checkoutPM.SelectedItem == "Visa")
+                {
+                    checkoutCashR.Text = finalAmountToPay.ToString("F2");
+                    checkoutMC.Text = "0 €";
                 }
                 else
                 {
-                    checkoutMC.Text = "Insufficient cash";
+                    checkoutMC.Text = "";
                 }
             }
             else
@@ -76,13 +88,22 @@ namespace WindowsFormsApp1.Panels
         private void UpdateCheckoutButtonStatus()
         {
             bool discountValid = double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100;
-            bool cashReceivedValid = double.TryParse(checkoutCashR.Text, out double cashReceived);
-            bool sufficientCash = checkoutMC.Text != "Insufficient cash";
             bool clientSelected = checkoutClient.SelectedIndex != -1;
             bool paymentMethodSelected = checkoutPM.SelectedIndex != -1;
             bool orderTypeSelected = checkoutOT.SelectedIndex != -1;
 
-            checkoutSB.Enabled = discountValid && cashReceivedValid && sufficientCash && clientSelected && paymentMethodSelected && orderTypeSelected;
+            bool cashReceivedValid = double.TryParse(checkoutCashR.Text, out double cashReceived);
+
+            bool paymentMethodIsCash = checkoutPM.SelectedItem == "Cash";
+            bool paymentMethodIsMbWayOrVisa = checkoutPM.SelectedItem == "MbWay" || checkoutPM.SelectedItem == "Visa";
+
+            bool validCashReceivedForCash = paymentMethodIsCash && cashReceivedValid && cashReceived >= double.Parse(checkoutFAP.Text.Replace(" €", ""));
+            bool validPaymentMethod = paymentMethodIsCash || paymentMethodIsMbWayOrVisa;
+
+            bool checkoutSBEnabled = discountValid && clientSelected && paymentMethodSelected && orderTypeSelected && validPaymentMethod &&
+                (validCashReceivedForCash || paymentMethodIsMbWayOrVisa);
+
+            checkoutSB.Enabled = checkoutSBEnabled;
         }
 
         private void checkoutDiscount_TextChanged(object sender, EventArgs e)
