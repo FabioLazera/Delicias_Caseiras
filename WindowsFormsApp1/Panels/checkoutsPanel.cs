@@ -48,35 +48,27 @@ namespace WindowsFormsApp1.Panels
 
         private void UpdateCheckoutValues()
         {
-            if (checkoutPM.SelectedItem != "Cash")
+            if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
             {
-                checkoutCashR.Text = "";
-                checkoutMC.Text = "";
-            }
-            else
-            {
-                if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
+                double discountAmount = this.totalCost * discount / 100;
+                double finalAmountToPay = this.totalCost - discountAmount;
+
+                checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
+
+                if (checkoutPM.SelectedItem == "Cash" && double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
                 {
-                    double discountAmount = this.totalCost * discount / 100;
-                    double finalAmountToPay = this.totalCost - discountAmount;
-
-                    checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
-
-                    if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
-                    {
-                        double changeAmount = cashReceived - finalAmountToPay;
-                        checkoutMC.Text = changeAmount.ToString("F2") + " €";
-                    }
-                    else
-                    {
-                        checkoutMC.Text = "Insufficient cash";
-                    }
+                    double changeAmount = cashReceived - finalAmountToPay;
+                    checkoutMC.Text = changeAmount.ToString("F2") + " €";
                 }
                 else
                 {
-                    checkoutFAP.Text = "";
-                    checkoutMC.Text = "";
+                    checkoutMC.Text = "Insufficient cash";
                 }
+            }
+            else
+            {
+                checkoutFAP.Text = "";
+                checkoutMC.Text = "";
             }
             UpdateCheckoutButtonStatus();
         }

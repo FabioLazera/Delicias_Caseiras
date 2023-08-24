@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Order order in orders)
                 {
-                    writer.WriteLine($"{order.ID},{order.ClientName},{order.OrderType},{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")},{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")},{order.Status},{order.Amount}");
+                    writer.WriteLine($"{order.ID}|{order.ClientName}|{order.OrderType}|{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")}|{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")}|{order.Status}|{order.Amount}");
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split(',');
+                        string[] parts = line.Split('|');
                         if (parts.Length == 7)
                         {
                             int id = Convert.ToInt32(parts[0]);
