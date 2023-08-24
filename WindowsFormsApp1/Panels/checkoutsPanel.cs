@@ -14,8 +14,8 @@ namespace WindowsFormsApp1.Panels
     {
         private double totalCost;
         private string orderTimeValue;
-        public event EventHandler OrderCreated;
-        public checkoutsPanel(double totalCost, string orderTimeValue)
+        private ordersPanel ordersPanelParent1;
+        public checkoutsPanel(double totalCost, string orderTimeValue, ordersPanel ordersPanelParent1)
         {
             InitializeComponent();
             CenterFormOnScreen();
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Panels
             this.totalCost = totalCost;
             this.orderTimeValue = orderTimeValue;
             checkoutWD.Text = totalCost.ToString("F2") + "€";
-            
+            this.ordersPanelParent1 = ordersPanelParent1;
         }
 
         private void CenterFormOnScreen()
@@ -135,6 +135,8 @@ namespace WindowsFormsApp1.Panels
                 OrderList.AddOrder(newOrder);
 
                 MessageBox.Show("Order created successfully!");
+                this.ordersPanelParent1.RefreshDataGridView();
+                OrderList.SaveToCSV("orders.csv");
                 this.Close();
             }
             else

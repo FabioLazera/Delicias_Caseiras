@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                return 0.0; // Valor padrão ou tratamento de erro
+                return 0.0; 
             }
         }
     }

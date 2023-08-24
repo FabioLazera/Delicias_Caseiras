@@ -14,7 +14,9 @@ namespace WindowsFormsApp1
     public partial class newOrdersPanel : Form
     {
         private List<Dish> selectedDishes = new List<Dish>();
-        public newOrdersPanel()
+        private ordersPanel ordersPanelParent;
+
+        public newOrdersPanel(ordersPanel ordersPanelParent)
         {
             InitializeComponent();
             CenterFormOnScreen();
@@ -24,6 +26,7 @@ namespace WindowsFormsApp1
             checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
             checkoutGrid.CellClick += checkoutGrid_CellClick;
             checkoutBtn.Enabled = false;
+            this.ordersPanelParent = ordersPanelParent;
         }
 
         private void CenterFormOnScreen()
@@ -42,7 +45,7 @@ namespace WindowsFormsApp1
             Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
             if (menuForm != null)
             {
-                checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour);
+                checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour, this.ordersPanelParent);
                 checkoutsPanel.Show();
                 checkoutGrid.Rows.Clear();
                 totalCost.Text = "Total: 0€";

@@ -14,16 +14,16 @@ namespace WindowsFormsApp1.Panels
     {
         public event EventHandler PlusHourClicked;
         public event EventHandler PlusDayClicked;
-
         public ordersPanel()
         {
             InitializeComponent();
-            this.Load += ordersPanel_Load;
+            OrderList.LoadOrderIfIsNeeded();
+            RefreshDataGridView();
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)
         {
-            newOrdersPanel newOrdersPanel = new newOrdersPanel();
+            newOrdersPanel newOrdersPanel = new newOrdersPanel(this);
             newOrdersPanel.Show();
         }
 
@@ -37,28 +37,38 @@ namespace WindowsFormsApp1.Panels
             PlusDayClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        private void ordersPanel_Load(object sender, EventArgs e)
+        public void RefreshDataGridView()
         {
-            // Obtém a lista de pedidos
-            List<Order> orders = OrderList.GetOrders();
-
-            // Limpa a grade antes de preencher
             ordersGrid.Rows.Clear();
-
-            // Preenche a grade com os detalhes dos pedidos
-            foreach (Order order in orders)
+            foreach (Order order in OrderList.GetOrders())
             {
-                ordersGrid.Rows.Add(
-                    order.ID,
-                    order.ClientName,
-                    order.Status,
-                    order.OrderType,
-                    order.OrderTime,
-                    order.NextStage,
-                    order.Amount
-                );
+                ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status.ToString(), order.OrderType, order.OrderTime, order.NextStage, order.Amount);
             }
         }
+
+        private void ordersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (ordersGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
+                {
+                    int rowIndex = e.RowIndex;
+
+                    if (imageColumn.Name == "gridDelete")
+                    {
+                        DialogResult result = MessageBox.Show("Do you want to remove the Order?", "Delete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            OrderList.DeleteOrder(rowIndex);
+                            OrderList.SaveToCSV("orders.csv");
+                            RefreshDataGridView();
+                        }
+                    }
+                }
+            }
+        }
+
 
 
 
