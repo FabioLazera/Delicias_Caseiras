@@ -36,6 +36,13 @@
             this.plusHour = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.ordersPImg = new System.Windows.Forms.PictureBox();
+            this.ordersLabel = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.oID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oStatus = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -44,13 +51,6 @@
             this.oForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.ordersPImg = new System.Windows.Forms.PictureBox();
-            this.ordersLabel = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plusDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plusHour)).BeginInit();
@@ -166,72 +166,6 @@
             this.ordersGrid.TabIndex = 35;
             this.ordersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGrid_CellClick);
             // 
-            // oID
-            // 
-            this.oID.FillWeight = 50F;
-            this.oID.HeaderText = "ID";
-            this.oID.MinimumWidth = 50;
-            this.oID.Name = "oID";
-            this.oID.ReadOnly = true;
-            // 
-            // oClient
-            // 
-            this.oClient.FillWeight = 125F;
-            this.oClient.HeaderText = "Client";
-            this.oClient.MinimumWidth = 125;
-            this.oClient.Name = "oClient";
-            this.oClient.ReadOnly = true;
-            // 
-            // oStatus
-            // 
-            this.oStatus.HeaderText = "Status";
-            this.oStatus.MinimumWidth = 100;
-            this.oStatus.Name = "oStatus";
-            this.oStatus.ReadOnly = true;
-            this.oStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.oStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // oType
-            // 
-            this.oType.HeaderText = "Order Type";
-            this.oType.MinimumWidth = 100;
-            this.oType.Name = "oType";
-            this.oType.ReadOnly = true;
-            // 
-            // oTime
-            // 
-            this.oTime.HeaderText = "Order Time";
-            this.oTime.MinimumWidth = 100;
-            this.oTime.Name = "oTime";
-            this.oTime.ReadOnly = true;
-            // 
-            // oForecast
-            // 
-            this.oForecast.HeaderText = "NStage Forecast";
-            this.oForecast.MinimumWidth = 100;
-            this.oForecast.Name = "oForecast";
-            this.oForecast.ReadOnly = true;
-            // 
-            // oAmount
-            // 
-            this.oAmount.FillWeight = 75F;
-            this.oAmount.HeaderText = "Amount";
-            this.oAmount.MinimumWidth = 75;
-            this.oAmount.Name = "oAmount";
-            this.oAmount.ReadOnly = true;
-            // 
-            // gridDelete
-            // 
-            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridDelete.FillWeight = 50F;
-            this.gridDelete.HeaderText = "";
-            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
-            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridDelete.MinimumWidth = 50;
-            this.gridDelete.Name = "gridDelete";
-            this.gridDelete.ReadOnly = true;
-            this.gridDelete.Width = 50;
-            // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
@@ -309,6 +243,74 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // oID
+            // 
+            this.oID.FillWeight = 50F;
+            this.oID.HeaderText = "ID";
+            this.oID.MinimumWidth = 50;
+            this.oID.Name = "oID";
+            this.oID.ReadOnly = true;
+            // 
+            // oClient
+            // 
+            this.oClient.FillWeight = 125F;
+            this.oClient.HeaderText = "Client";
+            this.oClient.MinimumWidth = 125;
+            this.oClient.Name = "oClient";
+            this.oClient.ReadOnly = true;
+            // 
+            // oStatus
+            // 
+            this.oStatus.HeaderText = "Status";
+            this.oStatus.MinimumWidth = 100;
+            this.oStatus.Name = "oStatus";
+            this.oStatus.ReadOnly = true;
+            this.oStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.oStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // oType
+            // 
+            this.oType.HeaderText = "Order Type";
+            this.oType.MinimumWidth = 100;
+            this.oType.Name = "oType";
+            this.oType.ReadOnly = true;
+            // 
+            // oTime
+            // 
+            this.oTime.FillWeight = 175F;
+            this.oTime.HeaderText = "Order Time";
+            this.oTime.MinimumWidth = 175;
+            this.oTime.Name = "oTime";
+            this.oTime.ReadOnly = true;
+            // 
+            // oForecast
+            // 
+            this.oForecast.FillWeight = 175F;
+            this.oForecast.HeaderText = "NStage Forecast";
+            this.oForecast.MinimumWidth = 175;
+            this.oForecast.Name = "oForecast";
+            this.oForecast.ReadOnly = true;
+            // 
+            // oAmount
+            // 
+            this.oAmount.FillWeight = 75F;
+            this.oAmount.HeaderText = "Amount";
+            this.oAmount.MinimumWidth = 75;
+            this.oAmount.Name = "oAmount";
+            this.oAmount.ReadOnly = true;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
             // 
             // ordersPanel
             // 

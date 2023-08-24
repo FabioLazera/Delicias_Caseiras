@@ -106,11 +106,6 @@ namespace WindowsFormsApp1
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            DrinkList.SaveToCSV("drinks.csv");
-            DishList.SaveToCSV("dishes.csv");
-            ClientList.SaveToCSV("clients.csv");
-            EmployeeList.SaveToCSV("employees.csv");
-            OrderList.SaveToCSV("orders.csv");
             Application.Exit();
         }
 

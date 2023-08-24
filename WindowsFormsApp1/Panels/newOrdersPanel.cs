@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             CenterFormOnScreen();
             DishList.LoadDishesIfNeeded();
             DrinkList.LoadDrinksIfNeeded();
+            ClientList.LoadClientsIfNeeded();
             checkoutGrid.RowsAdded += checkoutGrid_RowsAdded;
             checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
             checkoutGrid.CellClick += checkoutGrid_CellClick;

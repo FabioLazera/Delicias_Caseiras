@@ -77,5 +77,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        public static void LoadClientsIfNeeded()
+        {
+            if (clients.Count == 0)
+            {
+                LoadFromCSV("clients.csv");
+            }
+        }
     }
 }
