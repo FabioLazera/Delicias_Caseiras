@@ -28,6 +28,11 @@ namespace WindowsFormsApp1
             
         }
 
+        public string DateHour
+        {
+            get { return dateHour.Text; }
+        }
+
         private void CenterFormOnScreen()
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -122,5 +127,6 @@ namespace WindowsFormsApp1
             string dateTimeString = $"{formattedDate} {formattedTime}";
             dateHour.Text = dateTimeString;
         }
+
     }
 }

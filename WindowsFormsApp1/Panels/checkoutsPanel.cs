@@ -13,13 +13,17 @@ namespace WindowsFormsApp1.Panels
     public partial class checkoutsPanel : Form
     {
         private double totalCost;
-        public checkoutsPanel(double totalCost)
+        private string orderTimeValue;
+        public event EventHandler OrderCreated;
+        public checkoutsPanel(double totalCost, string orderTimeValue)
         {
             InitializeComponent();
             CenterFormOnScreen();
             LoadClientsToComboBox();
             this.totalCost = totalCost;
+            this.orderTimeValue = orderTimeValue;
             checkoutWD.Text = totalCost.ToString("F2") + "€";
+            
         }
 
         private void CenterFormOnScreen()
@@ -44,28 +48,37 @@ namespace WindowsFormsApp1.Panels
 
         private void UpdateCheckoutValues()
         {
-            if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
+            if (checkoutPM.SelectedItem != "Cash")
             {
-                double discountAmount = this.totalCost * discount / 100;
-                double finalAmountToPay = this.totalCost - discountAmount;
-
-                checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
-
-                if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
-                {
-                    double changeAmount = cashReceived - finalAmountToPay;
-                    checkoutMC.Text = changeAmount.ToString("F2") + " €";
-                }
-                else
-                {
-                    checkoutMC.Text = "Insufficient cash";
-                }
+                checkoutCashR.Text = "";
+                checkoutMC.Text = "";
             }
             else
             {
-                checkoutFAP.Text = "";
-                checkoutMC.Text = "";
+                if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
+                {
+                    double discountAmount = this.totalCost * discount / 100;
+                    double finalAmountToPay = this.totalCost - discountAmount;
+
+                    checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
+
+                    if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
+                    {
+                        double changeAmount = cashReceived - finalAmountToPay;
+                        checkoutMC.Text = changeAmount.ToString("F2") + " €";
+                    }
+                    else
+                    {
+                        checkoutMC.Text = "Insufficient cash";
+                    }
+                }
+                else
+                {
+                    checkoutFAP.Text = "";
+                    checkoutMC.Text = "";
+                }
             }
+            UpdateCheckoutButtonStatus();
         }
 
         private void UpdateCheckoutButtonStatus()
@@ -99,12 +112,35 @@ namespace WindowsFormsApp1.Panels
 
         private void checkoutPM_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateCheckoutValues();
             UpdateCheckoutButtonStatus();
         }
 
         private void checkoutOT_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateCheckoutButtonStatus();
+        }
+
+        private void checkoutSB_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(checkoutFAP.Text.Replace(" €", ""), out double amount))
+            {
+                string clientName = checkoutClient.SelectedItem.ToString();
+                string status = "Pending";
+                string orderType = checkoutOT.SelectedItem.ToString();
+                DateTime orderTime = DateTime.Parse(orderTimeValue);
+                DateTime nextStage = orderTime.AddMinutes(15);
+
+                Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
+                OrderList.AddOrder(newOrder);
+
+                MessageBox.Show("Order created successfully!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error creating order. Check the entered values.");
+            }
         }
     }
 }

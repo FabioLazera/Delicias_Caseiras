@@ -38,9 +38,19 @@ namespace WindowsFormsApp1
 
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
-            double totalCost = CalculateTotalCost();
-            checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost);
-            checkoutsPanel.Show();
+            double totalCost1 = CalculateTotalCost();
+            Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
+            if (menuForm != null)
+            {
+                checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour);
+                checkoutsPanel.Show();
+                checkoutGrid.Rows.Clear();
+                totalCost.Text = "Total: 0€";
+            }
+            else
+            {
+                MessageBox.Show("O formulário Menu não está aberto.");
+            }
         }
 
         private void dishesBtn_Click(object sender, EventArgs e)

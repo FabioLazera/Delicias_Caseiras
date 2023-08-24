@@ -14,18 +14,17 @@ namespace WindowsFormsApp1
         private double _price;
         private int _stock;
 
-        public Drink(string name, string description, double price, int stock, int id, string orderType, DateTime orderTime, DateTime readyForDelivery, string status)
-        : base(id, orderType, orderTime, readyForDelivery, status)
+        public Drink(string name, string description, double price, int stock, int id, string clientName, string status, string orderType, DateTime orderTime, DateTime nextStage, double amount)
+        : base(id, clientName, status, orderType, orderTime, nextStage, amount)
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
-
         }
 
         public Drink(string name, string description, double price, int stock)
-        : base(0, null, DateTime.MinValue, DateTime.MinValue, null) 
+        : base(0, null, "", "", DateTime.MinValue, DateTime.MinValue, 0)
         {
             _name = name;
             _description = description;

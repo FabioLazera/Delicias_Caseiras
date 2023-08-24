@@ -264,6 +264,7 @@
             this.checkoutSB.TabIndex = 17;
             this.checkoutSB.Text = "Save";
             this.checkoutSB.UseVisualStyleBackColor = false;
+            this.checkoutSB.Click += new System.EventHandler(this.checkoutSB_Click);
             // 
             // checkoutCashR
             // 

@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.Panels
         public ordersPanel()
         {
             InitializeComponent();
+            this.Load += ordersPanel_Load;
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)
@@ -34,6 +35,29 @@ namespace WindowsFormsApp1.Panels
         private void plusDay_Click(object sender, EventArgs e)
         {
             PlusDayClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ordersPanel_Load(object sender, EventArgs e)
+        {
+            // Obtém a lista de pedidos
+            List<Order> orders = OrderList.GetOrders();
+
+            // Limpa a grade antes de preencher
+            ordersGrid.Rows.Clear();
+
+            // Preenche a grade com os detalhes dos pedidos
+            foreach (Order order in orders)
+            {
+                ordersGrid.Rows.Add(
+                    order.ID,
+                    order.ClientName,
+                    order.Status,
+                    order.OrderType,
+                    order.OrderTime,
+                    order.NextStage,
+                    order.Amount
+                );
+            }
         }
 
 

@@ -10,25 +10,40 @@ namespace WindowsFormsApp1
     public class Order
     {
         private int _id;
+        private string _clientName;
+        private string _status;
         private string _orderType;
         private DateTime _orderTime;
         private DateTime _nextStage;
-        private string _status;
-        private Delivery _delivery;
+        private double _amount;
 
-        public Order (int id, string orderType, DateTime orderTime, DateTime nextStage, string status)
+        public Order (int id,string clientName, string status, string orderType, DateTime orderTime, DateTime nextStage,  double amount)
         {
             _id = id;
+            _clientName = clientName;
+            _status = status;
             _orderType = orderType;
             _orderTime = orderTime;
             _nextStage = nextStage;
-            _status = status;
+            _amount = amount;
         }
 
         public int ID
         {
             get { return _id; }
             set { _id = value; }
+        }
+
+        public string ClientName
+        {
+            get { return _clientName; }
+            set { _clientName = value; }
+        }
+
+        public string Status
+        {
+            get { return _status; }
+            set { _status = value; }
         }
 
         public string OrderType
@@ -49,16 +64,10 @@ namespace WindowsFormsApp1
             set { _nextStage = value; }
         }
 
-        public string Status
+        public double Amount
         {
-            get { return _status; }
-            set { _status = value; }
-        }
-
-        public Delivery Delivery
-        {
-            get { return _delivery; }
-            set { _delivery = value; }
+            get { return _amount; }
+            set { _amount = value; }
         }
     }
 }
