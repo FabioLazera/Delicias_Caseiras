@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,22 +70,25 @@ namespace WindowsFormsApp1.Panels
             }
         }
 
+        private void searchTB_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = searchTB.Text.Trim().ToLower();
 
+            ordersGrid.Rows.Clear();
 
+            foreach (Order order in OrderList.GetOrders())
+            {
+                if (order.ClientName.ToLower().StartsWith(searchValue))
+                {
+                    ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                }
+            }
+        }
 
-        //private void searchTB_TextChanged(object sender, EventArgs e)
-        //{
-        //    string searchValue = searchTB.Text.Trim().ToLower();
-        //
-        //    ordersGrid.Rows.Clear();
-        //
-        //    foreach (Order order in OrderList.GetOrders())
-        //    {
-        //        if (order.clientList.Name.ToLower().StartsWith(searchValue))
-        //        {
-        //            ordersGrid.Rows.Add(Address, client.NIF);
-        //        }
-        //    }
-        //}
+        private void printer_Click(object sender, EventArgs e)
+        {
+            OrderList.SaveOrdersToCSV("ordersPlaced.csv");
+            MessageBox.Show("Orders saved to CSV successfully!");
+        }
     }
 }

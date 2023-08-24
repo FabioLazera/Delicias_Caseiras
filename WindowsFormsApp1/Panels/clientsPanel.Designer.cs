@@ -32,25 +32,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.clientPanel = new System.Windows.Forms.Panel();
+            this.calculatorImg = new System.Windows.Forms.PictureBox();
             this.clientsGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.clientsLabel = new System.Windows.Forms.Label();
             this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.calculatorImg = new System.Windows.Forms.PictureBox();
             this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
             this.clientsPImg = new System.Windows.Forms.PictureBox();
+            this.clientsLabel = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.clientPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsPImg)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,18 @@
             this.clientPanel.Name = "clientPanel";
             this.clientPanel.Size = new System.Drawing.Size(824, 768);
             this.clientPanel.TabIndex = 0;
+            // 
+            // calculatorImg
+            // 
+            this.calculatorImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.calculatorImg.Image = global::WindowsFormsApp1.Properties.Resources.calculator;
+            this.calculatorImg.Location = new System.Drawing.Point(122, 77);
+            this.calculatorImg.Name = "calculatorImg";
+            this.calculatorImg.Size = new System.Drawing.Size(65, 65);
+            this.calculatorImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.calculatorImg.TabIndex = 29;
+            this.calculatorImg.TabStop = false;
+            this.calculatorImg.Click += new System.EventHandler(this.calculatorImg_Click);
             // 
             // clientsGrid
             // 
@@ -118,54 +130,10 @@
             this.clientsGrid.ReadOnly = true;
             this.clientsGrid.RowHeadersVisible = false;
             this.clientsGrid.RowHeadersWidth = 51;
-            this.clientsGrid.RowTemplate.Height = 24;
+            this.clientsGrid.RowTemplate.Height = 28;
             this.clientsGrid.Size = new System.Drawing.Size(755, 535);
             this.clientsGrid.TabIndex = 28;
             this.clientsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientsGrid_CellClick);
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.searchLabel.Location = new System.Drawing.Point(590, 95);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(91, 18);
-            this.searchLabel.TabIndex = 27;
-            this.searchLabel.Text = "Search Here";
-            // 
-            // separator
-            // 
-            this.separator.AutoSize = true;
-            this.separator.BackColor = System.Drawing.Color.Transparent;
-            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.separator.Location = new System.Drawing.Point(34, 163);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(855, 20);
-            this.separator.TabIndex = 25;
-            this.separator.Text = "_________________________________________________________________________________" +
-    "_____________";
-            // 
-            // searchTB
-            // 
-            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(557, 115);
-            this.searchTB.Multiline = true;
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(230, 30);
-            this.searchTB.TabIndex = 24;
-            // 
-            // clientsLabel
-            // 
-            this.clientsLabel.AutoSize = true;
-            this.clientsLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.clientsLabel.Location = new System.Drawing.Point(36, 38);
-            this.clientsLabel.Name = "clientsLabel";
-            this.clientsLabel.Size = new System.Drawing.Size(91, 26);
-            this.clientsLabel.TabIndex = 22;
-            this.clientsLabel.Text = "Clients";
             // 
             // cName
             // 
@@ -198,40 +166,6 @@
             this.cNIF.Name = "cNIF";
             this.cNIF.ReadOnly = true;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::WindowsFormsApp1.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 50;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.FillWeight = 50F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 50;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // calculatorImg
-            // 
-            this.calculatorImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calculatorImg.Image = global::WindowsFormsApp1.Properties.Resources.calculator;
-            this.calculatorImg.Location = new System.Drawing.Point(122, 77);
-            this.calculatorImg.Name = "calculatorImg";
-            this.calculatorImg.Size = new System.Drawing.Size(65, 65);
-            this.calculatorImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.calculatorImg.TabIndex = 29;
-            this.calculatorImg.TabStop = false;
-            this.calculatorImg.Click += new System.EventHandler(this.calculatorImg_Click);
-            // 
             // gridEdit
             // 
             this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -256,6 +190,18 @@
             this.gridDelete.ReadOnly = true;
             this.gridDelete.Width = 50;
             // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.searchLabel.Location = new System.Drawing.Point(590, 95);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(91, 18);
+            this.searchLabel.TabIndex = 27;
+            this.searchLabel.Text = "Search Here";
+            // 
             // searchImg
             // 
             this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
@@ -265,6 +211,28 @@
             this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.searchImg.TabIndex = 26;
             this.searchImg.TabStop = false;
+            // 
+            // separator
+            // 
+            this.separator.AutoSize = true;
+            this.separator.BackColor = System.Drawing.Color.Transparent;
+            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.separator.Location = new System.Drawing.Point(34, 163);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(855, 20);
+            this.separator.TabIndex = 25;
+            this.separator.Text = "_________________________________________________________________________________" +
+    "_____________";
+            // 
+            // searchTB
+            // 
+            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTB.Location = new System.Drawing.Point(557, 115);
+            this.searchTB.Multiline = true;
+            this.searchTB.Name = "searchTB";
+            this.searchTB.Size = new System.Drawing.Size(230, 30);
+            this.searchTB.TabIndex = 24;
             // 
             // clientsPImg
             // 
@@ -278,6 +246,38 @@
             this.clientsPImg.TabStop = false;
             this.clientsPImg.Click += new System.EventHandler(this.clientsPImg_Click);
             // 
+            // clientsLabel
+            // 
+            this.clientsLabel.AutoSize = true;
+            this.clientsLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.clientsLabel.Location = new System.Drawing.Point(36, 38);
+            this.clientsLabel.Name = "clientsLabel";
+            this.clientsLabel.Size = new System.Drawing.Size(91, 26);
+            this.clientsLabel.TabIndex = 22;
+            this.clientsLabel.Text = "Clients";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 50;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.FillWeight = 50F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 50;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // clientsPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -288,8 +288,8 @@
             this.Text = "clientsPanel";
             this.clientPanel.ResumeLayout(false);
             this.clientPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsPImg)).EndInit();
             this.ResumeLayout(false);

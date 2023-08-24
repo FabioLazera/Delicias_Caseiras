@@ -117,7 +117,7 @@
             this.employeesGrid.ReadOnly = true;
             this.employeesGrid.RowHeadersVisible = false;
             this.employeesGrid.RowHeadersWidth = 51;
-            this.employeesGrid.RowTemplate.Height = 24;
+            this.employeesGrid.RowTemplate.Height = 28;
             this.employeesGrid.Size = new System.Drawing.Size(755, 535);
             this.employeesGrid.TabIndex = 21;
             this.employeesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesGrid_CellClick);

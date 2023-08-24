@@ -33,18 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dishPanel = new System.Windows.Forms.Panel();
             this.dishesGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.dishesPImg = new System.Windows.Forms.PictureBox();
-            this.dishesLabel = new System.Windows.Forms.Label();
             this.dName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.dishesPImg = new System.Windows.Forms.PictureBox();
+            this.dishesLabel = new System.Windows.Forms.Label();
             this.dishPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dishesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -113,10 +113,64 @@
             this.dishesGrid.ReadOnly = true;
             this.dishesGrid.RowHeadersVisible = false;
             this.dishesGrid.RowHeadersWidth = 51;
-            this.dishesGrid.RowTemplate.Height = 24;
+            this.dishesGrid.RowTemplate.Height = 28;
             this.dishesGrid.Size = new System.Drawing.Size(755, 535);
             this.dishesGrid.TabIndex = 42;
             this.dishesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dishesGrid_CellClick);
+            // 
+            // dName
+            // 
+            this.dName.FillWeight = 125F;
+            this.dName.HeaderText = "Name";
+            this.dName.MinimumWidth = 125;
+            this.dName.Name = "dName";
+            this.dName.ReadOnly = true;
+            // 
+            // dDescription
+            // 
+            this.dDescription.FillWeight = 200F;
+            this.dDescription.HeaderText = "Description";
+            this.dDescription.MinimumWidth = 200;
+            this.dDescription.Name = "dDescription";
+            this.dDescription.ReadOnly = true;
+            // 
+            // dPrice
+            // 
+            this.dPrice.HeaderText = "Price";
+            this.dPrice.MinimumWidth = 100;
+            this.dPrice.Name = "dPrice";
+            this.dPrice.ReadOnly = true;
+            // 
+            // dStock
+            // 
+            this.dStock.HeaderText = "Stock";
+            this.dStock.MinimumWidth = 100;
+            this.dStock.Name = "dStock";
+            this.dStock.ReadOnly = true;
+            // 
+            // gridEdit
+            // 
+            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridEdit.FillWeight = 50F;
+            this.gridEdit.HeaderText = "";
+            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridEdit.MinimumWidth = 50;
+            this.gridEdit.Name = "gridEdit";
+            this.gridEdit.ReadOnly = true;
+            this.gridEdit.Width = 50;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
             // 
             // searchLabel
             // 
@@ -183,60 +237,6 @@
             this.dishesLabel.Size = new System.Drawing.Size(88, 26);
             this.dishesLabel.TabIndex = 36;
             this.dishesLabel.Text = "Dishes";
-            // 
-            // dName
-            // 
-            this.dName.FillWeight = 125F;
-            this.dName.HeaderText = "Name";
-            this.dName.MinimumWidth = 125;
-            this.dName.Name = "dName";
-            this.dName.ReadOnly = true;
-            // 
-            // dDescription
-            // 
-            this.dDescription.FillWeight = 200F;
-            this.dDescription.HeaderText = "Description";
-            this.dDescription.MinimumWidth = 200;
-            this.dDescription.Name = "dDescription";
-            this.dDescription.ReadOnly = true;
-            // 
-            // dPrice
-            // 
-            this.dPrice.HeaderText = "Price";
-            this.dPrice.MinimumWidth = 100;
-            this.dPrice.Name = "dPrice";
-            this.dPrice.ReadOnly = true;
-            // 
-            // dStock
-            // 
-            this.dStock.HeaderText = "Stock";
-            this.dStock.MinimumWidth = 100;
-            this.dStock.Name = "dStock";
-            this.dStock.ReadOnly = true;
-            // 
-            // gridEdit
-            // 
-            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridEdit.FillWeight = 50F;
-            this.gridEdit.HeaderText = "";
-            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
-            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridEdit.MinimumWidth = 50;
-            this.gridEdit.Name = "gridEdit";
-            this.gridEdit.ReadOnly = true;
-            this.gridEdit.Width = 50;
-            // 
-            // gridDelete
-            // 
-            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridDelete.FillWeight = 50F;
-            this.gridDelete.HeaderText = "";
-            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
-            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridDelete.MinimumWidth = 50;
-            this.gridDelete.Name = "gridDelete";
-            this.gridDelete.ReadOnly = true;
-            this.gridDelete.Width = 50;
             // 
             // dishesPanel
             // 

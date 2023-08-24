@@ -22,6 +22,11 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
             CheckCsvFolder();
             Application.Run(new Menu());
+            EmployeeList.LoadEmployeeIfNeeded();
+            ClientList.LoadClientsIfNeeded();
+            DishList.LoadDishesIfNeeded();
+            DrinkList.LoadDrinksIfNeeded();
+            OrderList.LoadOrderIfIsNeeded();
         }
 
         private static void CheckCsvFolder()

@@ -79,5 +79,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        public static void LoadEmployeeIfNeeded()
+        {
+            if (employees.Count == 0)
+            {
+                LoadFromCSV("employees.csv");
+            }
+        }
     }
 }

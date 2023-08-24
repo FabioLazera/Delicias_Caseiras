@@ -34,7 +34,7 @@
             this.orderPanel = new System.Windows.Forms.Panel();
             this.plusDay = new System.Windows.Forms.PictureBox();
             this.plusHour = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printer = new System.Windows.Forms.PictureBox();
             this.ordersGrid = new System.Windows.Forms.DataGridView();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchImg = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plusDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plusHour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).BeginInit();
@@ -64,7 +64,7 @@
             // 
             this.orderPanel.Controls.Add(this.plusDay);
             this.orderPanel.Controls.Add(this.plusHour);
-            this.orderPanel.Controls.Add(this.pictureBox1);
+            this.orderPanel.Controls.Add(this.printer);
             this.orderPanel.Controls.Add(this.ordersGrid);
             this.orderPanel.Controls.Add(this.searchLabel);
             this.orderPanel.Controls.Add(this.searchImg);
@@ -102,16 +102,17 @@
             this.plusHour.TabStop = false;
             this.plusHour.Click += new System.EventHandler(this.plusHour_Click);
             // 
-            // pictureBox1
+            // printer
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.printer;
-            this.pictureBox1.Location = new System.Drawing.Point(725, 691);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
+            this.printer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.printer.Image = global::WindowsFormsApp1.Properties.Resources.printer;
+            this.printer.Location = new System.Drawing.Point(725, 691);
+            this.printer.Name = "printer";
+            this.printer.Size = new System.Drawing.Size(65, 65);
+            this.printer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.printer.TabIndex = 37;
+            this.printer.TabStop = false;
+            this.printer.Click += new System.EventHandler(this.printer_Click);
             // 
             // ordersGrid
             // 
@@ -161,7 +162,7 @@
             this.ordersGrid.ReadOnly = true;
             this.ordersGrid.RowHeadersVisible = false;
             this.ordersGrid.RowHeadersWidth = 51;
-            this.ordersGrid.RowTemplate.Height = 24;
+            this.ordersGrid.RowTemplate.Height = 32;
             this.ordersGrid.Size = new System.Drawing.Size(755, 470);
             this.ordersGrid.TabIndex = 35;
             this.ordersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGrid_CellClick);
@@ -209,6 +210,7 @@
             this.searchTB.Name = "searchTB";
             this.searchTB.Size = new System.Drawing.Size(230, 30);
             this.searchTB.TabIndex = 31;
+            this.searchTB.TextChanged += new System.EventHandler(this.searchTB_TextChanged);
             // 
             // ordersPImg
             // 
@@ -247,7 +249,7 @@
             // oID
             // 
             this.oID.FillWeight = 50F;
-            this.oID.HeaderText = "ID";
+            this.oID.HeaderText = "Nr.";
             this.oID.MinimumWidth = 50;
             this.oID.Name = "oID";
             this.oID.ReadOnly = true;
@@ -287,7 +289,7 @@
             // oForecast
             // 
             this.oForecast.FillWeight = 175F;
-            this.oForecast.HeaderText = "NStage Forecast";
+            this.oForecast.HeaderText = "Next Stage";
             this.oForecast.MinimumWidth = 175;
             this.oForecast.Name = "oForecast";
             this.oForecast.ReadOnly = true;
@@ -327,7 +329,7 @@
             this.orderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plusDay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plusHour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersPImg)).EndInit();
@@ -345,7 +347,7 @@
         public System.Windows.Forms.TextBox searchTB;
         public System.Windows.Forms.PictureBox ordersPImg;
         private System.Windows.Forms.Label ordersLabel;
-        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox printer;
         public System.Windows.Forms.PictureBox plusHour;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         public System.Windows.Forms.PictureBox plusDay;
