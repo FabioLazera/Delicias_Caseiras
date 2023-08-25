@@ -12,10 +12,12 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class checkoutsPanel : Form
     {
+        private List<string> selectedProducts;
+
         private double totalCost;
         private string orderTimeValue;
         private ordersPanel ordersPanelParent1;
-        public checkoutsPanel(double totalCost, string orderTimeValue, ordersPanel ordersPanelParent1)
+        public checkoutsPanel(double totalCost, string orderTimeValue, ordersPanel ordersPanelParent1, List<string> selectedProducts)
         {
             InitializeComponent();
             CenterFormOnScreen();
@@ -24,6 +26,7 @@ namespace WindowsFormsApp1.Panels
             this.orderTimeValue = orderTimeValue;
             checkoutWD.Text = totalCost.ToString("F2") + "€";
             this.ordersPanelParent1 = ordersPanelParent1;
+            this.selectedProducts = selectedProducts;
         }
 
         private void CenterFormOnScreen()
@@ -143,6 +146,23 @@ namespace WindowsFormsApp1.Panels
                 string orderType = checkoutOT.SelectedItem.ToString();
                 DateTime orderTime = DateTime.Parse(orderTimeValue);
                 DateTime nextStage = orderTime.AddMinutes(15);
+
+                foreach (string productName in selectedProducts)
+                {
+                    Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
+                    Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
+
+                    if (selectedDrink != null && selectedDrink.Stock >= 1)
+                    {
+                        selectedDrink.Stock--;
+                    }
+                    else if (selectedDish != null && selectedDish.Stock >= 1)
+                    {
+                        selectedDish.Stock--;
+                    }
+                    DrinkList.SaveToCSV("drinks.csv");
+                    DishList.SaveToCSV("dishes.csv");
+                }
 
                 Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
                 OrderList.AddOrder(newOrder);

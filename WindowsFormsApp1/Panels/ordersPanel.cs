@@ -31,11 +31,13 @@ namespace WindowsFormsApp1.Panels
         private void plusHour_Click(object sender, EventArgs e)
         {
             PlusHourClicked?.Invoke(this, EventArgs.Empty);
+            Alert();
         }
 
         private void plusDay_Click(object sender, EventArgs e)
         {
             PlusDayClicked?.Invoke(this, EventArgs.Empty);
+            Alert();
         }
 
         public void RefreshDataGridView()
@@ -121,6 +123,27 @@ namespace WindowsFormsApp1.Panels
         {
             OrderList.SaveOrdersToCSV("ordersPlaced.csv");
             MessageBox.Show("Orders saved to CSV successfully!");
+        }
+
+        private void timeAlertStatus_Tick(object sender, EventArgs e)
+        {
+            Alert();
+        }
+
+        private void Alert()
+        {
+            Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
+
+            foreach (Order order in OrderList.GetOrders())
+            {
+                if (order.Status == "In Preparation" || order.Status == "Ready For Delivery")
+                {
+                    if (DateTime.Parse(menuForm.dateHour.Text) >= order.NextStage)
+                    {
+                        MessageBox.Show($"Order {order.ID} with state {order.Status} is in arrears!");
+                    }
+                }
+            }
         }
     }
 }

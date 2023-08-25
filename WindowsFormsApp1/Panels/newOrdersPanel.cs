@@ -14,6 +14,8 @@ namespace WindowsFormsApp1
     public partial class newOrdersPanel : Form
     {
         private List<Dish> selectedDishes = new List<Dish>();
+        private List<string> selectedProducts = new List<string>();
+
         private ordersPanel ordersPanelParent;
 
         public newOrdersPanel(ordersPanel ordersPanelParent)
@@ -46,7 +48,7 @@ namespace WindowsFormsApp1
             Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
             if (menuForm != null)
             {
-                checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour, this.ordersPanelParent);
+                checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour, this.ordersPanelParent, selectedProducts);
                 checkoutsPanel.Show();
                 checkoutGrid.Rows.Clear();
                 totalCost.Text = "Total: 0€";
@@ -123,7 +125,7 @@ namespace WindowsFormsApp1
                         int currentQty = Convert.ToInt32(existingRow.Cells["noQty"].Value);
                         int availableStock = selectedDrink != null ? selectedDrink.Stock : selectedDish.Stock;
 
-                        if (availableStock > 0)
+                        if (availableStock > currentQty)
                         {
                             existingRow.Cells["noQty"].Value = currentQty + 1;
                             double totalPrice = productPrice * (currentQty + 1);
@@ -148,16 +150,7 @@ namespace WindowsFormsApp1
                             MessageBox.Show("Insufficient stock!");
                         }
                     }
-
-                    if (selectedDrink != null && selectedDrink.Stock > 0)
-                    {
-                        selectedDrink.Stock--;
-                    }
-                    else if (selectedDish != null && selectedDish.Stock > 0)
-                    {
-                        selectedDish.Stock--;
-                    }
-
+                    selectedProducts.Add(productName);
                     UpdateTotalCost();
                 }
             }
