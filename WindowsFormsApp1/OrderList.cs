@@ -78,6 +78,7 @@ namespace WindowsFormsApp1
             if (index >= 0 && index < orders.Count)
             {
                 orders.RemoveAt(index);
+                RecalculateNextOrderId();
             }
         }
 
@@ -99,6 +100,8 @@ namespace WindowsFormsApp1
             if (orders.Count == 0)
             {
                 LoadFromCSV("orders.csv");
+                RecalculateNextOrderId();
+
             }
         }
 
@@ -114,6 +117,11 @@ namespace WindowsFormsApp1
                     writer.WriteLine($"{order.ID}|{order.ClientName}|{order.OrderType}|{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")}|{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")}|{order.Status}|{order.Amount}");
                 }
             }
+        }
+
+        private static void RecalculateNextOrderId()
+        {
+            nextOrderId = orders.Count > 0 ? orders.Max(order => order.ID) + 1 : 1;
         }
     }
 }

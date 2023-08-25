@@ -296,9 +296,8 @@
             // 
             // oAmount
             // 
-            this.oAmount.FillWeight = 75F;
-            this.oAmount.HeaderText = "Amount";
-            this.oAmount.MinimumWidth = 75;
+            this.oAmount.HeaderText = "Amount(€)";
+            this.oAmount.MinimumWidth = 100;
             this.oAmount.Name = "oAmount";
             this.oAmount.ReadOnly = true;
             // 
