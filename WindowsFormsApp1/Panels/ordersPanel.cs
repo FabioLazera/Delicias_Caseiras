@@ -67,6 +67,38 @@ namespace WindowsFormsApp1.Panels
                         }
                     }
                 }
+                else if (ordersGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn buttonColumn)
+                {
+                    Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
+                    DateTime nextStageValue = DateTime.Parse(menuForm.dateHour.Text);
+
+                    int rowIndex = e.RowIndex;
+
+                    if (buttonColumn.Name == "oStatus")
+                    {
+                        Order selectedOrder = OrderList.GetOrders()[rowIndex];
+                        switch (selectedOrder.Status)
+                        {
+                            case "Pending":
+                                selectedOrder.Status = "In Preparation";
+                                selectedOrder.NextStage = nextStageValue.AddMinutes(30);
+                                break;
+
+                            case "In Preparation":
+                                selectedOrder.Status = "Ready For Delivery";
+                                selectedOrder.NextStage = nextStageValue.AddMinutes(20);
+                                break;
+
+                            case "Ready For Delivery":
+                                selectedOrder.Status = "Delivered";
+                                buttonColumn.ReadOnly = true; 
+                                break;
+                        }
+                        ordersGrid.Rows[rowIndex].Cells["oStatus"].Value = selectedOrder.Status.ToString();
+                        ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
+                        OrderList.SaveToCSV("orders.csv");
+                    }
+                }
             }
         }
 

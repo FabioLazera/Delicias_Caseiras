@@ -264,8 +264,9 @@
             // 
             // oStatus
             // 
+            this.oStatus.FillWeight = 175F;
             this.oStatus.HeaderText = "Status";
-            this.oStatus.MinimumWidth = 100;
+            this.oStatus.MinimumWidth = 175;
             this.oStatus.Name = "oStatus";
             this.oStatus.ReadOnly = true;
             this.oStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -273,7 +274,7 @@
             // 
             // oType
             // 
-            this.oType.HeaderText = "Order Type";
+            this.oType.HeaderText = "Type";
             this.oType.MinimumWidth = 100;
             this.oType.Name = "oType";
             this.oType.ReadOnly = true;
