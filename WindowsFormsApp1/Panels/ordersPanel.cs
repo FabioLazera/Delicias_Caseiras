@@ -20,6 +20,8 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             OrderList.LoadOrderIfIsNeeded();
             RefreshDataGridView();
+            ordersGrid.CellFormatting += ordersGrid_CellFormatting;
+
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)
@@ -99,6 +101,39 @@ namespace WindowsFormsApp1.Panels
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value = selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
                         OrderList.SaveToCSV("orders.csv");
+                    }
+                }
+            }
+        }
+
+        private void ordersGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (ordersGrid.Columns[e.ColumnIndex].Name == "oTime" || ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
+                {
+                    DataGridViewCell cell = ordersGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    Order order = OrderList.GetOrders()[e.RowIndex];
+
+                    if (order.Status == "Pending")
+                    {
+                        cell.Style.ForeColor = Color.Red; 
+                    }
+                    else if (order.Status == "In Preparation")
+                    {
+                        cell.Style.ForeColor = Color.Orange;
+                    }
+                    else if (order.Status == "Ready For Delivery")
+                    {
+                        cell.Style.ForeColor = Color.Blue;
+                    }
+                    else if (order.Status == "Delivered")
+                    {
+                        cell.Style.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        cell.Style.ForeColor = ordersGrid.DefaultCellStyle.ForeColor;
                     }
                 }
             }
