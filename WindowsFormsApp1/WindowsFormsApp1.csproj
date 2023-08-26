@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientList.cs" />
+    <Compile Include="deliveriesPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deliveriesPanel.Designer.cs">
+      <DependentUpon>deliveriesPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="DishList.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="Delivery.cs" />
@@ -144,6 +150,9 @@
     <Compile Include="ucProduct.Designer.cs">
       <DependentUpon>ucProduct.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="deliveriesPanel.resx">
+      <DependentUpon>deliveriesPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +334,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

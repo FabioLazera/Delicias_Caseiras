@@ -124,5 +124,10 @@ namespace WindowsFormsApp1
             dateHour.Text = dateTimeString;
         }
 
+        private void deliveryBtn_Click(object sender, EventArgs e)
+        {
+            AddPanel(new deliveriesPanel());
+            HighlightButton(deliveryBtn);
+        }
     }
 }

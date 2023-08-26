@@ -220,6 +220,7 @@
             this.deliveryBtn.TabIndex = 7;
             this.deliveryBtn.Text = "Delivery";
             this.deliveryBtn.UseVisualStyleBackColor = false;
+            this.deliveryBtn.Click += new System.EventHandler(this.deliveryBtn_Click);
             // 
             // employeesBtn
             // 

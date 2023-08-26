@@ -219,7 +219,7 @@ namespace WindowsFormsApp1.Panels
                 ordersGrid.Columns["gridDelete"].Visible = false;
             }
             searchTB.Clear();
-            RefreshDataGridView();
+           
         }
     }
 }
