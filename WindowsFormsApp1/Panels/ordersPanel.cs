@@ -95,7 +95,8 @@ namespace WindowsFormsApp1.Panels
 
                             case "Ready For Delivery":
                                 selectedOrder.Status = "Delivered";
-                                buttonColumn.ReadOnly = true; 
+                                buttonColumn.ReadOnly = true;
+                                ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = "";
                                 break;
                         }
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value = selectedOrder.Status.ToString();
@@ -110,14 +111,23 @@ namespace WindowsFormsApp1.Panels
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (ordersGrid.Columns[e.ColumnIndex].Name == "oTime" || ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
+                if (ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
+                {
+                    Order order = OrderList.GetOrders()[e.RowIndex];
+
+                    if (order.Status == "Delivered")
+                    {
+                        e.Value = ""; 
+                    }
+                }
+                else if (ordersGrid.Columns[e.ColumnIndex].Name == "oTime" || ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
                 {
                     DataGridViewCell cell = ordersGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     Order order = OrderList.GetOrders()[e.RowIndex];
 
                     if (order.Status == "Pending")
                     {
-                        cell.Style.ForeColor = Color.Red; 
+                        cell.Style.ForeColor = Color.Red;
                     }
                     else if (order.Status == "In Preparation")
                     {
@@ -179,6 +189,37 @@ namespace WindowsFormsApp1.Panels
                     }
                 }
             }
+        }
+
+        private void FilterOrdersByStatus(string status)
+        {
+            ordersGrid.Rows.Clear();
+
+            foreach (Order order in OrderList.GetOrders())
+            {
+                if (order.Status == status)
+                {
+                    ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status.ToString(), order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                }
+            }
+        }
+
+        private void filterByState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedStatus = filterByState.SelectedItem.ToString();
+
+            if (selectedStatus == "All")
+            {
+                RefreshDataGridView();
+                ordersGrid.Columns["gridDelete"].Visible = true;
+            }
+            else
+            {
+                FilterOrdersByStatus(selectedStatus);
+                ordersGrid.Columns["gridDelete"].Visible = false;
+            }
+            searchTB.Clear();
+            RefreshDataGridView();
         }
     }
 }
