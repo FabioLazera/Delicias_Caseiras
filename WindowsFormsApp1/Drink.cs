@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         private string _description;
         private double _price;
         private int _stock;
+        private string _imagePath;
 
         public Drink(string name, string description, double price, int stock, int id, string clientName, string status, string orderType, DateTime orderTime, DateTime nextStage, double amount)
         : base(id, clientName, status, orderType, orderTime, nextStage, amount)
@@ -23,13 +24,14 @@ namespace WindowsFormsApp1
             _stock = stock;
         }
 
-        public Drink(string name, string description, double price, int stock)
-        : base(0, null, "", "", DateTime.MinValue, DateTime.MinValue, 0)
+        public Drink(string name, string description, double price, int stock, string imagePath = null, int id = 0, string clientName = "", string status = "", string orderType = "", DateTime orderTime = default, DateTime nextStage = default, double amount = 0)
+        : base(id, clientName, status, orderType, orderTime, nextStage, amount)
         {
             _name = name;
             _description = description;
             _price = price;
             _stock = stock;
+            _imagePath = imagePath;
         }
 
         public string Name
@@ -54,6 +56,12 @@ namespace WindowsFormsApp1
         {
             get { return _stock; }
             set { _stock = value; }
+        }
+
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            set { _imagePath = value; }
         }
 
     }

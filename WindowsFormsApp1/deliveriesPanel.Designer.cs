@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.deliveryPanel = new System.Windows.Forms.Panel();
             this.deliveriesGrid = new System.Windows.Forms.DataGridView();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.deliveriesPImg = new System.Windows.Forms.PictureBox();
-            this.deliveryLabel = new System.Windows.Forms.Label();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dExpected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchImg = new System.Windows.Forms.PictureBox();
+            this.separator = new System.Windows.Forms.Label();
+            this.searchTB = new System.Windows.Forms.TextBox();
+            this.deliveriesPImg = new System.Windows.Forms.PictureBox();
+            this.deliveryLabel = new System.Windows.Forms.Label();
             this.deliveryPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
@@ -70,25 +70,25 @@
             // 
             this.deliveriesGrid.AllowUserToAddRows = false;
             this.deliveriesGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.deliveriesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.deliveriesGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.deliveriesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deliveriesGrid.BackgroundColor = System.Drawing.Color.White;
             this.deliveriesGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.deliveriesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.deliveriesGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.deliveriesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.deliveriesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.deliveriesGrid.ColumnHeadersHeight = 40;
             this.deliveriesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dID,
@@ -97,14 +97,14 @@
             this.dForecast,
             this.dExpected,
             this.dAddress});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.deliveriesGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.deliveriesGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.deliveriesGrid.EnableHeadersVisualStyles = false;
             this.deliveriesGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.deliveriesGrid.Location = new System.Drawing.Point(35, 204);
@@ -115,6 +115,54 @@
             this.deliveriesGrid.RowTemplate.Height = 32;
             this.deliveriesGrid.Size = new System.Drawing.Size(755, 535);
             this.deliveriesGrid.TabIndex = 48;
+            // 
+            // dID
+            // 
+            this.dID.FillWeight = 50F;
+            this.dID.HeaderText = "Nr.";
+            this.dID.MinimumWidth = 50;
+            this.dID.Name = "dID";
+            this.dID.ReadOnly = true;
+            // 
+            // dClient
+            // 
+            this.dClient.FillWeight = 125F;
+            this.dClient.HeaderText = "Client";
+            this.dClient.MinimumWidth = 125;
+            this.dClient.Name = "dClient";
+            this.dClient.ReadOnly = true;
+            // 
+            // dTime
+            // 
+            this.dTime.FillWeight = 175F;
+            this.dTime.HeaderText = "Order Time";
+            this.dTime.MinimumWidth = 175;
+            this.dTime.Name = "dTime";
+            this.dTime.ReadOnly = true;
+            // 
+            // dForecast
+            // 
+            this.dForecast.FillWeight = 175F;
+            this.dForecast.HeaderText = "Next Stage";
+            this.dForecast.MinimumWidth = 175;
+            this.dForecast.Name = "dForecast";
+            this.dForecast.ReadOnly = true;
+            // 
+            // dExpected
+            // 
+            this.dExpected.FillWeight = 175F;
+            this.dExpected.HeaderText = "Expected ";
+            this.dExpected.MinimumWidth = 175;
+            this.dExpected.Name = "dExpected";
+            this.dExpected.ReadOnly = true;
+            // 
+            // dAddress
+            // 
+            this.dAddress.FillWeight = 150F;
+            this.dAddress.HeaderText = "Address";
+            this.dAddress.MinimumWidth = 150;
+            this.dAddress.Name = "dAddress";
+            this.dAddress.ReadOnly = true;
             // 
             // searchLabel
             // 
@@ -181,61 +229,14 @@
             this.deliveryLabel.TabIndex = 42;
             this.deliveryLabel.Text = "Delivery";
             // 
-            // dID
-            // 
-            this.dID.FillWeight = 50F;
-            this.dID.HeaderText = "Nr.";
-            this.dID.MinimumWidth = 50;
-            this.dID.Name = "dID";
-            this.dID.ReadOnly = true;
-            // 
-            // dClient
-            // 
-            this.dClient.FillWeight = 125F;
-            this.dClient.HeaderText = "Client";
-            this.dClient.MinimumWidth = 125;
-            this.dClient.Name = "dClient";
-            this.dClient.ReadOnly = true;
-            // 
-            // dTime
-            // 
-            this.dTime.FillWeight = 175F;
-            this.dTime.HeaderText = "Order Time";
-            this.dTime.MinimumWidth = 175;
-            this.dTime.Name = "dTime";
-            this.dTime.ReadOnly = true;
-            // 
-            // dForecast
-            // 
-            this.dForecast.FillWeight = 175F;
-            this.dForecast.HeaderText = "Next Stage";
-            this.dForecast.MinimumWidth = 175;
-            this.dForecast.Name = "dForecast";
-            this.dForecast.ReadOnly = true;
-            // 
-            // dExpected
-            // 
-            this.dExpected.FillWeight = 175F;
-            this.dExpected.HeaderText = "Expected ";
-            this.dExpected.MinimumWidth = 175;
-            this.dExpected.Name = "dExpected";
-            this.dExpected.ReadOnly = true;
-            // 
-            // dAddress
-            // 
-            this.dAddress.FillWeight = 150F;
-            this.dAddress.HeaderText = "Address";
-            this.dAddress.MinimumWidth = 150;
-            this.dAddress.Name = "dAddress";
-            this.dAddress.ReadOnly = true;
-            // 
-            // DeliveriesPanel
+            // deliveriesPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(824, 768);
             this.Controls.Add(this.deliveryPanel);
+            this.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DeliveriesPanel";
+            this.Name = "deliveriesPanel";
             this.Text = "DeliveriesPanel";
             this.deliveryPanel.ResumeLayout(false);
             this.deliveryPanel.PerformLayout();

@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
         public static string ProjectDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
         private const string CsvFolderPath = "csvFiles";
+        public const string ImageFolderPath = "imageFiles";
 
         [STAThread]
         static void Main()
@@ -21,6 +22,7 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CheckCsvFolder();
+            CheckImagesFolder();
             Application.Run(new Menu());
             EmployeeList.LoadEmployeeIfNeeded();
             ClientList.LoadClientsIfNeeded();
@@ -36,6 +38,16 @@ namespace WindowsFormsApp1
             if (!Directory.Exists(csvFolderPath))
             {
                 Directory.CreateDirectory(csvFolderPath);
+            }
+        }
+
+        private static void CheckImagesFolder()
+        {
+            string imageFolderPath = Path.Combine(ProjectDirectory, ImageFolderPath);
+
+            if (!Directory.Exists(imageFolderPath))
+            {
+                Directory.CreateDirectory(imageFolderPath);
             }
         }
 

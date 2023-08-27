@@ -81,12 +81,13 @@
             this.imageSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.imageSearchBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imageSearchBtn.ForeColor = System.Drawing.Color.White;
-            this.imageSearchBtn.Location = new System.Drawing.Point(395, 368);
+            this.imageSearchBtn.Location = new System.Drawing.Point(412, 367);
             this.imageSearchBtn.Name = "imageSearchBtn";
             this.imageSearchBtn.Size = new System.Drawing.Size(140, 35);
             this.imageSearchBtn.TabIndex = 35;
             this.imageSearchBtn.Text = "Image Search";
             this.imageSearchBtn.UseVisualStyleBackColor = false;
+            this.imageSearchBtn.Click += new System.EventHandler(this.imageSearchBtn_Click);
             // 
             // drinkCloseBtn
             // 
@@ -96,7 +97,7 @@
             this.drinkCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinkCloseBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drinkCloseBtn.ForeColor = System.Drawing.Color.White;
-            this.drinkCloseBtn.Location = new System.Drawing.Point(176, 529);
+            this.drinkCloseBtn.Location = new System.Drawing.Point(193, 528);
             this.drinkCloseBtn.Name = "drinkCloseBtn";
             this.drinkCloseBtn.Size = new System.Drawing.Size(140, 35);
             this.drinkCloseBtn.TabIndex = 34;
@@ -112,7 +113,7 @@
             this.drinkSaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinkSaveBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drinkSaveBtn.ForeColor = System.Drawing.Color.White;
-            this.drinkSaveBtn.Location = new System.Drawing.Point(21, 529);
+            this.drinkSaveBtn.Location = new System.Drawing.Point(38, 528);
             this.drinkSaveBtn.Name = "drinkSaveBtn";
             this.drinkSaveBtn.Size = new System.Drawing.Size(140, 35);
             this.drinkSaveBtn.TabIndex = 33;
@@ -123,7 +124,7 @@
             // drinkImage
             // 
             this.drinkImage.Image = global::WindowsFormsApp1.Properties.Resources.folder;
-            this.drinkImage.Location = new System.Drawing.Point(422, 262);
+            this.drinkImage.Location = new System.Drawing.Point(439, 261);
             this.drinkImage.Name = "drinkImage";
             this.drinkImage.Size = new System.Drawing.Size(89, 98);
             this.drinkImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,7 +134,7 @@
             // drinkStockTB
             // 
             this.drinkStockTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.drinkStockTB.Location = new System.Drawing.Point(57, 457);
+            this.drinkStockTB.Location = new System.Drawing.Point(75, 457);
             this.drinkStockTB.Multiline = true;
             this.drinkStockTB.Name = "drinkStockTB";
             this.drinkStockTB.Size = new System.Drawing.Size(220, 35);
@@ -142,7 +143,7 @@
             // drinkPriceTB
             // 
             this.drinkPriceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.drinkPriceTB.Location = new System.Drawing.Point(57, 381);
+            this.drinkPriceTB.Location = new System.Drawing.Point(75, 381);
             this.drinkPriceTB.Multiline = true;
             this.drinkPriceTB.Name = "drinkPriceTB";
             this.drinkPriceTB.Size = new System.Drawing.Size(220, 35);
@@ -151,7 +152,7 @@
             // drinkDescriptionTB
             // 
             this.drinkDescriptionTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.drinkDescriptionTB.Location = new System.Drawing.Point(57, 289);
+            this.drinkDescriptionTB.Location = new System.Drawing.Point(74, 288);
             this.drinkDescriptionTB.Multiline = true;
             this.drinkDescriptionTB.Name = "drinkDescriptionTB";
             this.drinkDescriptionTB.Size = new System.Drawing.Size(220, 35);
@@ -160,7 +161,7 @@
             // drinkNameTB
             // 
             this.drinkNameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.drinkNameTB.Location = new System.Drawing.Point(58, 195);
+            this.drinkNameTB.Location = new System.Drawing.Point(75, 194);
             this.drinkNameTB.Multiline = true;
             this.drinkNameTB.Name = "drinkNameTB";
             this.drinkNameTB.Size = new System.Drawing.Size(220, 35);
@@ -171,7 +172,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(53, 435);
+            this.label4.Location = new System.Drawing.Point(71, 435);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 19);
             this.label4.TabIndex = 27;
@@ -182,7 +183,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(54, 359);
+            this.label3.Location = new System.Drawing.Point(72, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 19);
             this.label3.TabIndex = 26;
@@ -193,7 +194,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(54, 267);
+            this.label2.Location = new System.Drawing.Point(71, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 19);
             this.label2.TabIndex = 25;
@@ -204,7 +205,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(54, 173);
+            this.label1.Location = new System.Drawing.Point(71, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 19);
             this.label1.TabIndex = 24;
@@ -224,7 +225,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.addProcess;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,7 +237,7 @@
             this.addCL.AutoSize = true;
             this.addCL.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
             this.addCL.ForeColor = System.Drawing.Color.White;
-            this.addCL.Location = new System.Drawing.Point(111, 63);
+            this.addCL.Location = new System.Drawing.Point(114, 57);
             this.addCL.Name = "addCL";
             this.addCL.Size = new System.Drawing.Size(127, 26);
             this.addCL.TabIndex = 4;
@@ -268,7 +269,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label addCL;
-        private System.Windows.Forms.PictureBox drinkImage;
         public System.Windows.Forms.TextBox drinkStockTB;
         public System.Windows.Forms.TextBox drinkPriceTB;
         public System.Windows.Forms.TextBox drinkDescriptionTB;
@@ -280,5 +280,6 @@
         private System.Windows.Forms.Button drinkCloseBtn;
         private System.Windows.Forms.Button drinkSaveBtn;
         private System.Windows.Forms.Button imageSearchBtn;
+        private System.Windows.Forms.PictureBox drinkImage;
     }
 }

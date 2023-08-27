@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,11 @@ namespace WindowsFormsApp1.Panels
             if (index >= 0)
             {
                 Dish dish = DishList.GetDish()[index];
-
-
                 dishNameTB.Text = dish.Name;
                 dishDescriptionTB.Text = dish.Description;
                 dishPriceTB.Text = dish.Price.ToString();
                 dishStockTB.Text = dish.Stock.ToString();
+                LoadDishImage(dish.ImagePath);
             }
         }
 
@@ -53,22 +53,38 @@ namespace WindowsFormsApp1.Panels
                 double price = double.Parse(dishPriceTB.Text);
                 int stock = int.Parse(dishStockTB.Text);
 
+                Dish editedDish;
                 if (rowIndex >= 0)
                 {
-                    Dish editedDish = new Dish(name, description, price, stock);
+                    editedDish = DishList.GetDish()[rowIndex];
+                    editedDish.Name = name;
+                    editedDish.Description = description;
+                    editedDish.Price = price;
+                    editedDish.Stock = stock;
+                }
+                else
+                {
+                    editedDish = new Dish(name, description, price, stock);
+                }
+                if (pictureBox2.Tag != null)
+                {
+                    editedDish.ImagePath = pictureBox2.Tag.ToString();
+                }
+
+                if (rowIndex >= 0)
+                {
                     DishList.EditDish(rowIndex, editedDish);
-                    DishList.SaveToCSV("dishes.csv");
                     MessageBox.Show("Dish edited successfully!");
                 }
                 else
                 {
-                    Dish newDish = new Dish(name, description, price, stock);
-                    DishList.AddDish(newDish);
-                    DishList.SaveToCSV("dishes.csv");
+                    DishList.AddDish(editedDish);
                     MessageBox.Show("Dish created successfully!");
                 }
 
+                DishList.SaveToCSV("dishes.csv");
                 parentForm.RefreshDataGridView();
+                LoadDishImage(editedDish.ImagePath);
                 this.Close();
             }
         }
@@ -118,6 +134,42 @@ namespace WindowsFormsApp1.Panels
                 return true;
             }
             return false;
+        }
+
+        private void dishIS_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Imagens|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imageName = Guid.NewGuid().ToString() + Path.GetExtension(openFileDialog.FileName);
+                    string imageDestinationPath = Path.Combine(Program.ProjectDirectory, "imageFiles", imageName);
+
+                    File.Copy(openFileDialog.FileName, imageDestinationPath, true);
+
+                    pictureBox2.Image = Image.FromFile(imageDestinationPath);
+
+                    pictureBox2.Tag = imageDestinationPath;
+                    LoadDishImage(imageDestinationPath);
+
+                }
+            }
+        }
+
+        private void LoadDishImage(string imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+            {
+                using (FileStream stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox2.Image = Image.FromFile(imagePath);
+                }
+            }
+            else
+            {
+                pictureBox2.Image = null;
+            }
         }
     }
 }

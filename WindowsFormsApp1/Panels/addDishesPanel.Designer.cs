@@ -88,6 +88,7 @@
             this.dishIS.TabIndex = 47;
             this.dishIS.Text = "Image Search";
             this.dishIS.UseVisualStyleBackColor = false;
+            this.dishIS.Click += new System.EventHandler(this.dishIS_Click);
             // 
             // dishCloseBtn
             // 

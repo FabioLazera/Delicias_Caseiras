@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Drink drink in drinks)
                 {
-                    writer.WriteLine($"{drink.Name},{drink.Description},{drink.Price},{drink.Stock}");
+                    writer.WriteLine($"{drink.Name},{drink.Description},{drink.Price},{drink.Stock},{drink.ImagePath}");
                 }
             }
         }
@@ -64,13 +64,14 @@ namespace WindowsFormsApp1
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 4)
+                        if (parts.Length == 5)
                         {
                             string name = parts[0];
                             string description = parts[1];
                             double price = Convert.ToDouble(parts[2], CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
-                            Drink newDrink = new Drink(name, description, price, stock);
+                            string imagePath = parts[4];
+                            Drink newDrink = new Drink(name, description, price, stock, imagePath);
                             drinks.Add(newDrink);
                         }
                     }

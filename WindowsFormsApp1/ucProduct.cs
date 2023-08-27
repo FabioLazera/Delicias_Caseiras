@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
             productName.Click += Component_Click;
             price.Click += Component_Click;
             productPrice.Click += Component_Click;
-            description.Click += Component_Click;
             productDescription.Click += Component_Click;
+            imageUC.Click += Component_Click;
 
         }
 

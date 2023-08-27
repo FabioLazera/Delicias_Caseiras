@@ -33,6 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newOrderPanel = new System.Windows.Forms.Panel();
             this.checkoutGrid = new System.Windows.Forms.DataGridView();
+            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.drinksBtn = new System.Windows.Forms.Button();
             this.dishesBtn = new System.Windows.Forms.Button();
@@ -43,11 +48,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.noProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.newOrderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutGrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -119,6 +119,50 @@
             this.checkoutGrid.Size = new System.Drawing.Size(414, 521);
             this.checkoutGrid.TabIndex = 31;
             // 
+            // noProduct
+            // 
+            this.noProduct.FillWeight = 80F;
+            this.noProduct.HeaderText = "Product";
+            this.noProduct.MinimumWidth = 80;
+            this.noProduct.Name = "noProduct";
+            this.noProduct.ReadOnly = true;
+            // 
+            // noQty
+            // 
+            this.noQty.FillWeight = 40F;
+            this.noQty.HeaderText = "Qty";
+            this.noQty.MinimumWidth = 40;
+            this.noQty.Name = "noQty";
+            this.noQty.ReadOnly = true;
+            // 
+            // noPrice
+            // 
+            this.noPrice.FillWeight = 70F;
+            this.noPrice.HeaderText = "Price";
+            this.noPrice.MinimumWidth = 70;
+            this.noPrice.Name = "noPrice";
+            this.noPrice.ReadOnly = true;
+            // 
+            // noAmount
+            // 
+            this.noAmount.FillWeight = 70F;
+            this.noAmount.HeaderText = "Amount";
+            this.noAmount.MinimumWidth = 70;
+            this.noAmount.Name = "noAmount";
+            this.noAmount.ReadOnly = true;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
+            // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AutoScroll = true;
@@ -132,7 +176,7 @@
             this.drinksBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
             this.drinksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drinksBtn.ForeColor = System.Drawing.Color.White;
-            this.drinksBtn.Location = new System.Drawing.Point(22, 245);
+            this.drinksBtn.Location = new System.Drawing.Point(20, 245);
             this.drinksBtn.Name = "drinksBtn";
             this.drinksBtn.Size = new System.Drawing.Size(162, 45);
             this.drinksBtn.TabIndex = 3;
@@ -145,7 +189,7 @@
             this.dishesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(95)))), ((int)(((byte)(129)))));
             this.dishesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dishesBtn.ForeColor = System.Drawing.Color.White;
-            this.dishesBtn.Location = new System.Drawing.Point(22, 177);
+            this.dishesBtn.Location = new System.Drawing.Point(20, 177);
             this.dishesBtn.Name = "dishesBtn";
             this.dishesBtn.Size = new System.Drawing.Size(162, 45);
             this.dishesBtn.TabIndex = 2;
@@ -231,50 +275,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // noProduct
-            // 
-            this.noProduct.FillWeight = 80F;
-            this.noProduct.HeaderText = "Product";
-            this.noProduct.MinimumWidth = 80;
-            this.noProduct.Name = "noProduct";
-            this.noProduct.ReadOnly = true;
-            // 
-            // noQty
-            // 
-            this.noQty.FillWeight = 40F;
-            this.noQty.HeaderText = "Qty";
-            this.noQty.MinimumWidth = 40;
-            this.noQty.Name = "noQty";
-            this.noQty.ReadOnly = true;
-            // 
-            // noPrice
-            // 
-            this.noPrice.FillWeight = 70F;
-            this.noPrice.HeaderText = "Price";
-            this.noPrice.MinimumWidth = 70;
-            this.noPrice.Name = "noPrice";
-            this.noPrice.ReadOnly = true;
-            // 
-            // noAmount
-            // 
-            this.noAmount.FillWeight = 70F;
-            this.noAmount.HeaderText = "Amount";
-            this.noAmount.MinimumWidth = 70;
-            this.noAmount.Name = "noAmount";
-            this.noAmount.ReadOnly = true;
-            // 
-            // gridDelete
-            // 
-            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridDelete.FillWeight = 50F;
-            this.gridDelete.HeaderText = "";
-            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
-            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridDelete.MinimumWidth = 50;
-            this.gridDelete.Name = "gridDelete";
-            this.gridDelete.ReadOnly = true;
-            this.gridDelete.Width = 50;
             // 
             // newOrdersPanel
             // 

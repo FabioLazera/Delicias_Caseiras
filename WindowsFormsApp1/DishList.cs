@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Dish dish in dishes)
                 {
-                    writer.WriteLine($"{dish.Name},{dish.Description},{dish.Price},{dish.Stock}");
+                    writer.WriteLine($"{dish.Name},{dish.Description},{dish.Price},{dish.Stock},{dish.ImagePath}");
                 }
             }
         }
@@ -64,13 +64,14 @@ namespace WindowsFormsApp1
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 4)
+                        if (parts.Length == 5)
                         {
                             string name = parts[0];
                             string description = parts[1];
                             double price = Convert.ToDouble(parts[2], CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
-                            Dish newDish = new Dish(name, description, price, stock);
+                            string imagePath = parts[4];
+                            Dish newDish = new Dish(name, description, price, stock, imagePath);
                             dishes.Add(newDish);
                         }
                     }

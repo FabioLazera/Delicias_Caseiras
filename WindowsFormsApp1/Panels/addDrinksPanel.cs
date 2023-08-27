@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace WindowsFormsApp1.Panels
                 drinkDescriptionTB.Text = drink.Description;
                 drinkPriceTB.Text = drink.Price.ToString();
                 drinkStockTB.Text = drink.Stock.ToString();
+                LoadDrinkImage(drink.ImagePath);
             }
         }
 
@@ -50,23 +52,41 @@ namespace WindowsFormsApp1.Panels
                 string description = drinkDescriptionTB.Text;
                 double price = double.Parse(drinkPriceTB.Text);
                 int stock = int.Parse(drinkStockTB.Text);
-       
+
+                Drink editedDrink;
                 if (rowIndex >= 0)
                 {
-                    Drink editedDrink = new Drink(name, description, price, stock);
+                    editedDrink = DrinkList.GetDrinks()[rowIndex];
+                    editedDrink.Name = name;
+                    editedDrink.Description = description;
+                    editedDrink.Price = price;
+                    editedDrink.Stock = stock;
+                }
+                else
+                {
+                    editedDrink = new Drink(name, description, price, stock);
+                }
+
+                if (drinkImage.Tag != null)
+                {
+                    editedDrink.ImagePath = drinkImage.Tag.ToString();
+         
+                }
+
+                if (rowIndex >= 0)
+                {
                     DrinkList.EditDrink(rowIndex, editedDrink);
-                    DrinkList.SaveToCSV("drinks.csv");
                     MessageBox.Show("Drink edited successfully!");
                 }
                 else
                 {
-                    Drink newDrink = new Drink(name, description, price, stock);
-                    DrinkList.AddDrink(newDrink);
-                    DrinkList.SaveToCSV("drinks.csv");
+                    DrinkList.AddDrink(editedDrink);
                     MessageBox.Show("Drink created successfully!");
                 }
 
+                DrinkList.SaveToCSV("drinks.csv");
                 parentForm.RefreshDataGridView();
+                LoadDrinkImage(editedDrink.ImagePath);
                 this.Close();
             }
         }
@@ -118,5 +138,39 @@ namespace WindowsFormsApp1.Panels
             return false;
         }
 
+        private void imageSearchBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Imagens|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imageName = Guid.NewGuid().ToString() + Path.GetExtension(openFileDialog.FileName);
+                    string imageDestinationPath = Path.Combine(Program.ProjectDirectory, "imageFiles", imageName);
+
+                    File.Copy(openFileDialog.FileName, imageDestinationPath, true);
+
+                    drinkImage.Image = Image.FromFile(imageDestinationPath);
+
+                    drinkImage.Tag = imageDestinationPath;
+                    LoadDrinkImage(imageDestinationPath);
+                }
+            }
+        }
+
+        private void LoadDrinkImage(string imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+            {
+                using (FileStream stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                {
+                    drinkImage.Image = Image.FromFile(imagePath);
+                }
+            }
+            else
+            {
+                drinkImage.Image = null;
+            }
+        }
     }
 }

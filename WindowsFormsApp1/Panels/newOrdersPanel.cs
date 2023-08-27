@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class newOrdersPanel : Form
     {
-        private List<Dish> selectedDishes = new List<Dish>();
+        //private List<Dish> selectedDishes = new List<Dish>();
         private List<string> selectedProducts = new List<string>();
 
         private ordersPanel ordersPanelParent;
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("O formulário Menu não está aberto.");
+                MessageBox.Show("The Menu form is not open!");
             }
         }
 
@@ -66,6 +66,7 @@ namespace WindowsFormsApp1
             foreach (Dish dish in DishList.dishes)
             {
                 ucProduct productControl = new ucProduct();
+                productControl.imageUC.ImageLocation = dish.ImagePath;
                 productControl.ProductNameLabel = dish.Name;
                 productControl.ProductPriceLabel = dish.Price;
                 productControl.ProductDescriptionTB = dish.Description;
@@ -81,6 +82,7 @@ namespace WindowsFormsApp1
             foreach (Drink drink in DrinkList.drinks)
             {
                 ucProduct productControl = new ucProduct();
+                productControl.imageUC.ImageLocation = drink.ImagePath;
                 productControl.ProductNameLabel = drink.Name;
                 productControl.ProductPriceLabel = drink.Price;
                 productControl.ProductDescriptionTB = drink.Description;
