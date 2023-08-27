@@ -35,7 +35,11 @@
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.SignInBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Label();
+            this.view = new System.Windows.Forms.PictureBox();
+            this.hidden = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidden)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -122,12 +126,38 @@
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.Font = new System.Drawing.Font("Bookman Old Style", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(0)))));
-            this.cancelBtn.Location = new System.Drawing.Point(316, 546);
+            this.cancelBtn.Location = new System.Drawing.Point(326, 546);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(48, 16);
             this.cancelBtn.TabIndex = 6;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // view
+            // 
+            this.view.BackColor = System.Drawing.Color.Transparent;
+            this.view.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.view.Image = global::WindowsFormsApp1.Properties.Resources.view1;
+            this.view.Location = new System.Drawing.Point(251, 385);
+            this.view.Name = "view";
+            this.view.Size = new System.Drawing.Size(13, 13);
+            this.view.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.view.TabIndex = 7;
+            this.view.TabStop = false;
+            this.view.Click += new System.EventHandler(this.view_Click);
+            // 
+            // hidden
+            // 
+            this.hidden.BackColor = System.Drawing.Color.Transparent;
+            this.hidden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hidden.Image = global::WindowsFormsApp1.Properties.Resources.hidden1;
+            this.hidden.Location = new System.Drawing.Point(269, 385);
+            this.hidden.Name = "hidden";
+            this.hidden.Size = new System.Drawing.Size(13, 13);
+            this.hidden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hidden.TabIndex = 8;
+            this.hidden.TabStop = false;
+            this.hidden.Click += new System.EventHandler(this.hidden_Click);
             // 
             // loginPanel
             // 
@@ -135,6 +165,8 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.gradient;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(382, 573);
+            this.Controls.Add(this.hidden);
+            this.Controls.Add(this.view);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.SignInBtn);
             this.Controls.Add(this.label2);
@@ -147,6 +179,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +195,7 @@
         private System.Windows.Forms.TextBox passwordTB;
         public System.Windows.Forms.Button SignInBtn;
         private System.Windows.Forms.Label cancelBtn;
+        private System.Windows.Forms.PictureBox view;
+        private System.Windows.Forms.PictureBox hidden;
     }
 }

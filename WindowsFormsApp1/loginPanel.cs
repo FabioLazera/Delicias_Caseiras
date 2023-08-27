@@ -29,20 +29,39 @@ namespace WindowsFormsApp1
             {
                 string enteredPassword = passwordTB.Text;
 
-                EmployeeList.LoadFromCSV("employees.csv"); 
+                EmployeeList.LoadFromCSV("employees.csv");
 
                 Employee matchingEmployee = EmployeeList.GetEmployees().FirstOrDefault(employee => employee.Nif == enteredNif && employee.Password == enteredPassword);
 
                 if (matchingEmployee != null)
                 {
                     Menu menuForm = new Menu();
+
+                    if (matchingEmployee.Job == "Manager")
+                    {
+                        menuForm.EnableAllButtons();
+                    }
+                    else
+                    {
+                        menuForm.EnableSomeButtons();
+                    }
+
                     menuForm.Show();
                     this.Hide();
                     return;
                 }
             }
+            MessageBox.Show("Wrong NIF or password! Try again", "Incorrect access credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
-            MessageBox.Show("Wrong NIF or password! Try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        private void view_Click(object sender, EventArgs e)
+        {
+            passwordTB.UseSystemPasswordChar = true;
+        }
+
+        private void hidden_Click(object sender, EventArgs e)
+        {
+            passwordTB.UseSystemPasswordChar = false;
         }
     }
 }

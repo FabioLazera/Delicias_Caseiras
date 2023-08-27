@@ -114,7 +114,6 @@ namespace WindowsFormsApp1
             UpdateDigitalClock();
         }
 
-
         private void UpdateDigitalClock()
         {
             DateTime currentTime = DateTime.Now.AddMinutes(addedMinutes);
@@ -129,5 +128,28 @@ namespace WindowsFormsApp1
             AddPanel(new deliveriesPanel());
             HighlightButton(deliveryBtn);
         }
+
+        public void EnableAllButtons()
+        {
+            ordersBtn.Enabled = true;
+            employeesBtn.Enabled = true;
+            clientsBtn.Enabled = true;
+            drinksBtn.Enabled = true;
+            dishesBtn.Enabled = true;
+            deliveryBtn.Enabled = true;
+            logoutBtn.Enabled = true;
+        }
+
+        public void EnableSomeButtons()
+        {
+            ordersBtn.Enabled = true;
+            employeesBtn.Enabled = false;
+            clientsBtn.Enabled = false;
+            drinksBtn.Enabled = false;
+            dishesBtn.Enabled = false;
+            deliveryBtn.Enabled = true;
+            logoutBtn.Enabled = true;
+        }
+
     }
 }
