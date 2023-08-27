@@ -36,22 +36,7 @@ namespace WindowsFormsApp1.Panels
             employeesGrid.Rows.Clear();
             foreach (Employee employee in EmployeeList.GetEmployees())
             {
-                employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Address, employee.Salary, employee.Job);
-            }
-        }
-
-        private void searchTB_TextChanged(object sender, EventArgs e)
-        {
-            string searchValue = searchTB.Text.Trim().ToLower();
-
-            employeesGrid.Rows.Clear();
-
-            foreach (Employee employee in EmployeeList.GetEmployees())
-            {
-                if (employee.Name.ToLower().StartsWith(searchValue))
-                {
-                    employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Address, employee.Salary, employee.Job);
-                }
+                employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif, employee.Password, employee.Address, employee.Salary, employee.Job);
             }
         }
 
@@ -83,6 +68,21 @@ namespace WindowsFormsApp1.Panels
                             RefreshDataGridView();
                         }
                     }
+                }
+            }
+        }
+
+        private void searchTB_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = searchTB.Text.Trim().ToLower();
+
+            employeesGrid.Rows.Clear();
+
+            foreach (Employee employee in EmployeeList.GetEmployees())
+            {
+                if (employee.Name.ToLower().StartsWith(searchValue))
+                {
+                    employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif, employee.Password, employee.Address, employee.Salary, employee.Job);
                 }
             }
         }

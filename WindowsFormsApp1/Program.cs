@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
             CheckCsvFolder();
             CheckImagesFolder();
-            Application.Run(new Menu());
+            Application.Run(new loginPanel());
             EmployeeList.LoadEmployeeIfNeeded();
             ClientList.LoadClientsIfNeeded();
             DishList.LoadDishesIfNeeded();

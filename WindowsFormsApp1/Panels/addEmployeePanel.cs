@@ -30,6 +30,8 @@ namespace WindowsFormsApp1.Panels
                 eNameTB.Text = employee.Name;
                 eAgeTB.Text = employee.Age.ToString();
                 ePNTB.Text = employee.PhoneNumber;
+                eNTB.Text = employee.Nif.ToString();
+                ePTB.Text = employee.Password;
                 eAddressTB.Text = employee.Address;
                 eSalaryTB.Text = employee.Salary.ToString();
                 eJobTB.Text = employee.Job;
@@ -53,20 +55,22 @@ namespace WindowsFormsApp1.Panels
                 string name = eNameTB.Text;
                 int age =  int.Parse(eAgeTB.Text);
                 string phoneNumber = ePNTB.Text;
+                int nif = int.Parse(eNTB.Text);
+                string password = ePTB.Text;
                 string address = eAddressTB.Text;
                 double salary = double.Parse(eSalaryTB.Text);
                 string job = eJobTB.Text;
 
                 if (rowIndex >= 0)
                 {
-                    Employee editedEmployee = new Employee(name, age, phoneNumber, address, salary, job);
+                    Employee editedEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
                     EmployeeList.EditEmployee(rowIndex, editedEmployee);
                     EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee edited successfully!");
                 }
                 else
                 {
-                    Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
+                    Employee newEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
                     EmployeeList.AddEmployee(newEmployee);
                     EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee created successfully!");
@@ -82,11 +86,13 @@ namespace WindowsFormsApp1.Panels
             bool nameValid = !string.IsNullOrWhiteSpace(eNameTB.Text);
             bool ageValid = !string.IsNullOrWhiteSpace(eAgeTB.Text); 
             bool phoneValid = !string.IsNullOrWhiteSpace(ePNTB.Text);
+            bool nifValid = !string.IsNullOrWhiteSpace(eNTB.Text);
+            bool passwordValid = !string.IsNullOrWhiteSpace(ePTB.Text);
             bool addressValid = !string.IsNullOrWhiteSpace(eAddressTB.Text);
             bool salaryValid = !string.IsNullOrWhiteSpace(eSalaryTB.Text);
             bool jobValid = !string.IsNullOrWhiteSpace(eJobTB.Text);
 
-            if (!nameValid || !ageValid || !phoneValid || !jobValid || !salaryValid || !addressValid)
+            if (!nameValid || !ageValid || !phoneValid || !nifValid || !passwordValid || !jobValid || !salaryValid || !addressValid)
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -101,6 +107,12 @@ namespace WindowsFormsApp1.Panels
             if (!IsValidDouble(eSalaryTB.Text))
             {
                 MessageBox.Show("Invalid salary format. Please enter a valid numeric value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!IsValidInt(eNTB.Text))
+            {
+                MessageBox.Show("Invalid NIF format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

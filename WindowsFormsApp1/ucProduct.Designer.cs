@@ -74,7 +74,6 @@
             this.productDescription.Name = "productDescription";
             this.productDescription.Size = new System.Drawing.Size(129, 40);
             this.productDescription.TabIndex = 11;
-            this.productDescription.Text = "Texto para verificar se o tamanho da label é suficiente ou não";
             // 
             // imageUC
             // 

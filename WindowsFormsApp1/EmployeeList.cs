@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Employee employee in employees)
                 {
-                    writer.WriteLine($"{employee.Name},{employee.Age},{employee.PhoneNumber}, {employee.Address},{employee.Salary}, {employee.Job}");
+                    writer.WriteLine($"{employee.Name}|{employee.Age}|{employee.PhoneNumber}|{employee.Nif}|{employee.Password}|{employee.Address}|{employee.Salary}|{employee.Job}");
                 }
             }
         }
@@ -63,16 +63,18 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split(',');
-                        if (parts.Length == 6)
+                        string[] parts = line.Split('|');
+                        if (parts.Length == 8)
                         {
                             string name = parts[0];
                             int age = Convert.ToInt32(parts[1]);
                             string phoneNumber = parts[2];
-                            string address = parts[3];
-                            double salary = Convert.ToDouble(parts[4]);
-                            string job = parts[5];
-                            Employee newEmployee = new Employee(name, age, phoneNumber, address, salary, job);
+                            int nif = Convert.ToInt32(parts[3]);
+                            string password = parts[4];
+                            string address = parts[5];
+                            double salary = Convert.ToDouble(parts[6]);
+                            string job = parts[7];
+                            Employee newEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
                             employees.Add(newEmployee);
                         }
                     }

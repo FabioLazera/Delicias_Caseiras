@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addEmployeePanel));
             this.addEmployeesPanel = new System.Windows.Forms.Panel();
+            this.eNTB = new System.Windows.Forms.TextBox();
+            this.a = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.eJobTB = new System.Windows.Forms.TextBox();
@@ -47,6 +49,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addEL = new System.Windows.Forms.Label();
+            this.ePTB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.addEmployeesPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +59,10 @@
             // addEmployeesPanel
             // 
             this.addEmployeesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addEmployeesPanel.Controls.Add(this.ePTB);
+            this.addEmployeesPanel.Controls.Add(this.label7);
+            this.addEmployeesPanel.Controls.Add(this.eNTB);
+            this.addEmployeesPanel.Controls.Add(this.a);
             this.addEmployeesPanel.Controls.Add(this.closeBtn);
             this.addEmployeesPanel.Controls.Add(this.saveBtn);
             this.addEmployeesPanel.Controls.Add(this.eJobTB);
@@ -73,8 +81,28 @@
             this.addEmployeesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addEmployeesPanel.Location = new System.Drawing.Point(0, 0);
             this.addEmployeesPanel.Name = "addEmployeesPanel";
-            this.addEmployeesPanel.Size = new System.Drawing.Size(571, 504);
+            this.addEmployeesPanel.Size = new System.Drawing.Size(571, 609);
             this.addEmployeesPanel.TabIndex = 0;
+            // 
+            // eNTB
+            // 
+            this.eNTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eNTB.Location = new System.Drawing.Point(36, 461);
+            this.eNTB.Multiline = true;
+            this.eNTB.Name = "eNTB";
+            this.eNTB.Size = new System.Drawing.Size(220, 35);
+            this.eNTB.TabIndex = 17;
+            // 
+            // a
+            // 
+            this.a.AutoSize = true;
+            this.a.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.a.ForeColor = System.Drawing.Color.Black;
+            this.a.Location = new System.Drawing.Point(32, 439);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(35, 19);
+            this.a.TabIndex = 16;
+            this.a.Text = "NIF";
             // 
             // closeBtn
             // 
@@ -84,7 +112,7 @@
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Location = new System.Drawing.Point(305, 447);
+            this.closeBtn.Location = new System.Drawing.Point(305, 531);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(180, 45);
             this.closeBtn.TabIndex = 15;
@@ -100,7 +128,7 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(88, 447);
+            this.saveBtn.Location = new System.Drawing.Point(88, 531);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(180, 45);
             this.saveBtn.TabIndex = 14;
@@ -111,7 +139,7 @@
             // eJobTB
             // 
             this.eJobTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.eJobTB.Location = new System.Drawing.Point(318, 379);
+            this.eJobTB.Location = new System.Drawing.Point(314, 461);
             this.eJobTB.Multiline = true;
             this.eJobTB.Name = "eJobTB";
             this.eJobTB.Size = new System.Drawing.Size(220, 35);
@@ -120,7 +148,7 @@
             // eSalaryTB
             // 
             this.eSalaryTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.eSalaryTB.Location = new System.Drawing.Point(318, 287);
+            this.eSalaryTB.Location = new System.Drawing.Point(314, 379);
             this.eSalaryTB.Multiline = true;
             this.eSalaryTB.Name = "eSalaryTB";
             this.eSalaryTB.Size = new System.Drawing.Size(220, 35);
@@ -129,7 +157,7 @@
             // eAddressTB
             // 
             this.eAddressTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.eAddressTB.Location = new System.Drawing.Point(318, 193);
+            this.eAddressTB.Location = new System.Drawing.Point(314, 287);
             this.eAddressTB.Multiline = true;
             this.eAddressTB.Name = "eAddressTB";
             this.eAddressTB.Size = new System.Drawing.Size(220, 35);
@@ -167,7 +195,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(314, 357);
+            this.label6.Location = new System.Drawing.Point(310, 439);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 19);
             this.label6.TabIndex = 7;
@@ -178,7 +206,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(314, 265);
+            this.label5.Location = new System.Drawing.Point(310, 357);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 6;
@@ -189,7 +217,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(314, 171);
+            this.label4.Location = new System.Drawing.Point(310, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 5;
@@ -260,11 +288,31 @@
             this.addEL.TabIndex = 0;
             this.addEL.Text = "Employee";
             // 
+            // ePTB
+            // 
+            this.ePTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ePTB.Location = new System.Drawing.Point(314, 193);
+            this.ePTB.Multiline = true;
+            this.ePTB.Name = "ePTB";
+            this.ePTB.Size = new System.Drawing.Size(220, 35);
+            this.ePTB.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(310, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Password";
+            // 
             // addEmployeePanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(571, 504);
+            this.ClientSize = new System.Drawing.Size(571, 609);
             this.Controls.Add(this.addEmployeesPanel);
             this.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -300,5 +348,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox eNTB;
+        private System.Windows.Forms.Label a;
+        public System.Windows.Forms.TextBox ePTB;
+        private System.Windows.Forms.Label label7;
     }
 }

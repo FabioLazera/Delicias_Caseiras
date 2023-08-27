@@ -48,10 +48,16 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientList.cs" />
-    <Compile Include="deliveriesPanel.cs">
+    <Compile Include="loginPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="deliveriesPanel.Designer.cs">
+    <Compile Include="loginPanel.Designer.cs">
+      <DependentUpon>loginPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\deliveriesPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\deliveriesPanel.Designer.cs">
       <DependentUpon>deliveriesPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="DishList.cs" />
@@ -60,10 +66,10 @@
     <Compile Include="DrinkList.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeList.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Panels\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Panels\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderList.cs" />
@@ -150,10 +156,13 @@
     <Compile Include="ucProduct.Designer.cs">
       <DependentUpon>ucProduct.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="deliveriesPanel.resx">
+    <EmbeddedResource Include="loginPanel.resx">
+      <DependentUpon>loginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\deliveriesPanel.resx">
       <DependentUpon>deliveriesPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Panels\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\betweenDatesPanel.resx">
@@ -340,6 +349,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\noPicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

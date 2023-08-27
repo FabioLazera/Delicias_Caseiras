@@ -120,7 +120,7 @@ namespace WindowsFormsApp1.Panels
                         e.Value = ""; 
                     }
                 }
-                else if (ordersGrid.Columns[e.ColumnIndex].Name == "oTime" || ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
+                else if (ordersGrid.Columns[e.ColumnIndex].Name == "oID")
                 {
                     DataGridViewCell cell = ordersGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     Order order = OrderList.GetOrders()[e.RowIndex];
@@ -181,7 +181,7 @@ namespace WindowsFormsApp1.Panels
 
             foreach (Order order in OrderList.GetOrders())
             {
-                if (order.Status == "In Preparation" || order.Status == "Ready For Delivery")
+                if (order.Status == "Pending" || order.Status == "In Preparation" || order.Status == "Ready For Delivery")
                 {
                     if (DateTime.Parse(menuForm.dateHour.Text) >= order.NextStage)
                     {
