@@ -35,6 +35,7 @@
             this.deliveriesGrid = new System.Windows.Forms.DataGridView();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStatus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dExpected = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +94,7 @@
             this.deliveriesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dID,
             this.dClient,
+            this.dStatus,
             this.dTime,
             this.dForecast,
             this.dExpected,
@@ -115,6 +117,7 @@
             this.deliveriesGrid.RowTemplate.Height = 32;
             this.deliveriesGrid.Size = new System.Drawing.Size(755, 535);
             this.deliveriesGrid.TabIndex = 48;
+            this.deliveriesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveriesGrid_CellContentClick);
             // 
             // dID
             // 
@@ -131,6 +134,14 @@
             this.dClient.MinimumWidth = 125;
             this.dClient.Name = "dClient";
             this.dClient.ReadOnly = true;
+            // 
+            // dStatus
+            // 
+            this.dStatus.FillWeight = 175F;
+            this.dStatus.HeaderText = "Status";
+            this.dStatus.MinimumWidth = 175;
+            this.dStatus.Name = "dStatus";
+            this.dStatus.ReadOnly = true;
             // 
             // dTime
             // 
@@ -259,6 +270,7 @@
         private System.Windows.Forms.Label deliveryLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dClient;
+        private System.Windows.Forms.DataGridViewButtonColumn dStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn dTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dForecast;
         private System.Windows.Forms.DataGridViewTextBoxColumn dExpected;

@@ -13,10 +13,12 @@ namespace WindowsFormsApp1.Panels
     public partial class checkoutsPanel : Form
     {
         private List<string> selectedProducts;
+        private List<string> cAddress = new List<string>();
 
         private double totalCost;
         private string orderTimeValue;
         private ordersPanel ordersPanelParent1;
+
         public checkoutsPanel(double totalCost, string orderTimeValue, ordersPanel ordersPanelParent1, List<string> selectedProducts)
         {
             InitializeComponent();
@@ -27,6 +29,10 @@ namespace WindowsFormsApp1.Panels
             checkoutWD.Text = totalCost.ToString("F2") + "€";
             this.ordersPanelParent1 = ordersPanelParent1;
             this.selectedProducts = selectedProducts;
+            label12.Visible = false;
+            DeliveryAddress.Visible = false;
+            checkoutOT.Enabled = false;
+            checkoutPM.Enabled = false;
         }
 
         private void CenterFormOnScreen()
@@ -46,6 +52,7 @@ namespace WindowsFormsApp1.Panels
             foreach (Client client in clients)
             {
                 checkoutClient.Items.Add(client.Name);
+                cAddress.Add(client.Address);
             }
         }
 
@@ -123,7 +130,9 @@ namespace WindowsFormsApp1.Panels
 
         private void checkoutClient_SelectedIndexChanged(object sender, EventArgs e)
         {
+            checkoutOT.Enabled = true;
             UpdateCheckoutButtonStatus();
+            changeAddress();
         }
 
         private void checkoutPM_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,6 +143,26 @@ namespace WindowsFormsApp1.Panels
 
         private void checkoutOT_SelectedIndexChanged(object sender, EventArgs e)
         {
+            checkoutPM.Enabled = true;
+
+            if (checkoutOT.Text == "Delivery")
+            {
+                checkoutPM.Items.Remove("Cash");
+                label12.Visible = true;
+                DeliveryAddress.Visible = true;
+
+                changeAddress();
+            }
+            else
+            {
+                if (!checkoutPM.Items.Contains("Cash"))
+                {
+                    checkoutPM.Items.Add("Cash");
+                }
+                label12.Visible = false;
+                DeliveryAddress.Visible = false;
+            }
+
             UpdateCheckoutButtonStatus();
         }
 
@@ -164,8 +193,20 @@ namespace WindowsFormsApp1.Panels
                     DishList.SaveToCSV("dishes.csv");
                 }
 
-                Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
-                OrderList.AddOrder(newOrder);
+                if (checkoutOT.Text == "Delivery")
+                {
+                    Delivery delivery = new Delivery(DeliveryAddress.Text, orderTime.AddHours(1));
+
+
+
+                    Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount, delivery);
+                    OrderList.AddOrder(newOrder);
+                }
+                else
+                {
+                    Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
+                    OrderList.AddOrder(newOrder);
+                }
 
                 MessageBox.Show("Order created successfully!");
                 this.ordersPanelParent1.RefreshDataGridView();
@@ -176,6 +217,12 @@ namespace WindowsFormsApp1.Panels
             {
                 MessageBox.Show("Error creating order. Check the entered values.");
             }
+        }
+
+        private void changeAddress()
+        {
+            int add = checkoutClient.SelectedIndex;
+            DeliveryAddress.Text = cAddress[add];
         }
     }
 }

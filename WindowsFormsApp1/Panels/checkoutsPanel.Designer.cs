@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(checkoutsPanel));
             this.checkoutPanel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.checkoutMC = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.DeliveryAddress = new System.Windows.Forms.TextBox();
             this.checkoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,6 +63,8 @@
             // checkoutPanel
             // 
             this.checkoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.checkoutPanel.Controls.Add(this.DeliveryAddress);
+            this.checkoutPanel.Controls.Add(this.label12);
             this.checkoutPanel.Controls.Add(this.label11);
             this.checkoutPanel.Controls.Add(this.label9);
             this.checkoutPanel.Controls.Add(this.checkoutMC);
@@ -86,8 +90,19 @@
             this.checkoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkoutPanel.Location = new System.Drawing.Point(0, 0);
             this.checkoutPanel.Name = "checkoutPanel";
-            this.checkoutPanel.Size = new System.Drawing.Size(589, 569);
+            this.checkoutPanel.Size = new System.Drawing.Size(589, 638);
             this.checkoutPanel.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(339, 463);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 19);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Address";
             // 
             // label11
             // 
@@ -171,7 +186,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(339, 279);
+            this.label7.Location = new System.Drawing.Point(339, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 19);
             this.label7.TabIndex = 24;
@@ -184,7 +199,7 @@
             "MbWay",
             "Visa",
             "Cash"});
-            this.checkoutPM.Location = new System.Drawing.Point(343, 301);
+            this.checkoutPM.Location = new System.Drawing.Point(343, 393);
             this.checkoutPM.Name = "checkoutPM";
             this.checkoutPM.Size = new System.Drawing.Size(220, 29);
             this.checkoutPM.TabIndex = 23;
@@ -195,7 +210,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 9F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(339, 371);
+            this.label6.Location = new System.Drawing.Point(339, 279);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 19);
             this.label6.TabIndex = 22;
@@ -218,7 +233,7 @@
             this.checkoutOT.Items.AddRange(new object[] {
             "In Person",
             "Delivery"});
-            this.checkoutOT.Location = new System.Drawing.Point(343, 393);
+            this.checkoutOT.Location = new System.Drawing.Point(343, 301);
             this.checkoutOT.Name = "checkoutOT";
             this.checkoutOT.Size = new System.Drawing.Size(220, 29);
             this.checkoutOT.TabIndex = 20;
@@ -241,7 +256,7 @@
             this.ceckoutCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ceckoutCB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ceckoutCB.ForeColor = System.Drawing.Color.White;
-            this.ceckoutCB.Location = new System.Drawing.Point(307, 485);
+            this.ceckoutCB.Location = new System.Drawing.Point(305, 562);
             this.ceckoutCB.Name = "ceckoutCB";
             this.ceckoutCB.Size = new System.Drawing.Size(180, 45);
             this.ceckoutCB.TabIndex = 18;
@@ -258,7 +273,7 @@
             this.checkoutSB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkoutSB.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkoutSB.ForeColor = System.Drawing.Color.White;
-            this.checkoutSB.Location = new System.Drawing.Point(108, 485);
+            this.checkoutSB.Location = new System.Drawing.Point(106, 562);
             this.checkoutSB.Name = "checkoutSB";
             this.checkoutSB.Size = new System.Drawing.Size(180, 45);
             this.checkoutSB.TabIndex = 17;
@@ -355,10 +370,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Checkout";
             // 
+            // DeliveryAddress
+            // 
+            this.DeliveryAddress.Location = new System.Drawing.Point(343, 485);
+            this.DeliveryAddress.Name = "DeliveryAddress";
+            this.DeliveryAddress.Size = new System.Drawing.Size(220, 27);
+            this.DeliveryAddress.TabIndex = 35;
+            // 
             // checkoutsPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(589, 569);
+            this.ClientSize = new System.Drawing.Size(589, 638);
             this.Controls.Add(this.checkoutPanel);
             this.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -401,5 +423,7 @@
         public System.Windows.Forms.Label checkoutMC;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox DeliveryAddress;
     }
 }

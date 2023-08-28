@@ -25,6 +25,19 @@ namespace WindowsFormsApp1
             return orders;
         }
 
+        public static Order GetOrdersById(int Id)
+        {
+
+            foreach (Order order in orders)
+            {
+                if (order.ID == Id)
+                {
+                    return order;
+                }
+            }
+            return null;
+        }
+
         public static int GetNextOrderId()
         {
             return nextOrderId;
@@ -38,7 +51,14 @@ namespace WindowsFormsApp1
             {
                 foreach (Order order in orders)
                 {
-                    writer.WriteLine($"{order.ID}|{order.ClientName}|{order.OrderType}|{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")}|{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")}|{order.Status}|{order.Amount}");
+                    if (order.Delivery == null)
+                    {
+                        writer.WriteLine($"{order.ID}|{order.ClientName}|{order.OrderType}|{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")}|{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")}|{order.Status}|{order.Amount}");
+                    }
+                    else
+                    {
+                        writer.WriteLine($"{order.ID}|{order.ClientName}|{order.OrderType}|{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")}|{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")}|{order.Status}|{order.Amount}|{order.Delivery.DeliveryAddress}|{order.Delivery.DeliveryForecast.ToString("dd/MM/yyyy HH:mm:ss")}");
+                    }
                 }
             }
         }
@@ -47,6 +67,8 @@ namespace WindowsFormsApp1
         {
             string fullPath = Path.Combine(Program.ProjectDirectory, "csvFiles", fileName);
 
+
+
             if (File.Exists(fullPath))
             {
                 using (StreamReader reader = new StreamReader(fullPath))
@@ -54,6 +76,7 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
+                        
                         string[] parts = line.Split('|');
                         if (parts.Length == 7)
                         {
@@ -66,6 +89,23 @@ namespace WindowsFormsApp1
                             double amount = Convert.ToDouble(parts[6]);
 
                             Order newOrder = new Order(id, clienteName, status, orderType, orderTime, nextStage, amount);
+                            orders.Add(newOrder);
+                        }
+                        else if (parts.Length == 9)
+                        {
+                            int id = Convert.ToInt32(parts[0]);
+                            string clienteName = parts[1];
+                            string status = Convert.ToString(parts[5]);
+                            string orderType = parts[2];
+                            DateTime orderTime = ConvertStrToDT(parts[3]);
+                            DateTime nextStage = ConvertStrToDT(parts[4]);
+                            double amount = Convert.ToDouble(parts[6]);
+
+                            string deliveryAddress = parts[7];
+                            DateTime deliveryForecast = ConvertStrToDT(parts[8]);
+                            Delivery delivery = new Delivery(deliveryAddress, deliveryForecast);
+
+                            Order newOrder = new Order(id, clienteName, status, orderType, orderTime, nextStage, amount, delivery);
                             orders.Add(newOrder);
                         }
                     }

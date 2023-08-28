@@ -58,7 +58,7 @@ namespace WindowsFormsApp1.Panels
                 if (ordersGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
                 {
                     int rowIndex = e.RowIndex;
-
+          
                     if (imageColumn.Name == "gridDelete")
                     {
                         DialogResult result = MessageBox.Show("Do you want to remove the Order?", "Delete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -80,24 +80,45 @@ namespace WindowsFormsApp1.Panels
 
                     if (buttonColumn.Name == "oStatus")
                     {
-                        Order selectedOrder = OrderList.GetOrders()[rowIndex];
-                        switch (selectedOrder.Status)
+                        int orderID = Convert.ToInt32(ordersGrid.Rows[rowIndex].Cells["oID"].Value);
+                        Order selectedOrder = OrderList.GetOrdersById(orderID);
+          
+                        if (selectedOrder.OrderType == "In Person")
                         {
-                            case "Pending":
-                                selectedOrder.Status = "In Preparation";
-                                selectedOrder.NextStage = nextStageValue.AddMinutes(30);
-                                break;
+                            switch (selectedOrder.Status)
+                            {
+                                case "Pending":
+                                    selectedOrder.Status = "In Preparation";
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(20);
+                                    break;
 
-                            case "In Preparation":
-                                selectedOrder.Status = "Ready For Delivery";
-                                selectedOrder.NextStage = nextStageValue.AddMinutes(20);
-                                break;
+                                case "In Preparation":
+                                    selectedOrder.Status = "Ready For Delivery";
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(10);
+                                    break;
 
-                            case "Ready For Delivery":
-                                selectedOrder.Status = "Delivered";
-                                buttonColumn.ReadOnly = true;
-                                ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = "";
-                                break;
+                                case "Ready For Delivery":
+                                    selectedOrder.Status = "Delivered";
+                                    buttonColumn.ReadOnly = true;
+                                    ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = "";
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            switch (selectedOrder.Status)
+                            {
+                                case "Pending":
+                                    selectedOrder.Status = "In Preparation";
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(20);
+                                    break;
+
+                                case "In Preparation":
+                                    selectedOrder.Status = "Ready For Delivery";
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(10);
+                                    buttonColumn.ReadOnly = true;
+                                    break;
+                            }
                         }
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value = selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
@@ -113,7 +134,8 @@ namespace WindowsFormsApp1.Panels
             {
                 if (ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
                 {
-                    Order order = OrderList.GetOrders()[e.RowIndex];
+                    int orderID = Convert.ToInt32(ordersGrid.Rows[e.RowIndex].Cells["oID"].Value);
+                    Order order = OrderList.GetOrdersById(orderID);
 
                     if (order.Status == "Delivered")
                     {
@@ -123,7 +145,8 @@ namespace WindowsFormsApp1.Panels
                 else if (ordersGrid.Columns[e.ColumnIndex].Name == "oID")
                 {
                     DataGridViewCell cell = ordersGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                    Order order = OrderList.GetOrders()[e.RowIndex];
+                    int orderID = Convert.ToInt32(ordersGrid.Rows[e.RowIndex].Cells["oID"].Value);
+                    Order order = OrderList.GetOrdersById(orderID);
 
                     if (order.Status == "Pending")
                     {
