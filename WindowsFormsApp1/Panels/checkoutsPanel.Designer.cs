@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(checkoutsPanel));
             this.checkoutPanel = new System.Windows.Forms.Panel();
+            this.DeliveryAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.DeliveryAddress = new System.Windows.Forms.TextBox();
             this.checkoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -92,6 +92,13 @@
             this.checkoutPanel.Name = "checkoutPanel";
             this.checkoutPanel.Size = new System.Drawing.Size(589, 638);
             this.checkoutPanel.TabIndex = 0;
+            // 
+            // DeliveryAddress
+            // 
+            this.DeliveryAddress.Location = new System.Drawing.Point(343, 485);
+            this.DeliveryAddress.Name = "DeliveryAddress";
+            this.DeliveryAddress.Size = new System.Drawing.Size(220, 27);
+            this.DeliveryAddress.TabIndex = 35;
             // 
             // label12
             // 
@@ -369,13 +376,6 @@
             this.label1.Size = new System.Drawing.Size(120, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Checkout";
-            // 
-            // DeliveryAddress
-            // 
-            this.DeliveryAddress.Location = new System.Drawing.Point(343, 485);
-            this.DeliveryAddress.Name = "DeliveryAddress";
-            this.DeliveryAddress.Size = new System.Drawing.Size(220, 27);
-            this.DeliveryAddress.TabIndex = 35;
             // 
             // checkoutsPanel
             // 

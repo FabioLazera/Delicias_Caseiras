@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
 
         public static void AddDish(Dish dish)
         {
-
             dishes.Add(dish);
         }
 

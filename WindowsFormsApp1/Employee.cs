@@ -76,6 +76,5 @@ namespace WindowsFormsApp1
             get { return _job;  }
             set { _job = value; }
         }
-
     }
 }

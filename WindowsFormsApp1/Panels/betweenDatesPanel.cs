@@ -57,7 +57,7 @@ namespace WindowsFormsApp1.Panels
             }
 
             DateTime startDate1 = startDate.Value;
-            DateTime endDate1 = endDate.Value;
+            DateTime endDate1 =   endDate.Value;
 
             double totalAmount = 0;
 

@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     {
         public static string ProjectDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
-        private const string CsvFolderPath = "csvFiles";
+        private const string CsvFolderPath =  "csvFiles";
         public const string ImageFolderPath = "imageFiles";
 
         [STAThread]

@@ -80,6 +80,5 @@ namespace WindowsFormsApp1.Panels
                 }
             }
         }
-
     }
 }

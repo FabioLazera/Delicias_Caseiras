@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
 
         public static void AddEmployee(Employee employee)
         {
-       
             employees.Add(employee);
         }
 

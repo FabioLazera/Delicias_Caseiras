@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
 
         public static void AddClient(Client client)
         {
-
             clients.Add(client);
         }
 

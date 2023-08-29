@@ -13,9 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class newOrdersPanel : Form
     {
-        //private List<Dish> selectedDishes = new List<Dish>();
         private List<string> selectedProducts = new List<string>();
-
         private ordersPanel ordersPanelParent;
 
         public newOrdersPanel(ordersPanel ordersPanelParent)
@@ -25,11 +23,11 @@ namespace WindowsFormsApp1
             DishList.LoadDishesIfNeeded();
             DrinkList.LoadDrinksIfNeeded();
             ClientList.LoadClientsIfNeeded();
-            checkoutGrid.RowsAdded += checkoutGrid_RowsAdded;
+            checkoutGrid.RowsAdded +=   checkoutGrid_RowsAdded;
             checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
-            checkoutGrid.CellClick += checkoutGrid_CellClick;
-            checkoutBtn.Enabled = false;
-            this.ordersPanelParent = ordersPanelParent;
+            checkoutGrid.CellClick +=   checkoutGrid_CellClick;
+            checkoutBtn.Enabled =       false;
+            this.ordersPanelParent =    ordersPanelParent;
         }
 
         private void CenterFormOnScreen()
@@ -45,7 +43,7 @@ namespace WindowsFormsApp1
         private void checkoutBtn_Click(object sender, EventArgs e)
         {
             double totalCost1 = CalculateTotalCost();
-            Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
+            Menu menuForm =     Application.OpenForms.OfType<Menu>().FirstOrDefault();
             if (menuForm != null)
             {
                 checkoutsPanel checkoutsPanel = new checkoutsPanel(totalCost1, menuForm.DateHour, this.ordersPanelParent, selectedProducts);
@@ -65,11 +63,11 @@ namespace WindowsFormsApp1
 
             foreach (Dish dish in DishList.dishes)
             {
-                ucProduct productControl = new ucProduct();
+                ucProduct productControl =             new ucProduct();
                 productControl.imageUC.ImageLocation = dish.ImagePath;
-                productControl.ProductNameLabel = dish.Name;
-                productControl.ProductPriceLabel = dish.Price;
-                productControl.ProductDescriptionTB = dish.Description;
+                productControl.ProductNameLabel =      dish.Name;
+                productControl.ProductPriceLabel =     dish.Price;
+                productControl.ProductDescriptionTB =  dish.Description;
                 productControl.Click += ucProduct_Click;
                 flowLayoutPanel.Controls.Add(productControl);
             }
@@ -81,11 +79,11 @@ namespace WindowsFormsApp1
 
             foreach (Drink drink in DrinkList.drinks)
             {
-                ucProduct productControl = new ucProduct();
+                ucProduct productControl =             new ucProduct();
                 productControl.imageUC.ImageLocation = drink.ImagePath;
-                productControl.ProductNameLabel = drink.Name;
-                productControl.ProductPriceLabel = drink.Price;
-                productControl.ProductDescriptionTB = drink.Description;
+                productControl.ProductNameLabel =      drink.Name;
+                productControl.ProductPriceLabel =     drink.Price;
+                productControl.ProductDescriptionTB =  drink.Description;
                 productControl.Click += ucProduct_Click;
                 flowLayoutPanel.Controls.Add(productControl);
             }
@@ -94,8 +92,8 @@ namespace WindowsFormsApp1
         private void UpdateAmountForRow(int rowIndex)
         {
             DataGridViewRow row = checkoutGrid.Rows[rowIndex];
-            double price = Convert.ToDouble(row.Cells["noPrice"].Value);
-            int quantity = Convert.ToInt32(row.Cells["noQty"].Value);
+            double price =        Convert.ToDouble(row.Cells["noPrice"].Value);
+            int quantity =        Convert.ToInt32(row.Cells["noQty"].Value);
 
             double amount = price * quantity;
             row.Cells["noAmount"].Value = amount;
@@ -105,11 +103,11 @@ namespace WindowsFormsApp1
         {
             if (sender is ucProduct productControl)
             {
-                string productName = productControl.ProductNameLabel;
+                string productName =  productControl.ProductNameLabel;
                 double productPrice = productControl.ProductPriceLabel;
 
                 Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
-                Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
+                Dish selectedDish =   DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
 
                 if (selectedDrink != null || selectedDish != null)
                 {
@@ -124,7 +122,7 @@ namespace WindowsFormsApp1
                     }
                     if (existingRow != null)
                     {
-                        int currentQty = Convert.ToInt32(existingRow.Cells["noQty"].Value);
+                        int currentQty =     Convert.ToInt32(existingRow.Cells["noQty"].Value);
                         int availableStock = selectedDrink != null ? selectedDrink.Stock : selectedDish.Stock;
 
                         if (availableStock > currentQty)

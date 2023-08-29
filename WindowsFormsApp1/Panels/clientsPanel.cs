@@ -12,7 +12,6 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class clientsPanel : Form
     {
-
         public clientsPanel()
         {
             InitializeComponent();
@@ -46,21 +45,6 @@ namespace WindowsFormsApp1.Panels
             betweenDatesPanel.Show();
         }
 
-        private void searchTB_TextChanged(object sender, EventArgs e)
-        {
-            string searchValue = searchTB.Text.Trim().ToLower();
-
-            clientsGrid.Rows.Clear();
-
-            foreach (Client client in ClientList.GetClients())
-            {
-                if (client.Name.ToLower().StartsWith(searchValue))
-                {
-                    clientsGrid.Rows.Add(client.Name, client.Phone_Number, client.Address, client.NIF);
-                }
-            }
-        }
-
         private void clientsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -89,6 +73,21 @@ namespace WindowsFormsApp1.Panels
                             RefreshDataGridView();
                         }
                     }
+                }
+            }
+        }
+
+        private void searchTB_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = searchTB.Text.Trim().ToLower();
+
+            clientsGrid.Rows.Clear();
+
+            foreach (Client client in ClientList.GetClients())
+            {
+                if (client.Name.ToLower().StartsWith(searchValue))
+                {
+                    clientsGrid.Rows.Add(client.Name, client.Phone_Number, client.Address, client.NIF);
                 }
             }
         }

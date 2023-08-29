@@ -31,9 +31,3 @@ namespace WindowsFormsApp1
         }
     }
 }
-
-//public Delivery (string status, string address, DateTime date) : base(status)
-//{
-    //Address = address;
-    //Date = date;
-//}

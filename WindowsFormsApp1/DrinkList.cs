@@ -86,24 +86,5 @@ namespace WindowsFormsApp1
                 LoadFromCSV("drinks.csv");
             }
         }
-
-        private double GetProductPrice(string productName)
-        {
-            Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
-            Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
-
-            if (selectedDrink != null)
-            {
-                return selectedDrink.Price;
-            }
-            else if (selectedDish != null)
-            {
-                return selectedDish.Price;
-            }
-            else
-            {
-                return 0.0; 
-            }
-        }
     }
 }

@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.orderPanel = new System.Windows.Forms.Panel();
+            this.filterByState = new System.Windows.Forms.ComboBox();
             this.plusDay = new System.Windows.Forms.PictureBox();
             this.plusHour = new System.Windows.Forms.PictureBox();
             this.printer = new System.Windows.Forms.PictureBox();
@@ -53,7 +54,6 @@
             this.ordersLabel = new System.Windows.Forms.Label();
             this.timeAlertStatus = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.filterByState = new System.Windows.Forms.ComboBox();
             this.orderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plusDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plusHour)).BeginInit();
@@ -82,13 +82,31 @@
             this.orderPanel.Size = new System.Drawing.Size(824, 768);
             this.orderPanel.TabIndex = 0;
             // 
+            // filterByState
+            // 
+            this.filterByState.Font = new System.Drawing.Font("Bookman Old Style", 7.8F);
+            this.filterByState.ForeColor = System.Drawing.Color.DimGray;
+            this.filterByState.FormattingEnabled = true;
+            this.filterByState.Items.AddRange(new object[] {
+            "All",
+            "Pending",
+            "In Preparation",
+            "Ready For Delivery",
+            "Delivered"});
+            this.filterByState.Location = new System.Drawing.Point(35, 180);
+            this.filterByState.Name = "filterByState";
+            this.filterByState.Size = new System.Drawing.Size(124, 26);
+            this.filterByState.TabIndex = 41;
+            this.filterByState.Text = "Filter By State";
+            this.filterByState.SelectedIndexChanged += new System.EventHandler(this.filterByState_SelectedIndexChanged);
+            // 
             // plusDay
             // 
             this.plusDay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.plusDay.Image = global::WindowsFormsApp1.Properties.Resources.tomorrow;
-            this.plusDay.Location = new System.Drawing.Point(103, 691);
+            this.plusDay.Location = new System.Drawing.Point(103, 699);
             this.plusDay.Name = "plusDay";
-            this.plusDay.Size = new System.Drawing.Size(50, 65);
+            this.plusDay.Size = new System.Drawing.Size(45, 45);
             this.plusDay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.plusDay.TabIndex = 40;
             this.plusDay.TabStop = false;
@@ -98,9 +116,9 @@
             // 
             this.plusHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.plusHour.Image = global::WindowsFormsApp1.Properties.Resources._15minutes;
-            this.plusHour.Location = new System.Drawing.Point(38, 691);
+            this.plusHour.Location = new System.Drawing.Point(38, 699);
             this.plusHour.Name = "plusHour";
-            this.plusHour.Size = new System.Drawing.Size(50, 65);
+            this.plusHour.Size = new System.Drawing.Size(45, 45);
             this.plusHour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.plusHour.TabIndex = 39;
             this.plusHour.TabStop = false;
@@ -122,25 +140,25 @@
             // 
             this.ordersGrid.AllowUserToAddRows = false;
             this.ordersGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(141)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ordersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersGrid.BackgroundColor = System.Drawing.Color.White;
             this.ordersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ordersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.ordersGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ordersGrid.ColumnHeadersHeight = 40;
             this.ordersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.oID,
@@ -151,14 +169,14 @@
             this.oForecast,
             this.oAmount,
             this.gridDelete});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ordersGrid.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ordersGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.ordersGrid.EnableHeadersVisualStyles = false;
             this.ordersGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ordersGrid.Location = new System.Drawing.Point(35, 204);
@@ -323,24 +341,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // filterByState
-            // 
-            this.filterByState.Font = new System.Drawing.Font("Bookman Old Style", 7.8F);
-            this.filterByState.ForeColor = System.Drawing.Color.DimGray;
-            this.filterByState.FormattingEnabled = true;
-            this.filterByState.Items.AddRange(new object[] {
-            "All",
-            "Pending",
-            "In Preparation",
-            "Ready For Delivery",
-            "Delivered"});
-            this.filterByState.Location = new System.Drawing.Point(35, 180);
-            this.filterByState.Name = "filterByState";
-            this.filterByState.Size = new System.Drawing.Size(124, 26);
-            this.filterByState.TabIndex = 41;
-            this.filterByState.Text = "Filter By State";
-            this.filterByState.SelectedIndexChanged += new System.EventHandler(this.filterByState_SelectedIndexChanged);
             // 
             // ordersPanel
             // 

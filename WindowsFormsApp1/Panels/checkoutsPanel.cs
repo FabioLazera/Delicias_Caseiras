@@ -24,15 +24,15 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             CenterFormOnScreen();
             LoadClientsToComboBox();
-            this.totalCost = totalCost;
-            this.orderTimeValue = orderTimeValue;
-            checkoutWD.Text = totalCost.ToString("F2") + "€";
+            this.totalCost =          totalCost;
+            this.orderTimeValue =     orderTimeValue;
+            checkoutWD.Text =         totalCost.ToString("F2") + "€";
             this.ordersPanelParent1 = ordersPanelParent1;
-            this.selectedProducts = selectedProducts;
-            label12.Visible = false;
+            this.selectedProducts =   selectedProducts;
+            label12.Visible =         false;
             DeliveryAddress.Visible = false;
-            checkoutOT.Enabled = false;
-            checkoutPM.Enabled = false;
+            checkoutOT.Enabled =      false;
+            checkoutPM.Enabled =      false;
         }
 
         private void CenterFormOnScreen()
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1.Panels
         {
             if (double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100)
             {
-                double discountAmount = this.totalCost * discount / 100;
+                double discountAmount =   this.totalCost * discount / 100;
                 double finalAmountToPay = this.totalCost - discountAmount;
 
                 checkoutFAP.Text = finalAmountToPay.ToString("F2") + " €";
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.Panels
                     if (double.TryParse(checkoutCashR.Text, out double cashReceived) && cashReceived >= finalAmountToPay)
                     {
                         double changeAmount = cashReceived - finalAmountToPay;
-                        checkoutMC.Text = changeAmount.ToString("F2") + " €";
+                        checkoutMC.Text =     changeAmount.ToString("F2") + " €";
                     }
                     else
                     {
@@ -97,23 +97,17 @@ namespace WindowsFormsApp1.Panels
 
         private void UpdateCheckoutButtonStatus()
         {
-            bool discountValid = double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100;
-            bool clientSelected = checkoutClient.SelectedIndex != -1;
-            bool paymentMethodSelected = checkoutPM.SelectedIndex != -1;
-            bool orderTypeSelected = checkoutOT.SelectedIndex != -1;
-
-            bool cashReceivedValid = double.TryParse(checkoutCashR.Text, out double cashReceived);
-
-            bool paymentMethodIsCash = checkoutPM.SelectedItem == "Cash";
+            bool discountValid =              double.TryParse(checkoutDiscount.Text, out double discount) && discount >= 0 && discount <= 100;
+            bool clientSelected =             checkoutClient.SelectedIndex != -1;
+            bool paymentMethodSelected =      checkoutPM.SelectedIndex != -1;
+            bool orderTypeSelected =          checkoutOT.SelectedIndex != -1;
+            bool cashReceivedValid =          double.TryParse(checkoutCashR.Text, out double cashReceived);
+            bool paymentMethodIsCash =        checkoutPM.SelectedItem == "Cash";
             bool paymentMethodIsMbWayOrVisa = checkoutPM.SelectedItem == "MbWay" || checkoutPM.SelectedItem == "Visa";
-
-            bool validCashReceivedForCash = paymentMethodIsCash && cashReceivedValid && cashReceived >= double.Parse(checkoutFAP.Text.Replace(" €", ""));
-            bool validPaymentMethod = paymentMethodIsCash || paymentMethodIsMbWayOrVisa;
-
-            bool checkoutSBEnabled = discountValid && clientSelected && paymentMethodSelected && orderTypeSelected && validPaymentMethod &&
-                (validCashReceivedForCash || paymentMethodIsMbWayOrVisa);
-
-            checkoutSB.Enabled = checkoutSBEnabled;
+            bool validCashReceivedForCash =   paymentMethodIsCash && cashReceivedValid && cashReceived >= double.Parse(checkoutFAP.Text.Replace(" €", ""));
+            bool validPaymentMethod =         paymentMethodIsCash || paymentMethodIsMbWayOrVisa;
+            bool checkoutSBEnabled =          discountValid && clientSelected && paymentMethodSelected && orderTypeSelected && validPaymentMethod && (validCashReceivedForCash || paymentMethodIsMbWayOrVisa);
+            checkoutSB.Enabled =              checkoutSBEnabled;
         }
 
         private void checkoutDiscount_TextChanged(object sender, EventArgs e)
@@ -148,7 +142,7 @@ namespace WindowsFormsApp1.Panels
             if (checkoutOT.Text == "Delivery")
             {
                 checkoutPM.Items.Remove("Cash");
-                label12.Visible = true;
+                label12.Visible =         true;
                 DeliveryAddress.Visible = true;
 
                 changeAddress();
@@ -159,7 +153,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     checkoutPM.Items.Add("Cash");
                 }
-                label12.Visible = false;
+                label12.Visible =         false;
                 DeliveryAddress.Visible = false;
             }
 
@@ -170,16 +164,16 @@ namespace WindowsFormsApp1.Panels
         {
             if (double.TryParse(checkoutFAP.Text.Replace(" €", ""), out double amount))
             {
-                string clientName = checkoutClient.SelectedItem.ToString();
-                string status = "Pending";
-                string orderType = checkoutOT.SelectedItem.ToString();
+                string clientName =  checkoutClient.SelectedItem.ToString();
+                string status =      "Pending";
+                string orderType =   checkoutOT.SelectedItem.ToString();
                 DateTime orderTime = DateTime.Parse(orderTimeValue);
                 DateTime nextStage = orderTime.AddMinutes(15);
 
                 foreach (string productName in selectedProducts)
                 {
                     Drink selectedDrink = DrinkList.drinks.FirstOrDefault(drink => drink.Name == productName);
-                    Dish selectedDish = DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
+                    Dish selectedDish =   DishList.dishes.FirstOrDefault(dish => dish.Name == productName);
 
                     if (selectedDrink != null && selectedDrink.Stock >= 1)
                     {
@@ -221,7 +215,7 @@ namespace WindowsFormsApp1.Panels
 
         private void changeAddress()
         {
-            int add = checkoutClient.SelectedIndex;
+            int add =              checkoutClient.SelectedIndex;
             DeliveryAddress.Text = cAddress[add];
         }
     }

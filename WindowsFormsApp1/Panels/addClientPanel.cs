@@ -23,15 +23,15 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
-            this.rowIndex = index;
+            this.rowIndex =   index;
 
             if (index >= 0)
             {
                 Client client = ClientList.GetClients()[index];
-                aCName.Text = client.Name;
-                aCPN.Text = client.Phone_Number;
-                aCA.Text = client.Address;
-                aCNIF.Text = client.NIF.ToString();
+                aCName.Text =   client.Name;
+                aCPN.Text =     client.Phone_Number;
+                aCA.Text =      client.Address;
+                aCNIF.Text =    client.NIF.ToString();
             }
         }
 
@@ -49,9 +49,9 @@ namespace WindowsFormsApp1.Panels
         {
             if (TextBoxesFilledAndValid())
             {
-                string name = aCName.Text;
+                string name =        aCName.Text;
                 string phoneNumber = aCPN.Text;
-                string address = aCA.Text;
+                string address =     aCA.Text;
                 long nif = long.Parse(aCNIF.Text);
 
                 if (rowIndex >= 0)
@@ -76,10 +76,10 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
-            bool nameValid = !string.IsNullOrWhiteSpace(aCName.Text);
-            bool phoneValid = !string.IsNullOrWhiteSpace(aCPN.Text);
+            bool nameValid =    !string.IsNullOrWhiteSpace(aCName.Text);
+            bool phoneValid =   !string.IsNullOrWhiteSpace(aCPN.Text);
             bool addressValid = !string.IsNullOrWhiteSpace(aCA.Text);
-            bool nifValid = !string.IsNullOrWhiteSpace(aCNIF.Text);
+            bool nifValid =     !string.IsNullOrWhiteSpace(aCNIF.Text);
 
             if (!nameValid || !phoneValid || !addressValid || !nifValid)
             {
@@ -103,6 +103,5 @@ namespace WindowsFormsApp1.Panels
             }
             return false;
         }
-
     }
 }

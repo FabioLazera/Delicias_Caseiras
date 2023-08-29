@@ -88,12 +88,12 @@ namespace WindowsFormsApp1.Panels
                             switch (selectedOrder.Status)
                             {
                                 case "Pending":
-                                    selectedOrder.Status = "In Preparation";
+                                    selectedOrder.Status =   "In Preparation";
                                     selectedOrder.NextStage = nextStageValue.AddMinutes(20);
                                     break;
 
                                 case "In Preparation":
-                                    selectedOrder.Status = "Ready For Delivery";
+                                    selectedOrder.Status =   "Ready For Delivery";
                                     selectedOrder.NextStage = nextStageValue.AddMinutes(10);
                                     break;
 
@@ -109,18 +109,18 @@ namespace WindowsFormsApp1.Panels
                             switch (selectedOrder.Status)
                             {
                                 case "Pending":
-                                    selectedOrder.Status = "In Preparation";
+                                    selectedOrder.Status =   "In Preparation";
                                     selectedOrder.NextStage = nextStageValue.AddMinutes(20);
                                     break;
 
                                 case "In Preparation":
-                                    selectedOrder.Status = "Ready For Delivery";
+                                    selectedOrder.Status =    "Ready For Delivery";
                                     selectedOrder.NextStage = nextStageValue.AddMinutes(10);
-                                    buttonColumn.ReadOnly = true;
+                                    buttonColumn.ReadOnly =   true;
                                     break;
                             }
                         }
-                        ordersGrid.Rows[rowIndex].Cells["oStatus"].Value = selectedOrder.Status.ToString();
+                        ordersGrid.Rows[rowIndex].Cells["oStatus"].Value =   selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
                         OrderList.SaveToCSV("orders.csv");
                     }
@@ -242,7 +242,6 @@ namespace WindowsFormsApp1.Panels
                 ordersGrid.Columns["gridDelete"].Visible = false;
             }
             searchTB.Clear();
-           
         }
     }
 }

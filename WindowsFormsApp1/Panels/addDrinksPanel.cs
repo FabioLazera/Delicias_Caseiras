@@ -21,15 +21,15 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
-            this.rowIndex = index;
+            this.rowIndex =   index;
 
             if (index >= 0)
             {
                 Drink drink = DrinkList.GetDrinks()[index];
-                drinkNameTB.Text = drink.Name;
+                drinkNameTB.Text =        drink.Name;
                 drinkDescriptionTB.Text = drink.Description;
-                drinkPriceTB.Text = drink.Price.ToString();
-                drinkStockTB.Text = drink.Stock.ToString();
+                drinkPriceTB.Text =       drink.Price.ToString();
+                drinkStockTB.Text =       drink.Stock.ToString();
                 LoadDrinkImage(drink.ImagePath);
             }
         }
@@ -48,10 +48,10 @@ namespace WindowsFormsApp1.Panels
         {
             if (TextBoxesFilledAndValid())
             {
-                string name = drinkNameTB.Text;
+                string name =        drinkNameTB.Text;
                 string description = drinkDescriptionTB.Text;
-                double price = double.Parse(drinkPriceTB.Text);
-                int stock = int.Parse(drinkStockTB.Text);
+                double price =       double.Parse(drinkPriceTB.Text);
+                int stock =          int.Parse(drinkStockTB.Text);
 
                 Drink editedDrink;
                 if (rowIndex >= 0)

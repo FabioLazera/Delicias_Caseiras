@@ -63,6 +63,5 @@ namespace WindowsFormsApp1
             get { return _imagePath; }
             set { _imagePath = value; }
         }
-
     }
 }

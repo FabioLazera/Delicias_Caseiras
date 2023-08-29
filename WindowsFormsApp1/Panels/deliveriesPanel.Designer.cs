@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.deliveryPanel = new System.Windows.Forms.Panel();
             this.deliveriesGrid = new System.Windows.Forms.DataGridView();
+            this.separator = new System.Windows.Forms.Label();
+            this.deliveriesPImg = new System.Windows.Forms.PictureBox();
+            this.deliveryLabel = new System.Windows.Forms.Label();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dStatus = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -40,25 +43,16 @@
             this.dForecast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dExpected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchImg = new System.Windows.Forms.PictureBox();
-            this.separator = new System.Windows.Forms.Label();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.deliveriesPImg = new System.Windows.Forms.PictureBox();
-            this.deliveryLabel = new System.Windows.Forms.Label();
+            this.dContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesPImg)).BeginInit();
             this.SuspendLayout();
             // 
             // deliveryPanel
             // 
             this.deliveryPanel.Controls.Add(this.deliveriesGrid);
-            this.deliveryPanel.Controls.Add(this.searchLabel);
-            this.deliveryPanel.Controls.Add(this.searchImg);
             this.deliveryPanel.Controls.Add(this.separator);
-            this.deliveryPanel.Controls.Add(this.searchTB);
             this.deliveryPanel.Controls.Add(this.deliveriesPImg);
             this.deliveryPanel.Controls.Add(this.deliveryLabel);
             this.deliveryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -98,7 +92,8 @@
             this.dTime,
             this.dForecast,
             this.dExpected,
-            this.dAddress});
+            this.dAddress,
+            this.dContact});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,6 +113,40 @@
             this.deliveriesGrid.Size = new System.Drawing.Size(755, 535);
             this.deliveriesGrid.TabIndex = 48;
             this.deliveriesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deliveriesGrid_CellContentClick);
+            // 
+            // separator
+            // 
+            this.separator.AutoSize = true;
+            this.separator.BackColor = System.Drawing.Color.Transparent;
+            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.separator.Location = new System.Drawing.Point(34, 163);
+            this.separator.Name = "separator";
+            this.separator.Size = new System.Drawing.Size(855, 20);
+            this.separator.TabIndex = 45;
+            this.separator.Text = "_________________________________________________________________________________" +
+    "_____________";
+            // 
+            // deliveriesPImg
+            // 
+            this.deliveriesPImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deliveriesPImg.Image = global::WindowsFormsApp1.Properties.Resources.road;
+            this.deliveriesPImg.Location = new System.Drawing.Point(41, 77);
+            this.deliveriesPImg.Name = "deliveriesPImg";
+            this.deliveriesPImg.Size = new System.Drawing.Size(65, 65);
+            this.deliveriesPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deliveriesPImg.TabIndex = 43;
+            this.deliveriesPImg.TabStop = false;
+            // 
+            // deliveryLabel
+            // 
+            this.deliveryLabel.AutoSize = true;
+            this.deliveryLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
+            this.deliveryLabel.Location = new System.Drawing.Point(36, 38);
+            this.deliveryLabel.Name = "deliveryLabel";
+            this.deliveryLabel.Size = new System.Drawing.Size(102, 26);
+            this.deliveryLabel.TabIndex = 42;
+            this.deliveryLabel.Text = "Delivery";
             // 
             // dID
             // 
@@ -175,70 +204,13 @@
             this.dAddress.Name = "dAddress";
             this.dAddress.ReadOnly = true;
             // 
-            // searchLabel
+            // dContact
             // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.searchLabel.Font = new System.Drawing.Font("Bookman Old Style", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.searchLabel.Location = new System.Drawing.Point(590, 95);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(136, 18);
-            this.searchLabel.TabIndex = 47;
-            this.searchLabel.Text = "Search Client Here";
-            // 
-            // searchImg
-            // 
-            this.searchImg.Image = global::WindowsFormsApp1.Properties.Resources.search1;
-            this.searchImg.Location = new System.Drawing.Point(557, 85);
-            this.searchImg.Name = "searchImg";
-            this.searchImg.Size = new System.Drawing.Size(29, 27);
-            this.searchImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchImg.TabIndex = 46;
-            this.searchImg.TabStop = false;
-            // 
-            // separator
-            // 
-            this.separator.AutoSize = true;
-            this.separator.BackColor = System.Drawing.Color.Transparent;
-            this.separator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.separator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.separator.Location = new System.Drawing.Point(34, 163);
-            this.separator.Name = "separator";
-            this.separator.Size = new System.Drawing.Size(855, 20);
-            this.separator.TabIndex = 45;
-            this.separator.Text = "_________________________________________________________________________________" +
-    "_____________";
-            // 
-            // searchTB
-            // 
-            this.searchTB.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(557, 115);
-            this.searchTB.Multiline = true;
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(230, 30);
-            this.searchTB.TabIndex = 44;
-            // 
-            // deliveriesPImg
-            // 
-            this.deliveriesPImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deliveriesPImg.Image = global::WindowsFormsApp1.Properties.Resources.road;
-            this.deliveriesPImg.Location = new System.Drawing.Point(41, 77);
-            this.deliveriesPImg.Name = "deliveriesPImg";
-            this.deliveriesPImg.Size = new System.Drawing.Size(65, 65);
-            this.deliveriesPImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.deliveriesPImg.TabIndex = 43;
-            this.deliveriesPImg.TabStop = false;
-            // 
-            // deliveryLabel
-            // 
-            this.deliveryLabel.AutoSize = true;
-            this.deliveryLabel.Font = new System.Drawing.Font("Bookman Old Style", 13.8F);
-            this.deliveryLabel.Location = new System.Drawing.Point(36, 38);
-            this.deliveryLabel.Name = "deliveryLabel";
-            this.deliveryLabel.Size = new System.Drawing.Size(102, 26);
-            this.deliveryLabel.TabIndex = 42;
-            this.deliveryLabel.Text = "Delivery";
+            this.dContact.FillWeight = 125F;
+            this.dContact.HeaderText = "Contact";
+            this.dContact.MinimumWidth = 125;
+            this.dContact.Name = "dContact";
+            this.dContact.ReadOnly = true;
             // 
             // deliveriesPanel
             // 
@@ -252,7 +224,6 @@
             this.deliveryPanel.ResumeLayout(false);
             this.deliveryPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveriesPImg)).EndInit();
             this.ResumeLayout(false);
 
@@ -262,10 +233,7 @@
 
         private System.Windows.Forms.Panel deliveryPanel;
         public System.Windows.Forms.DataGridView deliveriesGrid;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.PictureBox searchImg;
         private System.Windows.Forms.Label separator;
-        public System.Windows.Forms.TextBox searchTB;
         public System.Windows.Forms.PictureBox deliveriesPImg;
         private System.Windows.Forms.Label deliveryLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dID;
@@ -275,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dForecast;
         private System.Windows.Forms.DataGridViewTextBoxColumn dExpected;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dContact;
     }
 }

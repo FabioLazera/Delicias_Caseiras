@@ -22,19 +22,19 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
-            this.rowIndex = index;
+            this.rowIndex =   index;
 
             if (index >= 0)
             {
                 Employee employee = EmployeeList.GetEmployees()[index];
-                eNameTB.Text = employee.Name;
-                eAgeTB.Text = employee.Age.ToString();
-                ePNTB.Text = employee.PhoneNumber;
-                eNTB.Text = employee.Nif.ToString();
-                ePTB.Text = employee.Password;
+                eNameTB.Text =    employee.Name;
+                eAgeTB.Text =     employee.Age.ToString();
+                ePNTB.Text =      employee.PhoneNumber;
+                eNTB.Text =       employee.Nif.ToString();
+                ePTB.Text =       employee.Password;
                 eAddressTB.Text = employee.Address;
-                eSalaryTB.Text = employee.Salary.ToString();
-                eJobTB.Text = employee.Job;
+                eSalaryTB.Text =  employee.Salary.ToString();
+                eJobTB.Text =     employee.Job;
             }
         }
 
@@ -52,14 +52,14 @@ namespace WindowsFormsApp1.Panels
         {
             if (TextBoxesFilledAndValid())
             {
-                string name = eNameTB.Text;
-                int age =  int.Parse(eAgeTB.Text);
+                string name =        eNameTB.Text;
+                int age =            int.Parse(eAgeTB.Text);
                 string phoneNumber = ePNTB.Text;
-                int nif = int.Parse(eNTB.Text);
-                string password = ePTB.Text;
-                string address = eAddressTB.Text;
-                double salary = double.Parse(eSalaryTB.Text);
-                string job = eJobTB.Text;
+                int nif =            int.Parse(eNTB.Text);
+                string password =    ePTB.Text;
+                string address =     eAddressTB.Text;
+                double salary =      double.Parse(eSalaryTB.Text);
+                string job =         eJobTB.Text;
 
                 if (rowIndex >= 0)
                 {
@@ -83,14 +83,14 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
-            bool nameValid = !string.IsNullOrWhiteSpace(eNameTB.Text);
-            bool ageValid = !string.IsNullOrWhiteSpace(eAgeTB.Text); 
-            bool phoneValid = !string.IsNullOrWhiteSpace(ePNTB.Text);
-            bool nifValid = !string.IsNullOrWhiteSpace(eNTB.Text);
+            bool nameValid =     !string.IsNullOrWhiteSpace(eNameTB.Text);
+            bool ageValid =      !string.IsNullOrWhiteSpace(eAgeTB.Text); 
+            bool phoneValid =    !string.IsNullOrWhiteSpace(ePNTB.Text);
+            bool nifValid =      !string.IsNullOrWhiteSpace(eNTB.Text);
             bool passwordValid = !string.IsNullOrWhiteSpace(ePTB.Text);
-            bool addressValid = !string.IsNullOrWhiteSpace(eAddressTB.Text);
-            bool salaryValid = !string.IsNullOrWhiteSpace(eSalaryTB.Text);
-            bool jobValid = !string.IsNullOrWhiteSpace(eJobTB.Text);
+            bool addressValid =  !string.IsNullOrWhiteSpace(eAddressTB.Text);
+            bool salaryValid =   !string.IsNullOrWhiteSpace(eSalaryTB.Text);
+            bool jobValid =      !string.IsNullOrWhiteSpace(eJobTB.Text);
 
             if (!nameValid || !ageValid || !phoneValid || !nifValid || !passwordValid || !jobValid || !salaryValid || !addressValid)
             {
@@ -115,7 +115,6 @@ namespace WindowsFormsApp1.Panels
                 MessageBox.Show("Invalid NIF format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             return true;
         }
 

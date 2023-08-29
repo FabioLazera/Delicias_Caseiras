@@ -67,8 +67,6 @@ namespace WindowsFormsApp1
         {
             string fullPath = Path.Combine(Program.ProjectDirectory, "csvFiles", fileName);
 
-
-
             if (File.Exists(fullPath))
             {
                 using (StreamReader reader = new StreamReader(fullPath))

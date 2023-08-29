@@ -21,15 +21,15 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             CenterFormOnScreen();
             this.parentForm = parent;
-            this.rowIndex = index;
+            this.rowIndex =   index;
 
             if (index >= 0)
             {
                 Dish dish = DishList.GetDish()[index];
-                dishNameTB.Text = dish.Name;
+                dishNameTB.Text =        dish.Name;
                 dishDescriptionTB.Text = dish.Description;
-                dishPriceTB.Text = dish.Price.ToString();
-                dishStockTB.Text = dish.Stock.ToString();
+                dishPriceTB.Text =       dish.Price.ToString();
+                dishStockTB.Text =       dish.Stock.ToString();
                 LoadDishImage(dish.ImagePath);
             }
         }
@@ -48,19 +48,19 @@ namespace WindowsFormsApp1.Panels
         {
             if (TextBoxesFilledAndValid())
             {
-                string name = dishNameTB.Text;
+                string name =        dishNameTB.Text;
                 string description = dishDescriptionTB.Text;
-                double price = double.Parse(dishPriceTB.Text);
-                int stock = int.Parse(dishStockTB.Text);
+                double price =       double.Parse(dishPriceTB.Text);
+                int stock =          int.Parse(dishStockTB.Text);
 
                 Dish editedDish;
                 if (rowIndex >= 0)
                 {
                     editedDish = DishList.GetDish()[rowIndex];
-                    editedDish.Name = name;
+                    editedDish.Name =        name;
                     editedDish.Description = description;
-                    editedDish.Price = price;
-                    editedDish.Stock = stock;
+                    editedDish.Price =       price;
+                    editedDish.Stock =       stock;
                 }
                 else
                 {
@@ -91,10 +91,10 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
-            bool nameValid = !string.IsNullOrWhiteSpace(dishNameTB.Text);
+            bool nameValid =        !string.IsNullOrWhiteSpace(dishNameTB.Text);
             bool descriptionValid = !string.IsNullOrWhiteSpace(dishDescriptionTB.Text);
-            bool priceValid = !string.IsNullOrWhiteSpace(dishPriceTB.Text);
-            bool stockValid = !string.IsNullOrWhiteSpace(dishStockTB.Text);
+            bool priceValid =       !string.IsNullOrWhiteSpace(dishPriceTB.Text);
+            bool stockValid =       !string.IsNullOrWhiteSpace(dishStockTB.Text);
 
 
             if (!nameValid || !descriptionValid || !priceValid || !stockValid)

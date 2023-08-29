@@ -12,7 +12,6 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class employeesPanel : Form
     {
-
         public employeesPanel()
         {
             InitializeComponent();

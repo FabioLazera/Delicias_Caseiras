@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
         private void AddPanel(Form f)
         {
             mainPanel.Controls.Clear();
-            f.Dock = DockStyle.Fill;
+            f.Dock =     DockStyle.Fill;
             f.TopLevel = false;
             mainPanel.Controls.Add(f);
             f.Show();
@@ -53,16 +53,16 @@ namespace WindowsFormsApp1
             {
                 lastPressedButton.BackColor = Color.FromArgb(50, 55, 89);
             }
-            button.BackColor = Color.FromArgb(90, 95, 129);
+            button.BackColor =  Color.FromArgb(90, 95, 129);
             lastPressedButton = button;
         }
 
 
         private void ordersBtn_Click(object sender, EventArgs e)
         {
-            ordersPanel ordersPanel = new ordersPanel();
+            ordersPanel ordersPanel =      new ordersPanel();
             ordersPanel.PlusHourClicked += OrdersPanel_PlusHourClicked;
-            ordersPanel.PlusDayClicked += OrdersPanel_PlusDayClicked;
+            ordersPanel.PlusDayClicked +=  OrdersPanel_PlusDayClicked;
             AddPanel(ordersPanel);
             HighlightButton(ordersBtn);
         }
@@ -116,11 +116,11 @@ namespace WindowsFormsApp1
 
         private void UpdateDigitalClock()
         {
-            DateTime currentTime = DateTime.Now.AddMinutes(addedMinutes);
-            string formattedTime = currentTime.ToString("HH:mm:ss");
-            string formattedDate = currentTime.ToString("dd/MM/yyyy");
+            DateTime currentTime =  DateTime.Now.AddMinutes(addedMinutes);
+            string formattedTime =  currentTime.ToString("HH:mm:ss");
+            string formattedDate =  currentTime.ToString("dd/MM/yyyy");
             string dateTimeString = $"{formattedDate} {formattedTime}";
-            dateHour.Text = dateTimeString;
+            dateHour.Text =         dateTimeString;
         }
 
         private void deliveryBtn_Click(object sender, EventArgs e)
@@ -130,26 +130,25 @@ namespace WindowsFormsApp1
         }
 
         public void EnableAllButtons()
-        {
-            ordersBtn.Enabled = true;
+        { 
+            ordersBtn.Enabled =    true;
             employeesBtn.Enabled = true;
-            clientsBtn.Enabled = true;
-            drinksBtn.Enabled = true;
-            dishesBtn.Enabled = true;
-            deliveryBtn.Enabled = true;
-            logoutBtn.Enabled = true;
+            clientsBtn.Enabled =   true;
+            drinksBtn.Enabled =    true;
+            dishesBtn.Enabled =    true;
+            deliveryBtn.Enabled =  true;
+            logoutBtn.Enabled =    true;
         }
 
         public void EnableSomeButtons()
         {
-            ordersBtn.Enabled = true;
+            ordersBtn.Enabled =    true;
             employeesBtn.Enabled = false;
-            clientsBtn.Enabled = false;
-            drinksBtn.Enabled = false;
-            dishesBtn.Enabled = false;
-            deliveryBtn.Enabled = true;
-            logoutBtn.Enabled = true;
+            clientsBtn.Enabled =   false;
+            drinksBtn.Enabled =    false;
+            dishesBtn.Enabled =    false;
+            deliveryBtn.Enabled =  true;
+            logoutBtn.Enabled =    true;
         }
-
     }
 }
