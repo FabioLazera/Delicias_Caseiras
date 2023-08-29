@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class OrderList
+    public class Restaurant
     {
         private static List<Order> orders = new List<Order>();
         private static int nextOrderId = 1;

@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             ClientList.LoadClientsIfNeeded();
             DishList.LoadDishesIfNeeded();
             DrinkList.LoadDrinksIfNeeded();
-            OrderList.LoadOrderIfIsNeeded();
+            Restaurant.LoadOrderIfIsNeeded();
         }
 
         private static void CheckCsvFolder()

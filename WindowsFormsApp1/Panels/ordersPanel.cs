@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Panels
         public ordersPanel()
         {
             InitializeComponent();
-            OrderList.LoadOrderIfIsNeeded();
+            Restaurant.LoadOrderIfIsNeeded();
             RefreshDataGridView();
             ordersGrid.CellFormatting += ordersGrid_CellFormatting;
 
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1.Panels
         public void RefreshDataGridView()
         {
             ordersGrid.Rows.Clear();
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status.ToString(), order.OrderType, order.OrderTime, order.NextStage, order.Amount);
             }
@@ -65,8 +65,8 @@ namespace WindowsFormsApp1.Panels
 
                         if (result == DialogResult.Yes)
                         {
-                            OrderList.DeleteOrder(rowIndex);
-                            OrderList.SaveToCSV("orders.csv");
+                            Restaurant.DeleteOrder(rowIndex);
+                            Restaurant.SaveToCSV("orders.csv");
                             RefreshDataGridView();
                         }
                     }
@@ -81,7 +81,7 @@ namespace WindowsFormsApp1.Panels
                     if (buttonColumn.Name == "oStatus")
                     {
                         int orderID = Convert.ToInt32(ordersGrid.Rows[rowIndex].Cells["oID"].Value);
-                        Order selectedOrder = OrderList.GetOrdersById(orderID);
+                        Order selectedOrder = Restaurant.GetOrdersById(orderID);
           
                         if (selectedOrder.OrderType == "In Person")
                         {
@@ -122,7 +122,7 @@ namespace WindowsFormsApp1.Panels
                         }
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value =   selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
-                        OrderList.SaveToCSV("orders.csv");
+                        Restaurant.SaveToCSV("orders.csv");
                     }
                 }
             }
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1.Panels
                 if (ordersGrid.Columns[e.ColumnIndex].Name == "oForecast")
                 {
                     int orderID = Convert.ToInt32(ordersGrid.Rows[e.RowIndex].Cells["oID"].Value);
-                    Order order = OrderList.GetOrdersById(orderID);
+                    Order order = Restaurant.GetOrdersById(orderID);
 
                     if (order.Status == "Delivered")
                     {
@@ -146,7 +146,7 @@ namespace WindowsFormsApp1.Panels
                 {
                     DataGridViewCell cell = ordersGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     int orderID = Convert.ToInt32(ordersGrid.Rows[e.RowIndex].Cells["oID"].Value);
-                    Order order = OrderList.GetOrdersById(orderID);
+                    Order order = Restaurant.GetOrdersById(orderID);
 
                     if (order.Status == "Pending")
                     {
@@ -178,7 +178,7 @@ namespace WindowsFormsApp1.Panels
 
             ordersGrid.Rows.Clear();
 
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 if (order.ClientName.ToLower().StartsWith(searchValue))
                 {
@@ -189,7 +189,7 @@ namespace WindowsFormsApp1.Panels
 
         private void printer_Click(object sender, EventArgs e)
         {
-            OrderList.SaveOrdersToCSV("ordersPlaced.csv");
+            Restaurant.SaveOrdersToCSV("ordersPlaced.csv");
             MessageBox.Show("Orders saved to CSV successfully!");
         }
 
@@ -202,7 +202,7 @@ namespace WindowsFormsApp1.Panels
         {
             Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();
 
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 if (order.Status == "Pending" || order.Status == "In Preparation" || order.Status == "Ready For Delivery")
                 {
@@ -218,7 +218,7 @@ namespace WindowsFormsApp1.Panels
         {
             ordersGrid.Rows.Clear();
 
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 if (order.Status == status)
                 {

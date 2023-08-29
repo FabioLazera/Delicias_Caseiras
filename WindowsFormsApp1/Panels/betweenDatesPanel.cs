@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Panels
 
             double totalAmount = 0;
 
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 if (order.ClientName == selectedClient && order.OrderTime >= startDate1 && order.OrderTime <= endDate1)
                 {

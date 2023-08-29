@@ -193,18 +193,18 @@ namespace WindowsFormsApp1.Panels
 
 
 
-                    Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount, delivery);
-                    OrderList.AddOrder(newOrder);
+                    Order newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount, delivery);
+                    Restaurant.AddOrder(newOrder);
                 }
                 else
                 {
-                    Order newOrder = new Order(OrderList.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
-                    OrderList.AddOrder(newOrder);
+                    Order newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
+                    Restaurant.AddOrder(newOrder);
                 }
 
                 MessageBox.Show("Order created successfully!");
                 this.ordersPanelParent1.RefreshDataGridView();
-                OrderList.SaveToCSV("orders.csv");
+                Restaurant.SaveToCSV("orders.csv");
                 this.Close();
             }
             else

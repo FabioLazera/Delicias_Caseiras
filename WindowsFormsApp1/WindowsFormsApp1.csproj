@@ -72,7 +72,7 @@
     <Compile Include="Panels\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderList.cs" />
+    <Compile Include="Restaurant.cs" />
     <Compile Include="Panels\betweenDatesPanel.cs">
       <SubType>Form</SubType>
     </Compile>

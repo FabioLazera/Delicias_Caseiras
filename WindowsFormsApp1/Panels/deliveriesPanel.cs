@@ -15,14 +15,14 @@ namespace WindowsFormsApp1
         public deliveriesPanel()
         {
             InitializeComponent();
-            OrderList.LoadOrderIfIsNeeded();
+            Restaurant.LoadOrderIfIsNeeded();
             RefreshDataGridView();
         }
 
         public void RefreshDataGridView()
         {
             deliveriesGrid.Rows.Clear();
-            foreach (Order order in OrderList.GetOrders())
+            foreach (Order order in Restaurant.GetOrders())
             {
                 if (order.OrderType == "Delivery")
                 {
@@ -45,14 +45,14 @@ namespace WindowsFormsApp1
                     if (buttonColumn.Name == "dStatus")
                     {
                         int orderID = Convert.ToInt32(deliveriesGrid.Rows[rowIndex].Cells["dID"].Value);
-                        Order selectedOrder = OrderList.GetOrdersById(orderID);
+                        Order selectedOrder = Restaurant.GetOrdersById(orderID);
 
                         if (selectedOrder.Status.ToString() == "Ready For Delivery")
                         {
                             selectedOrder.Status = "Delivered";
                             buttonColumn.ReadOnly = true;
                         }
-                        OrderList.SaveToCSV("orders.csv");
+                        Restaurant.SaveToCSV("orders.csv");
                         RefreshDataGridView();
                     }
                 }
