@@ -21,7 +21,7 @@ namespace WindowsFormsApp1.Panels
             Restaurant.LoadOrderIfIsNeeded();
             RefreshDataGridView();
             ordersGrid.CellFormatting += ordersGrid_CellFormatting;
-
+            filterByState.SelectedItem = "All";
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)
@@ -58,16 +58,25 @@ namespace WindowsFormsApp1.Panels
                 if (ordersGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
                 {
                     int rowIndex = e.RowIndex;
-          
+                    int orderID = Convert.ToInt32(ordersGrid.Rows[rowIndex].Cells["oID"].Value);
+
                     if (imageColumn.Name == "gridDelete")
                     {
                         DialogResult result = MessageBox.Show("Do you want to remove the Order?", "Delete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (result == DialogResult.Yes)
                         {
-                            Restaurant.DeleteOrder(rowIndex);
+                            Restaurant.DeleteOrder(orderID);
                             Restaurant.SaveToCSV("orders.csv");
-                            RefreshDataGridView();
+
+                            if (filterByState.SelectedItem.ToString() != "All")
+                            {
+                                FilterOrdersByStatus(filterByState.SelectedItem.ToString());
+                            }
+                            else
+                            {
+                                RefreshDataGridView();
+                            }
                         }
                     }
                 }
@@ -122,6 +131,15 @@ namespace WindowsFormsApp1.Panels
                         }
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value =   selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
+
+                        if (filterByState.SelectedItem.ToString() != "All")
+                        {
+                            FilterOrdersByStatus(filterByState.SelectedItem.ToString());
+                        }
+                        else
+                        {
+                            RefreshDataGridView();
+                        }
                         Restaurant.SaveToCSV("orders.csv");
                     }
                 }
@@ -178,11 +196,26 @@ namespace WindowsFormsApp1.Panels
 
             ordersGrid.Rows.Clear();
 
-            foreach (Order order in Restaurant.GetOrders())
+            string selectedStatus = filterByState.SelectedItem.ToString();
+
+            if (selectedStatus == "All")
             {
-                if (order.ClientName.ToLower().StartsWith(searchValue))
+                foreach (Order order in Restaurant.GetOrders())
                 {
-                    ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                    if (order.ClientName.ToLower().StartsWith(searchValue))
+                    {
+                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Order order in Restaurant.GetOrders())
+                {
+                    if (order.ClientName.ToLower().StartsWith(searchValue) && order.Status == selectedStatus)
+                    {
+                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                    }
                 }
             }
         }
@@ -239,7 +272,6 @@ namespace WindowsFormsApp1.Panels
             else
             {
                 FilterOrdersByStatus(selectedStatus);
-                ordersGrid.Columns["gridDelete"].Visible = false;
             }
             searchTB.Clear();
         }

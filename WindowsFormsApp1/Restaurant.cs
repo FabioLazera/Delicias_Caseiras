@@ -111,13 +111,18 @@ namespace WindowsFormsApp1
             }
         }
 
-        public static void DeleteOrder(int index)
+        public static void DeleteOrder(int Id)
         {
-            if (index >= 0 && index < orders.Count)
+            Order remove = null;
+            foreach (Order order in orders)
             {
-                orders.RemoveAt(index);
-                RecalculateNextOrderId();
+                if (order.ID == Id)
+                {
+                    remove = order;
+                }
             }
+            orders.Remove(remove);
+            RecalculateNextOrderId();
         }
 
         public static DateTime ConvertStrToDT(string dateString)
