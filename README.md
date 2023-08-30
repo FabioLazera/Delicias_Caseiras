@@ -47,3 +47,55 @@ On the other hand, if it is an employee other than the "Manager", the Menu will 
 <div align="Center">
 <img src = "imgDoc/limited.png">
 </div>
+
+### Employees
+
+Panel where all employees are displayed. It is possible to add, edit or delete (Error messages will be displayed if the fields are unfilled or in the wrong format). Furthermore, searching for customers by name is possible through the filter box.
+
+<div align="Center">
+<img src = "imgDoc/employee.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/employee1.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/employee2.png">
+</div>
+
+### Clients
+
+Like employees, there is a client management panel, the main difference being the possibility of calculating the amount spent between two dates entered.
+
+<div align="Center">
+<img src = "imgDoc/clients.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/clients1.png">
+</div>
+
+### Drinks and Dishes
+
+The drinks and dishes panels follow the same reasoning, making it possible to add, edit or delete a product. The possibility of adding an image from the local machine to the respective product has been implemented.
+
+<div align="Center">
+<img src = "imgDoc/drinks.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/addDrink.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/dishes.png">
+</div>
+
+<div align="Center">
+<img src = "imgDoc/addDish.png">
+</div>
+
+### Orders
+The order panel is the most comprehensive, concentrating most of the program's functionalities. On the main panel, all requests and their respective status are displayed, and it is possible to modify the status using the corresponding button. All requests start in the "Pending" state by default, and are assigned an estimated time to advance to the next phase. The number of each order adopts a different color depending on the state.
+If the day or time advance buttons are pressed and the order is delayed in relation to the program time, alert messages will be displayed. A delay check cycle has been implemented, which is executed every X time units.
