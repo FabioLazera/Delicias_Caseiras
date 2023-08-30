@@ -1,5 +1,6 @@
 # Delicias Caseiras
 
+
 ## Intruduction
 
 The "Delícias Caseiras" application was developed to optimize and simplify the internal management of orders and deliveries, customers, employees and stocks of a establishment (take-away). Dedicated exclusively to internal use, the application aims to improve operational efficiency and the customer experience.
@@ -21,3 +22,28 @@ The interactive form provides features such as adding, excluding, editing and re
 The implementation of an order status forecast system further enhances customer service, ensuring timely and reliable deliveries, as any delay that occurs will be alerted.
 
 In short, the "Delícias Caseiras" application represents a technological solution dedicated exclusively to the internal management of the establishment, promoting an agile and precise organization of all the processes involved.
+
+
+## Functionalities
+
+### Log In
+
+When the application is launched, access credentials will be requested so that it is possible to verify the existence, in the storage, of information relating to any employee. If the fields match the data of a company employee, the windows related to the assigned status/function will be made available.
+
+By default, password data is encrypted, but there is the option to view or hide the entered characters again.
+
+<div align="Center">
+<img src = "imgDoc/login.png">
+</div>
+
+If the operation has full access, that is, if it is the "Manager", the Menu will be presented as follows:
+
+<div align="Center">
+<img src = "imgDoc/full.png">
+</div>
+
+On the other hand, if it is an employee other than the "Manager", the Menu will be presented as follows:
+
+<div align="Center">
+<img src = "imgDoc/limited.png">
+</div>

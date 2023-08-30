@@ -211,7 +211,7 @@
             // 
             // ePhoneNumber
             // 
-            this.ePhoneNumber.HeaderText = "P.Number";
+            this.ePhoneNumber.HeaderText = "Contact";
             this.ePhoneNumber.MinimumWidth = 100;
             this.ePhoneNumber.Name = "ePhoneNumber";
             this.ePhoneNumber.ReadOnly = true;

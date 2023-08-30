@@ -34,12 +34,6 @@
             this.clientPanel = new System.Windows.Forms.Panel();
             this.calculatorImg = new System.Windows.Forms.PictureBox();
             this.clientsGrid = new System.Windows.Forms.DataGridView();
-            this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchImg = new System.Windows.Forms.PictureBox();
             this.separator = new System.Windows.Forms.Label();
@@ -48,6 +42,12 @@
             this.clientsLabel = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.clientPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calculatorImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsGrid)).BeginInit();
@@ -134,61 +134,6 @@
             this.clientsGrid.Size = new System.Drawing.Size(755, 535);
             this.clientsGrid.TabIndex = 28;
             this.clientsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientsGrid_CellClick);
-            // 
-            // cName
-            // 
-            this.cName.FillWeight = 125F;
-            this.cName.HeaderText = "Name";
-            this.cName.MinimumWidth = 125;
-            this.cName.Name = "cName";
-            this.cName.ReadOnly = true;
-            // 
-            // cPhoneNumber
-            // 
-            this.cPhoneNumber.FillWeight = 150F;
-            this.cPhoneNumber.HeaderText = "Phone Number";
-            this.cPhoneNumber.MinimumWidth = 150;
-            this.cPhoneNumber.Name = "cPhoneNumber";
-            this.cPhoneNumber.ReadOnly = true;
-            // 
-            // cAddress
-            // 
-            this.cAddress.FillWeight = 200F;
-            this.cAddress.HeaderText = "Address";
-            this.cAddress.MinimumWidth = 200;
-            this.cAddress.Name = "cAddress";
-            this.cAddress.ReadOnly = true;
-            // 
-            // cNIF
-            // 
-            this.cNIF.HeaderText = "NIF";
-            this.cNIF.MinimumWidth = 100;
-            this.cNIF.Name = "cNIF";
-            this.cNIF.ReadOnly = true;
-            // 
-            // gridEdit
-            // 
-            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridEdit.FillWeight = 50F;
-            this.gridEdit.HeaderText = "";
-            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
-            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridEdit.MinimumWidth = 50;
-            this.gridEdit.Name = "gridEdit";
-            this.gridEdit.ReadOnly = true;
-            this.gridEdit.Width = 50;
-            // 
-            // gridDelete
-            // 
-            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.gridDelete.FillWeight = 50F;
-            this.gridDelete.HeaderText = "";
-            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
-            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.gridDelete.MinimumWidth = 50;
-            this.gridDelete.Name = "gridDelete";
-            this.gridDelete.ReadOnly = true;
-            this.gridDelete.Width = 50;
             // 
             // searchLabel
             // 
@@ -278,6 +223,61 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
+            // cName
+            // 
+            this.cName.FillWeight = 125F;
+            this.cName.HeaderText = "Name";
+            this.cName.MinimumWidth = 125;
+            this.cName.Name = "cName";
+            this.cName.ReadOnly = true;
+            // 
+            // cPhoneNumber
+            // 
+            this.cPhoneNumber.FillWeight = 150F;
+            this.cPhoneNumber.HeaderText = "Contact";
+            this.cPhoneNumber.MinimumWidth = 150;
+            this.cPhoneNumber.Name = "cPhoneNumber";
+            this.cPhoneNumber.ReadOnly = true;
+            // 
+            // cAddress
+            // 
+            this.cAddress.FillWeight = 200F;
+            this.cAddress.HeaderText = "Address";
+            this.cAddress.MinimumWidth = 200;
+            this.cAddress.Name = "cAddress";
+            this.cAddress.ReadOnly = true;
+            // 
+            // cNIF
+            // 
+            this.cNIF.HeaderText = "NIF";
+            this.cNIF.MinimumWidth = 100;
+            this.cNIF.Name = "cNIF";
+            this.cNIF.ReadOnly = true;
+            // 
+            // gridEdit
+            // 
+            this.gridEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridEdit.FillWeight = 50F;
+            this.gridEdit.HeaderText = "";
+            this.gridEdit.Image = global::WindowsFormsApp1.Properties.Resources.edit;
+            this.gridEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridEdit.MinimumWidth = 50;
+            this.gridEdit.Name = "gridEdit";
+            this.gridEdit.ReadOnly = true;
+            this.gridEdit.Width = 50;
+            // 
+            // gridDelete
+            // 
+            this.gridDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gridDelete.FillWeight = 50F;
+            this.gridDelete.HeaderText = "";
+            this.gridDelete.Image = global::WindowsFormsApp1.Properties.Resources.recycle;
+            this.gridDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.gridDelete.MinimumWidth = 50;
+            this.gridDelete.Name = "gridDelete";
+            this.gridDelete.ReadOnly = true;
+            this.gridDelete.Width = 50;
+            // 
             // clientsPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -307,13 +307,13 @@
         public System.Windows.Forms.PictureBox clientsPImg;
         private System.Windows.Forms.Label clientsLabel;
         public System.Windows.Forms.PictureBox calculatorImg;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cName;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn cAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNIF;
         private System.Windows.Forms.DataGridViewImageColumn gridEdit;
         private System.Windows.Forms.DataGridViewImageColumn gridDelete;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
