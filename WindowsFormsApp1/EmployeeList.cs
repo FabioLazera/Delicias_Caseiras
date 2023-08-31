@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Employee employee in employees)
                 {
-                    writer.WriteLine($"{employee.Name}|{employee.Age}|{employee.PhoneNumber}|{employee.Nif}|{employee.Password}|{employee.Address}|{employee.Salary}|{employee.Job}");
+                    writer.WriteLine($"{employee.Name};{employee.Age};{employee.PhoneNumber};{employee.Nif};{employee.Password};{employee.Address};{employee.Salary};{employee.Job}");
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split('|');
+                        string[] parts = line.Split(';');
                         if (parts.Length == 8)
                         {
                             string name = parts[0];

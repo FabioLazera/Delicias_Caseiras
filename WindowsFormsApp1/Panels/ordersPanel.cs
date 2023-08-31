@@ -19,9 +19,9 @@ namespace WindowsFormsApp1.Panels
         {
             InitializeComponent();
             Restaurant.LoadOrderIfIsNeeded();
+            filterByState.SelectedItem = "All";
             RefreshDataGridView();
             ordersGrid.CellFormatting += ordersGrid_CellFormatting;
-            filterByState.SelectedItem = "All";
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)
@@ -44,10 +44,31 @@ namespace WindowsFormsApp1.Panels
 
         public void RefreshDataGridView()
         {
+            string searchValue = searchTB.Text.Trim().ToLower();
+
             ordersGrid.Rows.Clear();
-            foreach (Order order in Restaurant.GetOrders())
+
+            string selectedStatus = filterByState.SelectedItem.ToString();
+
+            if (selectedStatus == "All")
             {
-                ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status.ToString(), order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                foreach (Order order in Restaurant.GetOrders())
+                {
+                    if (order.ClientName.ToLower().StartsWith(searchValue))
+                    {
+                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Order order in Restaurant.GetOrders())
+                {
+                    if (order.ClientName.ToLower().StartsWith(searchValue) && order.Status == selectedStatus)
+                    {
+                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
+                    }
+                }
             }
         }
 
@@ -98,12 +119,12 @@ namespace WindowsFormsApp1.Panels
                             {
                                 case "Pending":
                                     selectedOrder.Status =   "In Preparation";
-                                    selectedOrder.NextStage = nextStageValue.AddMinutes(20);
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(15);
                                     break;
 
                                 case "In Preparation":
                                     selectedOrder.Status =   "Ready For Delivery";
-                                    selectedOrder.NextStage = nextStageValue.AddMinutes(10);
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(1);
                                     break;
 
                                 case "Ready For Delivery":
@@ -119,12 +140,12 @@ namespace WindowsFormsApp1.Panels
                             {
                                 case "Pending":
                                     selectedOrder.Status =   "In Preparation";
-                                    selectedOrder.NextStage = nextStageValue.AddMinutes(20);
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(15);
                                     break;
 
                                 case "In Preparation":
                                     selectedOrder.Status =    "Ready For Delivery";
-                                    selectedOrder.NextStage = nextStageValue.AddMinutes(10);
+                                    selectedOrder.NextStage = nextStageValue.AddMinutes(20);
                                     buttonColumn.ReadOnly =   true;
                                     break;
                             }
@@ -192,32 +213,7 @@ namespace WindowsFormsApp1.Panels
 
         private void searchTB_TextChanged(object sender, EventArgs e)
         {
-            string searchValue = searchTB.Text.Trim().ToLower();
-
-            ordersGrid.Rows.Clear();
-
-            string selectedStatus = filterByState.SelectedItem.ToString();
-
-            if (selectedStatus == "All")
-            {
-                foreach (Order order in Restaurant.GetOrders())
-                {
-                    if (order.ClientName.ToLower().StartsWith(searchValue))
-                    {
-                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
-                    }
-                }
-            }
-            else
-            {
-                foreach (Order order in Restaurant.GetOrders())
-                {
-                    if (order.ClientName.ToLower().StartsWith(searchValue) && order.Status == selectedStatus)
-                    {
-                        ordersGrid.Rows.Add(order.ID, order.ClientName, order.Status, order.OrderType, order.OrderTime, order.NextStage, order.Amount);
-                    }
-                }
-            }
+            RefreshDataGridView();
         }
 
         private void printer_Click(object sender, EventArgs e)
@@ -262,18 +258,7 @@ namespace WindowsFormsApp1.Panels
 
         private void filterByState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedStatus = filterByState.SelectedItem.ToString();
-
-            if (selectedStatus == "All")
-            {
-                RefreshDataGridView();
-                ordersGrid.Columns["gridDelete"].Visible = true;
-            }
-            else
-            {
-                FilterOrdersByStatus(selectedStatus);
-            }
-            searchTB.Clear();
+            RefreshDataGridView();
         }
     }
 }

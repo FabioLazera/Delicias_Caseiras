@@ -14,7 +14,8 @@ namespace WindowsFormsApp1.Panels
     {
         private List<string> selectedProducts;
         private List<string> cAddress = new List<string>();
-
+        private List<long> cNif = new List<long>();
+        private long myNif;
         private double totalCost;
         private string orderTimeValue;
         private ordersPanel ordersPanelParent1;
@@ -53,6 +54,7 @@ namespace WindowsFormsApp1.Panels
             {
                 checkoutClient.Items.Add(client.Name);
                 cAddress.Add(client.Address);
+                cNif.Add(client.NIF);
             }
         }
 
@@ -169,6 +171,7 @@ namespace WindowsFormsApp1.Panels
                 string orderType =   checkoutOT.SelectedItem.ToString();
                 DateTime orderTime = DateTime.Parse(orderTimeValue);
                 DateTime nextStage = orderTime.AddMinutes(15);
+                Order newOrder;
 
                 foreach (string productName in selectedProducts)
                 {
@@ -193,16 +196,25 @@ namespace WindowsFormsApp1.Panels
 
 
 
-                    Order newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount, delivery);
+                    newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount, delivery);
                     Restaurant.AddOrder(newOrder);
                 }
                 else
                 {
-                    Order newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
+                    newOrder = new Order(Restaurant.GetNextOrderId(), clientName, status, orderType, orderTime, nextStage, amount);
                     Restaurant.AddOrder(newOrder);
                 }
 
-                MessageBox.Show("Order created successfully!");
+                string subtotal = checkoutWD.Text;
+                string discount = checkoutDiscount.Text;
+                string finalAP = checkoutFAP.Text;
+                string moneyChange = checkoutMC.Text;
+                string moneyReceived = checkoutCashR.Text;
+                string paymentMethod = checkoutPM.SelectedItem.ToString();
+
+                invoicePanel invoicePanel = new invoicePanel(newOrder, selectedProducts, myNif, subtotal, discount, finalAP, moneyChange, paymentMethod, moneyReceived);
+                invoicePanel.Show();
+
                 this.ordersPanelParent1.RefreshDataGridView();
                 Restaurant.SaveToCSV("orders.csv");
                 this.Close();
@@ -217,6 +229,7 @@ namespace WindowsFormsApp1.Panels
         {
             int add =              checkoutClient.SelectedIndex;
             DeliveryAddress.Text = cAddress[add];
+            myNif = cNif[add];
         }
     }
 }

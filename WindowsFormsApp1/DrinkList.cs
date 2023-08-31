@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Drink drink in drinks)
                 {
-                    writer.WriteLine($"{drink.Name},{drink.Description},{drink.Price},{drink.Stock},{drink.ImagePath}");
+                    writer.WriteLine($"{drink.Name};{drink.Description};{drink.Price};{drink.Stock};{drink.ImagePath}");
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split(',');
+                        string[] parts = line.Split(';');
                         if (parts.Length == 5)
                         {
                             string name = parts[0];

@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Client client in clients)
                 {
-                    writer.WriteLine($"{client.Name},{client.Phone_Number},{client.Address},{client.NIF}");
+                    writer.WriteLine($"{client.Name};{client.Phone_Number};{client.Address};{client.NIF}");
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] parts = line.Split(',');
+                        string[] parts = line.Split(';');
                         if (parts.Length == 4)
                         {
                             string name = parts[0];
