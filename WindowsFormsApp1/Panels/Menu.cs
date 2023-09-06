@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
     {
         private Button lastPressedButton;
         private int addedMinutes = 0;
+        private Employee loggedInEmployee;
 
         public Menu()
         {

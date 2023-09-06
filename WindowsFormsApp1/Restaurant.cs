@@ -148,20 +148,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        public static void SaveOrdersToCSV(string fileName)
-        {
-            string folderPath = Path.Combine(Program.ProjectDirectory, "csvFiles");
-            string fullPath = Path.Combine(folderPath, fileName);
-
-            using (StreamWriter writer = new StreamWriter(fullPath))
-            {
-                foreach (Order order in orders)
-                {
-                    writer.WriteLine($"{order.ID};{order.ClientName};{order.OrderType};{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")};{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")};{order.Status};{order.Amount}");
-                }
-            }
-        }
-
         private static void RecalculateNextOrderId()
         {
             nextOrderId = orders.Count > 0 ? orders.Max(order => order.ID) + 1 : 1;

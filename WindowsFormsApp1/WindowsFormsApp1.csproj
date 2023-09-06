@@ -48,10 +48,10 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientList.cs" />
-    <Compile Include="invoicePanel.cs">
+    <Compile Include="Panels\invoicePanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="invoicePanel.Designer.cs">
+    <Compile Include="Panels\invoicePanel.Designer.cs">
       <DependentUpon>invoicePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panels\loginPanel.cs">
@@ -161,7 +161,7 @@
     <Compile Include="ucProduct.Designer.cs">
       <DependentUpon>ucProduct.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="invoicePanel.resx">
+    <EmbeddedResource Include="Panels\invoicePanel.resx">
       <DependentUpon>invoicePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panels\loginPanel.resx">

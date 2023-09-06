@@ -218,7 +218,7 @@ namespace WindowsFormsApp1.Panels
 
         private void printer_Click(object sender, EventArgs e)
         {
-            Restaurant.SaveOrdersToCSV("ordersPlaced.csv");
+            Restaurant.SaveToCSV("ordersPlaced.csv");
             MessageBox.Show("Orders saved to CSV successfully!");
         }
 
