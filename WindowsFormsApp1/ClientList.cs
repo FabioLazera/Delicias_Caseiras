@@ -84,5 +84,64 @@ namespace WindowsFormsApp1
                 LoadFromCSV("clients.csv");
             }
         }
+
+        public static bool IfNifExists(string nif)
+        {
+            long myNif = long.Parse(nif);
+            bool flag  = false;
+
+            foreach (Client client in clients)
+            {
+                if (client.NIF == myNif)
+                {
+                    flag = true;
+                }
+            }
+
+            return flag;
+        }
+
+        public static bool IfNifExistsIndex(string nif, int MyIndex)
+        {
+            long myNif = long.Parse(nif);
+            bool flag = false;
+
+            for (int i = 0; i < clients.Count; i++)
+            {
+                if (i != MyIndex && clients[i].NIF == myNif)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        public static bool IfContactExists(string contact)
+        {
+            bool flag = false;
+            foreach (Client client in clients)
+            {
+                if (client.Phone_Number == contact)
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        public static bool IfContactExistsIndex(string contact, int MyIndex)
+        {
+            bool flag = false;
+            for (int i = 0; i < clients.Count; i++)
+            {
+                if (i != MyIndex && clients[i].Phone_Number == contact)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
+        }
     }
 }

@@ -11,7 +11,6 @@ namespace WindowsFormsApp1
     public class EmployeeList
     {
         private static List<Employee> employees = new List<Employee>();
-
         public static void AddEmployee(Employee employee)
         {
             employees.Add(employee);
@@ -87,6 +86,67 @@ namespace WindowsFormsApp1
             {
                 LoadFromCSV("employees.csv");
             }
+        }
+
+        public static bool IfNifExists(string nif)
+        {
+            long myNif = long.Parse(nif);
+            bool flag = false;
+
+            foreach (Employee emp in employees)
+            {
+                if (emp.Nif == myNif)
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        public static bool IfNifExistsIndex(string nif, int MyIndex)
+        {
+            long myNif = long.Parse(nif);
+            bool flag = false;
+
+            for (int i = 0; i < employees.Count; i++)
+            {
+                if (i != MyIndex && employees[i].Nif == myNif)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+
+            return flag;
+        }
+
+        public static bool IfContactExists(string contact)
+        {
+            bool flag = false;
+
+            foreach (Employee emp in employees)
+            {
+                if (emp.PhoneNumber == contact)
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        public static bool IfContactExistsIndex(string contact, int MyIndex)
+        {
+            bool flag = false;
+
+            for (int i = 0; i < employees.Count; i++)
+            {
+                if (i != MyIndex && employees[i].PhoneNumber == contact)
+                {
+                    flag = true;
+                    break; 
+                }
+            }
+            return flag;
         }
     }
 }

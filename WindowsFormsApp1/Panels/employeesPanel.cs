@@ -29,7 +29,6 @@ namespace WindowsFormsApp1.Panels
             RefreshDataGridView();
         }
 
-
         public void RefreshDataGridView()
         {
             employeesGrid.Rows.Clear();

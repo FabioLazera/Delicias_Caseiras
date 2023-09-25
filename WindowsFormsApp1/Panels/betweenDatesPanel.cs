@@ -41,6 +41,7 @@ namespace WindowsFormsApp1.Panels
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
             CalculateTotal();
+            endDate.MinDate = startDate.Value;
         }
 
         private void endDate_ValueChanged(object sender, EventArgs e)

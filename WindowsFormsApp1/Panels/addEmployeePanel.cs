@@ -115,6 +115,35 @@ namespace WindowsFormsApp1.Panels
                 MessageBox.Show("Invalid NIF format. Please enter a valid numerical value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
+            if (rowIndex >= 0)
+            {
+                if (EmployeeList.IfNifExistsIndex(eNTB.Text, rowIndex) == true || ClientList.IfNifExistsIndex(eNTB.Text, rowIndex) == true)
+                {
+                    MessageBox.Show("NIF Alredy Exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+                if (EmployeeList.IfContactExistsIndex(ePNTB.Text, rowIndex) == true)
+                {
+                    MessageBox.Show("This phone alredy exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            else
+            {
+                if (EmployeeList.IfNifExists(eNTB.Text) == true || ClientList.IfNifExists(eNTB.Text) == true)
+                {
+                    MessageBox.Show("NIF alredy exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+                if (EmployeeList.IfContactExists(ePNTB.Text) == true)
+                {
+                    MessageBox.Show("This Phone alredy exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
             return true;
         }
 
