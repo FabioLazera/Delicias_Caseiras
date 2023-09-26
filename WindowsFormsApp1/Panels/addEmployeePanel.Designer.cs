@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addEmployeePanel));
             this.addEmployeesPanel = new System.Windows.Forms.Panel();
+            this.ePTB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.eNTB = new System.Windows.Forms.TextBox();
             this.a = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addEL = new System.Windows.Forms.Label();
-            this.ePTB = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.addEmployeesPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +83,27 @@
             this.addEmployeesPanel.Name = "addEmployeesPanel";
             this.addEmployeesPanel.Size = new System.Drawing.Size(571, 609);
             this.addEmployeesPanel.TabIndex = 0;
+            // 
+            // ePTB
+            // 
+            this.ePTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ePTB.Location = new System.Drawing.Point(314, 193);
+            this.ePTB.Multiline = true;
+            this.ePTB.Name = "ePTB";
+            this.ePTB.PasswordChar = '*';
+            this.ePTB.Size = new System.Drawing.Size(220, 35);
+            this.ePTB.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(310, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Password";
             // 
             // eNTB
             // 
@@ -287,26 +308,6 @@
             this.addEL.Size = new System.Drawing.Size(120, 26);
             this.addEL.TabIndex = 0;
             this.addEL.Text = "Employee";
-            // 
-            // ePTB
-            // 
-            this.ePTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ePTB.Location = new System.Drawing.Point(314, 193);
-            this.ePTB.Multiline = true;
-            this.ePTB.Name = "ePTB";
-            this.ePTB.Size = new System.Drawing.Size(220, 35);
-            this.ePTB.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(310, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 19);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Password";
             // 
             // addEmployeePanel
             // 

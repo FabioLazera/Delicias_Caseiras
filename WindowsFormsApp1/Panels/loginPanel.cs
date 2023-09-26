@@ -27,10 +27,8 @@ namespace WindowsFormsApp1
             int enteredNif;
             if (int.TryParse(nifTB.Text, out enteredNif))
             {
-                string enteredPassword = passwordTB.Text;
-
+                string enteredPassword = EmployeeList.EncryptPassword(passwordTB.Text);
                 EmployeeList.LoadFromCSV("employees.csv");
-
                 Employee matchingEmployee = EmployeeList.GetEmployees().FirstOrDefault(employee => employee.Nif == enteredNif && employee.Password == enteredPassword);
 
                 if (matchingEmployee != null)

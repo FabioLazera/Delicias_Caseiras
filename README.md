@@ -63,9 +63,10 @@ On the other hand, if it is an employee who is not a "Manager", the Menu will be
 - Editing Customers: By clicking on the editing image in the row corresponding to a customer in the table, the Manager can modify the details of that customer. After editing, the changes are reflected in the list and in the CSV file.
 - Exclusion of Customers: The application also allows the exclusion of customers. When clicking the delete image in the customer row, a confirmation is requested and if confirmed, the customer is removed from the list and the changes are reflected in the CSV.
 - Customer search by name: There is a search field where you can type a customer's name. As search text is entered, the code dynamically filters the results displayed in the table, showing only those customers whose names match the text entered, making it easier to find specific customers.
-- Calculator: When clicking on the image representing a calculator, the application opens a window to perform calculations between dates of the amount spent for a certain previously selected customer.
 
 ![Clients Panel](imgDoc/clients.png)
+
+- Calculator: When clicking on the image representing a calculator, the application opens a window to perform calculations between dates of the amount spent for a certain previously selected customer.
 
 ![Calculate Customer Expenses](imgDoc/clients1.png)
 
@@ -99,13 +100,14 @@ The program's Order Dashboard – a comprehensive, central hub that encompasses 
 - Implements a periodic delay check cycle for timely updates.
 - There is the possibility of filtering orders by status or customer name.
 - It is possible to conveniently export all data to a CSV file using the printer icon.
-- Whenever an order is in "Delivered" status, the next status prediction column is empty.
 
 "Delivery" orders are transferred to the Delivery Panel when they reach the "Ready for Delivery" status, with the status button being disabled.
 
 ![Order Colors](imgDoc/colorOrder.png)
 
 ![Filter by Name](imgDoc/nameFilter.png)
+
+Whenever an order is in "Delivered" status, the next status prediction column is empty.
 
 ![Filter by Status](imgDoc/statusFilter.png)
 
@@ -125,15 +127,35 @@ The program's Order Dashboard – a comprehensive, central hub that encompasses 
 
 ![Order](imgDoc/newO1.png)
 
+![Order](imgDoc/newOrdersPanel.png)
+
+### **Checkout**
+
+- Automatic Cost Calculation: The cost field is automatically filled with the total value of the current invoice, which is calculated based on the products selected in the previous order step. This provides a clear view of the cost before the payment obligation.
+
+- Discount Application: There is an option to add discount to the order. The desired discount amount can be entered and the code automatically calculates the new total amount with the discount applied.
+
+- Payment and Automatic Exchange: The fields for the amount received and the final amount with discount applied are available. When entering the amount received (in the case of cash payment), the system automatically calculates the change to be returned.
+
+- Customer Selection: A customer must be selected to complete the order.
+
+- Type of Order and Payment Method: The user must choose the type of order, which can be “In-person” or “Delivery”, and select a payment method, such as cash, credit card, etc.
+
+- Dynamic Fields: The availability of fields, such as payment method and amount received, is dynamically controlled based on the previous options. For example, if the selected payment method is cash, the field for entering the amount received is editable, otherwise it is not. If the order is Delivery, an extra address field will be displayed and automatically filled with the customer's address, with the possibility of changing the address so that delivery can be made to another location.
+
+- Sending the order: Only when all mandatory fields are correctly filled in will you be able to send the order. This ensures that all information needed to process the order is available.
+
+![Order](imgDoc/checkout0.png)
+
+As soon as the order is placed, an invoice simulation is shown.
+
 ![Order](imgDoc/invoice1.png)
 
 ### **Deliveries** <img src="imgDoc/delivery.png"/> 
 
 In this panel, orders that are Ready for Delivery are displayed, and when a delivery person finishes the delivery, they click on the status button, and the order disappears from the deliveries panel and becomes available again in the Orders panel, with the Delivered status.
 
-![Ready for Delivery Orders](imgDoc/statusFilter.png)
+![Ready for Delivery Orders](imgDoc/deliveryPanel.png)
 
 
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

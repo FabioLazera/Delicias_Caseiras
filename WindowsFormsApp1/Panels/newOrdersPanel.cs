@@ -28,6 +28,8 @@ namespace WindowsFormsApp1
             checkoutGrid.CellClick +=   checkoutGrid_CellClick;
             checkoutBtn.Enabled =       false;
             this.ordersPanelParent =    ordersPanelParent;
+            checkoutGrid.Columns[2].DefaultCellStyle.Format = "0.00";
+            checkoutGrid.Columns[3].DefaultCellStyle.Format = "0.00";
         }
 
         private void CenterFormOnScreen()
@@ -94,8 +96,8 @@ namespace WindowsFormsApp1
             DataGridViewRow row = checkoutGrid.Rows[rowIndex];
             double price =        Convert.ToDouble(row.Cells["noPrice"].Value);
             int quantity =        Convert.ToInt32(row.Cells["noQty"].Value);
+            double amount =       price * quantity;
 
-            double amount = price * quantity;
             row.Cells["noAmount"].Value = amount;
         }
 

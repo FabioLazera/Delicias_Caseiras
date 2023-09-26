@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.Panels
         public employeesPanel()
         {
             InitializeComponent();
+            employeesGrid.Columns[6].DefaultCellStyle.Format = "0.00";
             if (EmployeeList.GetEmployees().Count == 0)
             {
                 EmployeeList.LoadFromCSV("employees.csv");
@@ -34,7 +35,7 @@ namespace WindowsFormsApp1.Panels
             employeesGrid.Rows.Clear();
             foreach (Employee employee in EmployeeList.GetEmployees())
             {
-                employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif, employee.Password, employee.Address, employee.Salary, employee.Job);
+                employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif,"******", employee.Address, employee.Salary, employee.Job);
             }
         }
 
@@ -80,7 +81,7 @@ namespace WindowsFormsApp1.Panels
             {
                 if (employee.Name.ToLower().StartsWith(searchValue))
                 {
-                    employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif, employee.Password, employee.Address, employee.Salary, employee.Job);
+                    employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif, "******", employee.Address, employee.Salary, employee.Job);
                 }
             }
         }

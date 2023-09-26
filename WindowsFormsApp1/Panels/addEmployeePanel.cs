@@ -27,14 +27,15 @@ namespace WindowsFormsApp1.Panels
             if (index >= 0)
             {
                 Employee employee = EmployeeList.GetEmployees()[index];
-                eNameTB.Text =    employee.Name;
-                eAgeTB.Text =     employee.Age.ToString();
-                ePNTB.Text =      employee.PhoneNumber;
-                eNTB.Text =       employee.Nif.ToString();
-                ePTB.Text =       employee.Password;
-                eAddressTB.Text = employee.Address;
-                eSalaryTB.Text =  employee.Salary.ToString();
-                eJobTB.Text =     employee.Job;
+                eNameTB.Text =      employee.Name;
+                eAgeTB.Text =       employee.Age.ToString();
+                ePNTB.Text =        employee.PhoneNumber;
+                eNTB.Text =         employee.Nif.ToString();
+                eAddressTB.Text =   employee.Address;
+                eSalaryTB.Text =    employee.Salary.ToString();
+                eJobTB.Text =       employee.Job;
+                string mypassword = employee.Password;
+                ePTB.Text = EmployeeList.DecryptPassword(mypassword);
             }
         }
 
@@ -63,14 +64,16 @@ namespace WindowsFormsApp1.Panels
 
                 if (rowIndex >= 0)
                 {
-                    Employee editedEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
+                    string EncryptPassword = EmployeeList.EncryptPassword(password);
+                    Employee editedEmployee = new Employee(name, age, phoneNumber, nif, EncryptPassword, address, salary, job);
                     EmployeeList.EditEmployee(rowIndex, editedEmployee);
                     EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee edited successfully!");
                 }
                 else
                 {
-                    Employee newEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
+                    string EncryptPassword = EmployeeList.EncryptPassword(password);
+                    Employee newEmployee = new Employee(name, age, phoneNumber, nif, EncryptPassword, address, salary, job);
                     EmployeeList.AddEmployee(newEmployee);
                     EmployeeList.SaveToCSV("employees.csv");
                     MessageBox.Show("Employee created successfully!");

@@ -23,8 +23,6 @@ namespace WindowsFormsApp1
         private double total;
         private string moneyReceived;
 
-
-
         public invoicePanel(Order neworder, List<string> selectedProducts, long myNif, string subtotal, string discount, string finalAP, string moneyChange, string paymentMethod, string moneyReceived)
         {
             InitializeComponent();
@@ -37,6 +35,7 @@ namespace WindowsFormsApp1
             this.finalAP =          finalAP;
             this.moneyChange =      moneyChange;
             this.paymentMethod =    paymentMethod;
+
             double.TryParse(finalAP.Replace(" €", ""), out total);
             this.moneyReceived =    moneyReceived;
 

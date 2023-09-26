@@ -45,8 +45,7 @@ namespace WindowsFormsApp1
             {
                 foreach (Employee employee in employees)
                 {
-                    string password = EncryptPassword(employee.Password, 150);
-                    writer.WriteLine($"{employee.Name};{employee.Age};{employee.PhoneNumber};{employee.Nif};{password};{employee.Address};{employee.Salary};{employee.Job}");
+                    writer.WriteLine($"{employee.Name};{employee.Age};{employee.PhoneNumber};{employee.Nif};{employee.Password};{employee.Address};{employee.Salary};{employee.Job}");
                 }
             }
         }
@@ -62,14 +61,13 @@ namespace WindowsFormsApp1
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(';');
-                        string password = EncryptPassword(parts[4], 150);
                         if (parts.Length == 8)
                         {
                             string name = parts[0];
                             int age = Convert.ToInt32(parts[1]);
                             string phoneNumber = parts[2];
                             int nif = Convert.ToInt32(parts[3]);
-                            password = parts[4];
+                            string password = parts[4];
                             string address = parts[5];
                             double salary = Convert.ToDouble(parts[6]);
                             string job = parts[7];
@@ -149,21 +147,28 @@ namespace WindowsFormsApp1
             }
             return flag;
         }
-        public static string EncryptPassword(string password, int leap)
 
+        public static string EncryptPassword(string password)
         {
             char[] chars = password.ToCharArray();
+
             for (int i = 0; i < chars.Length; i++)
             {
-                if (char.IsLetter(chars[i]))
-                {
-                    char baseChar = char.IsLower(chars[i]) ? 'a' : 'A';
-                    chars[i] = (char)(baseChar + (chars[i] - baseChar + leap) % 26);
-                }
-                else if (char.IsDigit(chars[i]))
-                {
-                    chars[i] = (char)((chars[i] - '0' + leap) % 10 + '0');
-                }
+
+                chars[i] = (char)(chars[i] + 2500);
+
+            }
+            return new string(chars);
+        }
+
+        public static string DecryptPassword(string password)
+        {
+            char[] chars = password.ToCharArray();
+
+            for (int i = 0; i < chars.Length; i++)
+
+            {
+                chars[i] = (char)(chars[i] - 2500);
             }
             return new string(chars);
         }
