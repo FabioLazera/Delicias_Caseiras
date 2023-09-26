@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class newOrdersPanel : Form
     {
+        // List to keep track of selected products.
         private List<string> selectedProducts = new List<string>();
         private ordersPanel ordersPanelParent;
 
@@ -23,11 +24,14 @@ namespace WindowsFormsApp1
             DishList.LoadDishesIfNeeded();
             DrinkList.LoadDrinksIfNeeded();
             ClientList.LoadClientsIfNeeded();
+            // Attach event handlers and initialize UI components.
             checkoutGrid.RowsAdded +=   checkoutGrid_RowsAdded;
             checkoutGrid.RowsRemoved += checkoutGrid_RowsRemoved;
             checkoutGrid.CellClick +=   checkoutGrid_CellClick;
             checkoutBtn.Enabled =       false;
+            // Reference to the parent ordersPanel.
             this.ordersPanelParent =    ordersPanelParent;
+            // Set formatting for DataGridView columns.
             checkoutGrid.Columns[2].DefaultCellStyle.Format = "0.00";
             checkoutGrid.Columns[3].DefaultCellStyle.Format = "0.00";
         }
@@ -93,6 +97,7 @@ namespace WindowsFormsApp1
 
         private void UpdateAmountForRow(int rowIndex)
         {
+            // Update the total amount for a specific row in the checkoutGrid.
             DataGridViewRow row = checkoutGrid.Rows[rowIndex];
             double price =        Convert.ToDouble(row.Cells["noPrice"].Value);
             int quantity =        Convert.ToInt32(row.Cells["noQty"].Value);
@@ -103,6 +108,7 @@ namespace WindowsFormsApp1
 
         private void ucProduct_Click(object sender, EventArgs e)
         {
+            // Handle product selection when clicked.
             if (sender is ucProduct productControl)
             {
                 string productName =  productControl.ProductNameLabel;
@@ -114,6 +120,7 @@ namespace WindowsFormsApp1
                 if (selectedDrink != null || selectedDish != null)
                 {
                     DataGridViewRow existingRow = null;
+                    // Check if the product is already in the checkoutGrid.
                     foreach (DataGridViewRow row in checkoutGrid.Rows)
                     {
                         if (row.Cells["noProduct"].Value.ToString() == productName)
@@ -191,6 +198,7 @@ namespace WindowsFormsApp1
 
         private void checkoutGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Handle cell click event for removing items from the checkoutGrid.
             if (e.RowIndex >= 0 && e.ColumnIndex == checkoutGrid.Columns["gridDelete"].Index)
             {
                 DataGridViewRow row = checkoutGrid.Rows[e.RowIndex];

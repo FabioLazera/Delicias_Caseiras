@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
             return drinks;
         }
 
+        // Method to edit drink data at a specific index.
         public static void EditDrink(int index, Drink newDrinkData)
         {
             if (index >= 0 && index < drinks.Count)
@@ -31,6 +32,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Method to delete a drink at a specific index.
         public static void DeleteDrink(int index)
         {
             if (index >= 0 && index < drinks.Count)
@@ -47,7 +49,9 @@ namespace WindowsFormsApp1
             {
                 foreach (Drink drink in drinks)
                 {
+                    // Format the price with the invariant culture to ensure consistent decimal representation.
                     string formattedPrice = string.Format(CultureInfo.InvariantCulture, "{0:0.00}", drink.Price);
+                    // Write drink data to the CSV file in a specific format.
                     writer.WriteLine($"{drink.Name};{drink.Description};{formattedPrice};{drink.Stock};{drink.ImagePath}");
                 }
             }
@@ -67,12 +71,14 @@ namespace WindowsFormsApp1
                         string[] parts = line.Split(';');
                         if (parts.Length == 5)
                         {
+                            // Parse drink data from the CSV line.
                             string name = parts[0];
                             string description = parts[1];
-                            string priceStr = parts[2].Replace(',', '.');
+                            string priceStr = parts[2].Replace(',', '.');// Replace comma with dot for consistent decimal parsing.
                             double price = Convert.ToDouble(priceStr, CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
                             string imagePath = parts[4];
+                            // Create a new Drink object and add it to the list.
                             Drink newDrink = new Drink(name, description, price, stock, imagePath);
                             drinks.Add(newDrink);
                         }

@@ -40,6 +40,7 @@ namespace WindowsFormsApp1.Panels
 
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
+            // Update the end date's minimum value to ensure it is not earlier than the start date.
             CalculateTotal();
             endDate.MinDate = startDate.Value;
         }

@@ -47,7 +47,9 @@ namespace WindowsFormsApp1
             {
                 foreach (Dish dish in dishes)
                 {
+                    // Format the price with the invariant culture to ensure consistent decimal representation.
                     string formattedPrice = string.Format(CultureInfo.InvariantCulture, "{0:0.00}", dish.Price);
+                    // Write dish data to the CSV file in a specific format.
                     writer.WriteLine($"{dish.Name};{dish.Description};{formattedPrice};{dish.Stock};{dish.ImagePath}");
                 }
             }
@@ -66,12 +68,14 @@ namespace WindowsFormsApp1
                         string[] parts = line.Split(';');
                         if (parts.Length == 5)
                         {
+                            // Parse dish data from the CSV line.
                             string name = parts[0];
                             string description = parts[1];
-                            string priceStr = parts[2].Replace(',', '.');
+                            string priceStr = parts[2].Replace(',', '.');// Replace comma with dot for consistent decimal parsing.
                             double price = Convert.ToDouble(priceStr, CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
                             string imagePath = parts[4];
+                            // Create a new Dish object and add it to the list.
                             Dish newDish = new Dish(name, description, price, stock, imagePath);
                             dishes.Add(newDish);
                         }

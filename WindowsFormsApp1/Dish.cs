@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         private int _stock;
         private string _imagePath;
 
+        // Constructor for initializing a Dish with basic properties.
         public Dish(string name, string description, double price, int stock, int id, string clientName, string status,  string orderType, DateTime orderTime, DateTime nextStage, double amount)
         : base(id, clientName, status, orderType, orderTime, nextStage, amount)
         {
@@ -24,6 +25,7 @@ namespace WindowsFormsApp1
             _stock = stock;
         }
 
+        // Constructor for initializing a Dish with additional image path property.
         public Dish(string name, string description, double price, int stock, string imagePath = null, int id = 0, string clientName = "", string status = "", string orderType = "", DateTime orderTime = default, DateTime nextStage = default, double amount = 0)
         : base(id, clientName, status, orderType, orderTime, nextStage, amount)
         {

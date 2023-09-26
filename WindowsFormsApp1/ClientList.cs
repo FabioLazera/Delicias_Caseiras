@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             return clients;
         }
 
+        // Method to edit client data at a specified index.
         public static void EditClient(int index, Client newClientData)
         {
             if (index >= 0 && index < clients.Count)
@@ -30,6 +31,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Method to delete a client at a specified index.
         public static void DeleteClient(int index)
         {
             if (index >= 0 && index < clients.Count)
@@ -85,6 +87,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Method to check if a client with a specific NIF exists.
         public static bool IfNifExists(string nif)
         {
             long myNif = long.Parse(nif);
@@ -101,6 +104,7 @@ namespace WindowsFormsApp1
             return flag;
         }
 
+        // Method to check if a client with a specific NIF exists at a specific index.
         public static bool IfNifExistsIndex(string nif, int MyIndex)
         {
             long myNif = long.Parse(nif);
@@ -117,6 +121,7 @@ namespace WindowsFormsApp1
             return flag;
         }
 
+        // Method to check if a client with a specific contact number exists.
         public static bool IfContactExists(string contact)
         {
             bool flag = false;
@@ -130,6 +135,7 @@ namespace WindowsFormsApp1
             return flag;
         }
 
+        // Method to check if a client with a specific contact number exists at a specific index.
         public static bool IfContactExistsIndex(string contact, int MyIndex)
         {
             bool flag = false;

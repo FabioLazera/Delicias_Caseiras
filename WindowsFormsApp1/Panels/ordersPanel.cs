@@ -13,6 +13,7 @@ namespace WindowsFormsApp1.Panels
 {
     public partial class ordersPanel : Form
     {
+        // Event handlers for Plus Hour and Plus Day button clicks.
         public event EventHandler PlusHourClicked;
         public event EventHandler PlusDayClicked;
         public ordersPanel()
@@ -20,6 +21,7 @@ namespace WindowsFormsApp1.Panels
             InitializeComponent();
             Restaurant.LoadOrderIfIsNeeded();
             filterByState.SelectedItem = "All";
+            // Initialize the DataGridView and format the "Amount" column.
             RefreshDataGridView();
             ordersGrid.CellFormatting += ordersGrid_CellFormatting;
             ordersGrid.Columns[6].DefaultCellStyle.Format = "0.00";
@@ -31,9 +33,12 @@ namespace WindowsFormsApp1.Panels
             newOrdersPanel.Show();
         }
 
+        // Event handler for clicking the "Plus Hour" button.
         private void plusHour_Click(object sender, EventArgs e)
         {
+            // Trigger the PlusHourClicked event when the "Plus Hour" button is clicked.
             PlusHourClicked?.Invoke(this, EventArgs.Empty);
+            // Check for overdue orders and show alerts.
             Alert();
         }
 
@@ -53,6 +58,7 @@ namespace WindowsFormsApp1.Panels
 
             if (selectedStatus == "All")
             {
+                // Populate the DataGridView with all orders.
                 foreach (Order order in Restaurant.GetOrders())
                 {
                     if (order.ClientName.ToLower().StartsWith(searchValue))
@@ -63,6 +69,7 @@ namespace WindowsFormsApp1.Panels
             }
             else
             {
+                // Populate the DataGridView with orders filtered by status.
                 foreach (Order order in Restaurant.GetOrders())
                 {
                     if (order.ClientName.ToLower().StartsWith(searchValue) && order.Status == selectedStatus)
@@ -75,6 +82,7 @@ namespace WindowsFormsApp1.Panels
 
         private void ordersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Handling image and button column clicks.
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (ordersGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn imageColumn)
@@ -93,6 +101,7 @@ namespace WindowsFormsApp1.Panels
 
                             if (filterByState.SelectedItem.ToString() != "All")
                             {
+                                // Refresh the DataGridView with filtered orders.
                                 FilterOrdersByStatus(filterByState.SelectedItem.ToString());
                             }
                             else
@@ -113,7 +122,8 @@ namespace WindowsFormsApp1.Panels
                     {
                         int orderID = Convert.ToInt32(ordersGrid.Rows[rowIndex].Cells["oID"].Value);
                         Order selectedOrder = Restaurant.GetOrdersById(orderID);
-          
+
+                        // Update order status based on its current status.
                         if (selectedOrder.OrderType == "In Person")
                         {
                             switch (selectedOrder.Status)
@@ -151,6 +161,7 @@ namespace WindowsFormsApp1.Panels
                                     break;
                             }
                         }
+                        // Update the DataGridView with the new status and forecast.
                         ordersGrid.Rows[rowIndex].Cells["oStatus"].Value =   selectedOrder.Status.ToString();
                         ordersGrid.Rows[rowIndex].Cells["oForecast"].Value = selectedOrder.NextStage;
 
@@ -188,6 +199,7 @@ namespace WindowsFormsApp1.Panels
                     int orderID = Convert.ToInt32(ordersGrid.Rows[e.RowIndex].Cells["oID"].Value);
                     Order order = Restaurant.GetOrdersById(orderID);
 
+                    // Apply different text colors based on order status.
                     if (order.Status == "Pending")
                     {
                         cell.Style.ForeColor = Color.Red;
@@ -228,6 +240,7 @@ namespace WindowsFormsApp1.Panels
             Alert();
         }
 
+        // Show alerts for overdue orders.
         private void Alert()
         {
             Menu menuForm = Application.OpenForms.OfType<Menu>().FirstOrDefault();

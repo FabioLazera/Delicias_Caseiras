@@ -13,8 +13,10 @@ namespace WindowsFormsApp1
 {
     internal static class Program
     {
+        // Property to get the project directory where the application is running.
         public static string ProjectDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
+        // Constants for folder paths where CSV and image files are stored.
         private const string CsvFolderPath =  "csvFiles";
         public const string ImageFolderPath = "imageFiles";
 
@@ -26,6 +28,8 @@ namespace WindowsFormsApp1
             CheckCsvFolder();
             CheckImagesFolder();
             Application.Run(new loginPanel());
+
+            // Load necessary data when the application starts.
             EmployeeList.LoadEmployeeIfNeeded();
             ClientList.LoadClientsIfNeeded();
             DishList.LoadDishesIfNeeded();
@@ -33,6 +37,7 @@ namespace WindowsFormsApp1
             Restaurant.LoadOrderIfIsNeeded();
         }
 
+        // Method to check if the CSV folder exists and create it if not.
         private static void CheckCsvFolder()
         {
             string csvFolderPath = Path.Combine(ProjectDirectory, CsvFolderPath);
@@ -43,6 +48,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Method to check if the image folder exists and create it if not.
         private static void CheckImagesFolder()
         {
             string imageFolderPath = Path.Combine(ProjectDirectory, ImageFolderPath);

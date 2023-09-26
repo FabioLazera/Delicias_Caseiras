@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
             return employees;
         }
 
+        // Method to edit an employee's data at a specific index.
         public static void EditEmployee(int index, Employee newEmployeeData)
         {
             if (index >= 0 && index < employees.Count)
@@ -29,6 +30,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Method to delete an employee at a specific index.
         public static void DeleteEmployee(int index)
         {
             if (index >= 0 && index < employees.Count)
@@ -63,6 +65,7 @@ namespace WindowsFormsApp1
                         string[] parts = line.Split(';');
                         if (parts.Length == 8)
                         {
+                            // Parse employee data from the CSV line.
                             string name = parts[0];
                             int age = Convert.ToInt32(parts[1]);
                             string phoneNumber = parts[2];
@@ -71,6 +74,7 @@ namespace WindowsFormsApp1
                             string address = parts[5];
                             double salary = Convert.ToDouble(parts[6]);
                             string job = parts[7];
+                            // Create a new Employee object and add it to the list.
                             Employee newEmployee = new Employee(name, age, phoneNumber, nif, password, address, salary, job);
                             employees.Add(newEmployee);
                         }
@@ -133,6 +137,7 @@ namespace WindowsFormsApp1
             return flag;
         }
 
+        // Method to check if a contact exists among employees except for a specific index.
         public static bool IfContactExistsIndex(string contact, int MyIndex)
         {
             bool flag = false;

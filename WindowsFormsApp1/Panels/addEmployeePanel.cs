@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Panels
             CenterFormOnScreen();
             this.parentForm = parent;
             this.rowIndex =   index;
-
+            // If editing an existing employee, populate the form fields with their data.
             if (index >= 0)
             {
                 Employee employee = EmployeeList.GetEmployees()[index];
@@ -51,6 +51,7 @@ namespace WindowsFormsApp1.Panels
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            // Check if the text boxes are filled and valid before saving employee information.
             if (TextBoxesFilledAndValid())
             {
                 string name =        eNameTB.Text;
@@ -86,6 +87,7 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
+            // Check if all text boxes are filled and contain valid data.
             bool nameValid =     !string.IsNullOrWhiteSpace(eNameTB.Text);
             bool ageValid =      !string.IsNullOrWhiteSpace(eAgeTB.Text); 
             bool phoneValid =    !string.IsNullOrWhiteSpace(ePNTB.Text);

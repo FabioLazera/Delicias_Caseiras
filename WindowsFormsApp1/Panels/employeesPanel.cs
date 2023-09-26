@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.Panels
         public employeesPanel()
         {
             InitializeComponent();
+            // Set a specific format for the 6th column in the DataGridView.
             employeesGrid.Columns[6].DefaultCellStyle.Format = "0.00";
             if (EmployeeList.GetEmployees().Count == 0)
             {
@@ -33,6 +34,7 @@ namespace WindowsFormsApp1.Panels
         public void RefreshDataGridView()
         {
             employeesGrid.Rows.Clear();
+            // Display employee data while hiding sensitive information.
             foreach (Employee employee in EmployeeList.GetEmployees())
             {
                 employeesGrid.Rows.Add(employee.Name, employee.Age, employee.PhoneNumber, employee.Nif,"******", employee.Address, employee.Salary, employee.Job);
@@ -50,6 +52,7 @@ namespace WindowsFormsApp1.Panels
                     if (imageColumn.Name == "gridEdit")
                     {
                         addEmployeePanel addEmployeePanel = new addEmployeePanel(this, rowIndex);
+                        // If changes are saved in the child form, update and save the employee list.
                         if (addEmployeePanel.ShowDialog() == DialogResult.OK)
                         {
                             EmployeeList.SaveToCSV("employees.csv");
@@ -76,7 +79,7 @@ namespace WindowsFormsApp1.Panels
             string searchValue = searchTB.Text.Trim().ToLower();
 
             employeesGrid.Rows.Clear();
-
+            // Iterate through employees and add those whose names start with the search value to the DataGridView.
             foreach (Employee employee in EmployeeList.GetEmployees())
             {
                 if (employee.Name.ToLower().StartsWith(searchValue))
