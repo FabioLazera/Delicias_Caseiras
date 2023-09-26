@@ -103,17 +103,29 @@ The program's Order Dashboard – a comprehensive, central hub that encompasses 
 
 "Delivery" orders are transferred to the Delivery Panel when they reach the "Ready for Delivery" status, with the status button being disabled.
 
-![Order](imgDoc/newO.png)
-
-![Order](imgDoc/newO1.png)
-
-![Order](imgDoc/invoice1.png)
-
 ![Order Colors](imgDoc/colorOrder.png)
 
 ![Filter by Name](imgDoc/nameFilter.png)
 
 ![Filter by Status](imgDoc/statusFilter.png)
+
+### **New Order**
+
+- Category Selection: In the new order panel, there is the option to choose between two main categories: Drinks and Dishes. When you click one of these buttons, a list of articles available in the selected category is displayed.
+
+- Adding Products: As products are selected from the list, a table is automatically updated to show the product name, the chosen quantity and the corresponding value.
+
+- Product Removal: If necessary, it is possible to delete products from the order table. This provides flexibility to adjust the order before finalizing it.
+
+- Calculation of the Purchase Total: At the bottom of the order table, the code automatically calculates the purchase total, adding the values of all selected products.
+
+- Checkout: After selecting the desired products and checking the purchase total in the table, you can proceed to the next step by clicking the "Checkout" button to complete the order.
+
+![Order](imgDoc/newO.png)
+
+![Order](imgDoc/newO1.png)
+
+![Order](imgDoc/invoice1.png)
 
 ### **Deliveries** <img src="imgDoc/delivery.png"/> 
 
@@ -124,12 +136,4 @@ In this panel, orders that are Ready for Delivery are displayed, and when a deli
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Category Selection: In the new order panel, there is the option to choose between two main categories: Drinks and Dishes. When you click one of these buttons, a list of articles available in the selected category is displayed.
 
-Adding Products: As products are selected from the list, a table is automatically updated to show the product name, the chosen quantity and the corresponding value.
-
-Product Removal: If necessary, it is possible to delete products from the order table. This provides flexibility to adjust the order before finalizing it.
-
-Calculation of the Purchase Total: At the bottom of the order table, the code automatically calculates the purchase total, adding the values of all selected products.
-
-Checkout: After selecting the desired products and checking the purchase total in the table, you can proceed to the next step by clicking the "Checkout" button to complete the order.

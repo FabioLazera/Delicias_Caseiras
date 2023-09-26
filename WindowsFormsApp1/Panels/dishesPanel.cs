@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.Panels
             searchTB.TextChanged += searchTB_TextChanged;
             DishList.LoadDishesIfNeeded();
             RefreshDataGridView();
+            dishesGrid.Columns[2].DefaultCellStyle.Format = "0.00";
         }
 
         private void dishesPImg_Click(object sender, EventArgs e)

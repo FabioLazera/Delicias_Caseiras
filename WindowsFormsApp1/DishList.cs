@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.LinkLabel;
 
 namespace WindowsFormsApp1
 {
@@ -46,11 +47,11 @@ namespace WindowsFormsApp1
             {
                 foreach (Dish dish in dishes)
                 {
-                    writer.WriteLine($"{dish.Name};{dish.Description};{dish.Price};{dish.Stock};{dish.ImagePath}");
+                    string formattedPrice = string.Format(CultureInfo.InvariantCulture, "{0:0.00}", dish.Price);
+                    writer.WriteLine($"{dish.Name};{dish.Description};{formattedPrice};{dish.Stock};{dish.ImagePath}");
                 }
             }
         }
-
         public static void LoadFromCSV(string fileName)
         {
             string fullPath = Path.Combine(Program.ProjectDirectory, "csvFiles", fileName);
@@ -67,7 +68,8 @@ namespace WindowsFormsApp1
                         {
                             string name = parts[0];
                             string description = parts[1];
-                            double price = Convert.ToDouble(parts[2], CultureInfo.InvariantCulture);
+                            string priceStr = parts[2].Replace(',', '.');
+                            double price = Convert.ToDouble(priceStr, CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
                             string imagePath = parts[4];
                             Dish newDish = new Dish(name, description, price, stock, imagePath);

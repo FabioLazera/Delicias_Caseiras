@@ -47,7 +47,8 @@ namespace WindowsFormsApp1
             {
                 foreach (Drink drink in drinks)
                 {
-                    writer.WriteLine($"{drink.Name};{drink.Description};{drink.Price};{drink.Stock};{drink.ImagePath}");
+                    string formattedPrice = string.Format(CultureInfo.InvariantCulture, "{0:0.00}", drink.Price);
+                    writer.WriteLine($"{drink.Name};{drink.Description};{formattedPrice};{drink.Stock};{drink.ImagePath}");
                 }
             }
         }
@@ -68,7 +69,8 @@ namespace WindowsFormsApp1
                         {
                             string name = parts[0];
                             string description = parts[1];
-                            double price = Convert.ToDouble(parts[2], CultureInfo.InvariantCulture);
+                            string priceStr = parts[2].Replace(',', '.');
+                            double price = Convert.ToDouble(priceStr, CultureInfo.InvariantCulture);
                             int stock = Convert.ToInt32(parts[3]);
                             string imagePath = parts[4];
                             Drink newDrink = new Drink(name, description, price, stock, imagePath);

@@ -19,6 +19,7 @@ namespace WindowsFormsApp1.Panels
             searchTB.TextChanged += searchTB_TextChanged;
             DrinkList.LoadDrinksIfNeeded();
             RefreshDataGridView();
+            drinksGrid.Columns[2].DefaultCellStyle.Format = "0.00";
         }
 
         private void drinksPImg_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace WindowsFormsApp1.Panels
             filterByState.SelectedItem = "All";
             RefreshDataGridView();
             ordersGrid.CellFormatting += ordersGrid_CellFormatting;
+            ordersGrid.Columns[6].DefaultCellStyle.Format = "0.00";
         }
 
         private void ordersPImg_Click(object sender, EventArgs e)

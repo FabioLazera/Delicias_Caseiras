@@ -51,14 +51,20 @@ namespace WindowsFormsApp1
             {
                 foreach (Order order in orders)
                 {
+                    string formattedAmount = string.Format(CultureInfo.InvariantCulture, "{0:0.00}", order.Amount);
+                    string formattedDeliveryForecast = order.Delivery != null ? order.Delivery.DeliveryForecast.ToString("dd/MM/yyyy HH:mm:ss") : "";
+                    string formattedLine;
+
                     if (order.Delivery == null)
                     {
-                        writer.WriteLine($"{order.ID};{order.ClientName};{order.OrderType};{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")};{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")};{order.Status};{order.Amount}");
+                        formattedLine = $"{order.ID};{order.ClientName};{order.OrderType};{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")};{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")};{order.Status};{formattedAmount}";
                     }
                     else
                     {
-                        writer.WriteLine($"{order.ID};{order.ClientName};{order.OrderType};{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")};{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")};{order.Status};{order.Amount};{order.Delivery.DeliveryAddress};{order.Delivery.DeliveryForecast.ToString("dd/MM/yyyy HH:mm:ss")}");
+                        formattedLine = $"{order.ID};{order.ClientName};{order.OrderType};{order.OrderTime.ToString("dd/MM/yyyy HH:mm:ss")};{order.NextStage.ToString("dd/MM/yyyy HH:mm:ss")};{order.Status};{formattedAmount};{order.Delivery.DeliveryAddress};{formattedDeliveryForecast}";
                     }
+
+                    writer.WriteLine(formattedLine);
                 }
             }
         }
@@ -84,7 +90,7 @@ namespace WindowsFormsApp1
                             string orderType = parts[2];
                             DateTime orderTime = ConvertStrToDT(parts[3]);
                             DateTime nextStage = ConvertStrToDT(parts[4]);
-                            double amount = Convert.ToDouble(parts[6]);
+                            double amount = Convert.ToDouble(parts[6], CultureInfo.InvariantCulture);
 
                             Order newOrder = new Order(id, clienteName, status, orderType, orderTime, nextStage, amount);
                             orders.Add(newOrder);
@@ -97,7 +103,7 @@ namespace WindowsFormsApp1
                             string orderType = parts[2];
                             DateTime orderTime = ConvertStrToDT(parts[3]);
                             DateTime nextStage = ConvertStrToDT(parts[4]);
-                            double amount = Convert.ToDouble(parts[6]);
+                            double amount = Convert.ToDouble(parts[6], CultureInfo.InvariantCulture);
 
                             string deliveryAddress = parts[7];
                             DateTime deliveryForecast = ConvertStrToDT(parts[8]);
@@ -134,7 +140,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                throw new ArgumentException("Invalid date string format", nameof(dateString));
+                throw new ArgumentException("Invalid Date String Format", nameof(dateString));
             }
         }
 
