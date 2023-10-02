@@ -93,15 +93,15 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
-            bool nameValid = !string.IsNullOrWhiteSpace(drinkNameTB.Text);
-            bool descriptionValid = !string.IsNullOrWhiteSpace(drinkDescriptionTB.Text);
-            bool priceValid = !string.IsNullOrWhiteSpace(drinkPriceTB.Text);
-            bool stockValid = !string.IsNullOrWhiteSpace(drinkStockTB.Text);
+            bool nameValid = !string.IsNullOrWhiteSpace(drinkNameTB.Text) && !drinkNameTB.Text.Contains(";");
+            bool descriptionValid = !string.IsNullOrWhiteSpace(drinkDescriptionTB.Text) && !drinkDescriptionTB.Text.Contains(";");
+            bool priceValid = !string.IsNullOrWhiteSpace(drinkPriceTB.Text) && !drinkPriceTB.Text.Contains(";");
+            bool stockValid = !string.IsNullOrWhiteSpace(drinkStockTB.Text) && !drinkStockTB.Text.Contains(";");
             
 
             if (!nameValid || !descriptionValid || !priceValid || !stockValid)
             {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields and do not use semicolons.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

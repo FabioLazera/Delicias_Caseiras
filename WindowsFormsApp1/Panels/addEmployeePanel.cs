@@ -88,18 +88,18 @@ namespace WindowsFormsApp1.Panels
         private bool TextBoxesFilledAndValid()
         {
             // Check if all text boxes are filled and contain valid data.
-            bool nameValid =     !string.IsNullOrWhiteSpace(eNameTB.Text);
-            bool ageValid =      !string.IsNullOrWhiteSpace(eAgeTB.Text); 
-            bool phoneValid =    !string.IsNullOrWhiteSpace(ePNTB.Text);
-            bool nifValid =      !string.IsNullOrWhiteSpace(eNTB.Text);
-            bool passwordValid = !string.IsNullOrWhiteSpace(ePTB.Text);
-            bool addressValid =  !string.IsNullOrWhiteSpace(eAddressTB.Text);
-            bool salaryValid =   !string.IsNullOrWhiteSpace(eSalaryTB.Text);
-            bool jobValid =      !string.IsNullOrWhiteSpace(eJobTB.Text);
+            bool nameValid =     !string.IsNullOrWhiteSpace(eNameTB.Text) && !eNameTB.Text.Contains(";");
+            bool ageValid =      !string.IsNullOrWhiteSpace(eAgeTB.Text) && !eAgeTB.Text.Contains(";"); 
+            bool phoneValid =    !string.IsNullOrWhiteSpace(ePNTB.Text) && !ePNTB.Text.Contains(";");
+            bool nifValid =      !string.IsNullOrWhiteSpace(eNTB.Text) && !eNTB.Text.Contains(";");
+            bool passwordValid = !string.IsNullOrWhiteSpace(ePTB.Text) && !ePTB.Text.Contains(";");
+            bool addressValid =  !string.IsNullOrWhiteSpace(eAddressTB.Text) && !eAddressTB.Text.Contains(";");
+            bool salaryValid =   !string.IsNullOrWhiteSpace(eSalaryTB.Text) && !eSalaryTB.Text.Contains(";");
+            bool jobValid =      !string.IsNullOrWhiteSpace(eJobTB.Text) && !eJobTB.Text.Contains(";");
 
             if (!nameValid || !ageValid || !phoneValid || !nifValid || !passwordValid || !jobValid || !salaryValid || !addressValid)
             {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields and do not use semicolons.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

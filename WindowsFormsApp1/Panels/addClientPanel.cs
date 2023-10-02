@@ -52,7 +52,7 @@ namespace WindowsFormsApp1.Panels
                 string name =        aCName.Text;
                 string phoneNumber = aCPN.Text;
                 string address =     aCA.Text;
-                long nif = long.Parse(aCNIF.Text);
+                long nif =           long.Parse(aCNIF.Text);
 
                 if (rowIndex >= 0)
                 {
@@ -76,14 +76,14 @@ namespace WindowsFormsApp1.Panels
 
         private bool TextBoxesFilledAndValid()
         {
-            bool nameValid =    !string.IsNullOrWhiteSpace(aCName.Text);
-            bool phoneValid =   !string.IsNullOrWhiteSpace(aCPN.Text);
-            bool addressValid = !string.IsNullOrWhiteSpace(aCA.Text);
-            bool nifValid =     !string.IsNullOrWhiteSpace(aCNIF.Text);
+            bool nameValid =    !string.IsNullOrWhiteSpace(aCName.Text) && !aCName.Text.Contains(";");
+            bool phoneValid =   !string.IsNullOrWhiteSpace(aCPN.Text) && !aCPN.Text.Contains(";");
+            bool addressValid = !string.IsNullOrWhiteSpace(aCA.Text) && !aCA.Text.Contains(";");
+            bool nifValid =     !string.IsNullOrWhiteSpace(aCNIF.Text) && !aCNIF.Text.Contains(";");
 
             if (!nameValid || !phoneValid || !addressValid || !nifValid)
             {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields and do not use semicolons.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
